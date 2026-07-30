@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设计理念 — 前端设计灵感画廊</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-black min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="text-xl font-bold text-black">前端设计灵感画廊</h1>
+                <div class="flex items-center gap-6">
+                    <nav class="flex gap-6 text-sm">
+                        <a href="index.html" class="text-gray-500 hover:text-black transition-colors">画廊</a>
+                        <a href="palette.html" class="text-gray-500 hover:text-black transition-colors">配色库</a>
+                        <a href="color-mixer.html" class="text-gray-500 hover:text-black transition-colors">颜色搭配</a>
+                        <a href="philosophy.html" class="text-black font-medium">设计理念</a>
+                        <a href="reference.html" class="text-gray-500 hover:text-black transition-colors">代码参考</a>
+                    </nav>
+                    <div class="flex items-center gap-4">
+                        <a href="../philosophy.html" class="text-sm text-gray-500 hover:text-black">EN</a>
+                        <span class="text-gray-300">|</span>
+                        <a href="philosophy.html" class="text-sm text-black font-medium">中文</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="py-20 px-6 border-b border-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl font-bold text-black mb-6">设计理念</h2>
+            <p class="text-xl text-gray-500 mb-4 max-w-2xl mx-auto">理解每种设计风格背后的<em>原因</em> — 起源、核心原则、适用场景与 UX 考量，这些因素共同塑造了现代界面设计。</p>
+            <p class="text-base text-gray-400 max-w-xl mx-auto">每种风格都代表了用户与数字界面交互的独特哲学。选择正确的风格意味着将视觉语言与用户期望和产品目标对齐。</p>
+        </div>
+    </section>
+
+    <!-- 理念卡片 -->
+    <section class="py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- 1. 极简主义 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">01</span>
+                        <h3 class="text-2xl font-bold text-black">极简主义</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">瑞士设计，1950 年代</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 少即是多 — 每个元素都必须有其存在的理由</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 形式服从功能 — 美学服务于可用性</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 留白是积极的元素，而非空白</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 网格系统强制视觉秩序</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 高对比度排版驱动层级</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">企业应用、仪表盘、文档、SaaS 平台</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>高对比度比率，屏幕阅读器友好</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>资源极少，加载速度快</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>视觉复杂度低；需要强大的内容策略</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2. 新拟物风格 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">02</span>
+                        <h3 class="text-2xl font-bold text-black">新拟物风格</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">2020 年 UI 趋势</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 柔和、浮雕外观 — 元素从背景中浮现</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 单色配色方案 — 协调而宁静</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 微妙的光影交织</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 低对比度、触觉感 — 邀请触摸</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">健康应用、冥想平台、健身追踪器</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>低对比度风险 — 确保达到 WCAG AA 最低标准</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>轻量级 CSS 阴影，无重资源</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>中等 — 需要精细的阴影调校</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3. 玻璃拟态 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">03</span>
+                        <h3 class="text-2xl font-bold text-black">玻璃拟态</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">2020 年（Apple、Microsoft）</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 背景模糊创造深度与上下文</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 半透明表面 — 信息分层</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 分层透明度构建视觉层级</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 高对比度文字确保模糊背景上的可读性</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">现代 SaaS、金融仪表盘、模态弹窗</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>文字必须在多变背景上通过对比度检查</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>backdrop-filter 在移动端可能消耗大量 GPU 资源</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>高 — 需要精细的层级和降级处理</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 4. 黏土风格 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">04</span>
+                        <h3 class="text-2xl font-bold text-black">黏土风格</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">2022 年 UI 趋势</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 3D 黏土质感 — 柔和、挤出的形态</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 粗犷、圆润的形状，大圆角</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 柔和的内外阴影营造深度</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 趣味、玩具般的美学 — 亲和力强</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">教育应用、儿童应用、创意工具</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>确保交互元素具有清晰的示能性</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>仅 CSS 阴影 — 轻量级</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低至中等 — CSS 实现简单直接</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 5. 拟物化 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">05</span>
+                        <h3 class="text-2xl font-bold text-black">拟物化</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">早期 iOS（2007–2012）</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 模仿现实世界材质 — 木材、皮革、金属</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 逼真的纹理和精细阴影</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 熟悉的物理隐喻降低学习曲线</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">游戏界面、沉浸式叙事、遗留应用</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>纹理可能遮挡文字 — 确保对比度</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>大量图片资源 — 优化并懒加载</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>高 — 需要详细的资源制作</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 6. 扁平设计 2.0 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">06</span>
+                        <h3 class="text-2xl font-bold text-black">扁平设计 2.0</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">2010 年代（Microsoft Metro）</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 二维美学 — 无阴影、无渐变</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 大胆的纯色实现清晰的视觉区分</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 简洁的图标系统 — 普遍可识别</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 干净的无衬线字体提升可读性</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">Web 应用、移动应用、跨平台、初创 MVP</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>纯色背景通常对比度良好</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>极快 — 纯 CSS，无需图片</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低 — 最容易实现和维护的风格</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 7. 极光 UI -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">07</span>
+                        <h3 class="text-2xl font-bold text-black">极光 UI</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">2020 年代渐变趋势</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 网格渐变配合流动的色彩过渡</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 氛围光晕创造深度</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 微妙、有目的的动画 — 从不分散注意力</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 空灵、超凡脱俗的感觉 — 高级感</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">创意机构、品牌设计、音乐平台、高端产品</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>渐变上的文字需要仔细的对比度测试</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS 渐变性能好；动画渐变可能影响低端设备</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>中等 — 需要渐变调校和动画时序</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 8. 粗野主义 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">08</span>
+                        <h3 class="text-2xl font-bold text-black">粗野主义</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">1950 年代建筑，2010 年代 Web</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 原始、未打磨的美学 — 诚实胜于美丽</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 原色和厚重黑色边框</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 可见的网格结构 — 暴露框架</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 反设计哲学 — 挑战传统</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">设计作品集、艺术项目、反主流品牌</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>粗边框和高对比度可能令人不适</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>非常轻量 — 极简 CSS</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>技术层面低；概念层面高 — 需要自信</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 9. 新粗野主义 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">09</span>
+                        <h3 class="text-2xl font-bold text-black">新粗野主义</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">2022 年现代复兴</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 粗犷黑色边框 — 不可错认的视觉语言</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 硬阴影 — 坚定、果断的深度</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 明亮、扁平色彩 — 充满活力与自信</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 大胆排版，受波普艺术影响</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">创意机构、作品集网站、初创公司、大胆品牌</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>天生高对比度 — 很易访问</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>纯 CSS — 快速轻量</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低 — 简单的 CSS 边框和阴影</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 10. 便当盒布局 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">10</span>
+                        <h3 class="text-2xl font-bold text-black">便当盒布局</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">Apple 设计语言，2020 年代</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 非对称网格布局 — 有机而有序</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 不同尺寸的模块化内容卡片</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 大圆角营造柔和、友好的感觉</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 日本便当盒灵感 — 有组织的多样性</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">作品集网站、产品展示、仪表盘</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>确保非对称布局中的逻辑 Tab 顺序</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS Grid 原生高性能</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>中等 — 需要周密的网格规划</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 11. 赛博朋克 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">11</span>
+                        <h3 class="text-2xl font-bold text-black">赛博朋克</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">1980 年代科幻</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 霓虹色彩点缀 — 在黑暗中发光</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 深色背景 — 沉浸式、夜间氛围</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 故障效果 — 数字不完美</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 等宽排版 — 黑客/终端美学</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 高科技、低生活美学 — 技术反乌托邦</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">游戏平台、科技初创、NFT/Crypto、科幻娱乐</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>深色背景配霓虹文字可能引起视觉疲劳</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>故障动画可能消耗大量 CPU</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>中至高 — 动画和霓虹效果需要调校</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 12. 蒸汽波 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">12</span>
+                        <h3 class="text-2xl font-bold text-black">蒸汽波</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">2010 年代互联网文化</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 粉/青渐变 — 标志性合成器波配色</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 日文元素 — 文化混搭</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 网格图案 — 复古未来主义</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 复古 80/90 年代字体 — 怀旧排版</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 超现实数字怀旧 — 梦幻美学</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">音乐平台、时尚品牌、艺术组合、复古游戏</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>粉/青文字可能难以阅读 — 限定为点缀色</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS 渐变和图案轻量</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低至中等 — 主要为装饰性 CSS</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 13. 瑞士现代主义 2.0 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">13</span>
+                        <h3 class="text-2xl font-bold text-black">瑞士现代主义 2.0</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">为数字时代更新的瑞士设计</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 严格网格系统 — 数学秩序</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 无衬线排版 — Helvetica 传统</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 原色 — 红、蓝、黄、黑、白</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 非对称布局 — 动态平衡</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 数学精度 — 每个像素都有意图</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">企业形象、编辑设计、信息设计</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>强对比度、清晰层级 — 天然可访问</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>无重资源 — 极快</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>中等 — 需要严谨的网格和排版工作</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 14. 液态玻璃 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">14</span>
+                        <h3 class="text-2xl font-bold text-black">液态玻璃</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">2022 年 Apple Vision Pro 影响</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 流动、变形形状 — 有机运动</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 虹彩变色效果 — 色彩变幻表面</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 深度背景模糊 — 空间深度</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 有机动画 — 流畅、自然的运动</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">高端 SaaS、高端电商、奢侈作品集</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>虹彩表面使文字可读性复杂化</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>较重 — backdrop-filter + 动画消耗 GPU</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>非常高 — 需要高级 CSS 和动画技能</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 15. Gen Z 混沌 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">15</span>
+                        <h3 class="text-2xl font-bold text-black">Gen Z 混沌</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">2023 年 TikTok / Gen Z 美学</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 极繁主义、混乱布局 — 越多越好</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 倾斜、旋转的元素 — 打破传统网格</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 俏皮、不羁的文案 — 个性驱动</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 大量 Emoji 沟通 — 视觉速记</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 反极简主义 — 颂扬过度</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">Gen Z 品牌、社交应用、迷因文化、非主流营销</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>混乱布局可能使屏幕阅读器和用户迷失方向</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS transform 轻量；注意过度使用</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>高 — 在混乱与可用性之间取得平衡具有挑战性</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 新兴实验风格 -->
+            <div class="mt-12 mb-6">
+                <h3 class="text-2xl font-bold text-black mb-2">新兴实验风格</h3>
+                <p class="text-gray-500">前沿、小众、实验性的设计理念</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- 16. 暗黑模式 OLED -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">16</span>
+                        <h3 class="text-2xl font-bold text-black">暗黑模式 OLED</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">OLED 显示技术，2020 年代</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 纯黑背景 — OLED 像素完全关闭</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 霓虹点缀色实现高对比度突出</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 省电设计 — 更低功耗</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 低光环境下减少眼部疲劳</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">开发者工具、代码编辑器、阅读应用、夜间模式界面</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>确保深色表面与文字之间有足够对比度</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>纯黑降低 OLED 功耗 — 移动端表现出色</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低 — 主要是颜色标记替换</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 17. 复古未来主义 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">17</span>
+                        <h3 class="text-2xl font-bold text-black">复古未来主义</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">中世纪科幻，1950–60 年代遐想</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 旧时代的明日之梦 — 怀旧未来主义</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 温暖橙色、深邃蓝、蜜桃色调</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 充满复古未来特色的几何形状</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 乐观、探索性的视觉语言</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">太空主题项目、复古品牌、概念设计</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>暖色调配色在适当对比度下通常可访问</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>基于 CSS，轻量级</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低至中等 — 颜色和形状处理</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 18. 动效驱动 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">18</span>
+                        <h3 class="text-2xl font-bold text-black">动效驱动</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">Web 动画复兴，2020 年代</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 动画优先设计 — 动效引导体验</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 动态色彩过渡和流畅运动</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 滚动触发动画 — 叙事推进</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 微交互带来愉悦和反馈</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">叙事网站、品牌体验、产品发布页</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>尊重 prefers-reduced-motion；避免触发晕动症</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>使用 GPU 加速属性（transform、opacity）</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>高 — 需要动画库和性能调优</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 19. 包容性设计 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">19</span>
+                        <h3 class="text-2xl font-bold text-black">包容性设计</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">WCAG 标准，通用设计运动</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 默认可访问 — WCAG AA 最低标准</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 清晰、可识别的色彩系统（Google 风格）</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 以人为本 — 为最广泛受众设计</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 语义化 HTML 和 ARIA 优先方法</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">政府、教育、医疗、企业平台</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>内建 — 此理念的基石</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>标准 — 可访问性增加极少开销</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>中等 — 需要可访问性知识和测试</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 20. 零界面 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">20</span>
+                        <h3 class="text-2xl font-bold text-black">零界面</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">隐形计算，2020 年代</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 界面消失 — 内容为王</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 极简边框 — 控件按需出现</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 轻柔色彩 — 若有若无的灰色调</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 语音和手势作为主要交互方式</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">阅读应用、内容平台、环境计算</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>隐藏控件有可发现性风险 — 提供清晰的示能性</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>极轻量 — 极简 UI 元素</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>概念层面高 — 需要深刻理解用户需求</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 21. 柔和 UI 进化 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">21</span>
+                        <h3 class="text-2xl font-bold text-black">柔和 UI 进化</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">新拟物风格进化，2023 年</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 柔和粉彩渐变 — 柔和过渡</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 多色融合 — 薰衣草、天蓝、奶油</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 进化版柔和阴影，对比度更好</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 宁静、治愈的视觉体验</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">健康应用、心理健康平台、生活方式品牌</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>比新拟物风格有改进 — 更好的对比度比率</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS 渐变和阴影 — 轻量级</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低至中等 — 渐变和谐调校</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 22. 主视觉中心 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">22</span>
+                        <h3 class="text-2xl font-bold text-black">主视觉中心</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">落地页优化，2020 年代</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 主导的主视觉区域 — 第一印象决定一切</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 戏剧化对比 — 深色背景配活力点缀</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 大号粗体排版 — 即时传达信息</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 单一 CTA 焦点 — 转化导向设计</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">落地页、营销网站、产品发布页</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>深色背景需要足够的文字对比度</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>主视觉图片需要优化 — 懒加载和压缩</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低 — 聚焦布局，优先级明确</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 23. HUD 科幻 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">23</span>
+                        <h3 class="text-2xl font-bold text-black">HUD 科幻</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">军事航空、科幻电影</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 抬头显示美学 — 数据叠加</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 矩阵绿配深色背景</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 终端风格等宽排版</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 发光边框和扫描线效果</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">网络安全平台、开发者工具、科幻游戏</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>绿底黑字对比度好；长文本避免纯绿</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS text-shadow 发光效果 — 轻量级</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低 — 主要是颜色和排版选择</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 24. 像素艺术 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">24</span>
+                        <h3 class="text-2xl font-bold text-black">像素艺术</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">8-bit 游戏时代，1980 年代</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 复古游戏怀旧 — 致敬 8-bit 和 16-bit</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 有限色彩 — 有意的约束</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 块状、基于网格的视觉 — 像素完美</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 像素字体和 CRT 屏幕效果</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">游戏网站、复古品牌、创意作品集</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>像素字体难以阅读 — 仅用于标题</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>轻量级 — 基于 CSS 的像素效果</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低至中等 — 需要加载专用字体</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 25. 电子墨水纸 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">25</span>
+                        <h3 class="text-2xl font-bold text-black">电子墨水纸</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">电子阅读器显示技术，2000 年代</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 纸张质感 — 温暖、触感的数字化</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 低对比度、宁静的阅读体验</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 暖灰和墨黑 — 自然色板</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 衬线字体提供传统阅读舒适感</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">阅读应用、数字出版物、文档网站</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>低对比度可能不足 — 提供高对比度切换</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>非常轻量 — 极简 CSS</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低 — 聚焦颜色和排版</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 26. 空间 UI -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">26</span>
+                        <h3 class="text-2xl font-bold text-black">空间 UI</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">Apple Vision Pro，空间计算时代</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 3D 深度和透视 — 超越平面屏幕</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 具有空间感知的玻璃材质</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 基于深度的交互 — Z 轴导航</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 潘通风格色彩点缀 — 紫外光、活珊瑚</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">AR/VR 界面、空间计算、沉浸式体验</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>3D 效果可能引起晕动症 — 提供 2D 降级方案</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>3D transform 消耗大量 GPU 资源</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>非常高 — 需要 3D CSS 和空间设计思维</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 27. 有机仿生 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">27</span>
+                        <h3 class="text-2xl font-bold text-black">有机仿生</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">仿生设计运动，2020 年代</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 自然灵感设计 — 将户外引入室内</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 森林绿、鼠尾草、薄荷雾色板</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 有机形状和流动曲线</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 关注健康与可持续性</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">可持续品牌、健康应用、生态产品</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>绿上绿配色需要仔细的对比度测试</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS 形状和渐变 — 轻量级</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低至中等 — 自然灵感 CSS 图案</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 28. AI 原生 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">28</span>
+                        <h3 class="text-2xl font-bold text-black">AI 原生</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">AI 革命，2023 年至今</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 生成式、自适应界面 — AI 驱动设计</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 靛蓝-紫罗兰-青色渐变 — 未来感 AI 氛围</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 锥形渐变和旋转元素 — 动态能量</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 智能、上下文感知的 UI 模式</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">AI 工具、聊天机器人界面、智能助手、ML 平台</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>渐变密集型界面需要文字对比度保障</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>锥形渐变是 CSS 原生 — 高性能</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>中等 — 创新渐变技术</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 29. 孟菲斯复兴 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">29</span>
+                        <h3 class="text-2xl font-bold text-black">孟菲斯复兴</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">孟菲斯集团，1980 年代米兰</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 大胆几何图案 — 圆、三角、波浪线</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 冲突色彩 — 珊瑚、青色、阳光黄、长春花</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 俏皮、不羁的设计语言</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 后现代对极简主义的反叛</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">创意机构、时尚品牌、艺术作品集</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>大胆色彩需要刻意的对比度搭配</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS 图案和形状 — 轻量级</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>中等 — 图案设计需要艺术技巧</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 30. Y2K 复兴 -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">30</span>
+                        <h3 class="text-2xl font-bold text-black">Y2K 复兴</h3>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
+                        <p class="text-sm text-gray-600 mt-1">1990 年代末–2000 年代初互联网</p>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 千禧美学 — 镀铬、金属、闪亮</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 亮粉、绿松石、金色、银色色板</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 泡泡糖流行与数字未来主义碰撞</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 怀旧但新鲜 — 复古复兴与现代打磨</li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
+                        <p class="text-sm text-gray-600 mt-1">时尚电商、音乐平台、Gen Z 品牌</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>金属和闪亮效果可能降低可读性</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS 渐变和阴影 — 轻量级</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低至中等 — 渐变和颜色处理</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h3 class="text-2xl font-bold mb-4">前端设计灵感画廊</h3>
+            <p class="text-gray-400 mb-6">30 种现代 UI 设计风格 — 精选展示</p>
+            <div class="flex justify-center gap-4 flex-wrap mb-8">
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Tailwind CSS</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">响应式</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">零依赖</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">GitHub Pages 就绪</span>
+            </div>
+            <p class="text-gray-500 text-sm">基于 <a href="https://github.com/joshhu/uitest" class="underline hover:text-gray-300">joshhu/uitest</a> 等开源设计资源构建</p>
+        </div>
+    </footer>
+</body>
+</html>

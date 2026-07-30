@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Design Inspiration Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+        .gradient-text { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-white text-black min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="text-xl font-bold text-black">Design Inspiration Gallery</h1>
+                <div class="flex items-center gap-6">
+                    <nav class="flex gap-6 text-sm">
+                        <a href="index.html" class="text-black font-medium">Gallery</a>
+                        <a href="palette.html" class="text-gray-500 hover:text-black transition-colors">Palettes</a>
+                        <a href="color-mixer.html" class="text-gray-500 hover:text-black transition-colors">Color Mixer</a>
+                        <a href="philosophy.html" class="text-gray-500 hover:text-black transition-colors">Philosophy</a>
+                        <a href="reference.html" class="text-gray-500 hover:text-black transition-colors">Reference</a>
+                    </nav>
+                    <div class="flex items-center gap-4">
+                        <a href="index.html" class="text-sm text-black font-medium">EN</a>
+                        <span class="text-gray-300">|</span>
+                        <a href="zh/index.html" class="text-sm text-gray-500 hover:text-black">中文</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="py-20 px-6 border-b border-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl font-bold text-black mb-6">Frontend Design<br/>Inspiration Gallery</h2>
+            <p class="text-xl text-gray-500 mb-8 max-w-2xl mx-auto">A curated showcase of 30 modern UI design paradigms — from Minimalism to Y2K Revival. Explore visual aesthetics, color systems, and implementation patterns.</p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="#core-styles" class="px-4 py-2 bg-black text-white rounded-full text-sm font-medium hover:bg-gray-800 transition-colors">Core Styles</a>
+                <a href="#modern-trends" class="px-4 py-2 bg-gray-100 text-black rounded-full text-sm font-medium hover:bg-gray-200 transition-colors">Modern Trends</a>
+                <a href="palette.html" class="px-4 py-2 bg-gray-100 text-black rounded-full text-sm font-medium hover:bg-gray-200 transition-colors">Color Palettes</a>
+                <a href="philosophy.html" class="px-4 py-2 bg-gray-100 text-black rounded-full text-sm font-medium hover:bg-gray-200 transition-colors">Design Philosophy</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Design Styles -->
+    <section id="core-styles" class="py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-3xl font-bold text-black mb-2">Core Design Styles</h3>
+            <p class="text-gray-500 mb-8">Foundational design paradigms that define modern UI aesthetics</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- 1. Minimalism -->
+                <a href="styles/minimalism.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-gradient-to-br from-white to-gray-50 flex items-center justify-center">
+                        <div class="w-16 h-16 bg-black rounded-lg"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">01</span>
+                        <h4 class="text-lg font-semibold text-black">Minimalism</h4>
+                        <p class="text-sm text-gray-500 mt-1">Clean, functional, high contrast</p>
+                    </div>
+                </a>
+                <!-- 2. Neumorphism -->
+                <a href="styles/neumorphism.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-[#e8e8e8] flex items-center justify-center">
+                        <div class="w-20 h-20 bg-[#e8e8e8] rounded-2xl" style="box-shadow: -5px -5px 15px #fff, 5px 5px 15px #d1d1d1;"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">02</span>
+                        <h4 class="text-lg font-semibold text-black">Neumorphism</h4>
+                        <p class="text-sm text-gray-500 mt-1">Soft shadows, embossed depth</p>
+                    </div>
+                </a>
+                <!-- 3. Glassmorphism -->
+                <a href="styles/glassmorphism.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 flex items-center justify-center p-4">
+                        <div class="w-full h-full bg-white/20 backdrop-blur-md rounded-xl border border-white/30"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">03</span>
+                        <h4 class="text-lg font-semibold text-black">Glassmorphism</h4>
+                        <p class="text-sm text-gray-500 mt-1">Frosted glass, layered transparency</p>
+                    </div>
+                </a>
+                <!-- 4. Claymorphism -->
+                <a href="styles/claymorphism.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-gradient-to-br from-pink-100 to-blue-100 flex items-center justify-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-pink-300 to-pink-400 rounded-3xl border-4 border-pink-200" style="box-shadow: 0 8px 0 #f9a8d4, inset 0 -4px 0 rgba(0,0,0,0.1);"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">04</span>
+                        <h4 class="text-lg font-semibold text-black">Claymorphism</h4>
+                        <p class="text-sm text-gray-500 mt-1">3D clay, rounded, playful</p>
+                    </div>
+                </a>
+                <!-- 5. Skeuomorphism -->
+                <a href="styles/skeuomorphism.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-gradient-to-b from-gray-300 to-gray-400 flex items-center justify-center">
+                        <div class="w-20 h-20 bg-gradient-to-b from-gray-100 to-gray-300 rounded-2xl border-2 border-gray-400" style="box-shadow: inset 0 2px 4px rgba(255,255,255,0.5), 0 4px 8px rgba(0,0,0,0.3);"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">05</span>
+                        <h4 class="text-lg font-semibold text-black">Skeuomorphism</h4>
+                        <p class="text-sm text-gray-500 mt-1">Realistic textures, real-world metaphor</p>
+                    </div>
+                </a>
+                <!-- 6. Flat Design 2.0 -->
+                <a href="styles/flat-design.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-blue-500 flex items-center justify-center gap-3">
+                        <div class="w-10 h-10 bg-red-500 rounded"></div>
+                        <div class="w-10 h-10 bg-yellow-400 rounded"></div>
+                        <div class="w-10 h-10 bg-green-500 rounded"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">06</span>
+                        <h4 class="text-lg font-semibold text-black">Flat Design 2.0</h4>
+                        <p class="text-sm text-gray-500 mt-1">2D blocks, no shadows, vibrant</p>
+                    </div>
+                </a>
+                <!-- 7. Aurora UI -->
+                <a href="styles/aurora-ui.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center" style="background-size: 200% 200%; animation: aurora 3s ease infinite;">
+                        <div class="text-white font-bold text-xl">Aurora</div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">07</span>
+                        <h4 class="text-lg font-semibold text-black">Aurora UI</h4>
+                        <p class="text-sm text-gray-500 mt-1">Gradient mesh, flowing colors</p>
+                    </div>
+                </a>
+                <!-- 8. Brutalism -->
+                <a href="styles/brutalism.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-yellow-400 flex items-center justify-center">
+                        <div class="w-20 h-16 bg-blue-600 border-4 border-black"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">08</span>
+                        <h4 class="text-lg font-semibold text-black">Brutalism</h4>
+                        <p class="text-sm text-gray-500 mt-1">Raw, high contrast, anti-design</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Trends -->
+    <section id="modern-trends" class="py-16 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-3xl font-bold text-black mb-2">Modern Trends</h3>
+            <p class="text-gray-500 mb-8">2020s cutting-edge design trends and avant-garde aesthetics</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- 9. Neubrutalism -->
+                <a href="styles/neubrutalism.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-yellow-300 flex items-center justify-center">
+                        <div class="w-20 h-12 bg-blue-500 border-4 border-black" style="box-shadow: 4px 4px 0 #000;"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">09</span>
+                        <h4 class="text-lg font-semibold text-black">Neubrutalism</h4>
+                        <p class="text-sm text-gray-500 mt-1">Bold borders, hard shadows, pop</p>
+                    </div>
+                </a>
+                <!-- 10. Bento Grid -->
+                <a href="styles/bento-grid.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-gray-50 flex items-center justify-center p-3">
+                        <div class="grid grid-cols-3 grid-rows-2 gap-2 w-full h-full">
+                            <div class="bg-white rounded-xl row-span-2 shadow-sm"></div>
+                            <div class="bg-white rounded-xl col-span-2 shadow-sm"></div>
+                            <div class="bg-white rounded-xl shadow-sm"></div>
+                            <div class="bg-white rounded-xl shadow-sm"></div>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">10</span>
+                        <h4 class="text-lg font-semibold text-black">Bento Grid</h4>
+                        <p class="text-sm text-gray-500 mt-1">Modular cards, asymmetric layout</p>
+                    </div>
+                </a>
+                <!-- 11. Cyberpunk -->
+                <a href="styles/cyberpunk.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-black flex items-center justify-center">
+                        <span class="text-green-400 font-mono" style="text-shadow: 0 0 10px #0f0;">CYBER//PUNK</span>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">11</span>
+                        <h4 class="text-lg font-semibold text-black">Cyberpunk</h4>
+                        <p class="text-sm text-gray-500 mt-1">Neon, dark, dystopian future</p>
+                    </div>
+                </a>
+                <!-- 12. Vaporwave -->
+                <a href="styles/vaporwave.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-gradient-to-b from-pink-400 via-purple-500 to-blue-600 flex items-center justify-center">
+                        <div class="text-white font-bold text-2xl" style="text-shadow: 2px 2px #ff00ff;">A E S T H E T I C</div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">12</span>
+                        <h4 class="text-lg font-semibold text-black">Vaporwave</h4>
+                        <p class="text-sm text-gray-500 mt-1">Retro synth, neon gradients</p>
+                    </div>
+                </a>
+                <!-- 13. Swiss Modernism 2.0 -->
+                <a href="styles/swiss-modernism.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-white flex items-center justify-center">
+                        <div class="grid grid-cols-4 gap-1">
+                            <div class="w-4 h-4 bg-black"></div>
+                            <div class="w-4 h-4 bg-red-500"></div>
+                            <div class="w-4 h-4 bg-black"></div>
+                            <div class="w-4 h-4 bg-black"></div>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">13</span>
+                        <h4 class="text-lg font-semibold text-black">Swiss Modernism 2.0</h4>
+                        <p class="text-sm text-gray-500 mt-1">Grid, typography, precision</p>
+                    </div>
+                </a>
+                <!-- 14. Liquid Glass -->
+                <a href="styles/liquid-glass.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-gradient-to-br from-indigo-400 via-purple-400 to-pink-400 flex items-center justify-center">
+                        <div class="w-24 h-16 bg-white/30 backdrop-blur-lg rounded-full border border-white/40"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">14</span>
+                        <h4 class="text-lg font-semibold text-black">Liquid Glass</h4>
+                        <p class="text-sm text-gray-500 mt-1">Flowing glass, iridescent</p>
+                    </div>
+                </a>
+                <!-- 15. Gen Z Chaos -->
+                <a href="styles/gen-z-chaos.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-gradient-to-br from-pink-500 via-yellow-400 to-green-400 flex items-center justify-center overflow-hidden">
+                        <div class="text-white font-bold text-xl transform rotate-12">CHAOS!!!</div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">15</span>
+                        <h4 class="text-lg font-semibold text-black">Gen Z Chaos</h4>
+                        <p class="text-sm text-gray-500 mt-1">Maximalist, expressive, irreverent</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emerging & Experimental -->
+    <section id="emerging-styles" class="py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-3xl font-bold text-black mb-2">Emerging & Experimental</h3>
+            <p class="text-gray-500 mb-8">Cutting-edge, niche, and experimental design aesthetics</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- 16. Dark Mode OLED -->
+                <a href="palette.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-black flex items-center justify-center">
+                        <div class="w-20 h-20 rounded-full border-2 border-gray-800" style="box-shadow: 0 0 20px rgba(0,212,255,0.3);"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">16</span>
+                        <h4 class="text-lg font-semibold text-black">Dark Mode OLED</h4>
+                        <p class="text-sm text-gray-500 mt-1">Deep blacks, neon accents, battery-friendly</p>
+                    </div>
+                </a>
+                <!-- 17. Retro Futurism -->
+                <a href="palette.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-gradient-to-br from-orange-500 to-blue-900 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">RETRO//2077</span>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">17</span>
+                        <h4 class="text-lg font-semibold text-black">Retro Futurism</h4>
+                        <p class="text-sm text-gray-500 mt-1">Vintage vision, future nostalgia</p>
+                    </div>
+                </a>
+                <!-- 18. Motion Driven -->
+                <a href="palette.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-gradient-to-r from-red-400 via-yellow-400 to-blue-400 flex items-center justify-center">
+                        <div class="flex gap-2">
+                            <div class="w-4 h-4 bg-white rounded-full animate-bounce"></div>
+                            <div class="w-4 h-4 bg-white rounded-full" style="animation: bounce 1s 0.2s infinite;"></div>
+                            <div class="w-4 h-4 bg-white rounded-full" style="animation: bounce 1s 0.4s infinite;"></div>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">18</span>
+                        <h4 class="text-lg font-semibold text-black">Motion Driven</h4>
+                        <p class="text-sm text-gray-500 mt-1">Animation-first, dynamic, fluid</p>
+                    </div>
+                </a>
+                <!-- 19. Inclusive Design -->
+                <a href="palette.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-blue-100 flex items-center justify-center gap-2">
+                        <div class="w-10 h-10 bg-[#1A73E8] rounded-xl"></div>
+                        <div class="w-10 h-10 bg-[#34A853] rounded-xl"></div>
+                        <div class="w-10 h-10 bg-[#FBBC04] rounded-xl"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">19</span>
+                        <h4 class="text-lg font-semibold text-black">Inclusive Design</h4>
+                        <p class="text-sm text-gray-500 mt-1">Accessible, universal, human-centered</p>
+                    </div>
+                </a>
+                <!-- 20. Zero Interface -->
+                <a href="palette.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-gradient-to-b from-gray-50 to-gray-100 flex items-center justify-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">20</span>
+                        <h4 class="text-lg font-semibold text-black">Zero Interface</h4>
+                        <p class="text-sm text-gray-500 mt-1">Invisible UI, minimal chrome</p>
+                    </div>
+                </a>
+                <!-- 21. Soft UI Evolution -->
+                <a href="palette.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-gradient-to-br from-purple-100 via-blue-100 to-amber-100 flex items-center justify-center">
+                        <div class="w-20 h-20 bg-white rounded-3xl" style="box-shadow: 0 10px 30px rgba(0,0,0,0.05);"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">21</span>
+                        <h4 class="text-lg font-semibold text-black">Soft UI Evolution</h4>
+                        <p class="text-sm text-gray-500 mt-1">Gentle gradients, pastel blending</p>
+                    </div>
+                </a>
+                <!-- 22. Hero Centric -->
+                <a href="palette.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-[#1A1A2E] flex items-center justify-center">
+                        <div class="w-16 h-12 bg-[#E94560] rounded-lg"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">22</span>
+                        <h4 class="text-lg font-semibold text-black">Hero Centric</h4>
+                        <p class="text-sm text-gray-500 mt-1">Bold hero, dramatic contrast</p>
+                    </div>
+                </a>
+                <!-- 23. HUD Sci-Fi -->
+                <a href="palette.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-[#001a00] flex items-center justify-center">
+                        <span class="text-[#00FF41] font-mono text-lg" style="text-shadow: 0 0 8px #00FF41;">SYS::ONLINE</span>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">23</span>
+                        <h4 class="text-lg font-semibold text-black">HUD Sci-Fi</h4>
+                        <p class="text-sm text-gray-500 mt-1">Heads-up display, terminal glow</p>
+                    </div>
+                </a>
+                <!-- 24. Pixel Art -->
+                <a href="palette.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-[#1a1a2e] flex items-center justify-center gap-2">
+                        <div class="w-8 h-8 bg-[#FF004D]"></div>
+                        <div class="w-8 h-8 bg-[#FFEC27]"></div>
+                        <div class="w-8 h-8 bg-[#00E436]"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">24</span>
+                        <h4 class="text-lg font-semibold text-black">Pixel Art</h4>
+                        <p class="text-sm text-gray-500 mt-1">Retro gaming, 8-bit nostalgia</p>
+                    </div>
+                </a>
+                <!-- 25. E-Ink Paper -->
+                <a href="palette.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-[#F8F4E6] flex items-center justify-center">
+                        <div class="w-24 h-16 border-2 border-[#2C2C2C] rounded flex items-center justify-center">
+                            <span class="text-[#2C2C2C] text-xs font-serif">e-ink</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">25</span>
+                        <h4 class="text-lg font-semibold text-black">E-Ink Paper</h4>
+                        <p class="text-sm text-gray-500 mt-1">Paper texture, low power, calm</p>
+                    </div>
+                </a>
+                <!-- 26. Spatial UI -->
+                <a href="palette.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-gradient-to-br from-[#5B5EA6] to-[#FF6F61] flex items-center justify-center">
+                        <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl border border-white/30" style="transform: perspective(200px) rotateY(10deg);"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">26</span>
+                        <h4 class="text-lg font-semibold text-black">Spatial UI</h4>
+                        <p class="text-sm text-gray-500 mt-1">3D depth, spatial computing</p>
+                    </div>
+                </a>
+                <!-- 27. Organic Biophilic -->
+                <a href="palette.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-gradient-to-br from-green-800 via-green-500 to-green-200 flex items-center justify-center">
+                        <div class="w-16 h-16 bg-green-300 rounded-full" style="box-shadow: 0 0 30px rgba(45,106,79,0.4);"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">27</span>
+                        <h4 class="text-lg font-semibold text-black">Organic Biophilic</h4>
+                        <p class="text-sm text-gray-500 mt-1">Nature-inspired, organic shapes</p>
+                    </div>
+                </a>
+                <!-- 28. AI Native -->
+                <a href="palette.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-400 flex items-center justify-center">
+                        <div class="w-20 h-20 rounded-full" style="background: conic-gradient(#6366F1, #8B5CF6, #06B6D4, #6366F1);"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">28</span>
+                        <h4 class="text-lg font-semibold text-black">AI Native</h4>
+                        <p class="text-sm text-gray-500 mt-1">Generative, intelligent, adaptive</p>
+                    </div>
+                </a>
+                <!-- 29. Memphis Revival -->
+                <a href="palette.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-white flex items-center justify-center gap-2">
+                        <div class="w-8 h-8 bg-[#FF6B6B] rounded-full"></div>
+                        <div class="w-8 h-8 bg-[#4ECDC4] rounded"></div>
+                        <div class="w-8 h-8 bg-[#FFE66D] transform rotate-45"></div>
+                        <div class="w-8 h-8 bg-[#A388EE] rounded-full"></div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">29</span>
+                        <h4 class="text-lg font-semibold text-black">Memphis Revival</h4>
+                        <p class="text-sm text-gray-500 mt-1">80s geometric, bold patterns</p>
+                    </div>
+                </a>
+                <!-- 30. Y2K Revival -->
+                <a href="palette.html" class="card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer">
+                    <div class="h-40 bg-gradient-to-br from-pink-400 via-cyan-400 to-yellow-300 flex items-center justify-center">
+                        <span class="text-white font-bold text-xl" style="text-shadow: 2px 2px 0 #FF69B4, 4px 4px 0 rgba(0,0,0,0.2);">Y2K</span>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-medium text-gray-400">30</span>
+                        <h4 class="text-lg font-semibold text-black">Y2K Revival</h4>
+                        <p class="text-sm text-gray-500 mt-1">Metallic, chrome, millennium aesthetic</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <a href="palette.html" class="group p-8 border border-gray-100 rounded-2xl hover:border-gray-300 transition-all">
+                    <div class="text-3xl mb-4">🎨</div>
+                    <h3 class="text-xl font-bold text-black mb-2">Color Palette System</h3>
+                    <p class="text-gray-500 text-sm">Curated color schemes by style category. Primary, Secondary, Accent, Semantic tokens, and Dark Mode variants.</p>
+                    <span class="inline-block mt-4 text-black text-sm font-medium group-hover:underline">Explore Palettes &rarr;</span>
+                </a>
+                <a href="color-mixer.html" class="group p-8 border border-gray-100 rounded-2xl hover:border-gray-300 transition-all">
+                    <div class="text-3xl mb-4">🎛️</div>
+                    <h3 class="text-xl font-bold text-black mb-2">Color Mixer</h3>
+                    <p class="text-gray-500 text-sm">Interactive color blending tool. Mix colors, apply design style presets, explore harmony rules, and preview results in real-time.</p>
+                    <span class="inline-block mt-4 text-black text-sm font-medium group-hover:underline">Try Mixer &rarr;</span>
+                </a>
+                <a href="philosophy.html" class="group p-8 border border-gray-100 rounded-2xl hover:border-gray-300 transition-all">
+                    <div class="text-3xl mb-4">📖</div>
+                    <h3 class="text-xl font-bold text-black mb-2">Design Philosophy</h3>
+                    <p class="text-gray-500 text-sm">Origins, core principles, UX theory, accessibility considerations, and visual characteristics of each style.</p>
+                    <span class="inline-block mt-4 text-black text-sm font-medium group-hover:underline">Read Philosophy &rarr;</span>
+                </a>
+                <a href="reference.html" class="group p-8 border border-gray-100 rounded-2xl hover:border-gray-300 transition-all">
+                    <div class="text-3xl mb-4">💻</div>
+                    <h3 class="text-xl font-bold text-black mb-2">Implementation Reference</h3>
+                    <p class="text-gray-500 text-sm">Pure HTML/CSS implementations. Tailwind CSS + vanilla CSS dual mode. Responsive and ready to deploy.</p>
+                    <span class="inline-block mt-4 text-black text-sm font-medium group-hover:underline">View Reference &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h3 class="text-2xl font-bold mb-4">Design Inspiration Gallery</h3>
+            <p class="text-gray-400 mb-6">30 modern UI design styles — curated showcase</p>
+            <div class="flex justify-center gap-4 flex-wrap mb-8">
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Tailwind CSS</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Responsive</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Zero Dependencies</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">GitHub Pages Ready</span>
+            </div>
+            <p class="text-gray-500 text-sm">Built with reference to <a href="https://github.com/joshhu/uitest" class="underline hover:text-gray-300">joshhu/uitest</a> and other open-source design resources.</p>
+        </div>
+    </footer>
+
+    <style>
+        @keyframes aurora {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+    </style>
+</body>
+</html>
