@@ -1,177 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Ink Paper - UI Style #25</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * { font-family: 'Inter', sans-serif; }
-    </style>
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Design Gallery">
-    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Ink Paper Style Page</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+  * { font-family: 'Noto Serif', 'Georgia', 'Times New Roman', serif; }
+  body { background-color: #F8F4E6; color: #2C2C2C; }
+  .ink-divider { border: none; border-top: 1px solid #8B8680; width: 40px; margin: 2rem 0; }
+  .paper-input { background: transparent; border: none; border-bottom: 1px solid #8B8680; border-radius: 0; padding: 0.5rem 0; font-family: inherit; color: #2C2C2C; }
+  .paper-input:focus { outline: none; border-bottom-color: #2C2C2C; }
+  .paper-input::placeholder { color: #8B8680; font-style: italic; }
+  .paper-btn { background: transparent; border: 1px solid #8B8680; color: #2C2C2C; padding: 0.6rem 2rem; font-family: inherit; cursor: pointer; transition: all 0.3s; }
+  .paper-btn:hover { background: #2C2C2C; color: #F8F4E6; border-color: #2C2C2C; }
+  .paper-card { background: #F8F4E6; border: 1px solid rgba(139,134,128,0.2); box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+  .paper-shadow { box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .byline { font-style: italic; color: #8B8680; }
+  .numbered::before { counter-increment: section; content: counter(section, decimal-leading-zero) ". "; color: #8B8680; font-size: 0.85rem; }
+  .toc-line { border-bottom: 1px dotted rgba(139,134,128,0.4); }
+</style>
 </head>
-<body class="bg-[#F8F4E6] text-[#2C2C2C] min-h-screen">
-    <nav class="fixed top-4 left-4 right-4 bg-white border-[#D4C9B8] rounded-lg z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-60 hover:opacity-100 transition-opacity">&larr; Back to Gallery</a>
-            <span class="font-medium">#25 E-Ink Paper</span>
-            <div class="flex items-center gap-2">
-                <span class="text-xs font-medium opacity-80">EN</span>
-                <span class="opacity-30">|</span>
-                <a href="../../styles/e-ink.html" class="text-xs opacity-50 hover:opacity-100">中文</a>
-            </div>
-        </div>
-    </nav>
+<body class="min-h-screen leading-relaxed tracking-wide">
 
-    <section class="pt-32 pb-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h1 class="text-7xl font-bold tracking-tight leading-none mb-8">E-Ink<br/>Paper</h1>
-            <p class="text-xl max-w-xl leading-relaxed opacity-80">Simulating the e-ink reading experience with paper texture backgrounds and low-contrast colors for a serene reading environment.</p>
-        </div>
-    </section>
+<!-- Navigation -->
+<nav class="max-w-2xl mx-auto px-8 py-8 flex items-center justify-between text-sm">
+  <span class="text-[#8B8680] tracking-[0.2em] uppercase text-xs">Design Gallery</span>
+  <div class="flex items-center gap-4">
+    <a href="../../index.html" class="text-[#8B8680] hover:text-[#2C2C2C] transition-colors">← Back to Gallery</a>
+    <span class="text-[#2C2C2C] border-b border-[#2C2C2C]">EN</span>
+    <span class="text-[#8B8680]">/</span>
+    <a href="../../styles/e-ink.html" class="text-[#8B8680] hover:text-[#2C2C2C] transition-colors">中文</a>
+  </div>
+</nav>
 
-    <section class="py-20 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">01</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">Paper Texture</h2>
-                    <p class="opacity-70">Warm beige background simulating real paper, reducing eye strain</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">02</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">Serif Typography</h2>
-                    <p class="opacity-70">Elegant serif fonts recreating traditional print reading rhythm</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">03</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">Minimalist Layout</h2>
-                    <p class="opacity-70">Single column, wide margins, generous line spacing for content focus</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Hero -->
+<section class="max-w-2xl mx-auto px-8 mt-12">
+  <p class="text-[#8B8680] text-xs tracking-[0.3em] uppercase mb-6">Design Style · No. 25</p>
+  <h1 class="text-5xl md:text-6xl font-bold mb-4 tracking-tight leading-tight">E-Ink Paper</h1>
+  <p class="byline text-lg mb-6">— A Paper-Textured Design System —</p>
+  <p class="text-[#8B8680] text-base leading-relaxed max-w-lg">
+    A reading experience inspired by paper. Warm tones, serif typography, restrained decoration — letting content return to its essence.
+  </p>
+  <div class="ink-divider"></div>
+  <div class="flex gap-3 text-xs text-[#8B8680]">
+    <span class="border border-[#8B8680]/30 px-3 py-1">Paper Texture</span>
+    <span class="border border-[#8B8680]/30 px-3 py-1">Serif</span>
+    <span class="border border-[#8B8680]/30 px-3 py-1">Reading</span>
+  </div>
+</section>
 
-    <section class="py-20 px-6 bg-black/10">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-8">Color Palette</h3>
-            <div class="flex gap-4">
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #F8F4E6;"></div>
-                    <p class="text-sm font-medium">Paper White</p>
-                    <p class="text-xs opacity-50">#F8F4E6</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #2C2C2C;"></div>
-                    <p class="text-sm font-medium">Ink Black</p>
-                    <p class="text-xs opacity-50">#2C2C2C</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #D4C9B8;"></div>
-                    <p class="text-sm font-medium">Light Tan</p>
-                    <p class="text-xs opacity-50">#D4C9B8</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #8B8680;"></div>
-                    <p class="text-sm font-medium">Warm Grey</p>
-                    <p class="text-xs opacity-50">#8B8680</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Features - Table of Contents Style -->
+<section class="max-w-2xl mx-auto px-8 mt-16">
+  <h2 class="text-sm font-bold tracking-[0.3em] uppercase text-[#8B8680] mb-8">Features</h2>
+  <div class="space-y-5" style="counter-reset: section;">
+    <div class="toc-line flex items-center justify-between pb-3">
+      <h3 class="numbered text-base font-medium">Paper Texture</h3>
+      <span class="text-[#8B8680] text-xs">Warm beige background, soft visual contrast</span>
+    </div>
+    <div class="toc-line flex items-center justify-between pb-3">
+      <h3 class="numbered text-base font-medium">Serif Typography</h3>
+      <span class="text-[#8B8680] text-xs">Elegant reading rhythm with Noto Serif</span>
+    </div>
+    <div class="toc-line flex items-center justify-between pb-3">
+      <h3 class="numbered text-base font-medium">Book Layout</h3>
+      <span class="text-[#8B8680] text-xs">Single column, generous margins, comfortable line height</span>
+    </div>
+    <div class="toc-line flex items-center justify-between pb-3">
+      <h3 class="numbered text-base font-medium">Restrained Decoration</h3>
+      <span class="text-[#8B8680] text-xs">Minimalist design, letting content speak for itself</span>
+    </div>
+  </div>
+</section>
 
-    <section class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-12">Components</h3>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">Buttons</h4>
-                <div class="flex gap-4 items-center flex-wrap">
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#2C2C2C] text-[#F8F4E6] hover:bg-black border border-[#2C2C2C]">Primary Action</button>
-                    <button class="px-8 py-3 font-medium transition-colors border border-[#2C2C2C] text-[#2C2C2C] hover:bg-[#2C2C2C] hover:text-[#F8F4E6]">Secondary</button>
-                    <button class="px-8 py-3 font-medium hover:opacity-60 transition-colors">Text Link &rarr;</button>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">Cards</h4>
-                <div class="grid grid-cols-3 gap-6">
-                    <div class="bg-white border-[#D4C9B8] p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">Feature</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">Paper Texture</h5>
-                        <p class="text-sm opacity-70">Warm beige background simulating real paper, reduc...</p>
-                    </div>
-                    <div class="bg-white border-[#D4C9B8] p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">Feature</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">Serif Typography</h5>
-                        <p class="text-sm opacity-70">Elegant serif fonts recreating traditional print r...</p>
-                    </div>
-                    <div class="bg-white border-[#D4C9B8] p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">Feature</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">Minimalist Layout</h5>
-                        <p class="text-sm opacity-70">Single column, wide margins, generous line spacing...</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">Form Elements</h4>
-                <div class="max-w-md">
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">Email</label>
-                        <input type="email" class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com">
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">Message</label>
-                        <textarea class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors h-32" placeholder="Your message..."></textarea>
-                    </div>
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#2C2C2C] text-[#F8F4E6] hover:bg-black border border-[#2C2C2C]">Submit</button>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Color Palette -->
+<section class="max-w-2xl mx-auto px-8 mt-16">
+  <h2 class="text-sm font-bold tracking-[0.3em] uppercase text-[#8B8680] mb-8">Palette</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="paper-card p-5">
+      <div class="w-full h-16 bg-[#F8F4E6] border border-[#8B8680]/20 mb-3"></div>
+      <p class="text-sm font-medium">Paper White</p>
+      <p class="text-xs text-[#8B8680]">Paper Beige</p>
+      <p class="text-xs text-[#8B8680]">#F8F4E6</p>
+    </div>
+    <div class="paper-card p-5">
+      <div class="w-full h-16 bg-[#2C2C2C] mb-3"></div>
+      <p class="text-sm font-medium">Ink Black</p>
+      <p class="text-xs text-[#8B8680]">Ink Black</p>
+      <p class="text-xs text-[#8B8680]">#2C2C2C</p>
+    </div>
+    <div class="paper-card p-5">
+      <div class="w-full h-16 bg-[#8B8680] mb-3"></div>
+      <p class="text-sm font-medium">Warm Grey</p>
+      <p class="text-xs text-[#8B8680]">Warm Grey</p>
+      <p class="text-xs text-[#8B8680]">#8B8680</p>
+    </div>
+  </div>
+</section>
 
-    <section class="py-20 px-6 bg-black/20">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-2 gap-16">
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">Best For</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>E-Readers</li>
-                        <li>Long-form Reading</li>
-                        <li>Academic Journals</li>
-                        <li>Literary Blogs</li>
-                        <li>Knowledge Bases</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">Characteristics</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>Dark Mode: Full</li>
-                        <li>Light Mode: Full</li>
-                        <li>Performance: Excellent</li>
-                        <li>Accessibility: WCAG AAA</li>
-                        <li>Complexity: Low</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Cards - Book Page Style -->
+<section class="max-w-2xl mx-auto px-8 mt-16">
+  <h2 class="text-sm font-bold tracking-[0.3em] uppercase text-[#8B8680] mb-8">Cards</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="paper-card paper-shadow p-8">
+      <p class="text-xs text-[#8B8680] tracking-[0.2em] uppercase mb-4">Chapter One</p>
+      <h3 class="text-xl font-bold mb-3 leading-snug">The Ritual of Reading</h3>
+      <p class="text-[#8B8680] text-sm leading-relaxed">In the digital age, we still yearn for the texture of paper. The rustle of turning pages, the faint scent of ink, and the slightly yellowed edges of a well-loved book.</p>
+      <p class="text-[#8B8680] text-xs mt-4 italic">— Design Notes</p>
+    </div>
+    <div class="paper-card paper-shadow p-8">
+      <p class="text-xs text-[#8B8680] tracking-[0.2em] uppercase mb-4">Chapter Two</p>
+      <h3 class="text-xl font-bold mb-3 leading-snug">The Art of Whitespace</h3>
+      <p class="text-[#8B8680] text-sm leading-relaxed">Good design is not about filling every inch of space, but knowing when to leave it empty. Whitespace is not waste — it is respect for content, a rhythm of breathing.</p>
+      <p class="text-[#8B8680] text-xs mt-4 italic">— Design Notes</p>
+    </div>
+  </div>
+</section>
 
-    <footer class="py-8 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-50 hover:opacity-100">&larr; Back to Gallery</a>
-            <a href="spatial-ui.html" class="text-sm opacity-50 hover:opacity-100">Next: #26 &rarr;</a>
-        </div>
-    </footer>
+<!-- Buttons -->
+<section class="max-w-2xl mx-auto px-8 mt-16">
+  <h2 class="text-sm font-bold tracking-[0.3em] uppercase text-[#8B8680] mb-8">Buttons</h2>
+  <div class="flex flex-wrap gap-4">
+    <button class="paper-btn">Continue Reading</button>
+    <button class="paper-btn" style="border-color: #2C2C2C; background: #2C2C2C; color: #F8F4E6;">Add to Shelf</button>
+    <button class="paper-btn" style="opacity: 0.4; pointer-events: none;">Completed</button>
+  </div>
+</section>
 
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
-      }
-    </script>
+<!-- Form -->
+<section class="max-w-2xl mx-auto px-8 mt-16 mb-16">
+  <h2 class="text-sm font-bold tracking-[0.3em] uppercase text-[#8B8680] mb-8">Subscribe</h2>
+  <div class="paper-card paper-shadow p-8 max-w-md">
+    <div class="space-y-6">
+      <div>
+        <label class="text-xs text-[#8B8680] tracking-[0.2em] uppercase block mb-3">Name</label>
+        <input type="text" placeholder="Your name" class="paper-input w-full">
+      </div>
+      <div>
+        <label class="text-xs text-[#8B8680] tracking-[0.2em] uppercase block mb-3">Email</label>
+        <input type="email" placeholder="your@email.com" class="paper-input w-full">
+      </div>
+      <button class="paper-btn w-full">Subscribe</button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="max-w-2xl mx-auto px-8 pb-12 text-center">
+  <div class="ink-divider" style="margin: 0 auto 2rem;"></div>
+  <p class="text-xs text-[#8B8680]">Design Gallery · E-Ink Paper · 2026</p>
+  <p class="text-xs text-[#8B8680] mt-1 italic">Printed on digital paper</p>
+</footer>
 </body>
 </html>

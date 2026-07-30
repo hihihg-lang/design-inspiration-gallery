@@ -1,176 +1,206 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Y2K 复兴 - UI Style #30</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * { font-family: 'Inter', sans-serif; }
-    </style>
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Design Gallery">
-    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Y2K 复兴 — 设计风格画廊</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700;900&display=swap');
+  body { font-family: 'Noto Sans SC', sans-serif; }
+  .chrome-text {
+    background: linear-gradient(180deg, #FFF 0%, #C0C0C0 30%, #FFF 50%, #C0C0C0 70%, #FFF 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  }
+  .text-3d {
+    text-shadow:
+      0 1px 0 #FF69B4,
+      0 2px 0 #FF69B4,
+      0 3px 0 #FF69B4,
+      0 4px 0 #C0C0C0,
+      0 5px 0 #C0C0C0,
+      0 6px 10px rgba(0,0,0,0.3);
+  }
+  .metallic-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(192,192,192,0.15) 50%, rgba(255,255,255,0.25) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+  .glossy-bubble {
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(255,255,255,0.1));
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 8px 32px rgba(255,105,180,0.2), inset 0 1px 0 rgba(255,255,255,0.6);
+  }
+  .chrome-gradient {
+    background: linear-gradient(135deg, #C0C0C0, #FFF, #C0C0C0, #FF69B4, #C0C0C0);
+    background-size: 400% 400%;
+    animation: chromeShine 3s ease infinite;
+  }
+  @keyframes chromeShine {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .float-bubble { animation: floatY2K 4s ease-in-out infinite; }
+  .float-bubble-delay { animation-delay: 2s; }
+  @keyframes floatY2K {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(3deg); }
+  }
+</style>
 </head>
-<body class="bg-gradient-to-br from-pink-400 via-cyan-400 to-yellow-300 text-white min-h-screen">
-    <nav class="fixed top-4 left-4 right-4 bg-white/20 backdrop-blur border-white/30 rounded-2xl rounded-lg z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-60 hover:opacity-100 transition-opacity">&larr; 返回画廊</a>
-            <span class="font-medium">#30 Y2K 复兴</span>
-            <div class="flex items-center gap-2">
-                <a href="../zh/styles/y2k.html" class="text-xs opacity-50 hover:opacity-100">EN</a>
-                <span class="opacity-30">|</span>
-                <span class="text-xs font-medium opacity-80">中文</span>
-            </div>
-        </div>
-    </nav>
+<body class="bg-gradient-to-br from-pink-400 via-cyan-400 to-yellow-300 min-h-screen text-white">
 
-    <section class="pt-32 pb-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h1 class="text-7xl font-bold tracking-tight leading-none mb-8">Y2K<br/>复兴</h1>
-            <p class="text-xl max-w-xl leading-relaxed opacity-80">千禧年之交的未来主义美学回归——金属质感、镀铬效果、虹彩光泽和糖果色渐变。</p>
-        </div>
-    </section>
+<!-- 导航栏 -->
+<nav class="sticky top-0 z-50 metallic-card px-6 py-4 flex items-center justify-between">
+  <div class="flex items-center gap-3">
+    <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #FF69B4, #C0C0C0);">
+      <span class="text-white text-lg">💿</span>
+    </div>
+    <span class="text-xl font-black chrome-text">Y2K 复兴</span>
+  </div>
+  <div class="hidden md:flex gap-8">
+    <a href="#" class="text-white/90 hover:text-white font-bold transition-colors" style="text-shadow: 0 0 10px rgba(255,105,180,0.5);">首页</a>
+    <a href="#" class="text-white/90 hover:text-white font-bold transition-colors" style="text-shadow: 0 0 10px rgba(0,212,255,0.5);">特色</a>
+    <a href="#" class="text-white/90 hover:text-white font-bold transition-colors" style="text-shadow: 0 0 10px rgba(255,230,0,0.5);">色彩</a>
+    <a href="#" class="text-white/90 hover:text-white font-bold transition-colors" style="text-shadow: 0 0 10px rgba(192,192,192,0.5);">联系</a>
+  </div>
+  <button class="rounded-full px-6 py-2 font-bold text-white transition-all hover:scale-105" style="background: linear-gradient(135deg, #FF69B4, #00D4FF); box-shadow: 0 0 20px rgba(255,105,180,0.4);">开始探索</button>
+</nav>
 
-    <section class="py-20 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">01</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">金属质感</h2>
-                    <p class="opacity-70">渐变模拟金属和镀铬表面的反光效果</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">02</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">虹彩光泽</h2>
-                    <p class="opacity-70">多色渐变叠加创造类似 CD 表面的彩虹光泽</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">03</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">千禧字体</h2>
-                    <p class="opacity-70">使用圆润、未来感的字体和 3D 文字效果</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Hero 区域 -->
+<header class="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
+  <!-- 装饰性气泡 -->
+  <div class="absolute top-20 left-10 w-40 h-40 rounded-full float-bubble" style="background: radial-gradient(circle at 30% 30%, rgba(255,105,180,0.4), rgba(192,192,192,0.1)); border: 1px solid rgba(255,255,255,0.4);"></div>
+  <div class="absolute top-1/3 right-20 w-32 h-32 rounded-full float-bubble float-bubble-delay" style="background: radial-gradient(circle at 30% 30%, rgba(0,212,255,0.4), rgba(192,192,192,0.1)); border: 1px solid rgba(255,255,255,0.4);"></div>
+  <div class="absolute bottom-32 left-1/3 w-28 h-28 rounded-full" style="background: radial-gradient(circle at 30% 30%, rgba(255,230,0,0.4), rgba(192,192,192,0.1)); border: 1px solid rgba(255,255,255,0.4); animation: floatY2K 5s ease-in-out infinite 1s;"></div>
+  <div class="absolute bottom-20 right-1/4 w-20 h-20 rounded-full" style="background: radial-gradient(circle at 30% 30%, rgba(255,105,180,0.3), rgba(192,192,192,0.1)); border: 1px solid rgba(255,255,255,0.4); animation: floatY2K 3.5s ease-in-out infinite 0.5s;"></div>
 
-    <section class="py-20 px-6 bg-black/10">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-8">色彩方案</h3>
-            <div class="flex gap-4">
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #FF69B4;"></div>
-                    <p class="text-sm font-medium">热粉</p>
-                    <p class="text-xs opacity-50">#FF69B4</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #00D4FF;"></div>
-                    <p class="text-sm font-medium">电光蓝</p>
-                    <p class="text-xs opacity-50">#00D4FF</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #C0C0C0;"></div>
-                    <p class="text-sm font-medium">金属银</p>
-                    <p class="text-xs opacity-50">#C0C0C0</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #FFE600;"></div>
-                    <p class="text-sm font-medium">亮黄</p>
-                    <p class="text-xs opacity-50">#FFE600</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="relative z-10 text-center max-w-4xl mx-auto">
+    <div class="inline-block rounded-full px-8 py-3 mb-8 glossy-bubble">
+      <span class="text-white font-bold" style="text-shadow: 0 0 10px rgba(255,105,180,0.6);">✨ 千禧年美学 · 未来复古主义</span>
+    </div>
+    <h1 class="text-6xl md:text-9xl font-black mb-6 leading-tight chrome-text text-3d">
+      Y2K<br>复兴
+    </h1>
+    <p class="text-xl md:text-2xl text-white font-bold mb-10 max-w-2xl mx-auto" style="text-shadow: 0 0 15px rgba(0,212,255,0.5);">
+      金属光泽 · 气泡质感 · 镀铬未来
+    </p>
+    <div class="flex gap-4 justify-center">
+      <button class="rounded-full px-10 py-4 text-white font-black text-lg transition-all hover:scale-110 hover:shadow-2xl" style="background: linear-gradient(135deg, #FF69B4, #C0C0C0); box-shadow: 0 0 25px rgba(255,105,180,0.5);">探索更多</button>
+      <button class="rounded-full px-10 py-4 text-white font-black text-lg transition-all hover:scale-110 hover:shadow-2xl" style="background: linear-gradient(135deg, #00D4FF, #C0C0C0); box-shadow: 0 0 25px rgba(0,212,255,0.5);">了解更多</button>
+    </div>
+  </div>
+</header>
 
-    <section class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-12">组件示例</h3>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">按钮</h4>
-                <div class="flex gap-4 items-center flex-wrap">
-                    <button class="px-8 py-3 font-medium transition-colors bg-gradient-to-r from-pink-400 to-cyan-400 text-white hover:opacity-90 rounded-full">主要操作</button>
-                    <button class="px-8 py-3 font-medium transition-colors border-2 border-pink-400 text-pink-400 hover:bg-pink-50 rounded-full">次要操作</button>
-                    <button class="px-8 py-3 font-medium hover:opacity-60 transition-colors">文字链接 &rarr;</button>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">卡片</h4>
-                <div class="grid grid-cols-3 gap-6">
-                    <div class="bg-white/20 backdrop-blur border-white/30 rounded-2xl p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">金属质感</h5>
-                        <p class="text-sm opacity-70">渐变模拟金属和镀铬表面的反光效果...</p>
-                    </div>
-                    <div class="bg-white/20 backdrop-blur border-white/30 rounded-2xl p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">虹彩光泽</h5>
-                        <p class="text-sm opacity-70">多色渐变叠加创造类似 CD 表面的彩虹光泽...</p>
-                    </div>
-                    <div class="bg-white/20 backdrop-blur border-white/30 rounded-2xl p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">千禧字体</h5>
-                        <p class="text-sm opacity-70">使用圆润、未来感的字体和 3D 文字效果...</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">表单元素</h4>
-                <div class="max-w-md">
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">邮箱</label>
-                        <input type="email" class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com">
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">留言</label>
-                        <textarea class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors h-32" placeholder="您的留言..."></textarea>
-                    </div>
-                    <button class="px-8 py-3 font-medium transition-colors bg-gradient-to-r from-pink-400 to-cyan-400 text-white hover:opacity-90 rounded-full">提交</button>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- 特色区域 -->
+<section class="py-24 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-6xl font-black text-center mb-4 chrome-text">✨ 千禧特色</h2>
+    <p class="text-center text-white/80 text-lg font-bold mb-16" style="text-shadow: 0 0 10px rgba(255,105,180,0.4);">回到互联网泡沫时代的未来想象</p>
 
-    <section class="py-20 px-6 bg-black/20">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-2 gap-16">
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">最佳适用</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>时尚品牌</li>
-                        <li>音乐平台</li>
-                        <li>潮流电商</li>
-                        <li>Z 世代产品</li>
-                        <li>社交媒体</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">特性</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>深色模式: 部分支持</li>
-                        <li>浅色模式: 完全支持</li>
-                        <li>性能: 良好</li>
-                        <li>无障碍: WCAG AA</li>
-                        <li>复杂度: 中</li>
-                    </ul>
-                </div>
-            </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- 卡片 1 -->
+      <div class="relative group">
+        <div class="rounded-3xl glossy-bubble p-8 transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-[0_20px_60px_rgba(255,105,180,0.3)]">
+          <div class="w-24 h-24 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(135deg, #FF69B4, #C0C0C0); box-shadow: 0 0 30px rgba(255,105,180,0.4);">
+            <span class="text-4xl">💿</span>
+          </div>
+          <h3 class="text-2xl font-black text-white text-center mb-4" style="text-shadow: 0 0 10px rgba(255,105,180,0.5);">镀铬美学</h3>
+          <p class="text-white/80 text-center font-bold leading-relaxed">金属光泽的渐变、镜面反射的质感——如同CD光盘表面的彩虹光芒。</p>
         </div>
-    </section>
+      </div>
 
-    <footer class="py-8 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-50 hover:opacity-100">&larr; 返回画廊</a>
+      <!-- 卡片 2 -->
+      <div class="relative group">
+        <div class="rounded-3xl glossy-bubble p-8 transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-[0_20px_60px_rgba(0,212,255,0.3)]">
+          <div class="w-24 h-24 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(135deg, #00D4FF, #C0C0C0); box-shadow: 0 0 30px rgba(0,212,255,0.4);">
+            <span class="text-4xl">🫧</span>
+          </div>
+          <h3 class="text-2xl font-black text-white text-center mb-4" style="text-shadow: 0 0 10px rgba(0,212,255,0.5);">气泡质感</h3>
+          <p class="text-white/80 text-center font-bold leading-relaxed">圆润的泡泡形态、半透明玻璃效果——典型的千禧年UI设计语言。</p>
         </div>
-    </footer>
+      </div>
 
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
-      }
-    </script>
+      <!-- 卡片 3 -->
+      <div class="relative group">
+        <div class="rounded-3xl glossy-bubble p-8 transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-[0_20px_60px_rgba(255,230,0,0.3)]">
+          <div class="w-24 h-24 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(135deg, #FFE600, #C0C0C0); box-shadow: 0 0 30px rgba(255,230,0,0.4);">
+            <span class="text-4xl">✨</span>
+          </div>
+          <h3 class="text-2xl font-black text-white text-center mb-4" style="text-shadow: 0 0 10px rgba(255,230,0,0.5);">3D 文字</h3>
+          <p class="text-white/80 text-center font-bold leading-relaxed">多层次的文字阴影、立体效果——模仿早期互联网的3D文字风格。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 色彩调色板 -->
+<section class="py-24 px-4">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-6xl font-black text-center mb-4 chrome-text">🎨 金属色彩</h2>
+    <p class="text-center text-white/80 text-lg font-bold mb-16" style="text-shadow: 0 0 10px rgba(192,192,192,0.4);">镀铬、霓虹与金属光泽</p>
+
+    <div class="flex flex-wrap justify-center gap-8">
+      <div class="flex flex-col items-center gap-4 group">
+        <div class="w-32 h-32 rounded-full shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_0_40px_rgba(255,105,180,0.6)]" style="background: linear-gradient(135deg, #FF69B4, #FF1493);"></div>
+        <span class="text-white font-black text-sm">热粉</span>
+        <code class="text-xs text-white/60 font-bold">#FF69B4</code>
+      </div>
+      <div class="flex flex-col items-center gap-4 group">
+        <div class="w-32 h-32 rounded-full shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_0_40px_rgba(0,212,255,0.6)]" style="background: linear-gradient(135deg, #00D4FF, #00BFFF);"></div>
+        <span class="text-white font-black text-sm">电光蓝</span>
+        <code class="text-xs text-white/60 font-bold">#00D4FF</code>
+      </div>
+      <div class="flex flex-col items-center gap-4 group">
+        <div class="w-32 h-32 rounded-full shadow-2xl transition-all duration-500 group-hover:scale-110" style="background: linear-gradient(135deg, #C0C0C0, #FFF, #C0C0C0);"></div>
+        <span class="text-white font-black text-sm">银色</span>
+        <code class="text-xs text-white/60 font-bold">#C0C0C0</code>
+      </div>
+      <div class="flex flex-col items-center gap-4 group">
+        <div class="w-32 h-32 rounded-full shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_0_40px_rgba(255,230,0,0.6)]" style="background: linear-gradient(135deg, #FFE600, #FFD700);"></div>
+        <span class="text-white font-black text-sm">明黄</span>
+        <code class="text-xs text-white/60 font-bold">#FFE600</code>
+      </div>
+      <div class="flex flex-col items-center gap-4 group">
+        <div class="w-32 h-32 rounded-full shadow-2xl transition-all duration-500 group-hover:scale-110 chrome-gradient"></div>
+        <span class="text-white font-black text-sm">镀铬渐变</span>
+        <code class="text-xs text-white/60 font-bold">Chrome</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 联系表单 -->
+<section class="py-24 px-4">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="text-6xl font-black text-center mb-4 chrome-text">💌 联系我们</h2>
+    <p class="text-center text-white/80 text-lg font-bold mb-12" style="text-shadow: 0 0 10px rgba(0,212,255,0.4);">用千禧年的美学与我们对话</p>
+
+    <form class="space-y-6">
+      <div class="flex gap-4">
+        <input type="text" placeholder="你的名字" class="flex-1 rounded-full px-6 py-4 bg-white/20 backdrop-blur-lg border border-white/30 text-white font-bold placeholder-white/50 focus:border-[#FF69B4] focus:outline-none focus:shadow-[0_0_20px_rgba(255,105,180,0.3)] transition-all">
+        <input type="email" placeholder="电子邮箱" class="flex-1 rounded-full px-6 py-4 bg-white/20 backdrop-blur-lg border border-white/30 text-white font-bold placeholder-white/50 focus:border-[#00D4FF] focus:outline-none focus:shadow-[0_0_20px_rgba(0,212,255,0.3)] transition-all">
+      </div>
+      <textarea rows="5" placeholder="你的留言..." class="w-full rounded-3xl px-6 py-4 bg-white/20 backdrop-blur-lg border border-white/30 text-white font-bold placeholder-white/50 focus:border-[#FFE600] focus:outline-none focus:shadow-[0_0_20px_rgba(255,230,0,0.3)] transition-all resize-none"></textarea>
+      <div class="text-center">
+        <button type="submit" class="rounded-full px-12 py-4 text-white font-black text-lg transition-all hover:scale-110" style="background: linear-gradient(135deg, #FF69B4, #00D4FF, #FFE600); box-shadow: 0 0 30px rgba(255,105,180,0.5);">✨ 发送消息</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="py-12 metallic-card mt-12">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, #FF69B4, #C0C0C0); box-shadow: 0 0 20px rgba(255,105,180,0.4);">
+      <span class="text-white text-xl">💿</span>
+    </div>
+    <p class="text-white font-black">Y2K 复兴 · 设计风格画廊</p>
+    <p class="text-white/60 text-sm font-bold mt-2">镀铬未来，气泡美学</p>
+  </div>
+</footer>
+
 </body>
 </html>

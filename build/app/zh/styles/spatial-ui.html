@@ -1,177 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spatial UI - UI Style #26</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * { font-family: 'Inter', sans-serif; }
-    </style>
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Design Gallery">
-    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spatial UI Style Page</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { background: linear-gradient(135deg, #5B5EA6, #FF6F61); min-height: 100vh; }
+  .glass-panel { background: rgba(255,255,255,0.2); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.3); }
+  .glass-btn { background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s; }
+  .glass-btn:hover { background: rgba(255,255,255,0.35); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+  .glass-input { background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); color: white; }
+  .glass-input:focus { outline: none; border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.25); }
+  .glass-input::placeholder { color: rgba(255,255,255,0.5); }
+  .depth-1 { transform: perspective(500px) rotateY(-2deg) rotateX(1deg); }
+  .depth-2 { transform: perspective(500px) rotateY(1deg) rotateX(-1deg); }
+  .depth-3 { transform: perspective(500px) rotateY(-1deg) rotateX(2deg); }
+  .depth-4 { transform: perspective(500px) rotateY(2deg) rotateX(-2deg); }
+  .depth-5 { transform: perspective(500px) rotateY(-1.5deg) rotateX(-1deg); }
+  .depth-6 { transform: perspective(500px) rotateY(1.5deg) rotateX(1.5deg); }
+  .float-slow { animation: float 6s ease-in-out infinite; }
+  .float-med { animation: float 5s ease-in-out infinite 0.5s; }
+  .float-fast { animation: float 4s ease-in-out infinite 1s; }
+  @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+</style>
 </head>
-<body class="bg-gradient-to-br from-[#5B5EA6] to-[#FF6F61] text-white min-h-screen">
-    <nav class="fixed top-4 left-4 right-4 bg-white/10 backdrop-blur border-white/20 rounded-lg z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-60 hover:opacity-100 transition-opacity">&larr; Back to Gallery</a>
-            <span class="font-medium">#26 Spatial UI</span>
-            <div class="flex items-center gap-2">
-                <span class="text-xs font-medium opacity-80">EN</span>
-                <span class="opacity-30">|</span>
-                <a href="../../styles/spatial-ui.html" class="text-xs opacity-50 hover:opacity-100">中文</a>
-            </div>
-        </div>
-    </nav>
+<body class="min-h-screen text-white">
 
-    <section class="pt-32 pb-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h1 class="text-7xl font-bold tracking-tight leading-none mb-8">Spatial UI<br/>Design</h1>
-            <p class="text-xl max-w-xl leading-relaxed opacity-80">Interface style designed for spatial computing and mixed reality, using 3D depth, perspective, and lighting for immersive experiences.</p>
-        </div>
-    </section>
+<!-- Navigation -->
+<nav class="glass-panel mx-6 mt-6 px-6 py-4 flex items-center justify-between max-w-5xl mx-auto relative z-10">
+  <span class="text-white/70 text-sm font-medium tracking-wider">✦ Spatial Gallery</span>
+  <div class="flex items-center gap-4 text-sm">
+    <a href="../../index.html" class="text-white/60 hover:text-white transition-colors">← Back to Gallery</a>
+    <span class="text-white font-semibold">EN</span>
+    <span class="text-white/30">|</span>
+    <a href="../../styles/spatial-ui.html" class="text-white/50 hover:text-white transition-colors">中文</a>
+  </div>
+</nav>
 
-    <section class="py-20 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">01</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">3D Depth</h2>
-                    <p class="opacity-70">Perspective transforms and depth-of-field create Z-axis spatial feel</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">02</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">Glass Materials</h2>
-                    <p class="opacity-70">Translucent frosted glass panels floating in space for depth</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">03</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">Light Interaction</h2>
-                    <p class="opacity-70">Dynamic lighting and shadows responding to perspective</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Hero -->
+<section class="max-w-5xl mx-auto mt-20 px-6 relative z-10">
+  <div class="glass-panel p-12 depth-1 relative overflow-hidden">
+    <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+    <p class="text-white/50 text-xs tracking-[0.4em] uppercase mb-4">Design Style · No. 26</p>
+    <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight" style="text-shadow: 0 4px 24px rgba(0,0,0,0.2);">Spatial UI</h1>
+    <p class="text-white/70 text-lg mb-3">Spatial UI Design System</p>
+    <p class="text-white/50 text-sm max-w-lg">3D depth illusion · Glass panels · Perspective transforms · Floating elements · Layered space</p>
+    <div class="flex gap-3 mt-6">
+      <span class="inline-block px-4 py-1.5 glass-panel text-white/60 text-xs">3D Depth</span>
+      <span class="inline-block px-4 py-1.5 glass-panel text-white/60 text-xs">Glassmorphism</span>
+      <span class="inline-block px-4 py-1.5 glass-panel text-white/60 text-xs">Floating</span>
+    </div>
+  </div>
+</section>
 
-    <section class="py-20 px-6 bg-black/10">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-8">Color Palette</h3>
-            <div class="flex gap-4">
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #5B5EA6;"></div>
-                    <p class="text-sm font-medium">Lavender</p>
-                    <p class="text-xs opacity-50">#5B5EA6</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #FF6F61;"></div>
-                    <p class="text-sm font-medium">Coral</p>
-                    <p class="text-xs opacity-50">#FF6F61</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: rgba(255,255,255,0.2);"></div>
-                    <p class="text-sm font-medium">Glass White</p>
-                    <p class="text-xs opacity-50">rgba(255,255,255,0.2)</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #1C1C2E;"></div>
-                    <p class="text-sm font-medium">Deep Space</p>
-                    <p class="text-xs opacity-50">#1C1C2E</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Features - Floating Glass Cards -->
+<section class="max-w-5xl mx-auto mt-20 px-6 relative z-10">
+  <h2 class="text-white/70 text-sm tracking-[0.4em] uppercase mb-10 text-center">Features</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="glass-panel p-8 depth-3 float-slow relative">
+      <div class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center text-2xl mb-5">🔮</div>
+      <h3 class="text-xl font-bold mb-3">3D Depth</h3>
+      <p class="text-white/60 text-sm leading-relaxed">CSS perspective with rotateY/rotateX creates a genuine sense of 3D space, making elements feel suspended above the screen.</p>
+    </div>
+    <div class="glass-panel p-8 depth-4 float-med relative">
+      <div class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center text-2xl mb-5">🪟</div>
+      <h3 class="text-xl font-bold mb-3">Glassmorphism</h3>
+      <p class="text-white/60 text-sm leading-relaxed">backdrop-blur creates frosted glass effects. Semi-transparent panels layered over gradient backgrounds create a light, airy visual hierarchy.</p>
+    </div>
+    <div class="glass-panel p-8 depth-5 float-fast relative">
+      <div class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center text-2xl mb-5">✨</div>
+      <h3 class="text-xl font-bold mb-3">Float Animation</h3>
+      <p class="text-white/60 text-sm leading-relaxed">Different float animation speeds give each element a unique breathing rhythm, enhancing the sense of depth and vitality.</p>
+    </div>
+  </div>
+</section>
 
-    <section class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-12">Components</h3>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">Buttons</h4>
-                <div class="flex gap-4 items-center flex-wrap">
-                    <button class="px-8 py-3 font-medium transition-colors bg-white/20 backdrop-blur border border-white/30 text-white hover:bg-white/30">Primary Action</button>
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#FF6F61] text-white hover:bg-[#E55A50]">Secondary</button>
-                    <button class="px-8 py-3 font-medium hover:opacity-60 transition-colors">Text Link &rarr;</button>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">Cards</h4>
-                <div class="grid grid-cols-3 gap-6">
-                    <div class="bg-white/10 backdrop-blur border-white/20 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">Feature</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">3D Depth</h5>
-                        <p class="text-sm opacity-70">Perspective transforms and depth-of-field create Z...</p>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur border-white/20 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">Feature</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">Glass Materials</h5>
-                        <p class="text-sm opacity-70">Translucent frosted glass panels floating in space...</p>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur border-white/20 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">Feature</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">Light Interaction</h5>
-                        <p class="text-sm opacity-70">Dynamic lighting and shadows responding to perspec...</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">Form Elements</h4>
-                <div class="max-w-md">
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">Email</label>
-                        <input type="email" class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com">
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">Message</label>
-                        <textarea class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors h-32" placeholder="Your message..."></textarea>
-                    </div>
-                    <button class="px-8 py-3 font-medium transition-colors bg-white/20 backdrop-blur border border-white/30 text-white hover:bg-white/30">Submit</button>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Color Palette - Glass Swatches -->
+<section class="max-w-5xl mx-auto mt-20 px-6 relative z-10">
+  <h2 class="text-white/70 text-sm tracking-[0.4em] uppercase mb-10 text-center">Palette</h2>
+  <div class="glass-panel p-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="text-center">
+        <div class="w-full h-16 rounded-xl bg-gradient-to-br from-[#5B5EA6] to-[#5B5EA699] border border-white/20 mb-3"></div>
+        <p class="text-white/80 text-sm font-medium">Indigo</p>
+        <p class="text-white/40 text-xs">#5B5EA6</p>
+      </div>
+      <div class="text-center">
+        <div class="w-full h-16 rounded-xl bg-gradient-to-br from-[#FF6F61] to-[#FF6F6199] border border-white/20 mb-3"></div>
+        <p class="text-white/80 text-sm font-medium">Coral</p>
+        <p class="text-white/40 text-xs">#FF6F61</p>
+      </div>
+      <div class="text-center">
+        <div class="w-full h-16 rounded-xl bg-white/20 border border-white/30 backdrop-blur mb-3"></div>
+        <p class="text-white/80 text-sm font-medium">Glass</p>
+        <p class="text-white/40 text-xs">white/20</p>
+      </div>
+      <div class="text-center">
+        <div class="w-full h-16 rounded-xl bg-white/40 border border-white/40 backdrop-blur mb-3"></div>
+        <p class="text-white/80 text-sm font-medium">Frosted</p>
+        <p class="text-white/40 text-xs">white/40</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="py-20 px-6 bg-black/20">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-2 gap-16">
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">Best For</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>AR/VR Apps</li>
-                        <li>Spatial Computing</li>
-                        <li>3D Showcases</li>
-                        <li>Virtual Galleries</li>
-                        <li>Game UI</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">Characteristics</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>Dark Mode: Full</li>
-                        <li>Light Mode: Partial</li>
-                        <li>Performance: Needs Optimization</li>
-                        <li>Accessibility: WCAG AA</li>
-                        <li>Complexity: High</li>
-                    </ul>
-                </div>
-            </div>
+<!-- Cards - Glass Panels with Different Depths -->
+<section class="max-w-5xl mx-auto mt-20 px-6 relative z-10">
+  <h2 class="text-white/70 text-sm tracking-[0.4em] uppercase mb-10 text-center">Spatial Cards</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="glass-panel p-10 depth-1">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur flex items-center justify-center text-xl">🌌</div>
+        <div>
+          <h3 class="font-bold text-lg">Deep Space</h3>
+          <p class="text-white/50 text-xs">Perspective 500 · rotateY(-2°) · rotateX(1°)</p>
         </div>
-    </section>
-
-    <footer class="py-8 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-50 hover:opacity-100">&larr; Back to Gallery</a>
-            <a href="organic-biomimicry.html" class="text-sm opacity-50 hover:opacity-100">Next: #27 &rarr;</a>
+      </div>
+      <p class="text-white/60 text-sm leading-relaxed">Perspective transforms tilt this panel slightly, as if approaching from deep within the screen. Each panel has its own unique spatial angle.</p>
+    </div>
+    <div class="glass-panel p-10 depth-2">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur flex items-center justify-center text-xl">🌠</div>
+        <div>
+          <h3 class="font-bold text-lg">Specular Reflection</h3>
+          <p class="text-white/50 text-xs">Perspective 500 · rotateY(1°) · rotateX(-1°)</p>
         </div>
-    </footer>
+      </div>
+      <p class="text-white/60 text-sm leading-relaxed">Glass panels capture ambient light, producing subtle specular reflections. Layered over gradient backgrounds, they create rich visual depth.</p>
+    </div>
+  </div>
+</section>
 
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
-      }
-    </script>
+<!-- Buttons -->
+<section class="max-w-5xl mx-auto mt-20 px-6 relative z-10">
+  <h2 class="text-white/70 text-sm tracking-[0.4em] uppercase mb-10 text-center">Buttons</h2>
+  <div class="flex flex-wrap justify-center gap-4">
+    <button class="glass-btn px-8 py-3 text-white font-medium">Explore Space</button>
+    <button class="glass-btn px-8 py-3 text-white font-medium" style="background: rgba(255,255,255,0.35);">Enter Depth</button>
+    <button class="glass-btn px-8 py-3 text-white/40 font-medium" style="opacity: 0.5; pointer-events: none;">Locked</button>
+  </div>
+</section>
+
+<!-- Form -->
+<section class="max-w-5xl mx-auto mt-20 px-6 mb-20 relative z-10">
+  <h2 class="text-white/70 text-sm tracking-[0.4em] uppercase mb-10 text-center">Spatial Form</h2>
+  <div class="glass-panel p-10 max-w-lg mx-auto depth-6">
+    <div class="space-y-5">
+      <div>
+        <label class="text-white/60 text-xs tracking-wider block mb-2">Username</label>
+        <input type="text" placeholder="Enter username" class="glass-input w-full px-5 py-3 rounded-xl text-sm placeholder-white/40">
+      </div>
+      <div>
+        <label class="text-white/60 text-xs tracking-wider block mb-2">Password</label>
+        <input type="password" placeholder="••••••••" class="glass-input w-full px-5 py-3 rounded-xl text-sm placeholder-white/40">
+      </div>
+      <button class="glass-btn w-full px-8 py-3 text-white font-medium">Enter Space</button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="glass-panel mx-6 mb-6 py-8 text-center max-w-5xl mx-auto relative z-10">
+  <p class="text-white/40 text-sm">Design Gallery · Spatial UI · 2026</p>
+  <p class="text-white/25 text-xs mt-1">Floating in digital space</p>
+</footer>
 </body>
 </html>

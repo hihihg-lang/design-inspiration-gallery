@@ -1,177 +1,226 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 原生 - UI Style #28</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * { font-family: 'Inter', sans-serif; }
-    </style>
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Design Gallery">
-    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 原生 — 设计风格画廊</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+  body { font-family: 'Noto Sans SC', sans-serif; background: linear-gradient(135deg, #1E1B4B 0%, #312E81 40%, #1E1B4B 100%); }
+  .conic-badge { background: conic-gradient(#6366F1, #8B5CF6, #06B6D4, #6366F1); }
+  .glow-glow { box-shadow: 0 0 30px rgba(99, 102, 241, 0.4), 0 0 60px rgba(139, 92, 246, 0.2); }
+  .glow-text { text-shadow: 0 0 20px rgba(99, 102, 241, 0.6); }
+  .chat-bubble-left {
+    align-self: flex-start; margin-right: auto;
+    border-radius: 24px 24px 24px 4px;
+  }
+  .chat-bubble-right {
+    align-self: flex-end; margin-left: auto;
+    border-radius: 24px 24px 4px 24px;
+  }
+  .typing::after { content: '▊'; animation: blink 1s step-end infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .pulse-ring { animation: pulseRing 2s ease-out infinite; }
+  @keyframes pulseRing {
+    0% { box-shadow: 0 0 0 0 rgba(99,102,241,0.6); }
+    100% { box-shadow: 0 0 0 20px rgba(99,102,241,0); }
+  }
+</style>
 </head>
-<body class="bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-400 text-white min-h-screen">
-    <nav class="fixed top-4 left-4 right-4 bg-white/10 backdrop-blur border-white/20 rounded-lg z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-60 hover:opacity-100 transition-opacity">&larr; 返回画廊</a>
-            <span class="font-medium">#28 AI 原生</span>
-            <div class="flex items-center gap-2">
-                <a href="../zh/styles/ai-native.html" class="text-xs opacity-50 hover:opacity-100">EN</a>
-                <span class="opacity-30">|</span>
-                <span class="text-xs font-medium opacity-80">中文</span>
-            </div>
-        </div>
-    </nav>
+<body class="min-h-screen text-white">
 
-    <section class="pt-32 pb-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h1 class="text-7xl font-bold tracking-tight leading-none mb-8">AI 原生<br/>设计</h1>
-            <p class="text-xl max-w-xl leading-relaxed opacity-80">专为 AI 驱动的产品打造的界面风格，融合渐变色彩、流动形态和智能交互元素。</p>
-        </div>
-    </section>
+<!-- 导航栏 -->
+<nav class="sticky top-0 z-50 bg-[#1E1B4B]/80 backdrop-blur-xl border-b border-white/10 px-6 py-4 flex items-center justify-between">
+  <div class="flex items-center gap-3">
+    <div class="w-10 h-10 rounded-full conic-badge flex items-center justify-center">
+      <span class="text-white text-lg">🤖</span>
+    </div>
+    <span class="text-xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">AI 原生</span>
+  </div>
+  <div class="hidden md:flex gap-8">
+    <a href="#" class="text-indigo-200 hover:text-white transition-colors font-medium">对话</a>
+    <a href="#" class="text-indigo-200 hover:text-white transition-colors font-medium">能力</a>
+    <a href="#" class="text-indigo-200 hover:text-white transition-colors font-medium">色彩</a>
+    <a href="#" class="text-indigo-200 hover:text-white transition-colors font-medium">互动</a>
+  </div>
+  <button class="rounded-full px-6 py-2 bg-gradient-to-r from-indigo-500 to-cyan-500 text-white font-medium hover:from-indigo-600 hover:to-cyan-600 transition-all glow-glow">开始对话</button>
+</nav>
 
-    <section class="py-20 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">01</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">锥形渐变</h2>
-                    <p class="opacity-70">使用 conic gradient 创造动态的 AI 视觉语言</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">02</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">对话界面</h2>
-                    <p class="opacity-70">以聊天和对话为核心的交互模式，自然流畅</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">03</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">智能适配</h2>
-                    <p class="opacity-70">界面元素根据用户行为和上下文动态调整</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Hero 区域 - 聊天式介绍 -->
+<header class="min-h-screen flex items-center justify-center px-4 py-20">
+  <div class="w-full max-w-3xl mx-auto">
+    <!-- AI 头像 + 提示 -->
+    <div class="flex items-center gap-4 mb-8 justify-center">
+      <div class="w-16 h-16 rounded-full conic-badge flex items-center justify-center pulse-ring">
+        <span class="text-3xl">✨</span>
+      </div>
+      <div>
+        <p class="text-indigo-300 text-sm">AI Assistant</p>
+        <p class="text-white/60 text-xs">在线 · 随时为你服务</p>
+      </div>
+    </div>
 
-    <section class="py-20 px-6 bg-black/10">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-8">色彩方案</h3>
-            <div class="flex gap-4">
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #6366F1;"></div>
-                    <p class="text-sm font-medium">靛蓝</p>
-                    <p class="text-xs opacity-50">#6366F1</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #8B5CF6;"></div>
-                    <p class="text-sm font-medium">紫罗兰</p>
-                    <p class="text-xs opacity-50">#8B5CF6</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #06B6D4;"></div>
-                    <p class="text-sm font-medium">青色</p>
-                    <p class="text-xs opacity-50">#06B6D4</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #1E1B4B;"></div>
-                    <p class="text-sm font-medium">深紫</p>
-                    <p class="text-xs opacity-50">#1E1B4B</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- 对话气泡 -->
+    <div class="flex flex-col gap-6 max-w-2xl mx-auto">
+      <div class="chat-bubble-left w-fit max-w-md bg-gradient-to-br from-indigo-600/40 to-indigo-800/40 backdrop-blur-lg border border-indigo-400/20 px-6 py-4">
+        <p class="text-white/90">你好！我是 AI 原生设计助手 👋</p>
+      </div>
+      <div class="chat-bubble-right w-fit max-w-md bg-gradient-to-br from-violet-600/40 to-violet-800/40 backdrop-blur-lg border border-violet-400/20 px-6 py-4">
+        <p class="text-white/90">你好！请展示一下你的设计能力吧</p>
+      </div>
+      <div class="chat-bubble-left w-fit max-w-md bg-gradient-to-br from-indigo-600/40 to-indigo-800/40 backdrop-blur-lg border border-indigo-400/20 px-6 py-4">
+        <p class="text-white/90">当然！这是一套融合了 AI 对话界面与渐变色彩的未来感设计风格</p>
+      </div>
+      <div class="chat-bubble-left w-fit max-w-md bg-gradient-to-br from-cyan-600/40 to-cyan-800/40 backdrop-blur-lg border border-cyan-400/20 px-6 py-4">
+        <p class="text-white/90 typing">搭载了最新的 AI 模型，支持多种交互方式</p>
+      </div>
+    </div>
 
-    <section class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-12">组件示例</h3>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">按钮</h4>
-                <div class="flex gap-4 items-center flex-wrap">
-                    <button class="px-8 py-3 font-medium transition-colors bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:opacity-90">主要操作</button>
-                    <button class="px-8 py-3 font-medium transition-colors border-2 border-indigo-400 text-indigo-400 hover:bg-indigo-50">次要操作</button>
-                    <button class="px-8 py-3 font-medium hover:opacity-60 transition-colors">文字链接 &rarr;</button>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">卡片</h4>
-                <div class="grid grid-cols-3 gap-6">
-                    <div class="bg-white/10 backdrop-blur border-white/20 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">锥形渐变</h5>
-                        <p class="text-sm opacity-70">使用 conic gradient 创造动态的 AI 视觉语言...</p>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur border-white/20 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">对话界面</h5>
-                        <p class="text-sm opacity-70">以聊天和对话为核心的交互模式，自然流畅...</p>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur border-white/20 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">智能适配</h5>
-                        <p class="text-sm opacity-70">界面元素根据用户行为和上下文动态调整...</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">表单元素</h4>
-                <div class="max-w-md">
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">邮箱</label>
-                        <input type="email" class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com">
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">留言</label>
-                        <textarea class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors h-32" placeholder="您的留言..."></textarea>
-                    </div>
-                    <button class="px-8 py-3 font-medium transition-colors bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:opacity-90">提交</button>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- 标题 -->
+    <h1 class="text-5xl md:text-7xl font-bold text-center mt-16 mb-6 leading-tight">
+      <span class="bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent glow-text">AI 原生</span><br>
+      <span class="text-white">设计语言</span>
+    </h1>
+    <p class="text-center text-indigo-200/70 text-lg max-w-xl mx-auto">以对话式界面为核心，融合渐变色彩与智能交互的未来设计范式</p>
+  </div>
+</header>
 
-    <section class="py-20 px-6 bg-black/20">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-2 gap-16">
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">最佳适用</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>AI 助手</li>
-                        <li>聊天机器人</li>
-                        <li>智能工具</li>
-                        <li>数据分析</li>
-                        <li>自动化平台</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">特性</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>深色模式: 完全支持</li>
-                        <li>浅色模式: 完全支持</li>
-                        <li>性能: 良好</li>
-                        <li>无障碍: WCAG AA</li>
-                        <li>复杂度: 中</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- 特色区域 - 对话式卡片 -->
+<section class="py-24 px-4">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-5xl font-bold text-center mb-4">
+      <span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">✨ 核心能力</span>
+    </h2>
+    <p class="text-center text-indigo-200/70 text-lg mb-16">对话式功能展示，如同与 AI 助手交流</p>
 
-    <footer class="py-8 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-50 hover:opacity-100">&larr; 返回画廊</a>
-            <a href="memphis.html" class="text-sm opacity-50 hover:opacity-100">下一页: #29 &rarr;</a>
+    <div class="flex flex-col gap-6">
+      <!-- 左侧对话卡片 -->
+      <div class="flex items-start gap-4">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center flex-shrink-0 mt-1">
+          <span>🤖</span>
         </div>
-    </footer>
+        <div class="chat-bubble-left bg-gradient-to-br from-indigo-600/30 to-indigo-800/30 backdrop-blur-lg border border-indigo-400/20 px-8 py-6 rounded-3xl max-w-lg">
+          <h3 class="text-xl font-bold text-white mb-2">智能对话</h3>
+          <p class="text-indigo-200/80">自然语言理解与生成，让交互如同人与人之间的对话般流畅自然，支持多轮上下文理解。</p>
+        </div>
+      </div>
 
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
-      }
-    </script>
+      <!-- 右侧对话卡片 -->
+      <div class="flex items-start gap-4 justify-end">
+        <div class="chat-bubble-right bg-gradient-to-br from-violet-600/30 to-violet-800/30 backdrop-blur-lg border border-violet-400/20 px-8 py-6 rounded-3xl max-w-lg">
+          <h3 class="text-xl font-bold text-white mb-2">多模态感知</h3>
+          <p class="text-violet-200/80">支持文本、图像、代码等多种输入方式，全方位理解用户意图，提供精准响应。</p>
+        </div>
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-cyan-500 flex items-center justify-center flex-shrink-0 mt-1">
+          <span>🧠</span>
+        </div>
+      </div>
+
+      <!-- 左侧对话卡片 -->
+      <div class="flex items-start gap-4">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-indigo-500 flex items-center justify-center flex-shrink-0 mt-1">
+          <span>⚡</span>
+        </div>
+        <div class="chat-bubble-left bg-gradient-to-br from-cyan-600/30 to-cyan-800/30 backdrop-blur-lg border border-cyan-400/20 px-8 py-6 rounded-3xl max-w-lg">
+          <h3 class="text-xl font-bold text-white mb-2">实时生成</h3>
+          <p class="text-cyan-200/80">毫秒级响应速度，流式输出内容，让用户感受到即时反馈的流畅体验。</p>
+        </div>
+      </div>
+
+      <!-- 右侧对话卡片 -->
+      <div class="flex items-start gap-4 justify-end">
+        <div class="chat-bubble-right bg-gradient-to-br from-indigo-600/30 to-indigo-800/30 backdrop-blur-lg border border-indigo-400/20 px-8 py-6 rounded-3xl max-w-lg">
+          <h3 class="text-xl font-bold text-white mb-2">自适应学习</h3>
+          <p class="text-indigo-200/80">持续从交互中学习优化，提供越来越个性化的智能服务体验。</p>
+        </div>
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center flex-shrink-0 mt-1">
+          <span>🔄</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 色彩调色板 - 圆锥渐变 -->
+<section class="py-24 px-4">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-5xl font-bold text-center mb-4">
+      <span class="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">🎨 AI 色彩系统</span>
+    </h2>
+    <p class="text-center text-indigo-200/70 text-lg mb-16">圆锥渐变与智能配色</p>
+
+    <div class="flex flex-wrap justify-center gap-8">
+      <div class="flex flex-col items-center gap-4 group">
+        <div class="w-24 h-24 rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-12" style="background: #6366F1;"></div>
+        <span class="text-white font-semibold text-sm">靛蓝</span>
+        <code class="text-xs text-indigo-300/60">#6366F1</code>
+      </div>
+      <div class="flex flex-col items-center gap-4 group">
+        <div class="w-24 h-24 rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12" style="background: #8B5CF6;"></div>
+        <span class="text-white font-semibold text-sm">紫罗兰</span>
+        <code class="text-xs text-indigo-300/60">#8B5CF6</code>
+      </div>
+      <div class="flex flex-col items-center gap-4 group">
+        <div class="w-24 h-24 rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-12" style="background: #06B6D4;"></div>
+        <span class="text-white font-semibold text-sm">青色</span>
+        <code class="text-xs text-indigo-300/60">#06B6D4</code>
+      </div>
+      <div class="flex flex-col items-center gap-4 group">
+        <div class="w-24 h-24 rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12" style="background: #1E1B4B;"></div>
+        <span class="text-white font-semibold text-sm">深紫</span>
+        <code class="text-xs text-indigo-300/60">#1E1B4B</code>
+      </div>
+      <div class="flex flex-col items-center gap-4 group">
+        <div class="w-24 h-24 rounded-full shadow-2xl transition-all duration-500 group-hover:scale-110 conic-badge"></div>
+        <span class="text-white font-semibold text-sm">圆锥渐变</span>
+        <code class="text-xs text-indigo-300/60">Conic</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 互动表单 - 聊天输入样式 -->
+<section class="py-24 px-4">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="text-5xl font-bold text-center mb-4">
+      <span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">💬 开始对话</span>
+    </h2>
+    <p class="text-center text-indigo-200/70 text-lg mb-12">输入你的问题，AI 助手即刻回应</p>
+
+    <!-- 模拟聊天窗口 -->
+    <div class="bg-[#1E1B4B]/60 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 space-y-4">
+      <div class="chat-bubble-left bg-gradient-to-br from-indigo-600/30 to-indigo-800/30 backdrop-blur-lg border border-indigo-400/20 px-5 py-3 rounded-2xl text-sm text-white/80 w-fit max-w-xs">
+        你好！有什么我可以帮助你的吗？
+      </div>
+      <div class="chat-bubble-right bg-gradient-to-br from-violet-600/30 to-violet-800/30 backdrop-blur-lg border border-violet-400/20 px-5 py-3 rounded-2xl text-sm text-white/80 w-fit max-w-xs ml-auto">
+        我想了解更多关于设计风格
+      </div>
+      <div class="chat-bubble-left bg-gradient-to-br from-indigo-600/30 to-indigo-800/30 backdrop-blur-lg border border-indigo-400/20 px-5 py-3 rounded-2xl text-sm text-white/80 w-fit max-w-xs">
+        当然！让我为你详细介绍...
+      </div>
+
+      <!-- 输入框 -->
+      <div class="flex gap-3 pt-4 border-t border-white/10">
+        <input type="text" placeholder="输入你的消息..." class="flex-1 rounded-full px-6 py-4 bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-indigo-400 focus:outline-none transition-all">
+        <button class="w-14 h-14 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500 flex items-center justify-center hover:from-indigo-600 hover:to-cyan-600 transition-all glow-glow flex-shrink-0">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="py-12 bg-[#1E1B4B]/80 border-t border-white/10">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <div class="w-14 h-14 rounded-full conic-badge flex items-center justify-center mx-auto mb-4">
+      <span class="text-white text-xl">🤖</span>
+    </div>
+    <p class="text-white/70 font-medium">AI 原生 · 设计风格画廊</p>
+    <p class="text-white/40 text-sm mt-2">对话即界面，智能即设计</p>
+  </div>
+</footer>
+
 </body>
 </html>

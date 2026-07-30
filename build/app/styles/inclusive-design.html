@@ -1,177 +1,251 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>包容性设计 - UI Style #19</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * { font-family: 'Inter', sans-serif; }
-    </style>
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Design Gallery">
-    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="/manifest.json">
+  <title>19. 包容性设计 — 设计风格画廊</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-black min-h-screen">
-    <nav class="fixed top-4 left-4 right-4 bg-white border-gray-200 rounded-lg z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-60 hover:opacity-100 transition-opacity">&larr; 返回画廊</a>
-            <span class="font-medium">#19 包容性设计</span>
-            <div class="flex items-center gap-2">
-                <a href="../zh/styles/inclusive-design.html" class="text-xs opacity-50 hover:opacity-100">EN</a>
-                <span class="opacity-30">|</span>
-                <span class="text-xs font-medium opacity-80">中文</span>
-            </div>
-        </div>
-    </nav>
+<body class="bg-white min-h-screen font-sans">
 
-    <section class="pt-32 pb-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h1 class="text-7xl font-bold tracking-tight leading-none mb-8">包容性<br/>设计</h1>
-            <p class="text-xl max-w-xl leading-relaxed opacity-80">超越无障碍标准，为所有人设计——无论能力、年龄、文化背景，都能平等使用。</p>
+  <!-- Nav -->
+  <nav class="w-full bg-white border-b-4 border-gray-200" role="navigation" aria-label="主导航">
+    <div class="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
+      <a href="/" class="text-2xl font-black text-gray-900" aria-label="返回画廊首页">🎨 设计画廊</a>
+      <div class="flex items-center gap-8 text-lg font-bold">
+        <a href="/" class="text-gray-700 hover:text-[#1A73E8] focus:ring-4 focus:ring-[#1A73E8] focus:outline-none rounded-lg px-4 py-3 transition-colors" aria-label="返回画廊">返回画廊</a>
+        <span class="px-5 py-2 rounded-lg bg-[#1A73E8] text-white text-lg font-bold" aria-current="page">中文</span>
+        <a href="../zh/styles/inclusive-design.html" class="text-gray-700 hover:text-[#1A73E8] focus:ring-4 focus:ring-[#1A73E8] focus:outline-none rounded-lg px-4 py-3 transition-colors" lang="en">EN</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="py-24 px-8" aria-labelledby="hero-heading">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-lg font-bold tracking-widest uppercase text-[#EA4335] mb-6">演示风格 #19</p>
+        <h1 id="hero-heading" class="text-6xl md:text-7xl font-black text-gray-900 mb-8 leading-tight">
+          包容性<br>设计
+        </h1>
+        <p class="text-2xl text-gray-800 max-w-3xl mb-12 leading-relaxed">
+          为每一个人设计 — 无论能力、年龄、设备或环境。高对比度、大字体、大触控目标，让任何人都能轻松使用。
+        </p>
+        <div class="flex flex-wrap gap-6">
+          <a href="#features" class="inline-block px-10 py-5 bg-[#1A73E8] text-white text-lg font-bold rounded-lg hover:bg-[#1557b0] focus:ring-4 focus:ring-[#1A73E8] focus:ring-offset-2 focus:outline-none transition-colors" style="min-height: 56px; min-width: 44px;">
+            探索特性
+          </a>
+          <a href="#palette" class="inline-block px-10 py-5 border-4 border-gray-900 text-gray-900 text-lg font-bold rounded-lg hover:bg-gray-900 hover:text-white focus:ring-4 focus:ring-gray-900 focus:ring-offset-2 focus:outline-none transition-colors" style="min-height: 56px; min-width: 44px;">
+            查看色彩
+          </a>
         </div>
+      </div>
     </section>
 
-    <section class="py-20 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">01</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">高对比度</h2>
-                    <p class="opacity-70">文字与背景对比度超过 7:1，确保低视力用户也能清晰阅读</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">02</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">大触控区域</h2>
-                    <p class="opacity-70">最小 44x44px 的点击区域，方便运动障碍用户操作</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">03</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">清晰的焦点指示</h2>
-                    <p class="opacity-70">键盘导航时有明显的焦点环，支持完整的键盘操作</p>
-                </div>
-            </div>
+    <!-- Features -->
+    <section id="features" class="py-24 px-8 bg-gray-50" aria-labelledby="features-heading">
+      <div class="max-w-6xl mx-auto">
+        <h2 id="features-heading" class="text-5xl font-black text-gray-900 mb-4">核心特性</h2>
+        <p class="text-xl text-gray-700 mb-16">清晰、直观、无障碍的设计原则</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <article class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+            <div class="text-5xl mb-6" aria-hidden="true">🔍</div>
+            <h3 class="text-2xl font-black text-gray-900 mb-4">高对比度</h3>
+            <p class="text-lg text-gray-800 leading-relaxed">黑色文字配白色背景，确保所有用户都能清晰阅读，符合 WCAG AAA 标准。</p>
+          </article>
+          <article class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+            <div class="text-5xl mb-6" aria-hidden="true">📏</div>
+            <h3 class="text-2xl font-black text-gray-900 mb-4">大触控目标</h3>
+            <p class="text-lg text-gray-800 leading-relaxed">所有可交互元素最小 44px，确保运动障碍用户也能轻松操作。</p>
+          </article>
+          <article class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+            <div class="text-5xl mb-6" aria-hidden="true">🏷️</div>
+            <h3 class="text-2xl font-black text-gray-900 mb-4">语义化结构</h3>
+            <p class="text-lg text-gray-800 leading-relaxed">清晰的标题层级和 ARIA 标签，让屏幕阅读器用户也能完整理解内容。</p>
+          </article>
         </div>
+      </div>
     </section>
 
-    <section class="py-20 px-6 bg-black/10">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-8">色彩方案</h3>
-            <div class="flex gap-4">
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #1A73E8;"></div>
-                    <p class="text-sm font-medium">谷歌蓝</p>
-                    <p class="text-xs opacity-50">#1A73E8</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #34A853;"></div>
-                    <p class="text-sm font-medium">绿色</p>
-                    <p class="text-xs opacity-50">#34A853</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #FBBC04;"></div>
-                    <p class="text-sm font-medium">黄色</p>
-                    <p class="text-xs opacity-50">#FBBC04</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #EA4335;"></div>
-                    <p class="text-sm font-medium">红色</p>
-                    <p class="text-xs opacity-50">#EA4335</p>
-                </div>
-            </div>
+    <!-- Color Palette -->
+    <section id="palette" class="py-24 px-8" aria-labelledby="palette-heading">
+      <div class="max-w-6xl mx-auto">
+        <h2 id="palette-heading" class="text-5xl font-black text-gray-900 mb-4">色彩搭配</h2>
+        <p class="text-xl text-gray-700 mb-16">高对比度、清晰可辨的色彩方案</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="rounded-xl overflow-hidden border-2 border-gray-300">
+            <div class="h-36 bg-[#1A73E8] flex items-end p-5"><span class="text-white text-xl font-black">Google 蓝</span></div>
+            <div class="bg-white p-5"><p class="text-lg font-bold font-mono">#1A73E8</p><p class="text-lg text-gray-700">主色 / 交互</p></div>
+          </div>
+          <div class="rounded-xl overflow-hidden border-2 border-gray-300">
+            <div class="h-36 bg-[#34A853] flex items-end p-5"><span class="text-white text-xl font-black">成功绿</span></div>
+            <div class="bg-white p-5"><p class="text-lg font-bold font-mono">#34A853</p><p class="text-lg text-gray-700">成功 / 正向</p></div>
+          </div>
+          <div class="rounded-xl overflow-hidden border-2 border-gray-300">
+            <div class="h-36 bg-[#FBBC04] flex items-end p-5"><span class="text-gray-900 text-xl font-black">警告黄</span></div>
+            <div class="bg-white p-5"><p class="text-lg font-bold font-mono">#FBBC04</p><p class="text-lg text-gray-700">警告 / 注意</p></div>
+          </div>
+          <div class="rounded-xl overflow-hidden border-2 border-gray-300">
+            <div class="h-36 bg-[#EA4335] flex items-end p-5"><span class="text-white text-xl font-black">错误红</span></div>
+            <div class="bg-white p-5"><p class="text-lg font-bold font-mono">#EA4335</p><p class="text-lg text-gray-700">错误 / 紧急</p></div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-12">组件示例</h3>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">按钮</h4>
-                <div class="flex gap-4 items-center flex-wrap">
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#1A73E8] text-white hover:bg-[#1557B0] text-lg px-10 py-4">主要操作</button>
-                    <button class="px-8 py-3 font-medium transition-colors border-2 border-[#1A73E8] text-[#1A73E8] hover:bg-[#1A73E8] hover:text-white text-lg px-10 py-4">次要操作</button>
-                    <button class="px-8 py-3 font-medium hover:opacity-60 transition-colors">文字链接 &rarr;</button>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">卡片</h4>
-                <div class="grid grid-cols-3 gap-6">
-                    <div class="bg-white border-gray-200 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">高对比度</h5>
-                        <p class="text-sm opacity-70">文字与背景对比度超过 7:1，确保低视力用户也能清晰阅读...</p>
-                    </div>
-                    <div class="bg-white border-gray-200 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">大触控区域</h5>
-                        <p class="text-sm opacity-70">最小 44x44px 的点击区域，方便运动障碍用户操作...</p>
-                    </div>
-                    <div class="bg-white border-gray-200 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">清晰的焦点指示</h5>
-                        <p class="text-sm opacity-70">键盘导航时有明显的焦点环，支持完整的键盘操作...</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">表单元素</h4>
-                <div class="max-w-md">
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">邮箱</label>
-                        <input type="email" class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com">
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">留言</label>
-                        <textarea class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors h-32" placeholder="您的留言..."></textarea>
-                    </div>
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#1A73E8] text-white hover:bg-[#1557B0] text-lg px-10 py-4">提交</button>
-                </div>
-            </div>
+    <!-- Components -->
+    <section class="py-24 px-8 bg-gray-50" aria-labelledby="components-heading">
+      <div class="max-w-6xl mx-auto">
+        <h2 id="components-heading" class="text-5xl font-black text-gray-900 mb-4">组件展示</h2>
+        <p class="text-xl text-gray-700 mb-16">高可访问性的按钮、卡片和表单</p>
+
+        <!-- Buttons -->
+        <div class="mb-20">
+          <h3 class="text-3xl font-black text-gray-900 mb-8">按钮</h3>
+          <div class="flex flex-wrap gap-6">
+            <button class="px-10 py-5 bg-[#1A73E8] text-white text-lg font-bold rounded-lg hover:bg-[#1557b0] focus:ring-4 focus:ring-[#1A73E8] focus:ring-offset-2 focus:outline-none transition-colors" style="min-height: 56px;">
+              主要操作
+            </button>
+            <button class="px-10 py-5 bg-[#34A853] text-white text-lg font-bold rounded-lg hover:bg-[#2d9249] focus:ring-4 focus:ring-[#34A853] focus:ring-offset-2 focus:outline-none transition-colors" style="min-height: 56px;">
+              成功操作
+            </button>
+            <button class="px-10 py-5 bg-[#EA4335] text-white text-lg font-bold rounded-lg hover:bg-[#d33426] focus:ring-4 focus:ring-[#EA4335] focus:ring-offset-2 focus:outline-none transition-colors" style="min-height: 56px;">
+              危险操作
+            </button>
+            <button class="px-10 py-5 border-4 border-gray-900 text-gray-900 text-lg font-bold rounded-lg hover:bg-gray-900 hover:text-white focus:ring-4 focus:ring-gray-900 focus:ring-offset-2 focus:outline-none transition-colors" style="min-height: 56px;">
+              次要操作
+            </button>
+          </div>
         </div>
+
+        <!-- Cards -->
+        <div class="mb-20">
+          <h3 class="text-3xl font-black text-gray-900 mb-8">卡片</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <article class="bg-white p-8 rounded-xl shadow-md border border-gray-200" tabindex="0">
+              <h4 class="text-2xl font-black text-gray-900 mb-4">标准卡片</h4>
+              <p class="text-lg text-gray-800 leading-relaxed">大号字体、清晰的结构、充足的间距，确保阅读无障碍。</p>
+            </article>
+            <article class="bg-white p-8 rounded-xl shadow-md border-l-8 border-[#1A73E8]" tabindex="0">
+              <h4 class="text-2xl font-black text-gray-900 mb-4">蓝色强调</h4>
+              <p class="text-lg text-gray-800 leading-relaxed">左侧边框提供额外的视觉线索，帮助用户快速识别卡片类型。</p>
+            </article>
+            <article class="bg-white p-8 rounded-xl shadow-md border-l-8 border-[#34A853]" tabindex="0">
+              <h4 class="text-2xl font-black text-gray-900 mb-4">绿色强调</h4>
+              <p class="text-lg text-gray-800 leading-relaxed">颜色不仅仅是装饰，更是传递信息的重要渠道。</p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div>
+          <h3 class="text-3xl font-black text-gray-900 mb-8">表单</h3>
+          <form class="max-w-2xl mx-auto bg-white p-10 rounded-xl shadow-md border border-gray-200" aria-label="联系表单">
+            <div class="mb-8">
+              <label for="name" class="block text-xl font-bold text-gray-900 mb-3">姓名 <span class="text-[#EA4335]">*</span></label>
+              <input type="text" id="name" name="name" required placeholder="请输入您的姓名" class="w-full px-6 py-5 text-lg border-2 border-gray-400 rounded-lg focus:border-[#1A73E8] focus:ring-4 focus:ring-[#1A73E8] focus:ring-offset-2 focus:outline-none transition-colors" style="min-height: 56px;" aria-required="true">
+            </div>
+            <div class="mb-8">
+              <label for="email" class="block text-xl font-bold text-gray-900 mb-3">邮箱 <span class="text-[#EA4335]">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="请输入您的邮箱" class="w-full px-6 py-5 text-lg border-2 border-gray-400 rounded-lg focus:border-[#1A73E8] focus:ring-4 focus:ring-[#1A73E8] focus:ring-offset-2 focus:outline-none transition-colors" style="min-height: 56px;" aria-required="true">
+            </div>
+            <div class="mb-8">
+              <label for="message" class="block text-xl font-bold text-gray-900 mb-3">消息</label>
+              <textarea id="message" name="message" rows="5" placeholder="请输入您的消息" class="w-full px-6 py-5 text-lg border-2 border-gray-400 rounded-lg focus:border-[#1A73E8] focus:ring-4 focus:ring-[#1A73E8] focus:ring-offset-2 focus:outline-none transition-colors resize-none"></textarea>
+            </div>
+            <div class="mb-8 p-4 bg-[#EA4335]/10 border-2 border-[#EA4335] rounded-lg" role="alert">
+              <p class="text-lg font-bold text-[#EA4335]">⚠️ 请填写所有必填字段</p>
+            </div>
+            <button type="submit" class="w-full px-10 py-5 bg-[#1A73E8] text-white text-lg font-bold rounded-lg hover:bg-[#1557b0] focus:ring-4 focus:ring-[#1A73E8] focus:ring-offset-2 focus:outline-none transition-colors" style="min-height: 56px;">
+              提交表单
+            </button>
+          </form>
+        </div>
+      </div>
     </section>
 
-    <section class="py-20 px-6 bg-black/20">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-2 gap-16">
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">最佳适用</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>政府网站</li>
-                        <li>医疗健康</li>
-                        <li>教育平台</li>
-                        <li>金融服务</li>
-                        <li>公共服务</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">特性</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>深色模式: 完全支持</li>
-                        <li>浅色模式: 完全支持</li>
-                        <li>性能: 优秀</li>
-                        <li>无障碍: WCAG AAA</li>
-                        <li>复杂度: 中</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Best For -->
+    <section class="py-24 px-8" aria-labelledby="bestfor-heading">
+      <div class="max-w-6xl mx-auto">
+        <h2 id="bestfor-heading" class="text-5xl font-black text-gray-900 mb-4">最适合</h2>
+        <p class="text-xl text-gray-700 mb-16">包容性设计在这些领域至关重要</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div class="bg-gray-50 p-8 rounded-xl text-center border border-gray-200">
+            <span class="text-5xl block mb-4" aria-hidden="true">🏛️</span>
+            <span class="text-xl font-black text-gray-900">政府</span>
+          </div>
+          <div class="bg-gray-50 p-8 rounded-xl text-center border border-gray-200">
+            <span class="text-5xl block mb-4" aria-hidden="true">🏥</span>
+            <span class="text-xl font-black text-gray-900">医疗</span>
+          </div>
+          <div class="bg-gray-50 p-8 rounded-xl text-center border border-gray-200">
+            <span class="text-5xl block mb-4" aria-hidden="true">🎓</span>
+            <span class="text-xl font-black text-gray-900">教育</span>
+          </div>
+          <div class="bg-gray-50 p-8 rounded-xl text-center border border-gray-200">
+            <span class="text-5xl block mb-4" aria-hidden="true">🏦</span>
+            <span class="text-xl font-black text-gray-900">金融</span>
+          </div>
+          <div class="bg-gray-50 p-8 rounded-xl text-center border border-gray-200">
+            <span class="text-5xl block mb-4" aria-hidden="true">🚌</span>
+            <span class="text-xl font-black text-gray-900">公共服务</span>
+          </div>
         </div>
+      </div>
     </section>
 
-    <footer class="py-8 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-50 hover:opacity-100">&larr; 返回画廊</a>
-            <a href="zero-ui.html" class="text-sm opacity-50 hover:opacity-100">下一页: #20 &rarr;</a>
+    <!-- Characteristics -->
+    <section class="py-24 px-8 bg-gray-50" aria-labelledby="characteristics-heading">
+      <div class="max-w-4xl mx-auto">
+        <h2 id="characteristics-heading" class="text-5xl font-black text-gray-900 mb-16">风格特征</h2>
+        <div class="space-y-8">
+          <div class="flex items-start gap-6 p-8 bg-white rounded-xl border border-gray-200">
+            <span class="text-4xl shrink-0" aria-hidden="true">♿</span>
+            <div>
+              <h3 class="text-2xl font-black text-gray-900 mb-2">WCAG 合规</h3>
+              <p class="text-lg text-gray-800 leading-relaxed">严格遵循 Web 内容无障碍指南，确保所有用户都能访问。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-6 p-8 bg-white rounded-xl border border-gray-200">
+            <span class="text-4xl shrink-0" aria-hidden="true">📱</span>
+            <div>
+              <h3 class="text-2xl font-black text-gray-900 mb-2">大触控目标</h3>
+              <p class="text-lg text-gray-800 leading-relaxed">所有交互元素至少 44x44px，符合 Apple HIG 和 Material Design 标准。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-6 p-8 bg-white rounded-xl border border-gray-200">
+            <span class="text-4xl shrink-0" aria-hidden="true">🎯</span>
+            <div>
+              <h3 class="text-2xl font-black text-gray-900 mb-2">可见焦点指示</h3>
+              <p class="text-lg text-gray-800 leading-relaxed">每个可聚焦元素都有明显的焦点环，键盘用户不会迷失。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-6 p-8 bg-white rounded-xl border border-gray-200">
+            <span class="text-4xl shrink-0" aria-hidden="true">📖</span>
+            <div>
+              <h3 class="text-2xl font-black text-gray-900 mb-2">清晰排版</h3>
+              <p class="text-lg text-gray-800 leading-relaxed">最小字号 text-lg，确保可读性，不依赖缩放即可阅读。</p>
+            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
-      }
-    </script>
+  <!-- Footer -->
+  <footer class="py-16 px-8 bg-gray-900 text-white" role="contentinfo">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <div>
+        <p class="text-lg text-gray-300 font-bold">风格 #19 — 包容性设计</p>
+        <p class="text-base text-gray-400 mt-2">Inclusive Design</p>
+      </div>
+      <div class="flex gap-6">
+        <a href="/styles/motion-driven.html" class="px-8 py-4 bg-white/10 text-lg font-bold rounded-lg hover:bg-white/20 focus:ring-4 focus:ring-white focus:outline-none transition-colors" style="min-height: 56px;" aria-label="上一个风格">← 上一个风格</a>
+        <a href="/styles/zero-ui.html" class="px-8 py-4 bg-[#1A73E8] text-lg font-bold rounded-lg hover:bg-[#1557b0] focus:ring-4 focus:ring-[#1A73E8] focus:outline-none transition-colors" style="min-height: 56px;" aria-label="下一个风格">下一个风格 →</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

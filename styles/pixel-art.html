@@ -1,177 +1,207 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>像素艺术 - UI Style #24</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * { font-family: 'Inter', sans-serif; }
-    </style>
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Design Gallery">
-    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixel Art 风格页面</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  * { image-rendering: pixelated; }
+  .pixel-font { font-family: 'Press Start 2P', 'Courier New', monospace; }
+  .pixel-mono { font-family: 'Courier New', monospace; }
+  .pixel-border { border: 4px solid; box-shadow: 4px 4px 0px rgba(0,0,0,0.3); }
+  .pixel-card { border: 4px solid; box-shadow: 6px 6px 0px rgba(0,0,0,0.35); }
+  .pixel-btn { border: 4px solid; box-shadow: 4px 4px 0px rgba(0,0,0,0.3); transition: all 0.1s; }
+  .pixel-btn:active { box-shadow: 1px 1px 0px rgba(0,0,0,0.3); transform: translate(3px, 3px); }
+  .pixel-input { border: 4px solid; border-radius: 0; outline: none; }
+  .pixel-input:focus { border-color: #FFEC27; }
+  .pixel-block { border: 4px solid; }
+  .pixel-tag { border: 3px solid; padding: 4px 8px; font-size: 10px; }
+  .grid-8bit { background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 16px 16px; }
+</style>
 </head>
-<body class="bg-[#1A1A2E] text-white min-h-screen">
-    <nav class="fixed top-4 left-4 right-4 bg-[#2A2A3E] border-[#FF004D] border-4 rounded-lg z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-60 hover:opacity-100 transition-opacity">&larr; 返回画廊</a>
-            <span class="font-medium">#24 像素艺术</span>
-            <div class="flex items-center gap-2">
-                <a href="../zh/styles/pixel-art.html" class="text-xs opacity-50 hover:opacity-100">EN</a>
-                <span class="opacity-30">|</span>
-                <span class="text-xs font-medium opacity-80">中文</span>
-            </div>
-        </div>
-    </nav>
+<body class="bg-[#1A1A2E] min-h-screen text-white grid-8bit">
 
-    <section class="pt-32 pb-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h1 class="text-7xl font-bold tracking-tight leading-none mb-8">像素艺术<br/>风格</h1>
-            <p class="text-xl max-w-xl leading-relaxed opacity-80">致敬 8-bit 和 16-bit 时代的经典游戏美学，用像素块和点阵字体构建独特的数字怀旧体验。</p>
-        </div>
-    </section>
+<!-- Navigation -->
+<nav class="border-b-4 border-[#FF004D] px-6 py-4 flex items-center justify-between">
+  <span class="pixel-font text-[#FFEC27] text-xs tracking-wider">🎮 DESIGN GALLERY</span>
+  <div class="flex items-center gap-4 pixel-mono text-sm">
+    <a href="../index.html" class="text-[#29ADFF] hover:text-[#FFEC27] pixel-font text-xs">← 返回画廊</a>
+    <span class="pixel-font text-[#00E436] text-xs">中文</span>
+    <span class="text-white/40">|</span>
+    <a href="../zh/styles/pixel-art.html" class="text-[#29ADFF] hover:text-[#FFEC27] pixel-font text-xs">EN</a>
+  </div>
+</nav>
 
-    <section class="py-20 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">01</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">像素块元素</h2>
-                    <p class="opacity-70">所有 UI 元素由像素块组成，按钮、图标都有锯齿边缘</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">02</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">点阵字体</h2>
-                    <p class="opacity-70">使用像素风格的等宽字体，还原 80 年代计算机界面</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">03</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">有限调色板</h2>
-                    <p class="opacity-70">使用 4-16 种颜色的有限调色板，忠实复古游戏美学</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Hero -->
+<section class="max-w-4xl mx-auto mt-16 px-6">
+  <div class="pixel-card p-8 border-[#FF004D] bg-[#1A1A2E]">
+    <div class="flex gap-2 mb-4">
+      <div class="w-4 h-4 bg-[#FF004D]"></div>
+      <div class="w-4 h-4 bg-[#FFEC27]"></div>
+      <div class="w-4 h-4 bg-[#00E436]"></div>
+      <div class="w-4 h-4 bg-[#29ADFF]"></div>
+    </div>
+    <h1 class="pixel-font text-[#FFEC27] text-3xl md:text-5xl mb-4 leading-relaxed">像素艺术</h1>
+    <p class="pixel-mono text-[#29ADFF] text-lg mb-2">8-BIT RETRO STYLE</p>
+    <p class="pixel-mono text-white/60 text-sm max-w-lg">复古游戏风格 · 纯色块 · 像素字体 · 粗边框 · 无圆角</p>
+    <div class="flex gap-3 mt-6">
+      <span class="pixel-tag border-[#FF004D] text-[#FF004D]"># 像素</span>
+      <span class="pixel-tag border-[#FFEC27] text-[#FFEC27]"># 复古</span>
+      <span class="pixel-tag border-[#00E436] text-[#00E436]"># 8位</span>
+    </div>
+  </div>
+</section>
 
-    <section class="py-20 px-6 bg-black/10">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-8">色彩方案</h3>
-            <div class="flex gap-4">
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #FF004D;"></div>
-                    <p class="text-sm font-medium">经典红</p>
-                    <p class="text-xs opacity-50">#FF004D</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #FFEC27;"></div>
-                    <p class="text-sm font-medium">经典黄</p>
-                    <p class="text-xs opacity-50">#FFEC27</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #00E436;"></div>
-                    <p class="text-sm font-medium">经典绿</p>
-                    <p class="text-xs opacity-50">#00E436</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #29ADFF;"></div>
-                    <p class="text-sm font-medium">经典蓝</p>
-                    <p class="text-xs opacity-50">#29ADFF</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Features -->
+<section class="max-w-4xl mx-auto mt-16 px-6">
+  <h2 class="pixel-font text-[#FFEC27] text-lg mb-8">✦ 特色功能 ✦</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="pixel-card p-6 border-[#FF004D] bg-[#1A1A2E]">
+      <div class="w-12 h-12 bg-[#FF004D] mb-4 flex items-center justify-center">
+        <span class="pixel-mono text-2xl">⚔</span>
+      </div>
+      <h3 class="pixel-font text-[#FF004D] text-sm mb-3">像素渲染</h3>
+      <p class="pixel-mono text-white/50 text-xs leading-relaxed">纯正的像素渲染，image-rendering: pixelated，让每个像素都清晰可见。</p>
+    </div>
+    <div class="pixel-card p-6 border-[#FFEC27] bg-[#1A1A2E]">
+      <div class="w-12 h-12 bg-[#FFEC27] mb-4 flex items-center justify-center">
+        <span class="pixel-mono text-2xl">★</span>
+      </div>
+      <h3 class="pixel-font text-[#FFEC27] text-sm mb-3">8位色彩</h3>
+      <p class="pixel-mono text-white/50 text-xs leading-relaxed">经典红黄绿蓝四色，明亮饱和，致敬NES经典游戏配色。</p>
+    </div>
+    <div class="pixel-card p-6 border-[#00E436] bg-[#1A1A2E]">
+      <div class="w-12 h-12 bg-[#00E436] mb-4 flex items-center justify-center">
+        <span class="pixel-mono text-2xl">♠</span>
+      </div>
+      <h3 class="pixel-font text-[#00E436] text-sm mb-3">方块美学</h3>
+      <p class="pixel-mono text-white/50 text-xs leading-relaxed">锐利直角，粗边框，阴影偏移。一切元素都像从游戏里跳出来的。</p>
+    </div>
+  </div>
+</section>
 
-    <section class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-12">组件示例</h3>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">按钮</h4>
-                <div class="flex gap-4 items-center flex-wrap">
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#FF004D] text-white hover:bg-[#CC003D] border-4 border-[#7A0025]">主要操作</button>
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#1A1A2E] text-[#FFEC27] hover:bg-[#2A2A3E] border-4 border-[#FFEC27]">次要操作</button>
-                    <button class="px-8 py-3 font-medium hover:opacity-60 transition-colors">文字链接 &rarr;</button>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">卡片</h4>
-                <div class="grid grid-cols-3 gap-6">
-                    <div class="bg-[#2A2A3E] border-[#FF004D] border-4 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">像素块元素</h5>
-                        <p class="text-sm opacity-70">所有 UI 元素由像素块组成，按钮、图标都有锯齿边缘...</p>
-                    </div>
-                    <div class="bg-[#2A2A3E] border-[#FF004D] border-4 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">点阵字体</h5>
-                        <p class="text-sm opacity-70">使用像素风格的等宽字体，还原 80 年代计算机界面...</p>
-                    </div>
-                    <div class="bg-[#2A2A3E] border-[#FF004D] border-4 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">有限调色板</h5>
-                        <p class="text-sm opacity-70">使用 4-16 种颜色的有限调色板，忠实复古游戏美学...</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">表单元素</h4>
-                <div class="max-w-md">
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">邮箱</label>
-                        <input type="email" class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com">
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">留言</label>
-                        <textarea class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors h-32" placeholder="您的留言..."></textarea>
-                    </div>
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#FF004D] text-white hover:bg-[#CC003D] border-4 border-[#7A0025]">提交</button>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Color Palette -->
+<section class="max-w-4xl mx-auto mt-16 px-6">
+  <h2 class="pixel-font text-[#FFEC27] text-lg mb-8">✦ 调色板 ✦</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="pixel-card p-4 border-[#FF004D] bg-[#1A1A2E]">
+      <div class="w-full h-16 bg-[#FF004D] mb-3"></div>
+      <p class="pixel-font text-[#FF004D] text-xs">RED</p>
+      <p class="pixel-mono text-white/40 text-xs">#FF004D</p>
+    </div>
+    <div class="pixel-card p-4 border-[#FFEC27] bg-[#1A1A2E]">
+      <div class="w-full h-16 bg-[#FFEC27] mb-3"></div>
+      <p class="pixel-font text-[#FFEC27] text-xs">YELLOW</p>
+      <p class="pixel-mono text-white/40 text-xs">#FFEC27</p>
+    </div>
+    <div class="pixel-card p-4 border-[#00E436] bg-[#1A1A2E]">
+      <div class="w-full h-16 bg-[#00E436] mb-3"></div>
+      <p class="pixel-font text-[#00E436] text-xs">GREEN</p>
+      <p class="pixel-mono text-white/40 text-xs">#00E436</p>
+    </div>
+    <div class="pixel-card p-4 border-[#29ADFF] bg-[#1A1A2E]">
+      <div class="w-full h-16 bg-[#29ADFF] mb-3"></div>
+      <p class="pixel-font text-[#29ADFF] text-xs">BLUE</p>
+      <p class="pixel-mono text-white/40 text-xs">#29ADFF</p>
+    </div>
+  </div>
+</section>
 
-    <section class="py-20 px-6 bg-black/20">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-2 gap-16">
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">最佳适用</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>独立游戏</li>
-                        <li>创意个人站</li>
-                        <li>开发者博客</li>
-                        <li>怀旧主题</li>
-                        <li>像素艺术社区</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">特性</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>深色模式: 完全支持</li>
-                        <li>浅色模式: 部分支持</li>
-                        <li>性能: 极佳</li>
-                        <li>无障碍: WCAG A</li>
-                        <li>复杂度: 低</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Pixel Character / Icon Placeholders -->
+<section class="max-w-4xl mx-auto mt-16 px-6">
+  <h2 class="pixel-font text-[#FFEC27] text-lg mb-8">✦ 像素角色 ✦</h2>
+  <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
+    <div class="pixel-card p-4 border-[#FF004D] bg-[#1A1A2E] text-center">
+      <div class="grid grid-cols-4 gap-1 w-16 h-16 mx-auto mb-3">
+        <div class="bg-[#FF004D]"></div><div class="bg-[#FF004D]"></div><div class="bg-[#FF004D]"></div><div class="bg-[#FF004D]"></div>
+        <div class="bg-[#FF004D]"></div><div class="bg-[#FFEC27]"></div><div class="bg-[#FFEC27]"></div><div class="bg-[#FF004D]"></div>
+        <div class="bg-[#FF004D]"></div><div class="bg-[#1A1A2E]"></div><div class="bg-[#1A1A2E]"></div><div class="bg-[#FF004D]"></div>
+        <div class="bg-[#FF004D]"></div><div class="bg-[#FF004D]"></div><div class="bg-[#FF004D]"></div><div class="bg-[#FF004D]"></div>
+      </div>
+      <p class="pixel-font text-[#FF004D] text-[10px]">HERO</p>
+    </div>
+    <div class="pixel-card p-4 border-[#00E436] bg-[#1A1A2E] text-center">
+      <div class="grid grid-cols-4 gap-1 w-16 h-16 mx-auto mb-3">
+        <div class="bg-[#00E436]"></div><div class="bg-[#00E436]"></div><div class="bg-[#00E436]"></div><div class="bg-[#00E436]"></div>
+        <div class="bg-[#00E436]"></div><div class="bg-[#FF004D]"></div><div class="bg-[#FF004D]"></div><div class="bg-[#00E436]"></div>
+        <div class="bg-[#00E436]"></div><div class="bg-[#FFEC27]"></div><div class="bg-[#FFEC27]"></div><div class="bg-[#00E436]"></div>
+        <div class="bg-[#00E436]"></div><div class="bg-[#00E436]"></div><div class="bg-[#00E436]"></div><div class="bg-[#00E436]"></div>
+      </div>
+      <p class="pixel-font text-[#00E436] text-[10px]">SLIME</p>
+    </div>
+    <div class="pixel-card p-4 border-[#FFEC27] bg-[#1A1A2E] text-center">
+      <div class="grid grid-cols-4 gap-1 w-16 h-16 mx-auto mb-3">
+        <div class="bg-[#1A1A2E]"></div><div class="bg-[#FFEC27]"></div><div class="bg-[#FFEC27]"></div><div class="bg-[#1A1A2E]"></div>
+        <div class="bg-[#FFEC27]"></div><div class="bg-[#FFEC27]"></div><div class="bg-[#FFEC27]"></div><div class="bg-[#FFEC27]"></div>
+        <div class="bg-[#FFEC27]"></div><div class="bg-[#FF004D]"></div><div class="bg-[#FF004D]"></div><div class="bg-[#FFEC27]"></div>
+        <div class="bg-[#FFEC27]"></div><div class="bg-[#FFEC27]"></div><div class="bg-[#FFEC27]"></div><div class="bg-[#FFEC27]"></div>
+      </div>
+      <p class="pixel-font text-[#FFEC27] text-[10px]">STAR</p>
+    </div>
+    <div class="pixel-card p-4 border-[#29ADFF] bg-[#1A1A2E] text-center">
+      <div class="grid grid-cols-4 gap-1 w-16 h-16 mx-auto mb-3">
+        <div class="bg-[#29ADFF]"></div><div class="bg-[#29ADFF]"></div><div class="bg-[#29ADFF]"></div><div class="bg-[#29ADFF]"></div>
+        <div class="bg-[#29ADFF]"></div><div class="bg-[#FFEC27]"></div><div class="bg-[#FFEC27]"></div><div class="bg-[#29ADFF]"></div>
+        <div class="bg-[#29ADFF]"></div><div class="bg-[#FF004D]"></div><div class="bg-[#FF004D]"></div><div class="bg-[#29ADFF]"></div>
+        <div class="bg-[#29ADFF]"></div><div class="bg-[#29ADFF]"></div><div class="bg-[#29ADFF]"></div><div class="bg-[#29ADFF]"></div>
+      </div>
+      <p class="pixel-font text-[#29ADFF] text-[10px]">MAGE</p>
+    </div>
+    <div class="pixel-card p-4 border-[#FF004D] bg-[#1A1A2E] text-center">
+      <div class="grid grid-cols-4 gap-1 w-16 h-16 mx-auto mb-3">
+        <div class="bg-[#1A1A2E]"></div><div class="bg-[#FF004D]"></div><div class="bg-[#FF004D]"></div><div class="bg-[#1A1A2E]"></div>
+        <div class="bg-[#FF004D]"></div><div class="bg-[#29ADFF]"></div><div class="bg-[#29ADFF]"></div><div class="bg-[#FF004D]"></div>
+        <div class="bg-[#FF004D]"></div><div class="bg-[#FF004D]"></div><div class="bg-[#FF004D]"></div><div class="bg-[#FF004D]"></div>
+        <div class="bg-[#FF004D]"></div><div class="bg-[#1A1A2E]"></div><div class="bg-[#1A1A2E]"></div><div class="bg-[#FF004D]"></div>
+      </div>
+      <p class="pixel-font text-[#FF004D] text-[10px]">BOSS</p>
+    </div>
+    <div class="pixel-card p-4 border-[#00E436] bg-[#1A1A2E] text-center">
+      <div class="grid grid-cols-4 gap-1 w-16 h-16 mx-auto mb-3">
+        <div class="bg-[#1A1A2E]"></div><div class="bg-[#00E436]"></div><div class="bg-[#00E436]"></div><div class="bg-[#1A1A2E]"></div>
+        <div class="bg-[#00E436]"></div><div class="bg-[#1A1A2E]"></div><div class="bg-[#1A1A2E]"></div><div class="bg-[#00E436]"></div>
+        <div class="bg-[#00E436]"></div><div class="bg-[#FFEC27]"></div><div class="bg-[#FFEC27]"></div><div class="bg-[#00E436]"></div>
+        <div class="bg-[#1A1A2E]"></div><div class="bg-[#00E436]"></div><div class="bg-[#00E436]"></div><div class="bg-[#1A1A2E]"></div>
+      </div>
+      <p class="pixel-font text-[#00E436] text-[10px]">NPC</p>
+    </div>
+  </div>
+</section>
 
-    <footer class="py-8 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-50 hover:opacity-100">&larr; 返回画廊</a>
-            <a href="e-ink.html" class="text-sm opacity-50 hover:opacity-100">下一页: #25 &rarr;</a>
-        </div>
-    </footer>
+<!-- Buttons -->
+<section class="max-w-4xl mx-auto mt-16 px-6">
+  <h2 class="pixel-font text-[#FFEC27] text-lg mb-8">✦ 按钮 ✦</h2>
+  <div class="flex flex-wrap gap-4">
+    <button class="pixel-btn px-6 py-3 bg-[#00E436] border-[#00E436] text-[#1A1A2E] pixel-font text-xs">开始游戏</button>
+    <button class="pixel-btn px-6 py-3 bg-[#FFEC27] border-[#FFEC27] text-[#1A1A2E] pixel-font text-xs">选择关卡</button>
+    <button class="pixel-btn px-6 py-3 bg-[#FF004D] border-[#FF004D] text-white pixel-font text-xs">退出</button>
+    <button class="pixel-btn px-6 py-3 bg-transparent border-[#29ADFF] text-[#29ADFF] pixel-font text-xs">选项</button>
+  </div>
+</section>
 
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
-      }
-    </script>
+<!-- Form -->
+<section class="max-w-4xl mx-auto mt-16 px-6 mb-16">
+  <h2 class="pixel-font text-[#FFEC27] text-lg mb-8">✦ 输入 ✦</h2>
+  <div class="pixel-card p-6 border-[#29ADFF] bg-[#1A1A2E] max-w-lg">
+    <div class="space-y-4">
+      <div>
+        <label class="pixel-font text-[#29ADFF] text-xs block mb-2">玩家名称</label>
+        <input type="text" placeholder="输入名称" class="pixel-input w-full bg-[#0D0D1A] text-white px-4 py-3 pixel-mono text-sm border-[#29ADFF] placeholder-white/20">
+      </div>
+      <div>
+        <label class="pixel-font text-[#29ADFF] text-xs block mb-2">密码</label>
+        <input type="password" placeholder="••••••••" class="pixel-input w-full bg-[#0D0D1A] text-white px-4 py-3 pixel-mono text-sm border-[#29ADFF] placeholder-white/20">
+      </div>
+      <button class="pixel-btn w-full px-6 py-3 bg-[#FFEC27] border-[#FFEC27] text-[#1A1A2E] pixel-font text-xs">登录</button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t-4 border-[#FF004D] py-8 text-center">
+  <p class="pixel-mono text-white/30 text-xs">© 2026 DESIGN GALLERY · PIXEL ART</p>
+</footer>
 </body>
 </html>

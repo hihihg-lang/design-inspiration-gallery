@@ -1,177 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zero UI - UI Style #20</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * { font-family: 'Inter', sans-serif; }
-    </style>
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Design Gallery">
-    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="/manifest.json">
+  <title>20. Zero UI — Design Style Gallery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-black min-h-screen">
-    <nav class="fixed top-4 left-4 right-4 bg-white border-gray-100 rounded-lg z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-60 hover:opacity-100 transition-opacity">&larr; Back to Gallery</a>
-            <span class="font-medium">#20 Zero UI</span>
-            <div class="flex items-center gap-2">
-                <span class="text-xs font-medium opacity-80">EN</span>
-                <span class="opacity-30">|</span>
-                <a href="../../styles/zero-ui.html" class="text-xs opacity-50 hover:opacity-100">中文</a>
-            </div>
-        </div>
-    </nav>
+<body class="bg-white min-h-screen">
 
-    <section class="pt-32 pb-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h1 class="text-7xl font-bold tracking-tight leading-none mb-8">Zero UI<br/>Design</h1>
-            <p class="text-xl max-w-xl leading-relaxed opacity-80">The interface disappears — content becomes the protagonist. Minimize visual elements, maximize content immersion.</p>
-        </div>
-    </section>
+  <nav class="w-full py-8 px-12">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-sm tracking-wide text-gray-400 hover:text-gray-600 transition-colors">Design Gallery</a>
+      <div class="flex items-center gap-8 text-sm tracking-wide">
+        <a href="/" class="text-gray-400 hover:text-gray-600 transition-colors">Back to Gallery</a>
+        <span class="text-gray-900 font-medium">EN</span>
+        <a href="../../styles/zero-ui.html" class="text-gray-300 hover:text-gray-500 transition-colors">中文</a>
+      </div>
+    </div>
+  </nav>
 
-    <section class="py-20 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">01</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">Invisible Navigation</h2>
-                    <p class="opacity-70">Navigation only appears when needed, hidden to maximize content area</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">02</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">Gesture-First</h2>
-                    <p class="opacity-70">Natural swipe interactions reduce visual clutter from buttons and controls</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">03</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">Content Breathing</h2>
-                    <p class="opacity-70">Generous white space and relaxed typography let content breathe</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section class="py-32 px-12">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-xs tracking-[0.3em] uppercase text-gray-300 mb-16">Demo Style #20</p>
+      <h1 class="text-5xl md:text-7xl font-light text-gray-900 leading-tight mb-12 tracking-wide">
+        Zero UI
+      </h1>
+      <p class="text-xl text-gray-400 leading-relaxed max-w-2xl mb-16">
+        When the interface disappears, only content remains.
+      </p>
+      <div class="flex gap-8">
+        <a href="#features" class="text-sm tracking-wide text-gray-500 hover:text-gray-900 transition-colors">↓ Learn More</a>
+      </div>
+    </div>
+  </section>
 
-    <section class="py-20 px-6 bg-black/10">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-8">Color Palette</h3>
-            <div class="flex gap-4">
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #FFFFFF;"></div>
-                    <p class="text-sm font-medium">Pure White</p>
-                    <p class="text-xs opacity-50">#FFFFFF</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #F5F5F5;"></div>
-                    <p class="text-sm font-medium">Light Grey</p>
-                    <p class="text-xs opacity-50">#F5F5F5</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #999999;"></div>
-                    <p class="text-sm font-medium">Mid Grey</p>
-                    <p class="text-xs opacity-50">#999999</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #333333;"></div>
-                    <p class="text-sm font-medium">Dark Grey</p>
-                    <p class="text-xs opacity-50">#333333</p>
-                </div>
-            </div>
+  <section id="features" class="py-32 px-12 bg-[#F5F5F5]">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-light text-gray-900 tracking-wide mb-24">Core Features</h2>
+      <div class="space-y-24">
+        <div>
+          <h3 class="text-lg font-medium text-gray-700 mb-6 tracking-wide">Nearly Invisible Interface</h3>
+          <p class="text-base text-gray-400 leading-relaxed">No visible borders, no obvious visual separators. Content becomes the interface — the UI steps back, letting information be the sole protagonist.</p>
         </div>
-    </section>
-
-    <section class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-12">Components</h3>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">Buttons</h4>
-                <div class="flex gap-4 items-center flex-wrap">
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#333] text-white hover:bg-black">Primary Action</button>
-                    <button class="px-8 py-3 font-medium transition-colors text-[#999] hover:text-black">Secondary</button>
-                    <button class="px-8 py-3 font-medium hover:opacity-60 transition-colors">Text Link &rarr;</button>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">Cards</h4>
-                <div class="grid grid-cols-3 gap-6">
-                    <div class="bg-white border-gray-100 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">Feature</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">Invisible Navigation</h5>
-                        <p class="text-sm opacity-70">Navigation only appears when needed, hidden to max...</p>
-                    </div>
-                    <div class="bg-white border-gray-100 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">Feature</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">Gesture-First</h5>
-                        <p class="text-sm opacity-70">Natural swipe interactions reduce visual clutter f...</p>
-                    </div>
-                    <div class="bg-white border-gray-100 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">Feature</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">Content Breathing</h5>
-                        <p class="text-sm opacity-70">Generous white space and relaxed typography let co...</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">Form Elements</h4>
-                <div class="max-w-md">
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">Email</label>
-                        <input type="email" class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com">
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">Message</label>
-                        <textarea class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors h-32" placeholder="Your message..."></textarea>
-                    </div>
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#333] text-white hover:bg-black">Submit</button>
-                </div>
-            </div>
+        <div>
+          <h3 class="text-lg font-medium text-gray-700 mb-6 tracking-wide">Massive White Space</h3>
+          <p class="text-base text-gray-400 leading-relaxed">Every element has generous breathing room. This is not waste — it is respect for content, giving every piece of information room to be taken seriously.</p>
         </div>
-    </section>
-
-    <section class="py-20 px-6 bg-black/20">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-2 gap-16">
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">Best For</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>Reading Apps</li>
-                        <li>Content Platforms</li>
-                        <li>Minimalist Blogs</li>
-                        <li>Meditation Apps</li>
-                        <li>Photography Showcases</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">Characteristics</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>Dark Mode: Full</li>
-                        <li>Light Mode: Full</li>
-                        <li>Performance: Excellent</li>
-                        <li>Accessibility: WCAG AA</li>
-                        <li>Complexity: Low</li>
-                    </ul>
-                </div>
-            </div>
+        <div>
+          <h3 class="text-lg font-medium text-gray-700 mb-6 tracking-wide">Content First</h3>
+          <p class="text-base text-gray-400 leading-relaxed">Single column layout, wide margins, generous line height. Everything is optimized for the ultimate reading experience — no distractions, only pure content.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <footer class="py-8 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-50 hover:opacity-100">&larr; Back to Gallery</a>
-            <a href="soft-ui.html" class="text-sm opacity-50 hover:opacity-100">Next: #21 &rarr;</a>
+  <section class="py-32 px-12">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-light text-gray-900 tracking-wide mb-24">Color Palette</h2>
+      <div class="space-y-12">
+        <div class="flex items-center gap-12">
+          <div class="w-16 h-16 bg-white border border-gray-100 shrink-0"></div>
+          <div><p class="text-sm font-medium text-gray-600 tracking-wide">White</p><p class="text-xs text-gray-300 mt-1">#FFFFFF — Pure Background</p></div>
         </div>
-    </footer>
+        <div class="flex items-center gap-12">
+          <div class="w-16 h-16 bg-[#F5F5F5] shrink-0"></div>
+          <div><p class="text-sm font-medium text-gray-600 tracking-wide">Light Grey</p><p class="text-xs text-gray-300 mt-1">#F5F5F5 — Subtle Layering</p></div>
+        </div>
+        <div class="flex items-center gap-12">
+          <div class="w-16 h-16 bg-[#999] shrink-0"></div>
+          <div><p class="text-sm font-medium text-gray-600 tracking-wide">Mid Grey</p><p class="text-xs text-gray-300 mt-1">#999999 — Secondary Text</p></div>
+        </div>
+        <div class="flex items-center gap-12">
+          <div class="w-16 h-16 bg-[#333] shrink-0"></div>
+          <div><p class="text-sm font-medium text-gray-600 tracking-wide">Dark Grey</p><p class="text-xs text-gray-300 mt-1">#333333 — Primary Text</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
-      }
-    </script>
+  <section class="py-32 px-12 bg-[#F5F5F5]">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-light text-gray-900 tracking-wide mb-24">Component Showcase</h2>
+
+      <div class="mb-24">
+        <h3 class="text-lg font-medium text-gray-700 mb-12 tracking-wide">Buttons</h3>
+        <div class="flex flex-wrap gap-10">
+          <button class="text-sm tracking-wide text-gray-500 hover:text-gray-900 transition-colors border-b border-transparent hover:border-gray-300 pb-1">Primary</button>
+          <button class="text-sm tracking-wide text-gray-400 hover:text-gray-700 transition-colors border-b border-transparent hover:border-gray-200 pb-1">Secondary</button>
+          <button class="text-sm tracking-wide text-gray-300 hover:text-gray-500 transition-colors border-b border-transparent hover:border-gray-200 pb-1">Text Only</button>
+        </div>
+      </div>
+
+      <div class="mb-24">
+        <h3 class="text-lg font-medium text-gray-700 mb-12 tracking-wide">Cards</h3>
+        <div class="space-y-12">
+          <div class="p-10 bg-white shadow-sm">
+            <h4 class="text-base font-medium text-gray-700 mb-4 tracking-wide">Borderless Card</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Only a subtle shadow hints at its existence. No borders, no dividers, just content.</p>
+          </div>
+          <div class="p-10 bg-white shadow-sm">
+            <h4 class="text-base font-medium text-gray-700 mb-4 tracking-wide">Breathing Room</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Generous padding gives each card its own breathing space — content never feels crowded.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-medium text-gray-700 mb-12 tracking-wide">Form</h3>
+        <form class="space-y-12">
+          <div>
+            <label class="block text-xs tracking-wide text-gray-400 mb-3 uppercase">Name</label>
+            <input type="text" placeholder="Enter your name" class="w-full py-3 text-base bg-transparent border-b border-gray-200 focus:border-gray-900 focus:outline-none transition-colors text-gray-700 placeholder-gray-300">
+          </div>
+          <div>
+            <label class="block text-xs tracking-wide text-gray-400 mb-3 uppercase">Email</label>
+            <input type="email" placeholder="Enter your email" class="w-full py-3 text-base bg-transparent border-b border-gray-200 focus:border-gray-900 focus:outline-none transition-colors text-gray-700 placeholder-gray-300">
+          </div>
+          <div>
+            <label class="block text-xs tracking-wide text-gray-400 mb-3 uppercase">Message</label>
+            <textarea rows="3" placeholder="Enter your message" class="w-full py-3 text-base bg-transparent border-b border-gray-200 focus:border-gray-900 focus:outline-none transition-colors text-gray-700 placeholder-gray-300 resize-none"></textarea>
+          </div>
+          <button type="submit" class="text-sm tracking-wide text-gray-500 hover:text-gray-900 transition-colors border-b border-transparent hover:border-gray-300 pb-1 mt-4">
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-32 px-12">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-light text-gray-900 tracking-wide mb-24">Best For</h2>
+      <div class="space-y-8">
+        <div class="flex items-center gap-8"><span class="text-2xl">📝</span><span class="text-lg text-gray-600 tracking-wide">Writing Platforms</span></div>
+        <div class="flex items-center gap-8"><span class="text-2xl">📖</span><span class="text-lg text-gray-600 tracking-wide">Reading Apps</span></div>
+        <div class="flex items-center gap-8"><span class="text-2xl">🏛️</span><span class="text-lg text-gray-600 tracking-wide">Minimal Portfolios</span></div>
+        <div class="flex items-center gap-8"><span class="text-2xl">📰</span><span class="text-lg text-gray-600 tracking-wide">News Readers</span></div>
+        <div class="flex items-center gap-8"><span class="text-2xl">🧘</span><span class="text-lg text-gray-600 tracking-wide">Meditation Apps</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-32 px-12 bg-[#F5F5F5]">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-light text-gray-900 tracking-wide mb-24">Characteristics</h2>
+      <div class="space-y-16">
+        <div><h3 class="text-base font-medium text-gray-700 mb-4 tracking-wide">Minimalism First</h3><p class="text-sm text-gray-400 leading-relaxed">Remove all unnecessary visual elements, keeping only the core content presentation.</p></div>
+        <div><h3 class="text-base font-medium text-gray-700 mb-4 tracking-wide">Invisible Interface</h3><p class="text-sm text-gray-400 leading-relaxed">The UI is nearly invisible — no borders, no shadows, no dividers, letting content breathe naturally.</p></div>
+        <div><h3 class="text-base font-medium text-gray-700 mb-4 tracking-wide">Generous Rhythm</h3><p class="text-sm text-gray-400 leading-relaxed">Huge vertical spacing and horizontal margins create a slow, rhythmic browsing experience.</p></div>
+        <div><h3 class="text-base font-medium text-gray-700 mb-4 tracking-wide">Restrained Color</h3><p class="text-sm text-gray-400 leading-relaxed">Using only grayscale tones, letting color completely recede and focus return to the content itself.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-32 px-12">
+    <div class="max-w-2xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+      <div><p class="text-sm text-gray-400 tracking-wide">Style #20 — Zero UI</p><p class="text-xs text-gray-300 mt-2 tracking-wide">Content-first minimalism</p></div>
+      <div class="flex gap-10">
+        <a href="/zh/styles/inclusive-design.html" class="text-sm tracking-wide text-gray-400 hover:text-gray-700 transition-colors">← Previous Style</a>
+        <a href="/zh/styles/soft-ui.html" class="text-sm tracking-wide text-gray-500 hover:text-gray-900 transition-colors">Next Style →</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

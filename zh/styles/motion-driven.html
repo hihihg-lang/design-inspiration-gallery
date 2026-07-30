@@ -1,177 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motion-Driven - UI Style #18</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * { font-family: 'Inter', sans-serif; }
-    </style>
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Design Gallery">
-    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="/manifest.json">
+  <title>18. Motion-Driven — Design Style Gallery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    @keyframes pulse-ring {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.15); opacity: 1; }
+    }
+    @keyframes slide-up {
+      0% { transform: translateY(40px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes gradient-shift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes progress-grow {
+      0% { width: 0%; }
+    }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+    .animate-pulse-ring { animation: pulse-ring 2s ease-in-out infinite; }
+    .animate-slide-up { animation: slide-up 0.6s ease-out forwards; opacity: 0; }
+    .animate-gradient { background-size: 200% 200%; animation: gradient-shift 4s ease infinite; }
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .stagger-4 { animation-delay: 0.4s; }
+    .stagger-5 { animation-delay: 0.5s; }
+    .stagger-6 { animation-delay: 0.6s; }
+  </style>
 </head>
-<body class="bg-white text-black min-h-screen">
-    <nav class="fixed top-4 left-4 right-4 bg-white border-gray-200 rounded-lg z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-60 hover:opacity-100 transition-opacity">&larr; Back to Gallery</a>
-            <span class="font-medium">#18 Motion-Driven</span>
-            <div class="flex items-center gap-2">
-                <span class="text-xs font-medium opacity-80">EN</span>
-                <span class="opacity-30">|</span>
-                <a href="../../styles/motion-driven.html" class="text-xs opacity-50 hover:opacity-100">中文</a>
-            </div>
-        </div>
-    </nav>
+<body class="bg-white min-h-screen overflow-x-hidden">
 
-    <section class="pt-32 pb-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h1 class="text-7xl font-bold tracking-tight leading-none mb-8">Motion-Driven<br/>Design</h1>
-            <p class="text-xl max-w-xl leading-relaxed opacity-80">Design driven by animation and micro-interactions at its core, with every element having its own motion trajectory and rhythm.</p>
-        </div>
-    </section>
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="text-lg font-bold bg-gradient-to-r from-[#FF3B30] via-[#FFCC00] to-[#007AFF] bg-clip-text text-transparent animate-gradient">🎨 Design Gallery</a>
+      <div class="flex items-center gap-6 text-sm font-medium">
+        <a href="/" class="text-gray-500 hover:text-[#FF3B30] transition-colors">Back to Gallery</a>
+        <span class="px-3 py-1 rounded-full bg-[#007AFF] text-white font-bold">EN</span>
+        <a href="../../styles/motion-driven.html" class="text-gray-400 hover:text-[#007AFF] transition-colors">中文</a>
+      </div>
+    </div>
+  </nav>
 
-    <section class="py-20 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">01</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">Scroll Animation</h2>
-                    <p class="opacity-70">Elements progressively reveal with scrolling for a fluid narrative</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">02</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">Micro-interactions</h2>
-                    <p class="opacity-70">Every button click and hover has refined motion feedback</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">03</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">Transition Choreography</h2>
-                    <p class="opacity-70">Carefully choreographed page transitions guiding visual flow</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Hero -->
+  <section class="relative pt-32 pb-28 px-6 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-20 left-[15%] w-12 h-12 rounded-full bg-[#FF3B30] animate-bounce opacity-70" style="animation-duration: 1.4s;"></div>
+      <div class="absolute top-32 left-[25%] w-8 h-8 rounded-full bg-[#FFCC00] animate-bounce opacity-70" style="animation-duration: 1.8s; animation-delay: 0.3s;"></div>
+      <div class="absolute top-16 left-[38%] w-14 h-14 rounded-full bg-[#007AFF] animate-bounce opacity-70" style="animation-duration: 1.6s; animation-delay: 0.6s;"></div>
+      <div class="absolute top-24 left-[55%] w-10 h-10 rounded-full bg-[#34C759] animate-bounce opacity-70" style="animation-duration: 2s; animation-delay: 0.2s;"></div>
+      <div class="absolute top-40 left-[70%] w-16 h-16 rounded-full bg-[#FF3B30] animate-bounce opacity-50" style="animation-duration: 1.5s; animation-delay: 0.8s;"></div>
+      <div class="absolute top-20 left-[85%] w-9 h-9 rounded-full bg-[#FFCC00] animate-bounce opacity-70" style="animation-duration: 1.7s; animation-delay: 0.5s;"></div>
+    </div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <p class="text-sm font-bold tracking-widest uppercase text-[#FF3B30] mb-4 animate-slide-up stagger-1">Demo Style #18</p>
+      <h1 class="text-6xl md:text-7xl font-black mb-6 animate-slide-up stagger-2">
+        <span class="bg-gradient-to-r from-[#FF3B30] via-[#FFCC00] to-[#007AFF] bg-clip-text text-transparent animate-gradient">Motion-Driven</span>
+      </h1>
+      <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-10 animate-slide-up stagger-3 leading-relaxed">
+        Every element is alive — bouncing, floating, scaling, transitioning. Let users feel rhythm and energy as they browse.
+      </p>
+      <div class="flex gap-4 justify-center animate-slide-up stagger-4">
+        <a href="#features" class="px-8 py-4 bg-[#FF3B30] text-white font-bold rounded-full hover:scale-110 hover:shadow-xl transition-all duration-300">Explore Features</a>
+        <a href="#palette" class="px-8 py-4 bg-[#007AFF] text-white font-bold rounded-full hover:scale-110 hover:shadow-xl transition-all duration-300">View Palette</a>
+      </div>
+    </div>
+  </section>
 
-    <section class="py-20 px-6 bg-black/10">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-8">Color Palette</h3>
-            <div class="flex gap-4">
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #FF3B30;"></div>
-                    <p class="text-sm font-medium">Vivid Red</p>
-                    <p class="text-xs opacity-50">#FF3B30</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #FFCC00;"></div>
-                    <p class="text-sm font-medium">Sun Yellow</p>
-                    <p class="text-xs opacity-50">#FFCC00</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #007AFF;"></div>
-                    <p class="text-sm font-medium">Sky Blue</p>
-                    <p class="text-xs opacity-50">#007AFF</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #34C759;"></div>
-                    <p class="text-sm font-medium">Fresh Green</p>
-                    <p class="text-xs opacity-50">#34C759</p>
-                </div>
-            </div>
+  <!-- Features -->
+  <section id="features" class="py-24 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-black text-center mb-4 animate-slide-up stagger-1">Core Features</h2>
+      <p class="text-gray-400 text-center mb-16 animate-slide-up stagger-2">Hover over cards to feel the motion magic</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:scale-105 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 animate-slide-up stagger-2">
+          <div class="w-14 h-14 rounded-full bg-[#FF3B30]/10 flex items-center justify-center mb-6 animate-float">
+            <span class="text-3xl">⚡</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Spring Animations</h3>
+          <p class="text-gray-500 leading-relaxed">Every interaction carries smooth elastic transitions, making every click and hover delightful.</p>
         </div>
-    </section>
-
-    <section class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-12">Components</h3>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">Buttons</h4>
-                <div class="flex gap-4 items-center flex-wrap">
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#007AFF] text-white hover:bg-[#0062CC] scale-105 transition-transform">Primary Action</button>
-                    <button class="px-8 py-3 font-medium transition-colors border-2 border-[#007AFF] text-[#007AFF] hover:bg-[#007AFF] hover:text-white">Secondary</button>
-                    <button class="px-8 py-3 font-medium hover:opacity-60 transition-colors">Text Link &rarr;</button>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">Cards</h4>
-                <div class="grid grid-cols-3 gap-6">
-                    <div class="bg-white border-gray-200 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">Feature</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">Scroll Animation</h5>
-                        <p class="text-sm opacity-70">Elements progressively reveal with scrolling for a...</p>
-                    </div>
-                    <div class="bg-white border-gray-200 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">Feature</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">Micro-interactions</h5>
-                        <p class="text-sm opacity-70">Every button click and hover has refined motion fe...</p>
-                    </div>
-                    <div class="bg-white border-gray-200 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">Feature</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">Transition Choreography</h5>
-                        <p class="text-sm opacity-70">Carefully choreographed page transitions guiding v...</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">Form Elements</h4>
-                <div class="max-w-md">
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">Email</label>
-                        <input type="email" class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com">
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">Message</label>
-                        <textarea class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors h-32" placeholder="Your message..."></textarea>
-                    </div>
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#007AFF] text-white hover:bg-[#0062CC] scale-105 transition-transform">Submit</button>
-                </div>
-            </div>
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:scale-105 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 animate-slide-up stagger-3">
+          <div class="w-14 h-14 rounded-full bg-[#FFCC00]/10 flex items-center justify-center mb-6 animate-float" style="animation-delay: 0.5s;">
+            <span class="text-3xl">🎯</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Gradient Transitions</h3>
+          <p class="text-gray-500 leading-relaxed">Colors flow through gradients, creating dynamic visual focal points that guide attention naturally.</p>
         </div>
-    </section>
-
-    <section class="py-20 px-6 bg-black/20">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-2 gap-16">
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">Best For</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>Product Landing Pages</li>
-                        <li>Creative Agencies</li>
-                        <li>Interactive Stories</li>
-                        <li>Brand Showcases</li>
-                        <li>Portfolios</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">Characteristics</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>Dark Mode: Full</li>
-                        <li>Light Mode: Full</li>
-                        <li>Performance: Needs Optimization</li>
-                        <li>Accessibility: Motion-safe</li>
-                        <li>Complexity: Medium-High</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:scale-105 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 animate-slide-up stagger-4">
+          <div class="w-14 h-14 rounded-full bg-[#007AFF]/10 flex items-center justify-center mb-6 animate-float" style="animation-delay: 1s;">
+            <span class="text-3xl">🚀</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Staggered Timing</h3>
+          <p class="text-gray-500 leading-relaxed">Elements appear in staggered sequence, creating richly layered visual rhythm.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <footer class="py-8 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-50 hover:opacity-100">&larr; Back to Gallery</a>
-            <a href="inclusive-design.html" class="text-sm opacity-50 hover:opacity-100">Next: #19 &rarr;</a>
+  <!-- Color Palette -->
+  <section id="palette" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-black text-center mb-4">Color Palette</h2>
+      <p class="text-gray-400 text-center mb-16">Bright, bold, and energetic color scheme</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <div class="h-32 bg-[#FF3B30] flex items-end p-4"><span class="text-white font-bold text-lg">Vivid Red</span></div>
+          <div class="bg-white p-4"><p class="font-mono text-sm font-bold">#FF3B30</p><p class="text-gray-400 text-xs">Primary / CTA</p></div>
         </div>
-    </footer>
+        <div class="rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <div class="h-32 bg-[#FFCC00] flex items-end p-4"><span class="text-gray-900 font-bold text-lg">Sunny Yellow</span></div>
+          <div class="bg-white p-4"><p class="font-mono text-sm font-bold">#FFCC00</p><p class="text-gray-400 text-xs">Accent / Energy</p></div>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <div class="h-32 bg-[#007AFF] flex items-end p-4"><span class="text-white font-bold text-lg">Tech Blue</span></div>
+          <div class="bg-white p-4"><p class="font-mono text-sm font-bold">#007AFF</p><p class="text-gray-400 text-xs">Secondary / Trust</p></div>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <div class="h-32 bg-[#34C759] flex items-end p-4"><span class="text-white font-bold text-lg">Vibrant Green</span></div>
+          <div class="bg-white p-4"><p class="font-mono text-sm font-bold">#34C759</p><p class="text-gray-400 text-xs">Success / Positive</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
-      }
-    </script>
+  <!-- Components -->
+  <section class="py-24 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-black text-center mb-4">Component Showcase</h2>
+      <p class="text-gray-400 text-center mb-16">Buttons, cards, forms — every component is alive with motion</p>
+
+      <!-- Buttons -->
+      <div class="mb-20">
+        <h3 class="text-2xl font-bold mb-8 text-center">Buttons</h3>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <button class="px-8 py-4 bg-[#FF3B30] text-white font-bold rounded-full hover:scale-110 hover:shadow-xl transition-all duration-300">Primary</button>
+          <button class="px-8 py-4 bg-[#007AFF] text-white font-bold rounded-full hover:scale-110 hover:shadow-xl transition-all duration-300">Info</button>
+          <button class="px-8 py-4 bg-[#34C759] text-white font-bold rounded-full hover:scale-110 hover:shadow-xl transition-all duration-300">Success</button>
+          <button class="px-8 py-4 bg-[#FFCC00] text-gray-900 font-bold rounded-full hover:scale-110 hover:shadow-xl transition-all duration-300">Warning</button>
+          <button class="px-8 py-4 border-2 border-[#FF3B30] text-[#FF3B30] font-bold rounded-full hover:scale-110 hover:bg-[#FF3B30] hover:text-white transition-all duration-300">Outline</button>
+        </div>
+      </div>
+
+      <!-- Staggered Cards -->
+      <div class="mb-20">
+        <h3 class="text-2xl font-bold mb-8 text-center">Staggered Cards</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="rounded-2xl p-6 text-white font-bold text-center hover:scale-105 transition-all duration-300 cursor-pointer" style="background: linear-gradient(135deg, #FF3B30, #ff6b5e);">
+            <span class="text-4xl block mb-3">🔥</span>
+            <span class="text-lg">Red Card</span>
+          </div>
+          <div class="rounded-2xl p-6 text-gray-900 font-bold text-center hover:scale-105 transition-all duration-300 cursor-pointer" style="background: linear-gradient(135deg, #FFCC00, #ffe066);">
+            <span class="text-4xl block mb-3">⭐</span>
+            <span class="text-lg">Yellow Card</span>
+          </div>
+          <div class="rounded-2xl p-6 text-white font-bold text-center hover:scale-105 transition-all duration-300 cursor-pointer" style="background: linear-gradient(135deg, #007AFF, #5ea8ff);">
+            <span class="text-4xl block mb-3">💎</span>
+            <span class="text-lg">Blue Card</span>
+          </div>
+          <div class="rounded-2xl p-6 text-white font-bold text-center hover:scale-105 transition-all duration-300 cursor-pointer" style="background: linear-gradient(135deg, #34C759, #5edb7a);">
+            <span class="text-4xl block mb-3">🌿</span>
+            <span class="text-lg">Green Card</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated Form -->
+      <div>
+        <h3 class="text-2xl font-bold mb-8 text-center">Animated Form</h3>
+        <form class="max-w-lg mx-auto bg-white rounded-2xl shadow-lg p-8">
+          <div class="mb-6">
+            <label class="block text-sm font-bold text-gray-700 mb-2">Name</label>
+            <input type="text" placeholder="Enter your name" class="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:border-[#007AFF] focus:ring-4 focus:ring-[#007AFF]/20 outline-none transition-all duration-300">
+          </div>
+          <div class="mb-6">
+            <label class="block text-sm font-bold text-gray-700 mb-2">Email</label>
+            <input type="email" placeholder="Enter your email" class="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:border-[#FFCC00] focus:ring-4 focus:ring-[#FFCC00]/20 outline-none transition-all duration-300">
+          </div>
+          <div class="mb-6">
+            <label class="block text-sm font-bold text-gray-700 mb-2">Message</label>
+            <textarea rows="4" placeholder="Enter your message" class="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:border-[#34C759] focus:ring-4 focus:ring-[#34C759]/20 outline-none transition-all duration-300 resize-none"></textarea>
+          </div>
+          <button type="submit" class="w-full py-4 bg-gradient-to-r from-[#FF3B30] via-[#FFCC00] to-[#007AFF] animate-gradient text-white font-bold rounded-full hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+            Submit Message ✨
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animated Stats -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-black text-center mb-16">Animated Stats</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="hover:scale-110 transition-transform duration-300">
+          <div class="text-5xl font-black bg-gradient-to-r from-[#FF3B30] to-[#ff6b5e] bg-clip-text text-transparent mb-2">98%</div>
+          <div class="w-full h-2 bg-gray-200 rounded-full mt-3 overflow-hidden">
+            <div class="h-full bg-[#FF3B30] rounded-full" style="width: 98%; animation: progress-grow 1.5s ease-out;"></div>
+          </div>
+          <p class="text-gray-400 mt-3 text-sm font-medium">User Satisfaction</p>
+        </div>
+        <div class="hover:scale-110 transition-transform duration-300">
+          <div class="text-5xl font-black bg-gradient-to-r from-[#FFCC00] to-[#ffb800] bg-clip-text text-transparent mb-2">85%</div>
+          <div class="w-full h-2 bg-gray-200 rounded-full mt-3 overflow-hidden">
+            <div class="h-full bg-[#FFCC00] rounded-full" style="width: 85%; animation: progress-grow 1.5s ease-out;"></div>
+          </div>
+          <p class="text-gray-400 mt-3 text-sm font-medium">Engagement Boost</p>
+        </div>
+        <div class="hover:scale-110 transition-transform duration-300">
+          <div class="text-5xl font-black bg-gradient-to-r from-[#007AFF] to-[#5ea8ff] bg-clip-text text-transparent mb-2">72%</div>
+          <div class="w-full h-2 bg-gray-200 rounded-full mt-3 overflow-hidden">
+            <div class="h-full bg-[#007AFF] rounded-full" style="width: 72%; animation: progress-grow 1.5s ease-out;"></div>
+          </div>
+          <p class="text-gray-400 mt-3 text-sm font-medium">Conversion Growth</p>
+        </div>
+        <div class="hover:scale-110 transition-transform duration-300">
+          <div class="text-5xl font-black bg-gradient-to-r from-[#34C759] to-[#5edb7a] bg-clip-text text-transparent mb-2">64%</div>
+          <div class="w-full h-2 bg-gray-200 rounded-full mt-3 overflow-hidden">
+            <div class="h-full bg-[#34C759] rounded-full" style="width: 64%; animation: progress-grow 1.5s ease-out;"></div>
+          </div>
+          <p class="text-gray-400 mt-3 text-sm font-medium">Retention Increase</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best For -->
+  <section class="py-24 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-black text-center mb-4">Best For</h2>
+      <p class="text-gray-400 text-center mb-16">Motion-driven design excels in these scenarios</p>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div class="bg-white rounded-2xl p-6 text-center hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-md">
+          <span class="text-4xl block mb-3">🎮</span>
+          <span class="font-bold text-sm">Gaming</span>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-md">
+          <span class="text-4xl block mb-3">🎵</span>
+          <span class="font-bold text-sm">Music</span>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-md">
+          <span class="text-4xl block mb-3">🎬</span>
+          <span class="font-bold text-sm">Entertainment</span>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-md">
+          <span class="text-4xl block mb-3">👶</span>
+          <span class="font-bold text-sm">Kids Education</span>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-md">
+          <span class="text-4xl block mb-3">🛍️</span>
+          <span class="font-bold text-sm">E-Commerce</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Characteristics -->
+  <section class="py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-black text-center mb-16">Characteristics</h2>
+      <div class="space-y-6">
+        <div class="flex items-center gap-4 p-6 bg-gray-50 rounded-2xl hover:scale-[1.02] transition-all duration-300">
+          <span class="text-3xl">🎯</span>
+          <div>
+            <h3 class="font-bold text-lg">Animation-Driven Interaction</h3>
+            <p class="text-gray-500 text-sm">Every interaction triggers animated feedback, making the interface feel alive</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 p-6 bg-gray-50 rounded-2xl hover:scale-[1.02] transition-all duration-300">
+          <span class="text-3xl">🌈</span>
+          <div>
+            <h3 class="font-bold text-lg">Bold Vibrant Colors</h3>
+            <p class="text-gray-500 text-sm">High-saturation bright colors create an energetic and positive atmosphere</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 p-6 bg-gray-50 rounded-2xl hover:scale-[1.02] transition-all duration-300">
+          <span class="text-3xl">✨</span>
+          <div>
+            <h3 class="font-bold text-lg">Flowing Gradient Effects</h3>
+            <p class="text-gray-500 text-sm">Colors continuously shift through gradients, creating visual focal points</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 p-6 bg-gray-50 rounded-2xl hover:scale-[1.02] transition-all duration-300">
+          <span class="text-3xl">📐</span>
+          <div>
+            <h3 class="font-bold text-lg">Staggered Timing</h3>
+            <p class="text-gray-500 text-sm">Elements appear in sequence, establishing a visual rhythm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-16 px-6 bg-gray-900 text-white">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="text-gray-400 text-sm">Style #18 — Motion-Driven</p>
+        <p class="text-gray-500 text-xs mt-1">Animated & energetic design</p>
+      </div>
+      <div class="flex gap-4">
+        <a href="/zh/styles/hero-centric.html" class="px-6 py-3 bg-white/10 rounded-full text-sm font-medium hover:bg-white/20 hover:scale-105 transition-all duration-300">← Previous Style</a>
+        <a href="/zh/styles/inclusive-design.html" class="px-6 py-3 bg-[#FF3B30] rounded-full text-sm font-medium hover:bg-[#ff5b52] hover:scale-105 transition-all duration-300">Next Style →</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

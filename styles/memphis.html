@@ -1,177 +1,184 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>孟菲斯复兴 - UI Style #29</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * { font-family: 'Inter', sans-serif; }
-    </style>
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Design Gallery">
-    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>孟菲斯复兴 — 设计风格画廊</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&display=swap');
+  body { font-family: 'Noto Sans SC', sans-serif; }
+  .memphis-dot { background: radial-gradient(circle, #FFE66D 30%, #FF6B6B 70%); }
+  .squiggle { position: relative; }
+  .squiggle::after { content: ''; position: absolute; bottom: -8px; left: 10%; width: 80%; height: 4px; background: repeating-linear-gradient(90deg, #4ECDC4 0px, #4ECDC4 8px, transparent 8px, transparent 16px); }
+  .irregular-card { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+</style>
 </head>
-<body class="bg-white text-black min-h-screen">
-    <nav class="fixed top-4 left-4 right-4 bg-white border-black border-2 rounded-lg z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-60 hover:opacity-100 transition-opacity">&larr; 返回画廊</a>
-            <span class="font-medium">#29 孟菲斯复兴</span>
-            <div class="flex items-center gap-2">
-                <a href="../zh/styles/memphis.html" class="text-xs opacity-50 hover:opacity-100">EN</a>
-                <span class="opacity-30">|</span>
-                <span class="text-xs font-medium opacity-80">中文</span>
-            </div>
-        </div>
-    </nav>
+<body class="bg-white min-h-screen">
 
-    <section class="pt-32 pb-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h1 class="text-7xl font-bold tracking-tight leading-none mb-8">孟菲斯<br/>复兴</h1>
-            <p class="text-xl max-w-xl leading-relaxed opacity-80">复兴 1980 年代孟菲斯设计集团的标志性风格，大胆的几何图形、波普色彩和玩乐精神。</p>
-        </div>
-    </section>
+<!-- 导航栏 -->
+<nav class="sticky top-0 z-50 bg-white border-2 border-black px-6 py-4 flex items-center justify-between">
+  <div class="flex items-center gap-3">
+    <div class="w-10 h-10 border-2 border-black flex items-center justify-center" style="background: #FF6B6B; transform: rotate(-6deg);">
+      <span class="text-white text-lg font-black">M</span>
+    </div>
+    <span class="text-2xl font-black text-black tracking-tight">孟菲斯复兴</span>
+  </div>
+  <div class="hidden md:flex gap-8">
+    <a href="#" class="text-black font-bold hover:text-[#FF6B6B] transition-colors">首页</a>
+    <a href="#" class="text-black font-bold hover:text-[#4ECDC4] transition-colors">特色</a>
+    <a href="#" class="text-black font-bold hover:text-[#A388EE] transition-colors">色彩</a>
+    <a href="#" class="text-black font-bold hover:text-[#FFE66D] transition-colors">联系</a>
+  </div>
+  <button class="border-2 border-black px-6 py-2 font-black text-black hover:bg-black hover:text-white transition-all" style="transform: rotate(1deg);">开始探索</button>
+</nav>
 
-    <section class="py-20 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">01</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">几何拼贴</h2>
-                    <p class="opacity-70">圆形、三角形、波浪线等几何元素自由组合</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">02</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">波普色彩</h2>
-                    <p class="opacity-70">高饱和度、高对比度的配色方案，充满活力</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">03</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">玩乐精神</h2>
-                    <p class="opacity-70">打破网格限制，元素可以旋转、重叠、不规则排列</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Hero 区域 -->
+<header class="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
+  <!-- 装饰性几何形状 -->
+  <div class="absolute top-16 left-10 w-32 h-32 border-2 border-black rounded-full" style="background: #FFE66D; transform: rotate(-15deg);"></div>
+  <div class="absolute top-32 right-20 w-20 h-20 border-2 border-black" style="background: #FF6B6B; transform: rotate(25deg);"></div>
+  <div class="absolute top-1/3 left-20 w-24 h-24 border-2 border-black rounded-full" style="background: #4ECDC4;"></div>
+  <div class="absolute bottom-32 right-16 w-28 h-28 border-2 border-black" style="background: #A388EE; transform: rotate(12deg);"></div>
+  <div class="absolute bottom-20 left-1/3 w-16 h-16 border-2 border-black rounded-full" style="background: #FF6B6B; transform: rotate(-8deg);"></div>
+  <div class="absolute top-1/4 right-1/3 w-12 h-40 border-2 border-black" style="background: #FFE66D; transform: rotate(45deg);"></div>
+  <!-- 波浪线 -->
+  <div class="absolute top-20 left-1/2 w-40 opacity-80" style="transform: rotate(-10deg);">
+    <svg viewBox="0 0 200 40"><path d="M10,20 Q30,5 50,20 T90,20 T130,20 T170,20 T190,20" fill="none" stroke="#FF6B6B" stroke-width="4"/></svg>
+  </div>
+  <div class="absolute bottom-40 right-1/4 w-40 opacity-80" style="transform: rotate(15deg);">
+    <svg viewBox="0 0 200 40"><path d="M10,20 Q30,5 50,20 T90,20 T130,20 T170,20 T190,20" fill="none" stroke="#4ECDC4" stroke-width="4"/></svg>
+  </div>
 
-    <section class="py-20 px-6 bg-black/10">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-8">色彩方案</h3>
-            <div class="flex gap-4">
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #FF6B6B;"></div>
-                    <p class="text-sm font-medium">珊瑚红</p>
-                    <p class="text-xs opacity-50">#FF6B6B</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #4ECDC4;"></div>
-                    <p class="text-sm font-medium">青绿</p>
-                    <p class="text-xs opacity-50">#4ECDC4</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #FFE66D;"></div>
-                    <p class="text-sm font-medium">明黄</p>
-                    <p class="text-xs opacity-50">#FFE66D</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #A388EE;"></div>
-                    <p class="text-sm font-medium">紫罗兰</p>
-                    <p class="text-xs opacity-50">#A388EE</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="relative z-10 text-center max-w-4xl mx-auto">
+    <div class="inline-block border-2 border-black px-8 py-3 mb-8" style="background: #A388EE; transform: rotate(-2deg);">
+      <span class="text-white font-black text-lg">🎨 大胆 · 多彩 · 打破规则</span>
+    </div>
+    <h1 class="text-6xl md:text-9xl font-black text-black mb-8 leading-none" style="text-shadow: 6px 6px 0 #FFE66D;">
+      孟菲斯<br>复兴
+    </h1>
+    <p class="text-xl md:text-2xl text-black font-bold mb-10 max-w-2xl mx-auto" style="transform: rotate(0.5deg);">
+      拒绝极简 · 拥抱色彩 · 几何即是语言
+    </p>
+    <div class="flex gap-4 justify-center">
+      <button class="border-2 border-black px-10 py-4 font-black text-black text-lg hover:bg-black hover:text-white transition-all" style="background: #FF6B6B; transform: rotate(-1deg);">探索更多</button>
+      <button class="border-2 border-black px-10 py-4 font-black text-black text-lg hover:bg-black hover:text-white transition-all" style="background: #4ECDC4; transform: rotate(1deg);">了解更多</button>
+    </div>
+  </div>
+</header>
 
-    <section class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-12">组件示例</h3>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">按钮</h4>
-                <div class="flex gap-4 items-center flex-wrap">
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#FF6B6B] text-white hover:bg-[#E55A5A] border-2 border-black">主要操作</button>
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#4ECDC4] text-white hover:bg-[#3DBDB5] border-2 border-black">次要操作</button>
-                    <button class="px-8 py-3 font-medium hover:opacity-60 transition-colors">文字链接 &rarr;</button>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">卡片</h4>
-                <div class="grid grid-cols-3 gap-6">
-                    <div class="bg-white border-black border-2 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">几何拼贴</h5>
-                        <p class="text-sm opacity-70">圆形、三角形、波浪线等几何元素自由组合...</p>
-                    </div>
-                    <div class="bg-white border-black border-2 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">波普色彩</h5>
-                        <p class="text-sm opacity-70">高饱和度、高对比度的配色方案，充满活力...</p>
-                    </div>
-                    <div class="bg-white border-black border-2 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">玩乐精神</h5>
-                        <p class="text-sm opacity-70">打破网格限制，元素可以旋转、重叠、不规则排列...</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">表单元素</h4>
-                <div class="max-w-md">
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">邮箱</label>
-                        <input type="email" class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com">
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">留言</label>
-                        <textarea class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors h-32" placeholder="您的留言..."></textarea>
-                    </div>
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#FF6B6B] text-white hover:bg-[#E55A5A] border-2 border-black">提交</button>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- 特色区域 -->
+<section class="py-24 px-4 relative overflow-hidden">
+  <!-- 背景装饰 -->
+  <div class="absolute top-0 left-0 w-full h-full opacity-5">
+    <div class="absolute top-10 left-10 w-64 h-64 border-2 border-black rounded-full" style="background: #FFE66D;"></div>
+    <div class="absolute bottom-10 right-10 w-48 h-48 border-2 border-black" style="background: #A388EE; transform: rotate(30deg);"></div>
+  </div>
 
-    <section class="py-20 px-6 bg-black/20">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-2 gap-16">
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">最佳适用</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>创意品牌</li>
-                        <li>儿童产品</li>
-                        <li>艺术平台</li>
-                        <li>音乐节</li>
-                        <li>设计工作室</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">特性</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>深色模式: 部分支持</li>
-                        <li>浅色模式: 完全支持</li>
-                        <li>性能: 良好</li>
-                        <li>无障碍: WCAG A</li>
-                        <li>复杂度: 中</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="max-w-6xl mx-auto relative z-10">
+    <h2 class="text-6xl font-black text-center text-black mb-4 squiggle inline-block w-full">🎯 玩味特色</h2>
+    <p class="text-center text-black/70 text-lg font-bold mb-16">不规则的、充满活力的、拒绝无聊的设计</p>
 
-    <footer class="py-8 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-50 hover:opacity-100">&larr; 返回画廊</a>
-            <a href=".html" class="text-sm opacity-50 hover:opacity-100">下一页: #30 &rarr;</a>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- 卡片 1 -->
+      <div class="relative group" style="transform: rotate(-2deg);">
+        <div class="border-2 border-black p-8 transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_#FF6B6B]" style="background: #FFE66D;">
+          <div class="w-20 h-20 border-2 border-black flex items-center justify-center mb-6 mx-auto" style="background: white; transform: rotate(6deg);">
+            <span class="text-4xl">🔺</span>
+          </div>
+          <h3 class="text-2xl font-black text-black text-center mb-4">几何狂想</h3>
+          <p class="text-black/80 text-center font-bold leading-relaxed">三角形、圆形、波浪线——几何元素的大胆组合，打破传统网格的束缚。</p>
         </div>
-    </footer>
+      </div>
 
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
-      }
-    </script>
+      <!-- 卡片 2 -->
+      <div class="relative group" style="transform: rotate(2deg);">
+        <div class="border-2 border-black p-8 transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_#4ECDC4]" style="background: #FF6B6B;">
+          <div class="w-20 h-20 border-2 border-black flex items-center justify-center mb-6 mx-auto" style="background: white; transform: rotate(-4deg);">
+            <span class="text-4xl">🎨</span>
+          </div>
+          <h3 class="text-2xl font-black text-white text-center mb-4">撞色冲击</h3>
+          <p class="text-white/90 text-center font-bold leading-relaxed">珊瑚红与青绿色的碰撞，黄与紫的对比，色彩就是态度。</p>
+        </div>
+      </div>
+
+      <!-- 卡片 3 -->
+      <div class="relative group" style="transform: rotate(-1deg);">
+        <div class="border-2 border-black p-8 transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_#A388EE]" style="background: #4ECDC4;">
+          <div class="w-20 h-20 border-2 border-black flex items-center justify-center mb-6 mx-auto" style="background: white; transform: rotate(8deg);">
+            <span class="text-4xl">⚡</span>
+          </div>
+          <h3 class="text-2xl font-black text-black text-center mb-4">打破规则</h3>
+          <p class="text-black/80 text-center font-bold leading-relaxed">不对称布局、旋转元素、重叠形状——完美的不完美才是真正的设计。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 色彩调色板 -->
+<section class="py-24 px-4" style="background: repeating-linear-gradient(45deg, #FFF 0px, #FFF 10px, #FFE66D 10px, #FFE66D 11px);">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-6xl font-black text-center text-black mb-4">🎨 大胆色彩</h2>
+    <p class="text-center text-black/70 text-lg font-bold mb-16">80年代的色彩态度</p>
+
+    <div class="flex flex-wrap justify-center gap-8">
+      <div class="flex flex-col items-center gap-4 group">
+        <div class="w-32 h-32 border-2 border-black shadow-[6px_6px_0_#000] transition-all duration-300 group-hover:scale-110 group-hover:shadow-[10px_10px_0_#000]" style="background: #FF6B6B; transform: rotate(-3deg);"></div>
+        <span class="text-black font-black text-sm">珊瑚红</span>
+        <code class="text-xs px-2 py-1 border-2 border-black bg-white font-bold">#FF6B6B</code>
+      </div>
+      <div class="flex flex-col items-center gap-4 group">
+        <div class="w-32 h-32 border-2 border-black shadow-[6px_6px_0_#000] transition-all duration-300 group-hover:scale-110 group-hover:shadow-[10px_10px_0_#000]" style="background: #4ECDC4; transform: rotate(2deg);"></div>
+        <span class="text-black font-black text-sm">青绿</span>
+        <code class="text-xs px-2 py-1 border-2 border-black bg-white font-bold">#4ECDC4</code>
+      </div>
+      <div class="flex flex-col items-center gap-4 group">
+        <div class="w-32 h-32 border-2 border-black shadow-[6px_6px_0_#000] transition-all duration-300 group-hover:scale-110 group-hover:shadow-[10px_10px_0_#000]" style="background: #FFE66D; transform: rotate(-4deg);"></div>
+        <span class="text-black font-black text-sm">明黄</span>
+        <code class="text-xs px-2 py-1 border-2 border-black bg-white font-bold">#FFE66D</code>
+      </div>
+      <div class="flex flex-col items-center gap-4 group">
+        <div class="w-32 h-32 border-2 border-black shadow-[6px_6px_0_#000] transition-all duration-300 group-hover:scale-110 group-hover:shadow-[10px_10px_0_#000]" style="background: #A388EE; transform: rotate(3deg);"></div>
+        <span class="text-black font-black text-sm">紫罗兰</span>
+        <code class="text-xs px-2 py-1 border-2 border-black bg-white font-bold">#A388EE</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 联系表单 -->
+<section class="py-24 px-4 relative">
+  <div class="absolute top-10 right-20 w-20 h-20 border-2 border-black rounded-full" style="background: #FFE66D; transform: rotate(20deg);"></div>
+  <div class="absolute bottom-10 left-20 w-16 h-16 border-2 border-black" style="background: #FF6B6B; transform: rotate(-15deg);"></div>
+
+  <div class="max-w-2xl mx-auto relative z-10">
+    <h2 class="text-6xl font-black text-center text-black mb-4">💌 联系我们</h2>
+    <p class="text-center text-black/70 text-lg font-bold mb-12">用你的色彩填满这个世界</p>
+
+    <form class="space-y-6" style="transform: rotate(-0.5deg);">
+      <div class="flex gap-4">
+        <input type="text" placeholder="你的名字" class="flex-1 border-2 border-black px-6 py-4 font-bold text-black placeholder-black/40 bg-white focus:outline-none focus:shadow-[4px_4px_0_#FF6B6B] transition-all">
+        <input type="email" placeholder="电子邮箱" class="flex-1 border-2 border-black px-6 py-4 font-bold text-black placeholder-black/40 bg-white focus:outline-none focus:shadow-[4px_4px_0_#4ECDC4] transition-all">
+      </div>
+      <textarea rows="5" placeholder="你的留言..." class="w-full border-2 border-black px-6 py-4 font-bold text-black placeholder-black/40 bg-white focus:outline-none focus:shadow-[4px_4px_0_#A388EE] transition-all resize-none"></textarea>
+      <div class="text-center">
+        <button type="submit" class="border-2 border-black px-12 py-4 font-black text-black text-lg hover:bg-black hover:text-white transition-all" style="background: #FFE66D; transform: rotate(1deg);">🎉 发送消息</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="py-12 border-t-2 border-black" style="background: repeating-linear-gradient(-45deg, #FFF 0px, #FFF 8px, #4ECDC4 8px, #4ECDC4 9px);">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <div class="w-14 h-14 border-2 border-black flex items-center justify-center mx-auto mb-4" style="background: #FFE66D; transform: rotate(-6deg);">
+      <span class="text-black text-xl font-black">M</span>
+    </div>
+    <p class="text-black font-black">孟菲斯复兴 · 设计风格画廊</p>
+    <p class="text-black/60 text-sm font-bold mt-2">打破规则，重塑色彩</p>
+  </div>
+</footer>
+
 </body>
 </html>

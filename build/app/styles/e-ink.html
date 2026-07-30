@@ -1,177 +1,156 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>电子墨水纸 - UI Style #25</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * { font-family: 'Inter', sans-serif; }
-    </style>
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Design Gallery">
-    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Ink 纸张风格页面</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+  * { font-family: 'Noto Serif SC', 'Georgia', 'Times New Roman', serif; }
+  body { background-color: #F8F4E6; color: #2C2C2C; }
+  .ink-divider { border: none; border-top: 1px solid #8B8680; width: 40px; margin: 2rem 0; }
+  .paper-input { background: transparent; border: none; border-bottom: 1px solid #8B8680; border-radius: 0; padding: 0.5rem 0; font-family: inherit; color: #2C2C2C; }
+  .paper-input:focus { outline: none; border-bottom-color: #2C2C2C; }
+  .paper-input::placeholder { color: #8B8680; font-style: italic; }
+  .paper-btn { background: transparent; border: 1px solid #8B8680; color: #2C2C2C; padding: 0.6rem 2rem; font-family: inherit; cursor: pointer; transition: all 0.3s; }
+  .paper-btn:hover { background: #2C2C2C; color: #F8F4E6; border-color: #2C2C2C; }
+  .paper-card { background: #F8F4E6; border: 1px solid rgba(139,134,128,0.2); box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+  .paper-shadow { box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .byline { font-style: italic; color: #8B8680; }
+  .numbered::before { counter-increment: section; content: counter(section, decimal-leading-zero) ". "; color: #8B8680; font-size: 0.85rem; }
+  .toc-line { border-bottom: 1px dotted rgba(139,134,128,0.4); }
+</style>
 </head>
-<body class="bg-[#F8F4E6] text-[#2C2C2C] min-h-screen">
-    <nav class="fixed top-4 left-4 right-4 bg-white border-[#D4C9B8] rounded-lg z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-60 hover:opacity-100 transition-opacity">&larr; 返回画廊</a>
-            <span class="font-medium">#25 电子墨水纸</span>
-            <div class="flex items-center gap-2">
-                <a href="../zh/styles/e-ink.html" class="text-xs opacity-50 hover:opacity-100">EN</a>
-                <span class="opacity-30">|</span>
-                <span class="text-xs font-medium opacity-80">中文</span>
-            </div>
-        </div>
-    </nav>
+<body class="min-h-screen leading-relaxed tracking-wide">
 
-    <section class="pt-32 pb-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h1 class="text-7xl font-bold tracking-tight leading-none mb-8">电子墨水<br/>纸</h1>
-            <p class="text-xl max-w-xl leading-relaxed opacity-80">模拟电子墨水屏的阅读体验，纸质纹理背景、低对比度色彩，营造宁静舒适的阅读环境。</p>
-        </div>
-    </section>
+<!-- Navigation -->
+<nav class="max-w-2xl mx-auto px-8 py-8 flex items-center justify-between text-sm">
+  <span class="text-[#8B8680] tracking-[0.2em] uppercase text-xs">Design Gallery</span>
+  <div class="flex items-center gap-4">
+    <a href="../index.html" class="text-[#8B8680] hover:text-[#2C2C2C] transition-colors">← 返回画廊</a>
+    <span class="text-[#2C2C2C] border-b border-[#2C2C2C]">中文</span>
+    <span class="text-[#8B8680]">/</span>
+    <a href="../zh/styles/e-ink.html" class="text-[#8B8680] hover:text-[#2C2C2C] transition-colors">EN</a>
+  </div>
+</nav>
 
-    <section class="py-20 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">01</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">纸张质感</h2>
-                    <p class="opacity-70">温暖的米色背景模拟真实纸张，降低屏幕对眼睛的刺激</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">02</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">衬线字体</h2>
-                    <p class="opacity-70">使用优雅的衬线字体，还原传统印刷品的阅读节奏</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">03</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">极简布局</h2>
-                    <p class="opacity-70">单栏布局、宽边距、大行距，专注内容本身</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Hero -->
+<section class="max-w-2xl mx-auto px-8 mt-12">
+  <p class="text-[#8B8680] text-xs tracking-[0.3em] uppercase mb-6">设计风格 · 第二十五号</p>
+  <h1 class="text-5xl md:text-6xl font-bold mb-4 tracking-tight leading-tight">电子墨水</h1>
+  <p class="byline text-lg mb-6">— 纸张质感设计系统 —</p>
+  <p class="text-[#8B8680] text-base leading-relaxed max-w-lg">
+    以纸张为灵感的阅读体验。温暖色调，衬线字体，克制装饰，让内容回归本质。
+  </p>
+  <div class="ink-divider"></div>
+  <div class="flex gap-3 text-xs text-[#8B8680]">
+    <span class="border border-[#8B8680]/30 px-3 py-1">纸张质感</span>
+    <span class="border border-[#8B8680]/30 px-3 py-1">衬线字体</span>
+    <span class="border border-[#8B8680]/30 px-3 py-1">阅读体验</span>
+  </div>
+</section>
 
-    <section class="py-20 px-6 bg-black/10">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-8">色彩方案</h3>
-            <div class="flex gap-4">
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #F8F4E6;"></div>
-                    <p class="text-sm font-medium">纸张白</p>
-                    <p class="text-xs opacity-50">#F8F4E6</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #2C2C2C;"></div>
-                    <p class="text-sm font-medium">墨水黑</p>
-                    <p class="text-xs opacity-50">#2C2C2C</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #D4C9B8;"></div>
-                    <p class="text-sm font-medium">浅褐</p>
-                    <p class="text-xs opacity-50">#D4C9B8</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #8B8680;"></div>
-                    <p class="text-sm font-medium">暖灰</p>
-                    <p class="text-xs opacity-50">#8B8680</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Features - Table of Contents Style -->
+<section class="max-w-2xl mx-auto px-8 mt-16">
+  <h2 class="text-sm font-bold tracking-[0.3em] uppercase text-[#8B8680] mb-8">特色功能</h2>
+  <div class="space-y-5" style="counter-reset: section;">
+    <div class="toc-line flex items-center justify-between pb-3">
+      <h3 class="numbered text-base font-medium">纸张质感</h3>
+      <span class="text-[#8B8680] text-xs">温暖米色背景，柔和视觉对比度</span>
+    </div>
+    <div class="toc-line flex items-center justify-between pb-3">
+      <h3 class="numbered text-base font-medium">衬线排版</h3>
+      <span class="text-[#8B8680] text-xs">思源宋体，优雅阅读节奏</span>
+    </div>
+    <div class="toc-line flex items-center justify-between pb-3">
+      <h3 class="numbered text-base font-medium">书籍布局</h3>
+      <span class="text-[#8B8680] text-xs">单栏排版，宽裕间距，舒适行高</span>
+    </div>
+    <div class="toc-line flex items-center justify-between pb-3">
+      <h3 class="numbered text-base font-medium">克制装饰</h3>
+      <span class="text-[#8B8680] text-xs">极简设计，让内容自己说话</span>
+    </div>
+  </div>
+</section>
 
-    <section class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-12">组件示例</h3>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">按钮</h4>
-                <div class="flex gap-4 items-center flex-wrap">
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#2C2C2C] text-[#F8F4E6] hover:bg-black border border-[#2C2C2C]">主要操作</button>
-                    <button class="px-8 py-3 font-medium transition-colors border border-[#2C2C2C] text-[#2C2C2C] hover:bg-[#2C2C2C] hover:text-[#F8F4E6]">次要操作</button>
-                    <button class="px-8 py-3 font-medium hover:opacity-60 transition-colors">文字链接 &rarr;</button>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">卡片</h4>
-                <div class="grid grid-cols-3 gap-6">
-                    <div class="bg-white border-[#D4C9B8] p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">纸张质感</h5>
-                        <p class="text-sm opacity-70">温暖的米色背景模拟真实纸张，降低屏幕对眼睛的刺激...</p>
-                    </div>
-                    <div class="bg-white border-[#D4C9B8] p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">衬线字体</h5>
-                        <p class="text-sm opacity-70">使用优雅的衬线字体，还原传统印刷品的阅读节奏...</p>
-                    </div>
-                    <div class="bg-white border-[#D4C9B8] p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">极简布局</h5>
-                        <p class="text-sm opacity-70">单栏布局、宽边距、大行距，专注内容本身...</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">表单元素</h4>
-                <div class="max-w-md">
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">邮箱</label>
-                        <input type="email" class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com">
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">留言</label>
-                        <textarea class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors h-32" placeholder="您的留言..."></textarea>
-                    </div>
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#2C2C2C] text-[#F8F4E6] hover:bg-black border border-[#2C2C2C]">提交</button>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Color Palette -->
+<section class="max-w-2xl mx-auto px-8 mt-16">
+  <h2 class="text-sm font-bold tracking-[0.3em] uppercase text-[#8B8680] mb-8">调色板</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="paper-card p-5">
+      <div class="w-full h-16 bg-[#F8F4E6] border border-[#8B8680]/20 mb-3"></div>
+      <p class="text-sm font-medium">纸白</p>
+      <p class="text-xs text-[#8B8680]">Paper Beige</p>
+      <p class="text-xs text-[#8B8680]">#F8F4E6</p>
+    </div>
+    <div class="paper-card p-5">
+      <div class="w-full h-16 bg-[#2C2C2C] mb-3"></div>
+      <p class="text-sm font-medium">墨黑</p>
+      <p class="text-xs text-[#8B8680]">Ink Black</p>
+      <p class="text-xs text-[#8B8680]">#2C2C2C</p>
+    </div>
+    <div class="paper-card p-5">
+      <div class="w-full h-16 bg-[#8B8680] mb-3"></div>
+      <p class="text-sm font-medium">暖灰</p>
+      <p class="text-xs text-[#8B8680]">Warm Grey</p>
+      <p class="text-xs text-[#8B8680]">#8B8680</p>
+    </div>
+  </div>
+</section>
 
-    <section class="py-20 px-6 bg-black/20">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-2 gap-16">
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">最佳适用</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>电子书阅读器</li>
-                        <li>长文阅读</li>
-                        <li>学术期刊</li>
-                        <li>文学博客</li>
-                        <li>知识库</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">特性</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>深色模式: 完全支持</li>
-                        <li>浅色模式: 完全支持</li>
-                        <li>性能: 极佳</li>
-                        <li>无障碍: WCAG AAA</li>
-                        <li>复杂度: 低</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Cards - Book Page Style -->
+<section class="max-w-2xl mx-auto px-8 mt-16">
+  <h2 class="text-sm font-bold tracking-[0.3em] uppercase text-[#8B8680] mb-8">卡片</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="paper-card paper-shadow p-8">
+      <p class="text-xs text-[#8B8680] tracking-[0.2em] uppercase mb-4">第一章</p>
+      <h3 class="text-xl font-bold mb-3 leading-snug">阅读的仪式感</h3>
+      <p class="text-[#8B8680] text-sm leading-relaxed">在数字时代，我们依然怀念纸张的触感。翻页的沙沙声，油墨的淡淡香气，以及书页边缘微微泛黄的痕迹。</p>
+      <p class="text-[#8B8680] text-xs mt-4 italic">— 设计笔记</p>
+    </div>
+    <div class="paper-card paper-shadow p-8">
+      <p class="text-xs text-[#8B8680] tracking-[0.2em] uppercase mb-4">第二章</p>
+      <h3 class="text-xl font-bold mb-3 leading-snug">留白的艺术</h3>
+      <p class="text-[#8B8680] text-sm leading-relaxed">好的设计不在于填满每一寸空间，而在于知道何时留白。空白不是浪费，是对内容的尊重，是呼吸的节奏。</p>
+      <p class="text-[#8B8680] text-xs mt-4 italic">— 设计笔记</p>
+    </div>
+  </div>
+</section>
 
-    <footer class="py-8 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-50 hover:opacity-100">&larr; 返回画廊</a>
-            <a href="spatial-ui.html" class="text-sm opacity-50 hover:opacity-100">下一页: #26 &rarr;</a>
-        </div>
-    </footer>
+<!-- Buttons -->
+<section class="max-w-2xl mx-auto px-8 mt-16">
+  <h2 class="text-sm font-bold tracking-[0.3em] uppercase text-[#8B8680] mb-8">按钮</h2>
+  <div class="flex flex-wrap gap-4">
+    <button class="paper-btn">继续阅读</button>
+    <button class="paper-btn" style="border-color: #2C2C2C; background: #2C2C2C; color: #F8F4E6;">加入书架</button>
+    <button class="paper-btn" style="opacity: 0.4; pointer-events: none;">已完结</button>
+  </div>
+</section>
 
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
-      }
-    </script>
+<!-- Form -->
+<section class="max-w-2xl mx-auto px-8 mt-16 mb-16">
+  <h2 class="text-sm font-bold tracking-[0.3em] uppercase text-[#8B8680] mb-8">订阅</h2>
+  <div class="paper-card paper-shadow p-8 max-w-md">
+    <div class="space-y-6">
+      <div>
+        <label class="text-xs text-[#8B8680] tracking-[0.2em] uppercase block mb-3">姓名</label>
+        <input type="text" placeholder="您的姓名" class="paper-input w-full">
+      </div>
+      <div>
+        <label class="text-xs text-[#8B8680] tracking-[0.2em] uppercase block mb-3">邮箱</label>
+        <input type="email" placeholder="your@email.com" class="paper-input w-full">
+      </div>
+      <button class="paper-btn w-full">订阅更新</button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="max-w-2xl mx-auto px-8 pb-12 text-center">
+  <div class="ink-divider" style="margin: 0 auto 2rem;"></div>
+  <p class="text-xs text-[#8B8680]">Design Gallery · E-Ink Paper · 2026</p>
+  <p class="text-xs text-[#8B8680] mt-1 italic">印刷于数字纸张之上</p>
+</footer>
 </body>
 </html>

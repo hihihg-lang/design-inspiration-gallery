@@ -1,177 +1,221 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>零界面 - UI Style #20</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * { font-family: 'Inter', sans-serif; }
-    </style>
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Design Gallery">
-    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="/manifest.json">
+  <title>20. 零界面 — 设计风格画廊</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-black min-h-screen">
-    <nav class="fixed top-4 left-4 right-4 bg-white border-gray-100 rounded-lg z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-60 hover:opacity-100 transition-opacity">&larr; 返回画廊</a>
-            <span class="font-medium">#20 零界面</span>
-            <div class="flex items-center gap-2">
-                <a href="../zh/styles/zero-ui.html" class="text-xs opacity-50 hover:opacity-100">EN</a>
-                <span class="opacity-30">|</span>
-                <span class="text-xs font-medium opacity-80">中文</span>
-            </div>
-        </div>
-    </nav>
+<body class="bg-white min-h-screen">
 
-    <section class="pt-32 pb-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h1 class="text-7xl font-bold tracking-tight leading-none mb-8">零界面<br/>设计</h1>
-            <p class="text-xl max-w-xl leading-relaxed opacity-80">界面消失于无形，让内容成为主角。最小化视觉元素，最大化内容沉浸感。</p>
-        </div>
-    </section>
+  <!-- Nav - minimal, almost hidden -->
+  <nav class="w-full py-8 px-12">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-sm tracking-wide text-gray-400 hover:text-gray-600 transition-colors">设计画廊</a>
+      <div class="flex items-center gap-8 text-sm tracking-wide">
+        <a href="/" class="text-gray-400 hover:text-gray-600 transition-colors">返回画廊</a>
+        <span class="text-gray-900 font-medium">中文</span>
+        <a href="../zh/styles/zero-ui.html" class="text-gray-300 hover:text-gray-500 transition-colors">EN</a>
+      </div>
+    </div>
+  </nav>
 
-    <section class="py-20 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">01</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">隐形导航</h2>
-                    <p class="opacity-70">导航仅在需要时出现，平时完全隐藏以最大化内容区域</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">02</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">手势优先</h2>
-                    <p class="opacity-70">通过滑动手势自然交互，减少按钮和控件的视觉干扰</p>
-                </div>
-                <div class="col-span-4">
-                    <span class="text-sm opacity-50 uppercase tracking-widest">03</span>
-                    <h2 class="text-2xl font-semibold mt-2 mb-4">内容呼吸</h2>
-                    <p class="opacity-70">大量留白和宽松的排版，让内容自由呼吸</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Hero - one line, huge margins, content-focused -->
+  <section class="py-32 px-12">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-xs tracking-[0.3em] uppercase text-gray-300 mb-16">演示风格 #20</p>
+      <h1 class="text-5xl md:text-7xl font-light text-gray-900 leading-tight mb-12 tracking-wide">
+        零界面
+      </h1>
+      <p class="text-xl text-gray-400 leading-relaxed max-w-2xl mb-16">
+        当界面消失，只剩下内容。
+      </p>
+      <div class="flex gap-8">
+        <a href="#features" class="text-sm tracking-wide text-gray-500 hover:text-gray-900 transition-colors">↓ 了解更多</a>
+      </div>
+    </div>
+  </section>
 
-    <section class="py-20 px-6 bg-black/10">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-8">色彩方案</h3>
-            <div class="flex gap-4">
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #FFFFFF;"></div>
-                    <p class="text-sm font-medium">纯白</p>
-                    <p class="text-xs opacity-50">#FFFFFF</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #F5F5F5;"></div>
-                    <p class="text-sm font-medium">浅灰</p>
-                    <p class="text-xs opacity-50">#F5F5F5</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #999999;"></div>
-                    <p class="text-sm font-medium">中灰</p>
-                    <p class="text-xs opacity-50">#999999</p>
-                </div>
-                <div class="flex-1">
-                    <div class="h-32 rounded-lg mb-3" style="background: #333333;"></div>
-                    <p class="text-sm font-medium">深灰</p>
-                    <p class="text-xs opacity-50">#333333</p>
-                </div>
-            </div>
+  <!-- Features - single column, wide margins -->
+  <section id="features" class="py-32 px-12 bg-[#F5F5F5]">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-light text-gray-900 tracking-wide mb-24">核心特性</h2>
+      <div class="space-y-24">
+        <div>
+          <h3 class="text-lg font-medium text-gray-700 mb-6 tracking-wide">几乎不可见的界面</h3>
+          <p class="text-base text-gray-400 leading-relaxed">没有可见边框，没有明显的视觉分隔。内容本身成为界面，界面退居幕后，让信息成为唯一的主角。</p>
         </div>
-    </section>
-
-    <section class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-12">组件示例</h3>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">按钮</h4>
-                <div class="flex gap-4 items-center flex-wrap">
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#333] text-white hover:bg-black">主要操作</button>
-                    <button class="px-8 py-3 font-medium transition-colors text-[#999] hover:text-black">次要操作</button>
-                    <button class="px-8 py-3 font-medium hover:opacity-60 transition-colors">文字链接 &rarr;</button>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">卡片</h4>
-                <div class="grid grid-cols-3 gap-6">
-                    <div class="bg-white border-gray-100 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">隐形导航</h5>
-                        <p class="text-sm opacity-70">导航仅在需要时出现，平时完全隐藏以最大化内容区域...</p>
-                    </div>
-                    <div class="bg-white border-gray-100 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">手势优先</h5>
-                        <p class="text-sm opacity-70">通过滑动手势自然交互，减少按钮和控件的视觉干扰...</p>
-                    </div>
-                    <div class="bg-white border-gray-100 p-6 rounded-xl">
-                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
-                        <h5 class="text-xl font-semibold mt-2 mb-3">内容呼吸</h5>
-                        <p class="text-sm opacity-70">大量留白和宽松的排版，让内容自由呼吸...</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-16">
-                <h4 class="text-lg font-medium mb-6">表单元素</h4>
-                <div class="max-w-md">
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">邮箱</label>
-                        <input type="email" class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com">
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-2 opacity-70">留言</label>
-                        <textarea class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors h-32" placeholder="您的留言..."></textarea>
-                    </div>
-                    <button class="px-8 py-3 font-medium transition-colors bg-[#333] text-white hover:bg-black">提交</button>
-                </div>
-            </div>
+        <div>
+          <h3 class="text-lg font-medium text-gray-700 mb-6 tracking-wide">巨大的留白空间</h3>
+          <p class="text-base text-gray-400 leading-relaxed">每个元素周围都有充足的呼吸空间。这不是浪费，而是对内容的尊重 — 让每一条信息都有被认真对待的余地。</p>
         </div>
-    </section>
-
-    <section class="py-20 px-6 bg-black/20">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-2 gap-16">
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">最佳适用</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>阅读应用</li>
-                        <li>内容平台</li>
-                        <li>极简博客</li>
-                        <li>冥想应用</li>
-                        <li>摄影展示</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">特性</h3>
-                    <ul class="space-y-2 opacity-80">
-                        <li>深色模式: 完全支持</li>
-                        <li>浅色模式: 完全支持</li>
-                        <li>性能: 极佳</li>
-                        <li>无障碍: WCAG AA</li>
-                        <li>复杂度: 低</li>
-                    </ul>
-                </div>
-            </div>
+        <div>
+          <h3 class="text-lg font-medium text-gray-700 mb-6 tracking-wide">内容至上</h3>
+          <p class="text-base text-gray-400 leading-relaxed">单列布局、宽边距、大行高。一切都为了让阅读体验达到极致，没有任何干扰，只有纯粹的内容。</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <footer class="py-8 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <a href="../../index.html" class="text-sm opacity-50 hover:opacity-100">&larr; 返回画廊</a>
-            <a href="soft-ui.html" class="text-sm opacity-50 hover:opacity-100">下一页: #21 &rarr;</a>
+  <!-- Color Palette -->
+  <section class="py-32 px-12">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-light text-gray-900 tracking-wide mb-24">色彩搭配</h2>
+      <div class="space-y-12">
+        <div class="flex items-center gap-12">
+          <div class="w-16 h-16 bg-white border border-gray-100 shrink-0"></div>
+          <div>
+            <p class="text-sm font-medium text-gray-600 tracking-wide">白色</p>
+            <p class="text-xs text-gray-300 mt-1">#FFFFFF — 纯净背景</p>
+          </div>
         </div>
-    </footer>
+        <div class="flex items-center gap-12">
+          <div class="w-16 h-16 bg-[#F5F5F5] shrink-0"></div>
+          <div>
+            <p class="text-sm font-medium text-gray-600 tracking-wide">浅灰</p>
+            <p class="text-xs text-gray-300 mt-1">#F5F5F5 — 微妙分层</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-12">
+          <div class="w-16 h-16 bg-[#999] shrink-0"></div>
+          <div>
+            <p class="text-sm font-medium text-gray-600 tracking-wide">中灰</p>
+            <p class="text-xs text-gray-300 mt-1">#999999 — 辅助文字</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-12">
+          <div class="w-16 h-16 bg-[#333] shrink-0"></div>
+          <div>
+            <p class="text-sm font-medium text-gray-600 tracking-wide">深灰</p>
+            <p class="text-xs text-gray-300 mt-1">#333333 — 主要文字</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
-      }
-    </script>
+  <!-- Components -->
+  <section class="py-32 px-12 bg-[#F5F5F5]">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-light text-gray-900 tracking-wide mb-24">组件展示</h2>
+
+      <!-- Buttons - minimal -->
+      <div class="mb-24">
+        <h3 class="text-lg font-medium text-gray-700 mb-12 tracking-wide">按钮</h3>
+        <div class="flex flex-wrap gap-10">
+          <button class="text-sm tracking-wide text-gray-500 hover:text-gray-900 transition-colors border-b border-transparent hover:border-gray-300 pb-1">主要操作</button>
+          <button class="text-sm tracking-wide text-gray-400 hover:text-gray-700 transition-colors border-b border-transparent hover:border-gray-200 pb-1">次要操作</button>
+          <button class="text-sm tracking-wide text-gray-300 hover:text-gray-500 transition-colors border-b border-transparent hover:border-gray-200 pb-1">文字按钮</button>
+        </div>
+      </div>
+
+      <!-- Cards - no borders, subtle shadows -->
+      <div class="mb-24">
+        <h3 class="text-lg font-medium text-gray-700 mb-12 tracking-wide">卡片</h3>
+        <div class="space-y-12">
+          <div class="p-10 bg-white shadow-sm">
+            <h4 class="text-base font-medium text-gray-700 mb-4 tracking-wide">无边框卡片</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">只有微妙的阴影暗示着它的存在。没有边框，没有分割线，只有内容。</p>
+          </div>
+          <div class="p-10 bg-white shadow-sm">
+            <h4 class="text-base font-medium text-gray-700 mb-4 tracking-wide">呼吸空间</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">充裕的内边距让每个卡片都拥有自己的呼吸空间，内容从不拥挤。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form - borderless, underline-only focus -->
+      <div>
+        <h3 class="text-lg font-medium text-gray-700 mb-12 tracking-wide">表单</h3>
+        <form class="space-y-12">
+          <div>
+            <label class="block text-xs tracking-wide text-gray-400 mb-3 uppercase">姓名</label>
+            <input type="text" placeholder="请输入姓名" class="w-full py-3 text-base bg-transparent border-b border-gray-200 focus:border-gray-900 focus:outline-none transition-colors text-gray-700 placeholder-gray-300">
+          </div>
+          <div>
+            <label class="block text-xs tracking-wide text-gray-400 mb-3 uppercase">邮箱</label>
+            <input type="email" placeholder="请输入邮箱" class="w-full py-3 text-base bg-transparent border-b border-gray-200 focus:border-gray-900 focus:outline-none transition-colors text-gray-700 placeholder-gray-300">
+          </div>
+          <div>
+            <label class="block text-xs tracking-wide text-gray-400 mb-3 uppercase">消息</label>
+            <textarea rows="3" placeholder="请输入消息" class="w-full py-3 text-base bg-transparent border-b border-gray-200 focus:border-gray-900 focus:outline-none transition-colors text-gray-700 placeholder-gray-300 resize-none"></textarea>
+          </div>
+          <button type="submit" class="text-sm tracking-wide text-gray-500 hover:text-gray-900 transition-colors border-b border-transparent hover:border-gray-300 pb-1 mt-4">
+            发送
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best For -->
+  <section class="py-32 px-12">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-light text-gray-900 tracking-wide mb-24">最适合</h2>
+      <div class="space-y-8">
+        <div class="flex items-center gap-8">
+          <span class="text-2xl">📝</span>
+          <span class="text-lg text-gray-600 tracking-wide">写作平台</span>
+        </div>
+        <div class="flex items-center gap-8">
+          <span class="text-2xl">📖</span>
+          <span class="text-lg text-gray-600 tracking-wide">阅读应用</span>
+        </div>
+        <div class="flex items-center gap-8">
+          <span class="text-2xl">🏛️</span>
+          <span class="text-lg text-gray-600 tracking-wide">极简作品集</span>
+        </div>
+        <div class="flex items-center gap-8">
+          <span class="text-2xl">📰</span>
+          <span class="text-lg text-gray-600 tracking-wide">新闻阅读</span>
+        </div>
+        <div class="flex items-center gap-8">
+          <span class="text-2xl">🧘</span>
+          <span class="text-lg text-gray-600 tracking-wide">冥想应用</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Characteristics -->
+  <section class="py-32 px-12 bg-[#F5F5F5]">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-light text-gray-900 tracking-wide mb-24">风格特征</h2>
+      <div class="space-y-16">
+        <div>
+          <h3 class="text-base font-medium text-gray-700 mb-4 tracking-wide">极简至上</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">移除一切不必要的视觉元素，只保留最核心的内容呈现。</p>
+        </div>
+        <div>
+          <h3 class="text-base font-medium text-gray-700 mb-4 tracking-wide">隐形界面</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">界面几乎不可见 — 无边框、无阴影、无分割线，让内容自然呼吸。</p>
+        </div>
+        <div>
+          <h3 class="text-base font-medium text-gray-700 mb-4 tracking-wide">宽裕节奏</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">巨大的垂直间距和水平边距，创造缓慢而有节奏的浏览体验。</p>
+        </div>
+        <div>
+          <h3 class="text-base font-medium text-gray-700 mb-4 tracking-wide">克制色彩</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">仅使用灰阶色调，让色彩完全退场，焦点回归内容本身。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-32 px-12">
+    <div class="max-w-2xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+      <div>
+        <p class="text-sm text-gray-400 tracking-wide">风格 #20 — 零界面</p>
+        <p class="text-xs text-gray-300 mt-2 tracking-wide">Zero UI</p>
+      </div>
+      <div class="flex gap-10">
+        <a href="/styles/inclusive-design.html" class="text-sm tracking-wide text-gray-400 hover:text-gray-700 transition-colors">← 上一个风格</a>
+        <a href="/styles/soft-ui.html" class="text-sm tracking-wide text-gray-500 hover:text-gray-900 transition-colors">下一个风格 →</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
