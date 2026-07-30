@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memphis Revival - UI Style #29</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+    </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Design Gallery">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+</head>
+<body class="bg-white text-black min-h-screen">
+    <nav class="fixed top-4 left-4 right-4 bg-white border-black border-2 rounded-lg z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../../index.html" class="text-sm opacity-60 hover:opacity-100 transition-opacity">&larr; Back to Gallery</a>
+            <span class="font-medium">#29 Memphis Revival</span>
+            <div class="flex items-center gap-2">
+                <span class="text-xs font-medium opacity-80">EN</span>
+                <span class="opacity-30">|</span>
+                <a href="../../styles/memphis.html" class="text-xs opacity-50 hover:opacity-100">中文</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="text-7xl font-bold tracking-tight leading-none mb-8">Memphis<br/>Revival</h1>
+            <p class="text-xl max-w-xl leading-relaxed opacity-80">Reviving the iconic style of the 1980s Memphis Design Group — bold geometry, pop colors, and playful spirit.</p>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 border-t border-white/10">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-12 gap-8">
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">01</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">Geometric Collage</h2>
+                    <p class="opacity-70">Circles, triangles, squiggles freely combined</p>
+                </div>
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">02</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">Pop Colors</h2>
+                    <p class="opacity-70">High-saturation, high-contrast color schemes full of energy</p>
+                </div>
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">03</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">Playful Spirit</h2>
+                    <p class="opacity-70">Breaking grid constraints — elements rotate, overlap, and arrange irregularly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-black/10">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-8">Color Palette</h3>
+            <div class="flex gap-4">
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #FF6B6B;"></div>
+                    <p class="text-sm font-medium">Coral</p>
+                    <p class="text-xs opacity-50">#FF6B6B</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #4ECDC4;"></div>
+                    <p class="text-sm font-medium">Teal</p>
+                    <p class="text-xs opacity-50">#4ECDC4</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #FFE66D;"></div>
+                    <p class="text-sm font-medium">Bright Yellow</p>
+                    <p class="text-xs opacity-50">#FFE66D</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #A388EE;"></div>
+                    <p class="text-sm font-medium">Violet</p>
+                    <p class="text-xs opacity-50">#A388EE</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-12">Components</h3>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">Buttons</h4>
+                <div class="flex gap-4 items-center flex-wrap">
+                    <button class="px-8 py-3 font-medium transition-colors bg-[#FF6B6B] text-white hover:bg-[#E55A5A] border-2 border-black">Primary Action</button>
+                    <button class="px-8 py-3 font-medium transition-colors bg-[#4ECDC4] text-white hover:bg-[#3DBDB5] border-2 border-black">Secondary</button>
+                    <button class="px-8 py-3 font-medium hover:opacity-60 transition-colors">Text Link &rarr;</button>
+                </div>
+            </div>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">Cards</h4>
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="bg-white border-black border-2 p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">Feature</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">Geometric Collage</h5>
+                        <p class="text-sm opacity-70">Circles, triangles, squiggles freely combined...</p>
+                    </div>
+                    <div class="bg-white border-black border-2 p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">Feature</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">Pop Colors</h5>
+                        <p class="text-sm opacity-70">High-saturation, high-contrast color schemes full ...</p>
+                    </div>
+                    <div class="bg-white border-black border-2 p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">Feature</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">Playful Spirit</h5>
+                        <p class="text-sm opacity-70">Breaking grid constraints — elements rotate, overl...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">Form Elements</h4>
+                <div class="max-w-md">
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-2 opacity-70">Email</label>
+                        <input type="email" class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-2 opacity-70">Message</label>
+                        <textarea class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors h-32" placeholder="Your message..."></textarea>
+                    </div>
+                    <button class="px-8 py-3 font-medium transition-colors bg-[#FF6B6B] text-white hover:bg-[#E55A5A] border-2 border-black">Submit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-black/20">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">Best For</h3>
+                    <ul class="space-y-2 opacity-80">
+                        <li>Creative Brands</li>
+                        <li>Children's Products</li>
+                        <li>Art Platforms</li>
+                        <li>Music Festivals</li>
+                        <li>Design Studios</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">Characteristics</h3>
+                    <ul class="space-y-2 opacity-80">
+                        <li>Dark Mode: Partial</li>
+                        <li>Light Mode: Full</li>
+                        <li>Performance: Good</li>
+                        <li>Accessibility: WCAG A</li>
+                        <li>Complexity: Medium</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 px-6 border-t border-white/10">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <a href="../../index.html" class="text-sm opacity-50 hover:opacity-100">&larr; Back to Gallery</a>
+            <a href=".html" class="text-sm opacity-50 hover:opacity-100">Next: #30 &rarr;</a>
+        </div>
+    </footer>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+    </script>
+</body>
+</html>

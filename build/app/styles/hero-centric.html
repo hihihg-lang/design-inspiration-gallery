@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主视觉中心 - UI Style #22</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+    </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Design Gallery">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+</head>
+<body class="bg-[#1A1A2E] text-white min-h-screen">
+    <nav class="fixed top-4 left-4 right-4 bg-[#16213E] border-[#2A2A4E] rounded-lg z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../../index.html" class="text-sm opacity-60 hover:opacity-100 transition-opacity">&larr; 返回画廊</a>
+            <span class="font-medium">#22 主视觉中心</span>
+            <div class="flex items-center gap-2">
+                <a href="../zh/styles/hero-centric.html" class="text-xs opacity-50 hover:opacity-100">EN</a>
+                <span class="opacity-30">|</span>
+                <span class="text-xs font-medium opacity-80">中文</span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="text-7xl font-bold tracking-tight leading-none mb-8">主视觉<br/>中心</h1>
+            <p class="text-xl max-w-xl leading-relaxed opacity-80">以大尺寸、高冲击力的主视觉图像为核心，配合戏剧化的色彩对比，打造强烈的第一印象。</p>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 border-t border-white/10">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-12 gap-8">
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">01</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">沉浸式主视觉</h2>
+                    <p class="opacity-70">全屏或大幅面的主视觉占据页面 70% 以上空间</p>
+                </div>
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">02</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">戏剧化对比</h2>
+                    <p class="opacity-70">高饱和强调色与深色背景形成强烈的视觉张力</p>
+                </div>
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">03</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">大胆排版</h2>
+                    <p class="opacity-70">超大字号、粗体文字，配合精炼的文案传达核心信息</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-black/10">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-8">色彩方案</h3>
+            <div class="flex gap-4">
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #1A1A2E;"></div>
+                    <p class="text-sm font-medium">深海军蓝</p>
+                    <p class="text-xs opacity-50">#1A1A2E</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #E94560;"></div>
+                    <p class="text-sm font-medium">激情红</p>
+                    <p class="text-xs opacity-50">#E94560</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #FFFFFF;"></div>
+                    <p class="text-sm font-medium">纯白</p>
+                    <p class="text-xs opacity-50">#FFFFFF</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #16213E;"></div>
+                    <p class="text-sm font-medium">暗灰</p>
+                    <p class="text-xs opacity-50">#16213E</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-12">组件示例</h3>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">按钮</h4>
+                <div class="flex gap-4 items-center flex-wrap">
+                    <button class="px-8 py-3 font-medium transition-colors bg-[#E94560] text-white hover:bg-[#C73A50]">主要操作</button>
+                    <button class="px-8 py-3 font-medium transition-colors border-2 border-white text-white hover:bg-white hover:text-[#1A1A2E]">次要操作</button>
+                    <button class="px-8 py-3 font-medium hover:opacity-60 transition-colors">文字链接 &rarr;</button>
+                </div>
+            </div>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">卡片</h4>
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="bg-[#16213E] border-[#2A2A4E] p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">沉浸式主视觉</h5>
+                        <p class="text-sm opacity-70">全屏或大幅面的主视觉占据页面 70% 以上空间...</p>
+                    </div>
+                    <div class="bg-[#16213E] border-[#2A2A4E] p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">戏剧化对比</h5>
+                        <p class="text-sm opacity-70">高饱和强调色与深色背景形成强烈的视觉张力...</p>
+                    </div>
+                    <div class="bg-[#16213E] border-[#2A2A4E] p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">大胆排版</h5>
+                        <p class="text-sm opacity-70">超大字号、粗体文字，配合精炼的文案传达核心信息...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">表单元素</h4>
+                <div class="max-w-md">
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-2 opacity-70">邮箱</label>
+                        <input type="email" class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-2 opacity-70">留言</label>
+                        <textarea class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors h-32" placeholder="您的留言..."></textarea>
+                    </div>
+                    <button class="px-8 py-3 font-medium transition-colors bg-[#E94560] text-white hover:bg-[#C73A50]">提交</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-black/20">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">最佳适用</h3>
+                    <ul class="space-y-2 opacity-80">
+                        <li>品牌官网</li>
+                        <li>产品发布</li>
+                        <li>活动页面</li>
+                        <li>创意工作室</li>
+                        <li>奢侈品</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">特性</h3>
+                    <ul class="space-y-2 opacity-80">
+                        <li>深色模式: 完全支持</li>
+                        <li>浅色模式: 部分支持</li>
+                        <li>性能: 良好</li>
+                        <li>无障碍: WCAG AA</li>
+                        <li>复杂度: 中</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 px-6 border-t border-white/10">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <a href="../../index.html" class="text-sm opacity-50 hover:opacity-100">&larr; 返回画廊</a>
+            <a href="hud-scifi.html" class="text-sm opacity-50 hover:opacity-100">下一页: #23 &rarr;</a>
+        </div>
+    </footer>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+    </script>
+</body>
+</html>

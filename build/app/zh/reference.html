@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementation Reference — Frontend Design Inspiration Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+        pre {
+            font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+        }
+    </style>
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Design Gallery">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+</head>
+<body class="bg-white text-black min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="text-xl font-bold text-black">Design Inspiration Gallery</h1>
+                <div class="flex items-center gap-6">
+                    <nav class="flex gap-6 text-sm">
+                        <a href="../index.html" class="text-gray-500 hover:text-black transition-colors">Gallery</a>
+                        <a href="../palette.html" class="text-gray-500 hover:text-black transition-colors">Palettes</a>
+                        <a href="../color-mixer.html" class="text-gray-500 hover:text-black transition-colors">Color Mixer</a>
+                        <a href="../philosophy.html" class="text-gray-500 hover:text-black transition-colors">Philosophy</a>
+                        <a href="../reference.html" class="text-black font-medium">Reference</a>
+                    </nav>
+                    <div class="flex items-center gap-4">
+                        <a href="../reference.html" class="text-sm text-black font-medium">EN</a>
+                        <span class="text-gray-300">|</span>
+                        <a href="reference.html" class="text-sm text-gray-500 hover:text-black">中文</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="py-20 px-6 border-b border-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl font-bold text-black mb-6">Implementation Reference</h2>
+            <p class="text-xl text-gray-500 mb-4 max-w-2xl mx-auto">Technical details, file structure, CSS techniques, and deployment guide for the Frontend Design Inspiration Gallery.</p>
+            <p class="text-gray-400 max-w-2xl mx-auto">A pure HTML/CSS static site — zero JavaScript dependencies, instant loading, deploy anywhere.</p>
+        </div>
+    </section>
+
+    <!-- Tech Stack Overview -->
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="border border-gray-100 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-black mb-6">Tech Stack Overview</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-start gap-3">
+                        <span class="text-lg mt-0.5">📄</span>
+                        <div>
+                            <h4 class="font-semibold text-black">Pure HTML/CSS</h4>
+                            <p class="text-sm text-gray-500">Static site with no build step, no framework, no runtime overhead.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-lg mt-0.5">🎨</span>
+                        <div>
+                            <h4 class="font-semibold text-black">Tailwind CSS via CDN</h4>
+                            <p class="text-sm text-gray-500">Utility-first CSS framework loaded from CDN — no npm install required.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-lg mt-0.5">🔤</span>
+                        <div>
+                            <h4 class="font-semibold text-black">Google Fonts (Inter)</h4>
+                            <p class="text-sm text-gray-500">Inter typeface loaded from Google Fonts CDN for consistent typography.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-lg mt-0.5">⚡</span>
+                        <div>
+                            <h4 class="font-semibold text-black">Zero JavaScript</h4>
+                            <p class="text-sm text-gray-500">No JS dependencies. All interactions and animations are pure CSS.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-lg mt-0.5">🚀</span>
+                        <div>
+                            <h4 class="font-semibold text-black">Deploy Anywhere</h4>
+                            <p class="text-sm text-gray-500">GitHub Pages, Netlify, Vercel, or any static hosting — just upload the files.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- File Structure -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="border border-gray-100 bg-white rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-black mb-4">File Structure</h3>
+                <p class="text-gray-500 mb-6">The project follows a flat, intuitive structure. All style pages live under <code class="bg-gray-100 px-1.5 py-0.5 rounded text-sm">styles/</code>.</p>
+                <pre class="bg-gray-900 text-gray-100 rounded-xl p-6 text-sm leading-relaxed overflow-x-auto">
+/
+├── index.html              # Main gallery
+├── palette.html            # Color palette system
+├── philosophy.html         # Design philosophy
+├── reference.html          # This page
+└── styles/
+    ├── minimalism.html
+    ├── neumorphism.html
+    ├── glassmorphism.html
+    ├── claymorphism.html
+    ├── skeuomorphism.html
+    ├── flat-design.html
+    ├── aurora-ui.html
+    ├── brutalism.html
+    ├── neubrutalism.html
+    ├── bento-grid.html
+    ├── cyberpunk.html
+    ├── vaporwave.html
+    ├── swiss-modernism.html
+    ├── liquid-glass.html
+    └── gen-z-chaos.html</pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Patterns -->
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="border border-gray-100 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-black mb-4">Common Patterns Used</h3>
+                <p class="text-gray-500 mb-6">Each style page follows a consistent architecture to ensure familiarity and ease of navigation.</p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <span class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                        <div>
+                            <h4 class="font-semibold text-black">Consistent Page Structure</h4>
+                            <p class="text-sm text-gray-500">Every style page follows: Navigation → Hero → Feature Grid → Color Palette → Components (Buttons / Cards / Forms) → Style Info → Footer</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                        <div>
+                            <h4 class="font-semibold text-black">Tailwind CSS Utility Classes</h4>
+                            <p class="text-sm text-gray-500">Layout, spacing, typography, and colors are handled via Tailwind utility classes for rapid development and consistency.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                        <div>
+                            <h4 class="font-semibold text-black">Custom CSS for Style-Specific Effects</h4>
+                            <p class="text-sm text-gray-500">Tailwind handles the baseline; custom CSS properties like <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">backdrop-filter</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">box-shadow</code>, and <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">@keyframes</code> deliver each style's signature look.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</span>
+                        <div>
+                            <h4 class="font-semibold text-black">Responsive Grid Layouts</h4>
+                            <p class="text-sm text-gray-500">Tailwind responsive breakpoints (<code class="bg-gray-100 px-1 py-0.5 rounded text-xs">md:</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">lg:</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">xl:</code>) ensure layouts adapt from mobile to desktop.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Style-Specific CSS Techniques -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="border border-gray-100 bg-white rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-black mb-4">Style-Specific CSS Techniques</h3>
+                <p class="text-gray-500 mb-6">Each design style achieves its unique visual identity through a focused set of CSS properties.</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm border-collapse">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="text-left py-3 px-4 font-semibold text-black">Style</th>
+                                <th class="text-left py-3 px-4 font-semibold text-black">Key CSS Properties</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">Minimalism</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">grid</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">tracking</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">leading</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">Neumorphism</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">box-shadow</code> (dual), <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">border-radius</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">Glassmorphism</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">backdrop-filter: blur()</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">rgba()</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">Claymorphism</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">box-shadow</code> (inset+outer), <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">border-radius</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">Skeuomorphism</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">linear-gradient</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">box-shadow</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">border</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">Flat Design</td>
+                                <td class="py-3 px-4 text-gray-600">Solid colors, no shadows</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">Aurora UI</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">background-size</code> animation, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">radial-gradient</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">Brutalism</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">border</code>, solid colors, mono font</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">Neubrutalism</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">box-shadow</code> (hard offset), <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">border</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">Bento Grid</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">grid-template</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">border-radius</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">Cyberpunk</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">text-shadow</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">filter</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">monospace</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">Vaporwave</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">linear-gradient</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">@keyframes</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">grid</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">Swiss Modernism</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">grid-template-columns</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">font-weight</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">Liquid Glass</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">backdrop-filter</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">border-radius</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">@keyframes morph</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">Gen Z Chaos</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">transform: rotate()</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">@keyframes</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">flexbox</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deployment -->
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="border border-gray-100 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-black mb-6">Deployment</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-6 bg-gray-50 rounded-xl">
+                        <div class="text-2xl mb-3">🐙</div>
+                        <h4 class="font-semibold text-black mb-2">GitHub Pages</h4>
+                        <p class="text-sm text-gray-500">Push to <code class="bg-gray-200 px-1 py-0.5 rounded text-xs">main</code> branch, enable Pages in repository Settings. Your site will be live at <code class="bg-gray-200 px-1 py-0.5 rounded text-xs">username.github.io/repo</code>.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-xl">
+                        <div class="text-2xl mb-3">▲</div>
+                        <h4 class="font-semibold text-black mb-2">Netlify</h4>
+                        <p class="text-sm text-gray-500">Drag and drop the project folder into Netlify's deploy UI. Instant HTTPS and continuous deployment from Git.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-xl">
+                        <div class="text-2xl mb-3">📦</div>
+                        <h4 class="font-semibold text-black mb-2">Any Static Hosting</h4>
+                        <p class="text-sm text-gray-500">Upload all files as-is to any web server, S3 bucket, or CDN. No build step, no server-side processing needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credits & References -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="border border-gray-100 bg-white rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-black mb-4">Credits &amp; References</h3>
+                <p class="text-gray-500 mb-6">This project draws inspiration and reference from the following open-source resources and design catalogs.</p>
+                <div class="space-y-4">
+                    <a href="https://github.com/joshhu/uitest" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 border border-gray-100 rounded-xl hover:border-gray-300 transition-all group">
+                        <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white text-sm font-bold flex-shrink-0">1</div>
+                        <div>
+                            <h4 class="font-semibold text-black group-hover:underline">joshhu/uitest</h4>
+                            <p class="text-sm text-gray-500">57 UI Styles showcase — the primary inspiration for this gallery's breadth of design paradigms.</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/jerelvelarde/awesome-style-refs" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 border border-gray-100 rounded-xl hover:border-gray-300 transition-all group">
+                        <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white text-sm font-bold flex-shrink-0">2</div>
+                        <div>
+                            <h4 class="font-semibold text-black group-hover:underline">jerelvelarde/awesome-style-refs</h4>
+                            <p class="text-sm text-gray-500">Design philosophy references and conceptual foundations for each UI style.</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Bd-Mutant7/Modern-App-Color-Combos" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 border border-gray-100 rounded-xl hover:border-gray-300 transition-all group">
+                        <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white text-sm font-bold flex-shrink-0">3</div>
+                        <div>
+                            <h4 class="font-semibold text-black group-hover:underline">Bd-Mutant7/Modern-App-Color-Combos</h4>
+                            <p class="text-sm text-gray-500">Color reference palettes for modern applications, informing the color system design.</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/minirr890112-byte/popular-web-designs" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 border border-gray-100 rounded-xl hover:border-gray-300 transition-all group">
+                        <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white text-sm font-bold flex-shrink-0">4</div>
+                        <div>
+                            <h4 class="font-semibold text-black group-hover:underline">minirr890112-byte/popular-web-designs</h4>
+                            <p class="text-sm text-gray-500">Design catalog of popular web design trends, providing additional visual references.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h3 class="text-2xl font-bold mb-4">Design Inspiration Gallery</h3>
+            <p class="text-gray-400 mb-6">30 modern UI design styles — curated showcase</p>
+            <div class="flex justify-center gap-4 flex-wrap mb-8">
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Tailwind CSS</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Responsive</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Zero Dependencies</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">GitHub Pages Ready</span>
+            </div>
+            <p class="text-gray-500 text-sm">Built with reference to <a href="https://github.com/joshhu/uitest" class="underline hover:text-gray-300">joshhu/uitest</a> and other open-source design resources.</p>
+        </div>
+    </footer>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+    </script>
+
+</body>
+</html>

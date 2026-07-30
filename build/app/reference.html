@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代码实现参考 — 前端设计灵感画廊</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+        pre {
+            font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+        }
+    </style>
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Design Gallery">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+</head>
+<body class="bg-white text-black min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="text-xl font-bold text-black">前端设计灵感画廊</h1>
+                <div class="flex items-center gap-6">
+                    <nav class="flex gap-6 text-sm">
+                        <a href="index.html" class="text-gray-500 hover:text-black transition-colors">画廊</a>
+                        <a href="palette.html" class="text-gray-500 hover:text-black transition-colors">配色库</a>
+                        <a href="color-mixer.html" class="text-gray-500 hover:text-black transition-colors">颜色搭配</a>
+                        <a href="philosophy.html" class="text-gray-500 hover:text-black transition-colors">设计理念</a>
+                        <a href="reference.html" class="text-black font-medium">代码参考</a>
+                    </nav>
+                    <div class="flex items-center gap-4">
+                        <a href="zh/reference.html" class="text-sm text-gray-500 hover:text-black">EN</a>
+                        <span class="text-gray-300">|</span>
+                        <a href="reference.html" class="text-sm text-black font-medium">中文</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="py-20 px-6 border-b border-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl font-bold text-black mb-6">代码实现参考</h2>
+            <p class="text-xl text-gray-500 mb-4 max-w-2xl mx-auto">技术细节、文件结构、CSS 技巧与部署指南，全面介绍前端设计灵感画廊的实现方式。</p>
+            <p class="text-gray-400 max-w-2xl mx-auto">纯 HTML/CSS 静态站点 — 零 JavaScript 依赖，即时加载，随处部署。</p>
+        </div>
+    </section>
+
+    <!-- 技术栈概览 -->
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="border border-gray-100 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-black mb-6">技术栈概览</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-start gap-3">
+                        <span class="text-lg mt-0.5">📄</span>
+                        <div>
+                            <h4 class="font-semibold text-black">纯 HTML/CSS</h4>
+                            <p class="text-sm text-gray-500">静态站点，无构建步骤、无框架、无运行时开销。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-lg mt-0.5">🎨</span>
+                        <div>
+                            <h4 class="font-semibold text-black">Tailwind CSS（CDN）</h4>
+                            <p class="text-sm text-gray-500">通过 CDN 加载的实用优先 CSS 框架 — 无需 npm install。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-lg mt-0.5">🔤</span>
+                        <div>
+                            <h4 class="font-semibold text-black">Google Fonts（Inter）</h4>
+                            <p class="text-sm text-gray-500">从 Google Fonts CDN 加载的 Inter 字体，确保一致的排版风格。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-lg mt-0.5">⚡</span>
+                        <div>
+                            <h4 class="font-semibold text-black">零 JavaScript</h4>
+                            <p class="text-sm text-gray-500">无 JS 依赖。所有交互和动画均为纯 CSS 实现。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-lg mt-0.5">🚀</span>
+                        <div>
+                            <h4 class="font-semibold text-black">随处部署</h4>
+                            <p class="text-sm text-gray-500">GitHub Pages、Netlify、Vercel 或任何静态托管 — 只需上传文件即可。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文件结构 -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="border border-gray-100 bg-white rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-black mb-4">文件结构</h3>
+                <p class="text-gray-500 mb-6">项目遵循扁平、直观的结构。所有风格页面位于 <code class="bg-gray-100 px-1.5 py-0.5 rounded text-sm">styles/</code> 目录下。</p>
+                <pre class="bg-gray-900 text-gray-100 rounded-xl p-6 text-sm leading-relaxed overflow-x-auto">
+/
+├── index.html              # 主画廊
+├── palette.html            # 配色体系库
+├── philosophy.html         # 设计理念
+├── reference.html          # 本页面
+├── zh/                     # 中文版本
+│   ├── index.html
+│   ├── palette.html
+│   ├── philosophy.html
+│   └── reference.html
+└── styles/
+    ├── minimalism.html
+    ├── neumorphism.html
+    ├── glassmorphism.html
+    ├── claymorphism.html
+    ├── skeuomorphism.html
+    ├── flat-design.html
+    ├── aurora-ui.html
+    ├── brutalism.html
+    ├── neubrutalism.html
+    ├── bento-grid.html
+    ├── cyberpunk.html
+    ├── vaporwave.html
+    ├── swiss-modernism.html
+    ├── liquid-glass.html
+    └── gen-z-chaos.html</pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- 通用模式 -->
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="border border-gray-100 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-black mb-4">使用的通用模式</h3>
+                <p class="text-gray-500 mb-6">每个风格页面遵循一致的架构，确保熟悉度和导航便捷性。</p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <span class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                        <div>
+                            <h4 class="font-semibold text-black">一致的页面结构</h4>
+                            <p class="text-sm text-gray-500">每个风格页面遵循：导航 → 英雄区 → 功能网格 → 配色方案 → 组件（按钮/卡片/表单）→ 风格信息 → 页脚</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                        <div>
+                            <h4 class="font-semibold text-black">Tailwind CSS 实用类</h4>
+                            <p class="text-sm text-gray-500">布局、间距、排版和颜色通过 Tailwind 实用类处理，实现快速开发和一致性。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                        <div>
+                            <h4 class="font-semibold text-black">自定义 CSS 实现风格特定效果</h4>
+                            <p class="text-sm text-gray-500">Tailwind 处理基础；自定义 CSS 属性如 <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">backdrop-filter</code>、<code class="bg-gray-100 px-1 py-0.5 rounded text-xs">box-shadow</code> 和 <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">@keyframes</code> 实现每种风格的标志性外观。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</span>
+                        <div>
+                            <h4 class="font-semibold text-black">响应式网格布局</h4>
+                            <p class="text-sm text-gray-500">Tailwind 响应式断点（<code class="bg-gray-100 px-1 py-0.5 rounded text-xs">md:</code>、<code class="bg-gray-100 px-1 py-0.5 rounded text-xs">lg:</code>、<code class="bg-gray-100 px-1 py-0.5 rounded text-xs">xl:</code>）确保布局从移动端到桌面端自适应。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 风格特定 CSS 技巧 -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="border border-gray-100 bg-white rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-black mb-4">风格特定的 CSS 技巧</h3>
+                <p class="text-gray-500 mb-6">每种设计风格通过一组聚焦的 CSS 属性实现其独特的视觉识别。</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm border-collapse">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="text-left py-3 px-4 font-semibold text-black">风格</th>
+                                <th class="text-left py-3 px-4 font-semibold text-black">关键 CSS 属性</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">极简主义</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">grid</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">tracking</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">leading</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">新拟物风格</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">box-shadow</code>（双重）, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">border-radius</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">玻璃拟态</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">backdrop-filter: blur()</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">rgba()</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">黏土风格</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">box-shadow</code>（内+外）, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">border-radius</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">拟物化</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">linear-gradient</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">box-shadow</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">border</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">扁平设计</td>
+                                <td class="py-3 px-4 text-gray-600">纯色，无阴影</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">极光 UI</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">background-size</code> 动画, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">radial-gradient</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">粗野主义</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">border</code>, 纯色, 等宽字体</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">新粗野主义</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">box-shadow</code>（硬偏移）, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">border</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">便当盒布局</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">grid-template</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">border-radius</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">赛博朋克</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">text-shadow</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">filter</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">monospace</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">蒸汽波</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">linear-gradient</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">@keyframes</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">grid</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">瑞士现代主义</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">grid-template-columns</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">font-weight</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">液态玻璃</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">backdrop-filter</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">border-radius</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">@keyframes morph</code></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 px-4 font-medium text-black">Gen Z 混沌</td>
+                                <td class="py-3 px-4 text-gray-600"><code class="bg-gray-100 px-1 py-0.5 rounded text-xs">transform: rotate()</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">@keyframes</code>, <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">flexbox</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 部署 -->
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="border border-gray-100 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-black mb-6">部署方式</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-6 bg-gray-50 rounded-xl">
+                        <div class="text-2xl mb-3">🐙</div>
+                        <h4 class="font-semibold text-black mb-2">GitHub Pages</h4>
+                        <p class="text-sm text-gray-500">推送到 <code class="bg-gray-200 px-1 py-0.5 rounded text-xs">main</code> 分支，在仓库设置中启用 Pages。您的站点将在 <code class="bg-gray-200 px-1 py-0.5 rounded text-xs">username.github.io/repo</code> 上线。</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-xl">
+                        <div class="text-2xl mb-3">▲</div>
+                        <h4 class="font-semibold text-black mb-2">Netlify</h4>
+                        <p class="text-sm text-gray-500">将项目文件夹拖放到 Netlify 的部署界面。即时 HTTPS 和 Git 持续部署。</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-xl">
+                        <div class="text-2xl mb-3">📦</div>
+                        <h4 class="font-semibold text-black mb-2">任意静态托管</h4>
+                        <p class="text-sm text-gray-500">将所有文件原样上传到任何 Web 服务器、S3 存储桶或 CDN。无需构建步骤，无需服务器端处理。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 致谢与参考 -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="border border-gray-100 bg-white rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-black mb-4">致谢与参考</h3>
+                <p class="text-gray-500 mb-6">本项目从以下开源资源和设计目录中汲取灵感与参考。</p>
+                <div class="space-y-4">
+                    <a href="https://github.com/joshhu/uitest" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 border border-gray-100 rounded-xl hover:border-gray-300 transition-all group">
+                        <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white text-sm font-bold flex-shrink-0">1</div>
+                        <div>
+                            <h4 class="font-semibold text-black group-hover:underline">joshhu/uitest</h4>
+                            <p class="text-sm text-gray-500">57 种 UI 风格展示 — 本画廊设计范式广度的主要灵感来源。</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/jerelvelarde/awesome-style-refs" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 border border-gray-100 rounded-xl hover:border-gray-300 transition-all group">
+                        <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white text-sm font-bold flex-shrink-0">2</div>
+                        <div>
+                            <h4 class="font-semibold text-black group-hover:underline">jerelvelarde/awesome-style-refs</h4>
+                            <p class="text-sm text-gray-500">设计理念参考与每种 UI 风格的概念基础。</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Bd-Mutant7/Modern-App-Color-Combos" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 border border-gray-100 rounded-xl hover:border-gray-300 transition-all group">
+                        <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white text-sm font-bold flex-shrink-0">3</div>
+                        <div>
+                            <h4 class="font-semibold text-black group-hover:underline">Bd-Mutant7/Modern-App-Color-Combos</h4>
+                            <p class="text-sm text-gray-500">现代应用配色参考方案，为色彩体系设计提供依据。</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/minirr890112-byte/popular-web-designs" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 border border-gray-100 rounded-xl hover:border-gray-300 transition-all group">
+                        <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white text-sm font-bold flex-shrink-0">4</div>
+                        <div>
+                            <h4 class="font-semibold text-black group-hover:underline">minirr890112-byte/popular-web-designs</h4>
+                            <p class="text-sm text-gray-500">流行网页设计趋势的设计目录，提供额外的视觉参考。</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h3 class="text-2xl font-bold mb-4">前端设计灵感画廊</h3>
+            <p class="text-gray-400 mb-6">30 种现代 UI 设计风格 — 精选展示</p>
+            <div class="flex justify-center gap-4 flex-wrap mb-8">
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Tailwind CSS</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">响应式</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">零依赖</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">GitHub Pages 就绪</span>
+            </div>
+            <p class="text-gray-500 text-sm">基于 <a href="https://github.com/joshhu/uitest" class="underline hover:text-gray-300">joshhu/uitest</a> 等开源设计资源构建</p>
+        </div>
+    </footer>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+    </script>
+
+</body>
+</html>

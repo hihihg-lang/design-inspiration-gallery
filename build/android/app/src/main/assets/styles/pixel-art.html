@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>像素艺术 - UI Style #24</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+    </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Design Gallery">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+</head>
+<body class="bg-[#1A1A2E] text-white min-h-screen">
+    <nav class="fixed top-4 left-4 right-4 bg-[#2A2A3E] border-[#FF004D] border-4 rounded-lg z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../../index.html" class="text-sm opacity-60 hover:opacity-100 transition-opacity">&larr; 返回画廊</a>
+            <span class="font-medium">#24 像素艺术</span>
+            <div class="flex items-center gap-2">
+                <a href="../zh/styles/pixel-art.html" class="text-xs opacity-50 hover:opacity-100">EN</a>
+                <span class="opacity-30">|</span>
+                <span class="text-xs font-medium opacity-80">中文</span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="text-7xl font-bold tracking-tight leading-none mb-8">像素艺术<br/>风格</h1>
+            <p class="text-xl max-w-xl leading-relaxed opacity-80">致敬 8-bit 和 16-bit 时代的经典游戏美学，用像素块和点阵字体构建独特的数字怀旧体验。</p>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 border-t border-white/10">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-12 gap-8">
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">01</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">像素块元素</h2>
+                    <p class="opacity-70">所有 UI 元素由像素块组成，按钮、图标都有锯齿边缘</p>
+                </div>
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">02</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">点阵字体</h2>
+                    <p class="opacity-70">使用像素风格的等宽字体，还原 80 年代计算机界面</p>
+                </div>
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">03</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">有限调色板</h2>
+                    <p class="opacity-70">使用 4-16 种颜色的有限调色板，忠实复古游戏美学</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-black/10">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-8">色彩方案</h3>
+            <div class="flex gap-4">
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #FF004D;"></div>
+                    <p class="text-sm font-medium">经典红</p>
+                    <p class="text-xs opacity-50">#FF004D</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #FFEC27;"></div>
+                    <p class="text-sm font-medium">经典黄</p>
+                    <p class="text-xs opacity-50">#FFEC27</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #00E436;"></div>
+                    <p class="text-sm font-medium">经典绿</p>
+                    <p class="text-xs opacity-50">#00E436</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #29ADFF;"></div>
+                    <p class="text-sm font-medium">经典蓝</p>
+                    <p class="text-xs opacity-50">#29ADFF</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-12">组件示例</h3>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">按钮</h4>
+                <div class="flex gap-4 items-center flex-wrap">
+                    <button class="px-8 py-3 font-medium transition-colors bg-[#FF004D] text-white hover:bg-[#CC003D] border-4 border-[#7A0025]">主要操作</button>
+                    <button class="px-8 py-3 font-medium transition-colors bg-[#1A1A2E] text-[#FFEC27] hover:bg-[#2A2A3E] border-4 border-[#FFEC27]">次要操作</button>
+                    <button class="px-8 py-3 font-medium hover:opacity-60 transition-colors">文字链接 &rarr;</button>
+                </div>
+            </div>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">卡片</h4>
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="bg-[#2A2A3E] border-[#FF004D] border-4 p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">像素块元素</h5>
+                        <p class="text-sm opacity-70">所有 UI 元素由像素块组成，按钮、图标都有锯齿边缘...</p>
+                    </div>
+                    <div class="bg-[#2A2A3E] border-[#FF004D] border-4 p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">点阵字体</h5>
+                        <p class="text-sm opacity-70">使用像素风格的等宽字体，还原 80 年代计算机界面...</p>
+                    </div>
+                    <div class="bg-[#2A2A3E] border-[#FF004D] border-4 p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">有限调色板</h5>
+                        <p class="text-sm opacity-70">使用 4-16 种颜色的有限调色板，忠实复古游戏美学...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">表单元素</h4>
+                <div class="max-w-md">
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-2 opacity-70">邮箱</label>
+                        <input type="email" class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-2 opacity-70">留言</label>
+                        <textarea class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors h-32" placeholder="您的留言..."></textarea>
+                    </div>
+                    <button class="px-8 py-3 font-medium transition-colors bg-[#FF004D] text-white hover:bg-[#CC003D] border-4 border-[#7A0025]">提交</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-black/20">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">最佳适用</h3>
+                    <ul class="space-y-2 opacity-80">
+                        <li>独立游戏</li>
+                        <li>创意个人站</li>
+                        <li>开发者博客</li>
+                        <li>怀旧主题</li>
+                        <li>像素艺术社区</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">特性</h3>
+                    <ul class="space-y-2 opacity-80">
+                        <li>深色模式: 完全支持</li>
+                        <li>浅色模式: 部分支持</li>
+                        <li>性能: 极佳</li>
+                        <li>无障碍: WCAG A</li>
+                        <li>复杂度: 低</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 px-6 border-t border-white/10">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <a href="../../index.html" class="text-sm opacity-50 hover:opacity-100">&larr; 返回画廊</a>
+            <a href="e-ink.html" class="text-sm opacity-50 hover:opacity-100">下一页: #25 &rarr;</a>
+        </div>
+    </footer>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+    </script>
+</body>
+</html>

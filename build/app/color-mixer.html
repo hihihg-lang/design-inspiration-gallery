@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>颜色搭配器 — 前端设计灵感画廊</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .color-swatch { transition: all 0.2s ease; cursor: pointer; }
+        .color-swatch:hover { transform: scale(1.05); }
+        .style-btn { transition: all 0.2s ease; }
+        .style-btn:hover { transform: translateY(-2px); }
+        .style-btn.active { border-color: #000; background: #000; color: #fff; }
+        input[type="color"] { -webkit-appearance: none; border: none; width: 48px; height: 48px; cursor: pointer; border-radius: 12px; padding: 0; }
+        input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+        input[type="color"]::-webkit-color-swatch { border: 2px solid #e5e5e5; border-radius: 12px; }
+        input[type="range"] { -webkit-appearance: none; height: 6px; border-radius: 3px; background: #e5e5e5; outline: none; }
+        input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #000; cursor: pointer; }
+        .mix-preview { transition: background-color 0.3s ease; }
+        @keyframes pulse-border { 0%,100% { border-color: #e5e5e5; } 50% { border-color: #000; } }
+        .active-slot { animation: pulse-border 1.5s ease-in-out infinite; }
+    </style>
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Design Gallery">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+</head>
+<body class="bg-white text-black min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="text-xl font-bold text-black">前端设计灵感画廊</h1>
+                <div class="flex items-center gap-6">
+                    <nav class="flex gap-6 text-sm">
+                        <a href="index.html" class="text-gray-500 hover:text-black transition-colors">画廊</a>
+                        <a href="palette.html" class="text-gray-500 hover:text-black transition-colors">配色库</a>
+                        <a href="color-mixer.html" class="text-black font-medium">颜色搭配</a>
+                        <a href="philosophy.html" class="text-gray-500 hover:text-black transition-colors">设计理念</a>
+                        <a href="reference.html" class="text-gray-500 hover:text-black transition-colors">代码参考</a>
+                    </nav>
+                    <div class="flex items-center gap-4">
+                        <a href="zh/color-mixer.html" class="text-sm text-gray-500 hover:text-black">EN</a>
+                        <span class="text-gray-300">|</span>
+                        <a href="color-mixer.html" class="text-sm text-black font-medium">中文</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="py-16 px-6 border-b border-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl font-bold text-black mb-6">颜色搭配器</h2>
+            <p class="text-xl text-gray-500 mb-2 max-w-2xl mx-auto">交互式颜色混合搭配。选择设计风格，组合多种颜色，实时预览混合结果。</p>
+            <p class="text-base text-gray-400 max-w-xl mx-auto">从全色域中选择颜色，应用不同设计风格的调和规则，即时预览混合输出效果。</p>
+        </div>
+    </section>
+
+    <!-- Preview & Reference Section -->
+    <section class="py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- 搭配预览 -->
+                <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <h3 class="text-lg font-semibold text-black">搭配预览</h3>
+                        <p class="text-sm text-gray-400 mt-1" id="mixFormula">颜色 1 + 颜色 2 = 混合结果</p>
+                    </div>
+                    <div id="mixPreview" class="h-80 mix-preview flex items-center justify-center relative" style="background-color: #808080;">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-white drop-shadow-lg" id="mixResultHex">#808080</div>
+                            <div class="text-lg text-white/80 mt-2 drop-shadow-lg" id="mixResultRGB">rgb(128, 128, 128)</div>
+                        </div>
+                    </div>
+                    <div class="p-5 border-t border-gray-50">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <span class="text-sm text-gray-500">混合模式:</span>
+                                <select id="blendMode" class="text-sm border border-gray-200 rounded-lg px-3 py-1.5 bg-white focus:outline-none focus:border-black">
+                                    <option value="weighted">加权平均</option>
+                                    <option value="multiply">正片叠底</option>
+                                    <option value="screen">滤色</option>
+                                    <option value="overlay">叠加</option>
+                                    <option value="additive">相加混合</option>
+                                </select>
+                            </div>
+                            <button onclick="randomizeAll()" class="text-sm px-4 py-1.5 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors">随机配色</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 搭配参考 -->
+                <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <h3 class="text-lg font-semibold text-black">搭配参考</h3>
+                        <p class="text-sm text-gray-400 mt-1">各颜色分量展示</p>
+                    </div>
+                    <div class="p-5">
+                        <div class="grid grid-cols-2 gap-4" id="referenceGrid">
+                            <!-- Dynamic reference slots -->
+                        </div>
+                    </div>
+                    <div class="p-5 border-t border-gray-50 bg-gray-50">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="text-xs text-gray-500">调和方式:</span>
+                            <span id="harmonyLabel" class="text-xs font-medium text-black bg-white px-2 py-1 rounded-full border border-gray-200">自定义混合</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 颜色选择区域 -->
+    <section class="py-12 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-2xl font-bold text-black mb-2">颜色槽位</h3>
+            <p class="text-gray-500 mb-8">添加颜色（最多 6 个槽位）并调整每个颜色的权重。公式显示各颜色如何组合。</p>
+
+            <!-- Color Slots -->
+            <div class="mb-8" id="colorSlots">
+                <!-- Dynamic color slots -->
+            </div>
+
+            <div class="flex items-center gap-4 mb-10">
+                <button onclick="addColorSlot()" id="addSlotBtn" class="px-4 py-2 border-2 border-dashed border-gray-300 rounded-xl text-sm text-gray-500 hover:border-black hover:text-black transition-colors">+ 添加颜色槽位</button>
+                <button onclick="removeColorSlot()" id="removeSlotBtn" class="px-4 py-2 border border-gray-200 rounded-xl text-sm text-gray-500 hover:border-red-300 hover:text-red-500 transition-colors">- 移除槽位</button>
+                <span class="text-xs text-gray-400 ml-auto" id="slotCount">3 个槽位</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 设计风格选择 -->
+    <section class="py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-2xl font-bold text-black mb-2">设计风格预设</h3>
+            <p class="text-gray-500 mb-8">选择一种设计风格，应用其标志性配色方案作为混合的起点</p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3" id="stylePresets">
+                <!-- Dynamic style buttons -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 颜色调和工具 -->
+    <section class="py-12 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-2xl font-bold text-black mb-2">颜色调和</h3>
+            <p class="text-gray-500 mb-8">基于色彩理论生成和谐的颜色组合</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <button onclick="applyHarmony('complementary')" class="harmony-btn p-6 border border-gray-100 rounded-2xl hover:border-gray-300 transition-all text-left bg-white">
+                    <h4 class="font-semibold text-black">互补色</h4>
+                    <p class="text-sm text-gray-500 mt-1">色轮上相对的颜色 — 高对比度</p>
+                </button>
+                <button onclick="applyHarmony('analogous')" class="harmony-btn p-6 border border-gray-100 rounded-2xl hover:border-gray-300 transition-all text-left bg-white">
+                    <h4 class="font-semibold text-black">相似色</h4>
+                    <p class="text-sm text-gray-500 mt-1">色轮上相邻的颜色 — 和谐渐变</p>
+                </button>
+                <button onclick="applyHarmony('triadic')" class="harmony-btn p-6 border border-gray-100 rounded-2xl hover:border-gray-300 transition-all text-left bg-white">
+                    <h4 class="font-semibold text-black">三角色</h4>
+                    <p class="text-sm text-gray-500 mt-1">三个均匀分布 — 活力平衡</p>
+                </button>
+                <button onclick="applyHarmony('split-complementary')" class="harmony-btn p-6 border border-gray-100 rounded-2xl hover:border-gray-300 transition-all text-left bg-white">
+                    <h4 class="font-semibold text-black">分裂互补色</h4>
+                    <p class="text-sm text-gray-500 mt-1">基色 + 互补色两侧相邻色</p>
+                </button>
+                <button onclick="applyHarmony('tetradic')" class="harmony-btn p-6 border border-gray-100 rounded-2xl hover:border-gray-300 transition-all text-left bg-white">
+                    <h4 class="font-semibold text-black">四角色（矩形）</h4>
+                    <p class="text-sm text-gray-500 mt-1">四色组成两对互补色</p>
+                </button>
+                <button onclick="applyHarmony('monochromatic')" class="harmony-btn p-6 border border-gray-100 rounded-2xl hover:border-gray-300 transition-all text-left bg-white">
+                    <h4 class="font-semibold text-black">单色系</h4>
+                    <p class="text-sm text-gray-500 mt-1">单一色相，变化饱和度与明度</p>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 全色域快速选择 -->
+    <section class="py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-2xl font-bold text-black mb-2">全色域快速选择</h3>
+            <p class="text-gray-500 mb-8">点击任意颜色将其添加到当前活动槽位</p>
+            <div class="grid grid-cols-12 sm:grid-cols-16 md:grid-cols-20 lg:grid-cols-24 gap-1" id="spectrumGrid">
+                <!-- Generated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h3 class="text-2xl font-bold mb-4">前端设计灵感画廊</h3>
+            <p class="text-gray-400 mb-6">交互式颜色搭配器 — 探索全色域色彩</p>
+            <div class="flex justify-center gap-4 flex-wrap mb-8">
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Tailwind CSS</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">色彩理论</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">实时混合</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">全色域</span>
+            </div>
+            <p class="text-gray-500 text-sm">基于色彩理论资源和开源设计工具构建</p>
+        </div>
+    </footer>
+
+    <script>
+        // ==================== STATE ====================
+        let colorSlots = [
+            { color: '#FF6B6B', weight: 1 },
+            { color: '#4ECDC4', weight: 1 },
+            { color: '#FFE66D', weight: 1 }
+        ];
+        let activeSlot = 0;
+        let currentBlendMode = 'weighted';
+
+        // ==================== COLOR UTILITIES ====================
+        function hexToRgb(hex) {
+            const r = parseInt(hex.slice(1,3), 16);
+            const g = parseInt(hex.slice(3,5), 16);
+            const b = parseInt(hex.slice(5,7), 16);
+            return { r, g, b };
+        }
+
+        function rgbToHex(r, g, b) {
+            return '#' + [r, g, b].map(x => Math.round(Math.max(0, Math.min(255, x))).toString(16).padStart(2, '0')).join('');
+        }
+
+        function rgbToHsl(r, g, b) {
+            r /= 255; g /= 255; b /= 255;
+            const max = Math.max(r, g, b), min = Math.min(r, g, b);
+            let h, s, l = (max + min) / 2;
+            if (max === min) { h = s = 0; }
+            else {
+                const d = max - min;
+                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                switch (max) {
+                    case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
+                    case g: h = ((b - r) / d + 2) / 6; break;
+                    case b: h = ((r - g) / d + 4) / 6; break;
+                }
+            }
+            return { h: h * 360, s: s * 100, l: l * 100 };
+        }
+
+        function hslToRgb(h, s, l) {
+            h /= 360; s /= 100; l /= 100;
+            let r, g, b;
+            if (s === 0) { r = g = b = l; }
+            else {
+                const hue2rgb = (p, q, t) => {
+                    if (t < 0) t += 1;
+                    if (t > 1) t -= 1;
+                    if (t < 1/6) return p + (q - p) * 6 * t;
+                    if (t < 1/2) return q;
+                    if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+                    return p;
+                };
+                const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+                const p = 2 * l - q;
+                r = hue2rgb(p, q, h + 1/3);
+                g = hue2rgb(p, q, h);
+                b = hue2rgb(p, q, h - 1/3);
+            }
+            return { r: Math.round(r * 255), g: Math.round(g * 255), b: Math.round(b * 255) };
+        }
+
+        function mixColors(colors, weights, mode) {
+            if (colors.length === 0) return { r: 128, g: 128, b: 128 };
+            const rgbs = colors.map(c => hexToRgb(c));
+            const totalWeight = weights.reduce((a, b) => a + b, 0);
+            const w = weights.map(x => totalWeight > 0 ? x / totalWeight : 1 / colors.length);
+
+            if (mode === 'weighted') {
+                let r = 0, g = 0, b = 0;
+                for (let i = 0; i < colors.length; i++) {
+                    r += rgbs[i].r * w[i];
+                    g += rgbs[i].g * w[i];
+                    b += rgbs[i].b * w[i];
+                }
+                return { r: Math.round(r), g: Math.round(g), b: Math.round(b) };
+            }
+            if (mode === 'multiply') {
+                let r = 255, g = 255, b = 255;
+                for (let i = 0; i < colors.length; i++) {
+                    r *= rgbs[i].r / 255;
+                    g *= rgbs[i].g / 255;
+                    b *= rgbs[i].b / 255;
+                }
+                let wr = 0, wg = 0, wb = 0;
+                for (let i = 0; i < colors.length; i++) {
+                    wr += rgbs[i].r * w[i];
+                    wg += rgbs[i].g * w[i];
+                    wb += rgbs[i].b * w[i];
+                }
+                return { r: Math.round((r * 255 + wr) / 2), g: Math.round((g * 255 + wg) / 2), b: Math.round((b * 255 + wb) / 2) };
+            }
+            if (mode === 'screen') {
+                let r = 0, g = 0, b = 0;
+                for (let i = 0; i < colors.length; i++) {
+                    r += (1 - (1 - rgbs[i].r/255) * (1 - rgbs[i].r/255)) * 255 * w[i];
+                    g += (1 - (1 - rgbs[i].g/255) * (1 - rgbs[i].g/255)) * 255 * w[i];
+                    b += (1 - (1 - rgbs[i].b/255) * (1 - rgbs[i].b/255)) * 255 * w[i];
+                }
+                return { r: Math.round(r), g: Math.round(g), b: Math.round(b) };
+            }
+            if (mode === 'overlay') {
+                let wr = 0, wg = 0, wb = 0;
+                let mr = 255, mg = 255, mb = 255;
+                for (let i = 0; i < colors.length; i++) {
+                    wr += rgbs[i].r * w[i];
+                    wg += rgbs[i].g * w[i];
+                    wb += rgbs[i].b * w[i];
+                    mr *= rgbs[i].r / 255;
+                    mg *= rgbs[i].g / 255;
+                    mb *= rgbs[i].b / 255;
+                }
+                return {
+                    r: Math.round(wr > 128 ? 255 - 2*(255-wr)*(255-mr*255)/255 : 2*wr*mr*255/255/255),
+                    g: Math.round(wg > 128 ? 255 - 2*(255-wg)*(255-mg*255)/255 : 2*wg*mg*255/255/255),
+                    b: Math.round(wb > 128 ? 255 - 2*(255-wb)*(255-mb*255)/255 : 2*wb*mb*255/255/255)
+                };
+            }
+            if (mode === 'additive') {
+                let r = 0, g = 0, b = 0;
+                for (let i = 0; i < colors.length; i++) {
+                    r += rgbs[i].r * w[i];
+                    g += rgbs[i].g * w[i];
+                    b += rgbs[i].b * w[i];
+                }
+                return { r: Math.min(255, Math.round(r)), g: Math.min(255, Math.round(g)), b: Math.min(255, Math.round(b)) };
+            }
+            let r = 0, g = 0, b = 0;
+            for (let i = 0; i < colors.length; i++) {
+                r += rgbs[i].r * w[i];
+                g += rgbs[i].g * w[i];
+                b += rgbs[i].b * w[i];
+            }
+            return { r: Math.round(r), g: Math.round(g), b: Math.round(b) };
+        }
+
+        // ==================== RENDER ====================
+        function updatePreview() {
+            const colors = colorSlots.map(s => s.color);
+            const weights = colorSlots.map(s => s.weight);
+            const mixed = mixColors(colors, weights, currentBlendMode);
+            const hex = rgbToHex(mixed.r, mixed.g, mixed.b);
+
+            document.getElementById('mixPreview').style.backgroundColor = hex;
+            document.getElementById('mixResultHex').textContent = hex;
+            document.getElementById('mixResultRGB').textContent = `rgb(${mixed.r}, ${mixed.g}, ${mixed.b})`;
+
+            const luminance = (0.299 * mixed.r + 0.587 * mixed.g + 0.114 * mixed.b) / 255;
+            const textColor = luminance > 0.5 ? '#000' : '#fff';
+            document.getElementById('mixResultHex').style.color = textColor;
+            document.getElementById('mixResultRGB').style.color = textColor;
+
+            const formula = colorSlots.map((s, i) => {
+                const plus = i > 0 ? ' + ' : '';
+                return `${plus}${s.color}`;
+            }).join('') + ` = ${hex}`;
+            document.getElementById('mixFormula').textContent = formula;
+
+            updateReferenceGrid();
+        }
+
+        function updateReferenceGrid() {
+            const grid = document.getElementById('referenceGrid');
+            grid.innerHTML = colorSlots.map((s, i) => {
+                const rgb = hexToRgb(s.color);
+                return `
+                    <div class="color-swatch p-3 rounded-xl border border-gray-100 ${i === activeSlot ? 'active-slot' : ''}" 
+                         style="background: ${s.color};" 
+                         onclick="setActiveSlot(${i})">
+                        <div class="h-16 rounded-lg flex items-end justify-center p-2" style="background: ${s.color};">
+                            <span class="text-xs font-mono font-bold drop-shadow-lg" style="color: ${(0.299*rgb.r+0.587*rgb.g+0.114*rgb.b)/255 > 0.5 ? '#000' : '#fff'}">${s.color}</span>
+                        </div>
+                        <div class="mt-2 flex items-center justify-between bg-white rounded-lg px-2 py-1">
+                            <span class="text-xs text-gray-500">权重: ${s.weight}</span>
+                            <span class="text-xs text-gray-400">槽位 ${i+1}</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function updateColorSlots() {
+            const container = document.getElementById('colorSlots');
+            container.innerHTML = colorSlots.map((s, i) => {
+                const rgb = hexToRgb(s.color);
+                return `
+                    <div class="flex items-center gap-4 p-4 bg-white rounded-2xl border ${i === activeSlot ? 'border-black active-slot' : 'border-gray-100'} mb-3">
+                        <div class="relative">
+                            <input type="color" value="${s.color}" onchange="updateSlotColor(${i}, this.value)" class="w-12 h-12">
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-1">
+                                <span class="text-sm font-mono font-semibold">${s.color}</span>
+                                <span class="text-xs text-gray-400">槽位 ${i+1}</span>
+                                ${i === activeSlot ? '<span class="text-xs bg-black text-white px-2 py-0.5 rounded-full">当前</span>' : ''}
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs text-gray-500">权重:</span>
+                                <input type="range" min="0.1" max="3" step="0.1" value="${s.weight}" oninput="updateSlotWeight(${i}, parseFloat(this.value))" class="flex-1 max-w-[200px]">
+                                <span class="text-xs font-mono w-8 text-right">${s.weight}</span>
+                            </div>
+                        </div>
+                        <button onclick="setActiveSlot(${i})" class="px-3 py-1 text-xs border border-gray-200 rounded-lg hover:bg-black hover:text-white transition-colors">选择</button>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('slotCount').textContent = `${colorSlots.length} 个槽位`;
+            document.getElementById('removeSlotBtn').style.display = colorSlots.length > 1 ? 'inline-block' : 'none';
+            document.getElementById('addSlotBtn').style.display = colorSlots.length < 6 ? 'inline-block' : 'none';
+        }
+
+        function updateAll() {
+            updateColorSlots();
+            updatePreview();
+            updateHarmonyLabel();
+        }
+
+        function updateHarmonyLabel() {
+            document.getElementById('harmonyLabel').textContent = currentBlendMode === 'weighted' ? '加权混合' :
+                currentBlendMode === 'multiply' ? '正片叠底' :
+                currentBlendMode === 'screen' ? '滤色混合' :
+                currentBlendMode === 'overlay' ? '叠加混合' : '相加混合';
+        }
+
+        // ==================== ACTIONS ====================
+        function setActiveSlot(index) {
+            activeSlot = index;
+            updateAll();
+        }
+
+        function updateSlotColor(index, color) {
+            colorSlots[index].color = color;
+            activeSlot = index;
+            updateAll();
+        }
+
+        function updateSlotWeight(index, weight) {
+            colorSlots[index].weight = weight;
+            updateAll();
+        }
+
+        function addColorSlot() {
+            if (colorSlots.length >= 6) return;
+            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+            colorSlots.push({ color: randomColor, weight: 1 });
+            activeSlot = colorSlots.length - 1;
+            updateAll();
+        }
+
+        function removeColorSlot() {
+            if (colorSlots.length <= 1) return;
+            colorSlots.pop();
+            if (activeSlot >= colorSlots.length) activeSlot = colorSlots.length - 1;
+            updateAll();
+        }
+
+        function randomizeAll() {
+            colorSlots = colorSlots.map(s => ({
+                color: '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0'),
+                weight: s.weight
+            }));
+            updateAll();
+        }
+
+        // ==================== STYLE PRESETS ====================
+        const stylePresets = [
+            { name: '极简主义', colors: ['#000000', '#FFFFFF', '#808080'], weight: [1, 1, 0.5] },
+            { name: '新拟物风格', colors: ['#C8E0F4', '#F5E0E8', '#E8E8E8'], weight: [1, 1, 1] },
+            { name: '玻璃拟态', colors: ['#0080FF', '#8B00FF', '#FF1493'], weight: [1, 0.8, 0.6] },
+            { name: '黏土风格', colors: ['#FDBCB4', '#ADD8E6', '#98FF98'], weight: [1, 1, 0.8] },
+            { name: '拟物化', colors: ['#8B4513', '#DEB887', '#B8B8B8'], weight: [1, 0.8, 0.5] },
+            { name: '扁平设计', colors: ['#E74C3C', '#F39C12', '#3498DB'], weight: [1, 1, 1] },
+            { name: '极光 UI', colors: ['#667EEA', '#764BA2', '#F093FB'], weight: [1, 0.8, 0.7] },
+            { name: '粗野主义', colors: ['#FF0000', '#0000FF', '#FFFF00'], weight: [1, 1, 1] },
+            { name: '新粗野主义', colors: ['#FF6B6B', '#4ECDC4', '#FFE66D'], weight: [1, 1, 1] },
+            { name: '便当盒布局', colors: ['#8B5CF6', '#F59E0B', '#10B981'], weight: [1, 0.8, 0.6] },
+            { name: '赛博朋克', colors: ['#FF00FF', '#00FFFF', '#00FF00'], weight: [1, 1, 0.8] },
+            { name: '蒸汽波', colors: ['#FF71CE', '#00FFFF', '#9B59B6'], weight: [1, 0.8, 0.6] },
+            { name: '瑞士现代主义', colors: ['#000000', '#E60000', '#0066CC'], weight: [1, 0.5, 0.5] },
+            { name: '液态玻璃', colors: ['#667EEA', '#F093FB', '#00FFFF'], weight: [1, 0.7, 0.6] },
+            { name: 'Gen Z 混沌', colors: ['#FF6B6B', '#FFE66D', '#A388EE'], weight: [1, 1, 0.8] },
+            { name: '暗黑模式 OLED', colors: ['#000000', '#1A1A2E', '#00D4FF'], weight: [1, 0.8, 0.4] },
+            { name: '复古未来主义', colors: ['#FF6B35', '#004E89', '#F7C59F'], weight: [1, 1, 0.7] },
+            { name: '动效驱动', colors: ['#FF3366', '#FF9933', '#33CCFF'], weight: [1, 0.8, 0.6] },
+            { name: '包容性设计', colors: ['#1A73E8', '#34A853', '#FBBC04'], weight: [1, 1, 0.8] },
+            { name: '零界面', colors: ['#F5F5F5', '#E0E0E0', '#9E9E9E'], weight: [1, 1, 0.5] },
+            { name: '柔和 UI 进化', colors: ['#E8D5F5', '#D5E8F5', '#F5E8D5'], weight: [1, 1, 0.8] },
+            { name: '主视觉中心', colors: ['#1A1A2E', '#E94560', '#FFFFFF'], weight: [1, 0.7, 0.5] },
+            { name: 'HUD 科幻', colors: ['#00FF41', '#003B00', '#00BFFF'], weight: [1, 0.8, 0.5] },
+            { name: '像素艺术', colors: ['#FF004D', '#FFEC27', '#00E436'], weight: [1, 1, 1] },
+            { name: '电子墨水纸', colors: ['#F8F4E6', '#D4CFC4', '#2C2C2C'], weight: [1, 0.8, 0.3] },
+            { name: '空间 UI', colors: ['#5B5EA6', '#FF6F61', '#88B04B'], weight: [1, 0.7, 0.6] },
+            { name: '有机仿生', colors: ['#2D6A4F', '#95D5B2', '#D8F3DC'], weight: [1, 0.8, 0.6] },
+            { name: 'AI 原生', colors: ['#6366F1', '#8B5CF6', '#06B6D4'], weight: [1, 0.8, 0.6] },
+            { name: '孟菲斯复兴', colors: ['#FF6B6B', '#4ECDC4', '#FFE66D', '#A388EE'], weight: [1, 1, 0.8, 0.7] },
+            { name: 'Y2K 复兴', colors: ['#FF69B4', '#00CED1', '#FFD700', '#C0C0C0'], weight: [1, 0.8, 0.6, 0.5] }
+        ];
+
+        function renderStylePresets() {
+            const container = document.getElementById('stylePresets');
+            container.innerHTML = stylePresets.map((p, i) => `
+                <button onclick="applyStylePreset(${i})" class="style-btn p-4 border border-gray-100 rounded-xl hover:shadow-md transition-all bg-white text-left">
+                    <div class="flex gap-1 mb-2">
+                        ${p.colors.map(c => `<div class="w-6 h-6 rounded-full border border-gray-200" style="background:${c}"></div>`).join('')}
+                    </div>
+                    <span class="text-sm font-medium text-black">${p.name}</span>
+                </button>
+            `).join('');
+        }
+
+        function applyStylePreset(index) {
+            const preset = stylePresets[index];
+            colorSlots = preset.colors.map((c, i) => ({
+                color: c,
+                weight: preset.weight[i] || 1
+            }));
+            activeSlot = 0;
+            currentBlendMode = 'weighted';
+            document.getElementById('blendMode').value = 'weighted';
+            updateAll();
+        }
+
+        // ==================== HARMONY ====================
+        function applyHarmony(type) {
+            const baseColor = colorSlots[activeSlot]?.color || '#3498DB';
+            const baseRgb = hexToRgb(baseColor);
+            const baseHsl = rgbToHsl(baseRgb.r, baseRgb.g, baseRgb.b);
+
+            let newColors = [];
+            switch (type) {
+                case 'complementary':
+                    newColors = [
+                        baseColor,
+                        rgbToHex(...Object.values(hslToRgb((baseHsl.h + 180) % 360, baseHsl.s, baseHsl.l)))
+                    ];
+                    break;
+                case 'analogous':
+                    newColors = [
+                        rgbToHex(...Object.values(hslToRgb((baseHsl.h - 30 + 360) % 360, baseHsl.s, baseHsl.l))),
+                        baseColor,
+                        rgbToHex(...Object.values(hslToRgb((baseHsl.h + 30) % 360, baseHsl.s, baseHsl.l)))
+                    ];
+                    break;
+                case 'triadic':
+                    newColors = [
+                        baseColor,
+                        rgbToHex(...Object.values(hslToRgb((baseHsl.h + 120) % 360, baseHsl.s, baseHsl.l))),
+                        rgbToHex(...Object.values(hslToRgb((baseHsl.h + 240) % 360, baseHsl.s, baseHsl.l)))
+                    ];
+                    break;
+                case 'split-complementary':
+                    newColors = [
+                        baseColor,
+                        rgbToHex(...Object.values(hslToRgb((baseHsl.h + 150) % 360, baseHsl.s, baseHsl.l))),
+                        rgbToHex(...Object.values(hslToRgb((baseHsl.h + 210) % 360, baseHsl.s, baseHsl.l)))
+                    ];
+                    break;
+                case 'tetradic':
+                    newColors = [
+                        baseColor,
+                        rgbToHex(...Object.values(hslToRgb((baseHsl.h + 60) % 360, baseHsl.s, baseHsl.l))),
+                        rgbToHex(...Object.values(hslToRgb((baseHsl.h + 180) % 360, baseHsl.s, baseHsl.l))),
+                        rgbToHex(...Object.values(hslToRgb((baseHsl.h + 240) % 360, baseHsl.s, baseHsl.l)))
+                    ];
+                    break;
+                case 'monochromatic':
+                    newColors = [
+                        rgbToHex(...Object.values(hslToRgb(baseHsl.h, baseHsl.s, Math.max(0, baseHsl.l - 30)))),
+                        baseColor,
+                        rgbToHex(...Object.values(hslToRgb(baseHsl.h, baseHsl.s, Math.min(100, baseHsl.l + 30)))),
+                        rgbToHex(...Object.values(hslToRgb(baseHsl.h, Math.max(0, baseHsl.s - 30), baseHsl.l)))
+                    ];
+                    break;
+            }
+
+            colorSlots = newColors.map((c, i) => ({
+                color: c,
+                weight: i === 0 ? 1.5 : 1
+            }));
+            activeSlot = 0;
+            updateAll();
+        }
+
+        // ==================== SPECTRUM GRID ====================
+        function renderSpectrumGrid() {
+            const grid = document.getElementById('spectrumGrid');
+            const hues = 24;
+            const steps = 8;
+            let html = '';
+            for (let s = 0; s < steps; s++) {
+                for (let h = 0; h < hues; h++) {
+                    const hue = (h / hues) * 360;
+                    const lightness = 85 - (s / steps) * 70;
+                    const saturation = 40 + (s / steps) * 60;
+                    const rgb = hslToRgb(hue, saturation, lightness);
+                    const hex = rgbToHex(rgb.r, rgb.g, rgb.b);
+                    html += `<div class="color-swatch w-full aspect-square rounded-sm" style="background:${hex}" title="${hex}" onclick="setSlotColorFromSpectrum('${hex}')"></div>`;
+                }
+            }
+            grid.innerHTML = html;
+        }
+
+        function setSlotColorFromSpectrum(hex) {
+            colorSlots[activeSlot].color = hex;
+            updateAll();
+        }
+
+        // ==================== INIT ====================
+        function init() {
+            renderStylePresets();
+            renderSpectrumGrid();
+            updateAll();
+        }
+
+        document.getElementById('blendMode').addEventListener('change', function() {
+            currentBlendMode = this.value;
+            updateHarmonyLabel();
+            updatePreview();
+        });
+
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+    </script>
+
+</body>
+</html>

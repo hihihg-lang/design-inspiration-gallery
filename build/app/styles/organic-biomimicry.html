@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>有机仿生 - UI Style #27</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+    </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Design Gallery">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+</head>
+<body class="bg-gradient-to-br from-green-800 via-green-500 to-green-200 text-white min-h-screen">
+    <nav class="fixed top-4 left-4 right-4 bg-white/20 backdrop-blur border-white/30 rounded-3xl rounded-lg z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../../index.html" class="text-sm opacity-60 hover:opacity-100 transition-opacity">&larr; 返回画廊</a>
+            <span class="font-medium">#27 有机仿生</span>
+            <div class="flex items-center gap-2">
+                <a href="../zh/styles/organic-biomimicry.html" class="text-xs opacity-50 hover:opacity-100">EN</a>
+                <span class="opacity-30">|</span>
+                <span class="text-xs font-medium opacity-80">中文</span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="text-7xl font-bold tracking-tight leading-none mb-8">有机仿生<br/>设计</h1>
+            <p class="text-xl max-w-xl leading-relaxed opacity-80">从大自然中汲取灵感，使用有机曲线、自然纹理和仿生形态，创造与自然和谐共生的界面。</p>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 border-t border-white/10">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-12 gap-8">
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">01</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">有机曲线</h2>
+                    <p class="opacity-70">使用贝塞尔曲线和自然形态，避免生硬的直角和直线</p>
+                </div>
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">02</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">自然纹理</h2>
+                    <p class="opacity-70">木纹、石纹、水波纹等自然肌理增加视觉温度</p>
+                </div>
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">03</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">生物色板</h2>
+                    <p class="opacity-70">从自然界提取的色彩，和谐舒适不刺眼</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-black/10">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-8">色彩方案</h3>
+            <div class="flex gap-4">
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #2D6A4F;"></div>
+                    <p class="text-sm font-medium">森林绿</p>
+                    <p class="text-xs opacity-50">#2D6A4F</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #52B788;"></div>
+                    <p class="text-sm font-medium">翡翠绿</p>
+                    <p class="text-xs opacity-50">#52B788</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #95D5B2;"></div>
+                    <p class="text-sm font-medium">苔藓绿</p>
+                    <p class="text-xs opacity-50">#95D5B2</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #8B6914;"></div>
+                    <p class="text-sm font-medium">泥土棕</p>
+                    <p class="text-xs opacity-50">#8B6914</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-12">组件示例</h3>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">按钮</h4>
+                <div class="flex gap-4 items-center flex-wrap">
+                    <button class="px-8 py-3 font-medium transition-colors bg-[#2D6A4F] text-white hover:bg-[#1E4A37] rounded-3xl">主要操作</button>
+                    <button class="px-8 py-3 font-medium transition-colors border-2 border-[#2D6A4F] text-[#2D6A4F] hover:bg-[#2D6A4F] hover:text-white rounded-3xl">次要操作</button>
+                    <button class="px-8 py-3 font-medium hover:opacity-60 transition-colors">文字链接 &rarr;</button>
+                </div>
+            </div>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">卡片</h4>
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="bg-white/20 backdrop-blur border-white/30 rounded-3xl p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">有机曲线</h5>
+                        <p class="text-sm opacity-70">使用贝塞尔曲线和自然形态，避免生硬的直角和直线...</p>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur border-white/30 rounded-3xl p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">自然纹理</h5>
+                        <p class="text-sm opacity-70">木纹、石纹、水波纹等自然肌理增加视觉温度...</p>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur border-white/30 rounded-3xl p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">生物色板</h5>
+                        <p class="text-sm opacity-70">从自然界提取的色彩，和谐舒适不刺眼...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">表单元素</h4>
+                <div class="max-w-md">
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-2 opacity-70">邮箱</label>
+                        <input type="email" class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-2 opacity-70">留言</label>
+                        <textarea class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors h-32" placeholder="您的留言..."></textarea>
+                    </div>
+                    <button class="px-8 py-3 font-medium transition-colors bg-[#2D6A4F] text-white hover:bg-[#1E4A37] rounded-3xl">提交</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-black/20">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">最佳适用</h3>
+                    <ul class="space-y-2 opacity-80">
+                        <li>环保品牌</li>
+                        <li>健康应用</li>
+                        <li>户外运动</li>
+                        <li>有机食品</li>
+                        <li>SPA 养生</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">特性</h3>
+                    <ul class="space-y-2 opacity-80">
+                        <li>深色模式: 完全支持</li>
+                        <li>浅色模式: 完全支持</li>
+                        <li>性能: 良好</li>
+                        <li>无障碍: WCAG AA</li>
+                        <li>复杂度: 中</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 px-6 border-t border-white/10">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <a href="../../index.html" class="text-sm opacity-50 hover:opacity-100">&larr; 返回画廊</a>
+            <a href="ai-native.html" class="text-sm opacity-50 hover:opacity-100">下一页: #28 &rarr;</a>
+        </div>
+    </footer>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+    </script>
+</body>
+</html>

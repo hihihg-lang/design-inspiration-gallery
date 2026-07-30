@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子墨水纸 - UI Style #25</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+    </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Design Gallery">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+</head>
+<body class="bg-[#F8F4E6] text-[#2C2C2C] min-h-screen">
+    <nav class="fixed top-4 left-4 right-4 bg-white border-[#D4C9B8] rounded-lg z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../../index.html" class="text-sm opacity-60 hover:opacity-100 transition-opacity">&larr; 返回画廊</a>
+            <span class="font-medium">#25 电子墨水纸</span>
+            <div class="flex items-center gap-2">
+                <a href="../zh/styles/e-ink.html" class="text-xs opacity-50 hover:opacity-100">EN</a>
+                <span class="opacity-30">|</span>
+                <span class="text-xs font-medium opacity-80">中文</span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="text-7xl font-bold tracking-tight leading-none mb-8">电子墨水<br/>纸</h1>
+            <p class="text-xl max-w-xl leading-relaxed opacity-80">模拟电子墨水屏的阅读体验，纸质纹理背景、低对比度色彩，营造宁静舒适的阅读环境。</p>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 border-t border-white/10">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-12 gap-8">
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">01</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">纸张质感</h2>
+                    <p class="opacity-70">温暖的米色背景模拟真实纸张，降低屏幕对眼睛的刺激</p>
+                </div>
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">02</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">衬线字体</h2>
+                    <p class="opacity-70">使用优雅的衬线字体，还原传统印刷品的阅读节奏</p>
+                </div>
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">03</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">极简布局</h2>
+                    <p class="opacity-70">单栏布局、宽边距、大行距，专注内容本身</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-black/10">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-8">色彩方案</h3>
+            <div class="flex gap-4">
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #F8F4E6;"></div>
+                    <p class="text-sm font-medium">纸张白</p>
+                    <p class="text-xs opacity-50">#F8F4E6</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #2C2C2C;"></div>
+                    <p class="text-sm font-medium">墨水黑</p>
+                    <p class="text-xs opacity-50">#2C2C2C</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #D4C9B8;"></div>
+                    <p class="text-sm font-medium">浅褐</p>
+                    <p class="text-xs opacity-50">#D4C9B8</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #8B8680;"></div>
+                    <p class="text-sm font-medium">暖灰</p>
+                    <p class="text-xs opacity-50">#8B8680</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-12">组件示例</h3>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">按钮</h4>
+                <div class="flex gap-4 items-center flex-wrap">
+                    <button class="px-8 py-3 font-medium transition-colors bg-[#2C2C2C] text-[#F8F4E6] hover:bg-black border border-[#2C2C2C]">主要操作</button>
+                    <button class="px-8 py-3 font-medium transition-colors border border-[#2C2C2C] text-[#2C2C2C] hover:bg-[#2C2C2C] hover:text-[#F8F4E6]">次要操作</button>
+                    <button class="px-8 py-3 font-medium hover:opacity-60 transition-colors">文字链接 &rarr;</button>
+                </div>
+            </div>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">卡片</h4>
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="bg-white border-[#D4C9B8] p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">纸张质感</h5>
+                        <p class="text-sm opacity-70">温暖的米色背景模拟真实纸张，降低屏幕对眼睛的刺激...</p>
+                    </div>
+                    <div class="bg-white border-[#D4C9B8] p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">衬线字体</h5>
+                        <p class="text-sm opacity-70">使用优雅的衬线字体，还原传统印刷品的阅读节奏...</p>
+                    </div>
+                    <div class="bg-white border-[#D4C9B8] p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">极简布局</h5>
+                        <p class="text-sm opacity-70">单栏布局、宽边距、大行距，专注内容本身...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">表单元素</h4>
+                <div class="max-w-md">
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-2 opacity-70">邮箱</label>
+                        <input type="email" class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-2 opacity-70">留言</label>
+                        <textarea class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors h-32" placeholder="您的留言..."></textarea>
+                    </div>
+                    <button class="px-8 py-3 font-medium transition-colors bg-[#2C2C2C] text-[#F8F4E6] hover:bg-black border border-[#2C2C2C]">提交</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-black/20">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">最佳适用</h3>
+                    <ul class="space-y-2 opacity-80">
+                        <li>电子书阅读器</li>
+                        <li>长文阅读</li>
+                        <li>学术期刊</li>
+                        <li>文学博客</li>
+                        <li>知识库</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">特性</h3>
+                    <ul class="space-y-2 opacity-80">
+                        <li>深色模式: 完全支持</li>
+                        <li>浅色模式: 完全支持</li>
+                        <li>性能: 极佳</li>
+                        <li>无障碍: WCAG AAA</li>
+                        <li>复杂度: 低</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 px-6 border-t border-white/10">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <a href="../../index.html" class="text-sm opacity-50 hover:opacity-100">&larr; 返回画廊</a>
+            <a href="spatial-ui.html" class="text-sm opacity-50 hover:opacity-100">下一页: #26 &rarr;</a>
+        </div>
+    </footer>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+    </script>
+</body>
+</html>

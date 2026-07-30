@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 原生 - UI Style #28</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+    </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Design Gallery">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+</head>
+<body class="bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-400 text-white min-h-screen">
+    <nav class="fixed top-4 left-4 right-4 bg-white/10 backdrop-blur border-white/20 rounded-lg z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../../index.html" class="text-sm opacity-60 hover:opacity-100 transition-opacity">&larr; 返回画廊</a>
+            <span class="font-medium">#28 AI 原生</span>
+            <div class="flex items-center gap-2">
+                <a href="../zh/styles/ai-native.html" class="text-xs opacity-50 hover:opacity-100">EN</a>
+                <span class="opacity-30">|</span>
+                <span class="text-xs font-medium opacity-80">中文</span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="text-7xl font-bold tracking-tight leading-none mb-8">AI 原生<br/>设计</h1>
+            <p class="text-xl max-w-xl leading-relaxed opacity-80">专为 AI 驱动的产品打造的界面风格，融合渐变色彩、流动形态和智能交互元素。</p>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 border-t border-white/10">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-12 gap-8">
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">01</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">锥形渐变</h2>
+                    <p class="opacity-70">使用 conic gradient 创造动态的 AI 视觉语言</p>
+                </div>
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">02</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">对话界面</h2>
+                    <p class="opacity-70">以聊天和对话为核心的交互模式，自然流畅</p>
+                </div>
+                <div class="col-span-4">
+                    <span class="text-sm opacity-50 uppercase tracking-widest">03</span>
+                    <h2 class="text-2xl font-semibold mt-2 mb-4">智能适配</h2>
+                    <p class="opacity-70">界面元素根据用户行为和上下文动态调整</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-black/10">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-8">色彩方案</h3>
+            <div class="flex gap-4">
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #6366F1;"></div>
+                    <p class="text-sm font-medium">靛蓝</p>
+                    <p class="text-xs opacity-50">#6366F1</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #8B5CF6;"></div>
+                    <p class="text-sm font-medium">紫罗兰</p>
+                    <p class="text-xs opacity-50">#8B5CF6</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #06B6D4;"></div>
+                    <p class="text-sm font-medium">青色</p>
+                    <p class="text-xs opacity-50">#06B6D4</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-32 rounded-lg mb-3" style="background: #1E1B4B;"></div>
+                    <p class="text-sm font-medium">深紫</p>
+                    <p class="text-xs opacity-50">#1E1B4B</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-sm opacity-50 uppercase tracking-widest mb-12">组件示例</h3>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">按钮</h4>
+                <div class="flex gap-4 items-center flex-wrap">
+                    <button class="px-8 py-3 font-medium transition-colors bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:opacity-90">主要操作</button>
+                    <button class="px-8 py-3 font-medium transition-colors border-2 border-indigo-400 text-indigo-400 hover:bg-indigo-50">次要操作</button>
+                    <button class="px-8 py-3 font-medium hover:opacity-60 transition-colors">文字链接 &rarr;</button>
+                </div>
+            </div>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">卡片</h4>
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="bg-white/10 backdrop-blur border-white/20 p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">锥形渐变</h5>
+                        <p class="text-sm opacity-70">使用 conic gradient 创造动态的 AI 视觉语言...</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur border-white/20 p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">对话界面</h5>
+                        <p class="text-sm opacity-70">以聊天和对话为核心的交互模式，自然流畅...</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur border-white/20 p-6 rounded-xl">
+                        <span class="text-xs opacity-50 uppercase tracking-widest">特性</span>
+                        <h5 class="text-xl font-semibold mt-2 mb-3">智能适配</h5>
+                        <p class="text-sm opacity-70">界面元素根据用户行为和上下文动态调整...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-16">
+                <h4 class="text-lg font-medium mb-6">表单元素</h4>
+                <div class="max-w-md">
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-2 opacity-70">邮箱</label>
+                        <input type="email" class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-2 opacity-70">留言</label>
+                        <textarea class="w-full px-4 py-3 border border-white/30 bg-white/10 rounded-lg focus:outline-none focus:border-white/60 transition-colors h-32" placeholder="您的留言..."></textarea>
+                    </div>
+                    <button class="px-8 py-3 font-medium transition-colors bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:opacity-90">提交</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-black/20">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">最佳适用</h3>
+                    <ul class="space-y-2 opacity-80">
+                        <li>AI 助手</li>
+                        <li>聊天机器人</li>
+                        <li>智能工具</li>
+                        <li>数据分析</li>
+                        <li>自动化平台</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm opacity-50 uppercase tracking-widest mb-6">特性</h3>
+                    <ul class="space-y-2 opacity-80">
+                        <li>深色模式: 完全支持</li>
+                        <li>浅色模式: 完全支持</li>
+                        <li>性能: 良好</li>
+                        <li>无障碍: WCAG AA</li>
+                        <li>复杂度: 中</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 px-6 border-t border-white/10">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <a href="../../index.html" class="text-sm opacity-50 hover:opacity-100">&larr; 返回画廊</a>
+            <a href="memphis.html" class="text-sm opacity-50 hover:opacity-100">下一页: #29 &rarr;</a>
+        </div>
+    </footer>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+    </script>
+</body>
+</html>

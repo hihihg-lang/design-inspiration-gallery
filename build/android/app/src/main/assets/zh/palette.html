@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette System — Frontend Design Inspiration Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    </style>
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Design Gallery">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+</head>
+<body class="bg-white text-black min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="text-xl font-bold text-black">Design Inspiration Gallery</h1>
+                <div class="flex items-center gap-6">
+                    <nav class="flex gap-6 text-sm">
+                        <a href="../index.html" class="text-gray-500 hover:text-black transition-colors">Gallery</a>
+                        <a href="../palette.html" class="text-black font-medium">Palettes</a>
+                        <a href="../color-mixer.html" class="text-gray-500 hover:text-black transition-colors">Color Mixer</a>
+                        <a href="../philosophy.html" class="text-gray-500 hover:text-black transition-colors">Philosophy</a>
+                        <a href="../reference.html" class="text-gray-500 hover:text-black transition-colors">Reference</a>
+                    </nav>
+                    <div class="flex items-center gap-4">
+                        <a href="../palette.html" class="text-sm text-black font-medium">EN</a>
+                        <span class="text-gray-300">|</span>
+                        <a href="palette.html" class="text-sm text-gray-500 hover:text-black">中文</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="py-20 px-6 border-b border-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl font-bold text-black mb-6">Color Palette System</h2>
+            <p class="text-xl text-gray-500 mb-2 max-w-2xl mx-auto">A comprehensive collection of curated color schemes organized by design style.</p>
+            <p class="text-base text-gray-400 max-w-xl mx-auto">Each palette includes primary, secondary, accent, and dark mode color variants — ready to use in your next project.</p>
+        </div>
+    </section>
+
+    <!-- Core Styles Palettes -->
+    <section class="py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-2xl font-bold text-black mb-2">Core Design Style Palettes</h3>
+            <p class="text-gray-500 mb-10">Foundational design paradigms and their signature color systems</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <!-- 1. Minimalism -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">01</span>
+                        <h4 class="text-lg font-semibold text-black">Minimalism</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-12 bg-[#000000] rounded-lg border border-gray-200"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#000000 <span class="text-gray-400">— Black</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#FFFFFF] rounded-lg border border-gray-200"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#FFFFFF <span class="text-gray-400">— White</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#808080] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#808080 <span class="text-gray-400">— Grey</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#F5F1E8] rounded-lg border border-gray-200"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#F5F1E8 <span class="text-gray-400">— Beige</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Neumorphism -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">02</span>
+                        <h4 class="text-lg font-semibold text-black">Neumorphism</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-12 bg-[#C8E0F4] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#C8E0F4 <span class="text-gray-400">— Soft Blue</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#F5E0E8] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#F5E0E8 <span class="text-gray-400">— Soft Pink</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#E8E8E8] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#E8E8E8 <span class="text-gray-400">— Soft Grey</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#D4F5E9] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#D4F5E9 <span class="text-gray-400">— Soft Mint</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Glassmorphism -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">03</span>
+                        <h4 class="text-lg font-semibold text-black">Glassmorphism</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-12 bg-[#0080FF] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#0080FF <span class="text-gray-400">— Electric Blue</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#8B00FF] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#8B00FF <span class="text-gray-400">— Neon Purple</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#FF1493] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#FF1493 <span class="text-gray-400">— Vivid Pink</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#20B2AA] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#20B2AA <span class="text-gray-400">— Teal</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Claymorphism -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">04</span>
+                        <h4 class="text-lg font-semibold text-black">Claymorphism</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-12 bg-[#FDBCB4] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#FDBCB4 <span class="text-gray-400">— Soft Peach</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#ADD8E6] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#ADD8E6 <span class="text-gray-400">— Baby Blue</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#98FF98] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#98FF98 <span class="text-gray-400">— Mint</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#E6E6FA] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#E6E6FA <span class="text-gray-400">— Lilac</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Skeuomorphism -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">05</span>
+                        <h4 class="text-lg font-semibold text-black">Skeuomorphism</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-12 bg-[#8B4513] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#8B4513 <span class="text-gray-400">— Leather Brown</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#DEB887] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#DEB887 <span class="text-gray-400">— Wood</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#B8B8B8] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#B8B8B8 <span class="text-gray-400">— Metal Grey</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#F5F5F5] rounded-lg border border-gray-200"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#F5F5F5 <span class="text-gray-400">— Glass White</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Flat Design -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">06</span>
+                        <h4 class="text-lg font-semibold text-black">Flat Design</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-10 bg-[#E74C3C] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#E74C3C <span class="text-gray-400">— Alizarin</span></p>
+                        </div>
+                        <div>
+                            <div class="h-10 bg-[#F39C12] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#F39C12 <span class="text-gray-400">— Orange</span></p>
+                        </div>
+                        <div>
+                            <div class="h-10 bg-[#F1C40F] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#F1C40F <span class="text-gray-400">— Sun Flower</span></p>
+                        </div>
+                        <div>
+                            <div class="h-10 bg-[#3498DB] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#3498DB <span class="text-gray-400">— Peter River</span></p>
+                        </div>
+                        <div>
+                            <div class="h-10 bg-[#9B59B6] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#9B59B6 <span class="text-gray-400">— Amethyst</span></p>
+                        </div>
+                        <div>
+                            <div class="h-10 bg-[#27AE60] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#27AE60 <span class="text-gray-400">— Nephritis</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Aurora UI -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">07</span>
+                        <h4 class="text-lg font-semibold text-black">Aurora UI</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-16 rounded-lg" style="background: linear-gradient(135deg, #667EEA 0%, #764BA2 50%, #F093FB 100%);"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#667EEA → #764BA2 → #F093FB</p>
+                            <p class="text-xs text-gray-400">Gradient Blue-Purple-Pink</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Brutalism -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">08</span>
+                        <h4 class="text-lg font-semibold text-black">Brutalism</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-12 bg-[#FF0000] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#FF0000 <span class="text-gray-400">— Red</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#0000FF] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#0000FF <span class="text-gray-400">— Blue</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#FFFF00] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#FFFF00 <span class="text-gray-400">— Yellow</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#000000] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#000000 <span class="text-gray-400">— Black</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#FFFFFF] rounded-lg border border-gray-200"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#FFFFFF <span class="text-gray-400">— White</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Trends Palettes -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-2xl font-bold text-black mb-2">Modern Trend Palettes</h3>
+            <p class="text-gray-500 mb-10">2020s cutting-edge aesthetics and their distinctive color choices</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <!-- 9. Neubrutalism -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">09</span>
+                        <h4 class="text-lg font-semibold text-black">Neubrutalism</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-12 bg-[#FF6B6B] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#FF6B6B <span class="text-gray-400">— Coral</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#4ECDC4] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#4ECDC4 <span class="text-gray-400">— Teal</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#FFE66D] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#FFE66D <span class="text-gray-400">— Yellow</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#A8E6CF] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#A8E6CF <span class="text-gray-400">— Mint</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#000000] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#000000 <span class="text-gray-400">— Black</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Bento Grid -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">10</span>
+                        <h4 class="text-lg font-semibold text-black">Bento Grid</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-12 bg-[#8B5CF6] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#8B5CF6 <span class="text-gray-400">— Violet</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#F59E0B] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#F59E0B <span class="text-gray-400">— Amber</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#10B981] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#10B981 <span class="text-gray-400">— Emerald</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#F43F5E] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#F43F5E <span class="text-gray-400">— Rose</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#171717] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#171717 <span class="text-gray-400">— Dark</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. Cyberpunk -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">11</span>
+                        <h4 class="text-lg font-semibold text-black">Cyberpunk</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-12 bg-[#FF00FF] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#FF00FF <span class="text-gray-400">— Fuchsia</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#00FFFF] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#00FFFF <span class="text-gray-400">— Cyan</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#FFFF00] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#FFFF00 <span class="text-gray-400">— Yellow</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#00FF00] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#00FF00 <span class="text-gray-400">— Green</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. Vaporwave -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">12</span>
+                        <h4 class="text-lg font-semibold text-black">Vaporwave</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-12 bg-[#FF71CE] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#FF71CE <span class="text-gray-400">— Pink</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#00FFFF] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#00FFFF <span class="text-gray-400">— Cyan</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#9B59B6] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#9B59B6 <span class="text-gray-400">— Purple</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#FF6B6B] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#FF6B6B <span class="text-gray-400">— Sunset Orange</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13. Swiss Modernism -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">13</span>
+                        <h4 class="text-lg font-semibold text-black">Swiss Modernism</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-12 bg-[#000000] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#000000 <span class="text-gray-400">— Black</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#FFFFFF] rounded-lg border border-gray-200"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#FFFFFF <span class="text-gray-400">— White</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#E60000] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#E60000 <span class="text-gray-400">— Red</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#0066CC] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#0066CC <span class="text-gray-400">— Blue</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#FFCC00] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#FFCC00 <span class="text-gray-400">— Yellow</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14. Liquid Glass -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">14</span>
+                        <h4 class="text-lg font-semibold text-black">Liquid Glass</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-16 rounded-lg" style="background: linear-gradient(135deg, #667EEA 0%, #F093FB 50%, #00FFFF 100%);"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#667EEA → #F093FB → #00FFFF</p>
+                            <p class="text-xs text-gray-400">Iridescent Purple-Pink-Cyan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15. Gen Z Chaos -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">15</span>
+                        <h4 class="text-lg font-semibold text-black">Gen Z Chaos</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-12 bg-[#FF6B6B] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#FF6B6B <span class="text-gray-400">— Coral</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#4ECDC4] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#4ECDC4 <span class="text-gray-400">— Teal</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#FFE66D] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#FFE66D <span class="text-gray-400">— Yellow</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#A388EE] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#A388EE <span class="text-gray-400">— Purple</span></p>
+                        </div>
+                        <div>
+                            <div class="h-12 bg-[#95E1D3] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#95E1D3 <span class="text-gray-400">— Mint</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Emerging & Experimental Palettes -->
+    <section class="py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-2xl font-bold text-black mb-2">Emerging & Experimental Palettes</h3>
+            <p class="text-gray-500 mb-10">Cutting-edge design aesthetics and their distinctive color choices</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <!-- 16. Dark Mode OLED -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">16</span>
+                        <h4 class="text-lg font-semibold text-black">Dark Mode OLED</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div><div class="h-12 bg-[#000000] rounded-lg border border-gray-700"></div><p class="text-xs text-gray-500 mt-1 font-mono">#000000 <span class="text-gray-400">— True Black</span></p></div>
+                        <div><div class="h-12 bg-[#1A1A2E] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#1A1A2E <span class="text-gray-400">— Deep Navy</span></p></div>
+                        <div><div class="h-12 bg-[#00D4FF] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#00D4FF <span class="text-gray-400">— Neon Cyan</span></p></div>
+                    </div>
+                </div>
+
+                <!-- 17. Retro Futurism -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">17</span>
+                        <h4 class="text-lg font-semibold text-black">Retro Futurism</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div><div class="h-12 bg-[#FF6B35] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#FF6B35 <span class="text-gray-400">— Burnt Orange</span></p></div>
+                        <div><div class="h-12 bg-[#004E89] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#004E89 <span class="text-gray-400">— Deep Cerulean</span></p></div>
+                        <div><div class="h-12 bg-[#F7C59F] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#F7C59F <span class="text-gray-400">— Peach</span></p></div>
+                    </div>
+                </div>
+
+                <!-- 18. Motion Driven -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">18</span>
+                        <h4 class="text-lg font-semibold text-black">Motion Driven</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div><div class="h-12 bg-[#FF3366] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#FF3366 <span class="text-gray-400">— Hot Pink</span></p></div>
+                        <div><div class="h-12 bg-[#FF9933] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#FF9933 <span class="text-gray-400">— Neon Orange</span></p></div>
+                        <div><div class="h-12 bg-[#33CCFF] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#33CCFF <span class="text-gray-400">— Sky Blue</span></p></div>
+                    </div>
+                </div>
+
+                <!-- 19. Inclusive Design -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">19</span>
+                        <h4 class="text-lg font-semibold text-black">Inclusive Design</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div><div class="h-12 bg-[#1A73E8] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#1A73E8 <span class="text-gray-400">— Google Blue</span></p></div>
+                        <div><div class="h-12 bg-[#34A853] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#34A853 <span class="text-gray-400">— Google Green</span></p></div>
+                        <div><div class="h-12 bg-[#FBBC04] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#FBBC04 <span class="text-gray-400">— Google Yellow</span></p></div>
+                    </div>
+                </div>
+
+                <!-- 20. Zero Interface -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">20</span>
+                        <h4 class="text-lg font-semibold text-black">Zero Interface</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div><div class="h-12 bg-[#F5F5F5] rounded-lg border border-gray-200"></div><p class="text-xs text-gray-500 mt-1 font-mono">#F5F5F5 <span class="text-gray-400">— Whisper</span></p></div>
+                        <div><div class="h-12 bg-[#E0E0E0] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#E0E0E0 <span class="text-gray-400">— Light Grey</span></p></div>
+                        <div><div class="h-12 bg-[#9E9E9E] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#9E9E9E <span class="text-gray-400">— Mid Grey</span></p></div>
+                    </div>
+                </div>
+
+                <!-- 21. Soft UI Evolution -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">21</span>
+                        <h4 class="text-lg font-semibold text-black">Soft UI Evolution</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div><div class="h-12 bg-[#E8D5F5] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#E8D5F5 <span class="text-gray-400">— Soft Lavender</span></p></div>
+                        <div><div class="h-12 bg-[#D5E8F5] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#D5E8F5 <span class="text-gray-400">— Soft Sky</span></p></div>
+                        <div><div class="h-12 bg-[#F5E8D5] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#F5E8D5 <span class="text-gray-400">— Soft Cream</span></p></div>
+                    </div>
+                </div>
+
+                <!-- 22. Hero Centric -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">22</span>
+                        <h4 class="text-lg font-semibold text-black">Hero Centric</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div><div class="h-12 bg-[#1A1A2E] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#1A1A2E <span class="text-gray-400">— Dark Navy</span></p></div>
+                        <div><div class="h-12 bg-[#E94560] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#E94560 <span class="text-gray-400">— Crimson</span></p></div>
+                        <div><div class="h-12 bg-[#FFFFFF] rounded-lg border border-gray-200"></div><p class="text-xs text-gray-500 mt-1 font-mono">#FFFFFF <span class="text-gray-400">— White</span></p></div>
+                    </div>
+                </div>
+
+                <!-- 23. HUD Sci-Fi -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">23</span>
+                        <h4 class="text-lg font-semibold text-black">HUD Sci-Fi</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div><div class="h-12 bg-[#00FF41] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#00FF41 <span class="text-gray-400">— Matrix Green</span></p></div>
+                        <div><div class="h-12 bg-[#003B00] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#003B00 <span class="text-gray-400">— Dark Green</span></p></div>
+                        <div><div class="h-12 bg-[#00BFFF] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#00BFFF <span class="text-gray-400">— Deep Sky</span></p></div>
+                    </div>
+                </div>
+
+                <!-- 24. Pixel Art -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">24</span>
+                        <h4 class="text-lg font-semibold text-black">Pixel Art</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div><div class="h-12 bg-[#FF004D] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#FF004D <span class="text-gray-400">— Pixel Red</span></p></div>
+                        <div><div class="h-12 bg-[#FFEC27] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#FFEC27 <span class="text-gray-400">— Pixel Yellow</span></p></div>
+                        <div><div class="h-12 bg-[#00E436] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#00E436 <span class="text-gray-400">— Pixel Green</span></p></div>
+                    </div>
+                </div>
+
+                <!-- 25. E-Ink Paper -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">25</span>
+                        <h4 class="text-lg font-semibold text-black">E-Ink Paper</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div><div class="h-12 bg-[#F8F4E6] rounded-lg border border-gray-200"></div><p class="text-xs text-gray-500 mt-1 font-mono">#F8F4E6 <span class="text-gray-400">— Paper White</span></p></div>
+                        <div><div class="h-12 bg-[#D4CFC4] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#D4CFC4 <span class="text-gray-400">— Warm Grey</span></p></div>
+                        <div><div class="h-12 bg-[#2C2C2C] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#2C2C2C <span class="text-gray-400">— Ink Black</span></p></div>
+                    </div>
+                </div>
+
+                <!-- 26. Spatial UI -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">26</span>
+                        <h4 class="text-lg font-semibold text-black">Spatial UI</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div><div class="h-12 bg-[#5B5EA6] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#5B5EA6 <span class="text-gray-400">— Ultra Violet</span></p></div>
+                        <div><div class="h-12 bg-[#FF6F61] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#FF6F61 <span class="text-gray-400">— Living Coral</span></p></div>
+                        <div><div class="h-12 bg-[#88B04B] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#88B04B <span class="text-gray-400">— Greenery</span></p></div>
+                    </div>
+                </div>
+
+                <!-- 27. Organic Biophilic -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">27</span>
+                        <h4 class="text-lg font-semibold text-black">Organic Biophilic</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div><div class="h-12 bg-[#2D6A4F] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#2D6A4F <span class="text-gray-400">— Forest Green</span></p></div>
+                        <div><div class="h-12 bg-[#95D5B2] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#95D5B2 <span class="text-gray-400">— Sage</span></p></div>
+                        <div><div class="h-12 bg-[#D8F3DC] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#D8F3DC <span class="text-gray-400">— Mint Mist</span></p></div>
+                    </div>
+                </div>
+
+                <!-- 28. AI Native -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">28</span>
+                        <h4 class="text-lg font-semibold text-black">AI Native</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div><div class="h-12 bg-[#6366F1] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#6366F1 <span class="text-gray-400">— Indigo</span></p></div>
+                        <div><div class="h-12 bg-[#8B5CF6] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#8B5CF6 <span class="text-gray-400">— Violet</span></p></div>
+                        <div><div class="h-12 bg-[#06B6D4] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#06B6D4 <span class="text-gray-400">— Cyan</span></p></div>
+                    </div>
+                </div>
+
+                <!-- 29. Memphis Revival -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">29</span>
+                        <h4 class="text-lg font-semibold text-black">Memphis Revival</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div><div class="h-12 bg-[#FF6B6B] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#FF6B6B <span class="text-gray-400">— Coral</span></p></div>
+                        <div><div class="h-12 bg-[#4ECDC4] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#4ECDC4 <span class="text-gray-400">— Teal</span></p></div>
+                        <div><div class="h-12 bg-[#FFE66D] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#FFE66D <span class="text-gray-400">— Sunny Yellow</span></p></div>
+                        <div><div class="h-12 bg-[#A388EE] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#A388EE <span class="text-gray-400">— Periwinkle</span></p></div>
+                    </div>
+                </div>
+
+                <!-- 30. Y2K Revival -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <span class="text-xs font-medium text-gray-400">30</span>
+                        <h4 class="text-lg font-semibold text-black">Y2K Revival</h4>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div><div class="h-12 bg-[#FF69B4] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#FF69B4 <span class="text-gray-400">— Hot Pink</span></p></div>
+                        <div><div class="h-12 bg-[#00CED1] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#00CED1 <span class="text-gray-400">— Turquoise</span></p></div>
+                        <div><div class="h-12 bg-[#FFD700] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#FFD700 <span class="text-gray-400">— Gold</span></p></div>
+                        <div><div class="h-12 bg-[#C0C0C0] rounded-lg"></div><p class="text-xs text-gray-500 mt-1 font-mono">#C0C0C0 <span class="text-gray-400">— Silver</span></p></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-World Design Tokens -->
+    <section class="py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-2xl font-bold text-black mb-2">Real-World Design Tokens</h3>
+            <p class="text-gray-500 mb-10">Production color systems from leading product companies — reference for your own design token architecture</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Stripe -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <h4 class="text-lg font-semibold text-black">Stripe</h4>
+                        <p class="text-xs text-gray-400 mt-0.5">Payment Infrastructure</p>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-14 bg-[#635BFF] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#635BFF <span class="text-gray-400">— Primary</span></p>
+                        </div>
+                        <div>
+                            <div class="h-14 bg-[#00D4FF] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#00D4FF <span class="text-gray-400">— Accent</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Linear -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <h4 class="text-lg font-semibold text-black">Linear</h4>
+                        <p class="text-xs text-gray-400 mt-0.5">Project Management</p>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-14 bg-[#5E6AD2] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#5E6AD2 <span class="text-gray-400">— Primary</span></p>
+                        </div>
+                        <div>
+                            <div class="h-14 bg-[#000000] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#000000 <span class="text-gray-400">— Text</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notion -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <h4 class="text-lg font-semibold text-black">Notion</h4>
+                        <p class="text-xs text-gray-400 mt-0.5">All-in-one Workspace</p>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-14 bg-[#000000] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#000000 <span class="text-gray-400">— Text</span></p>
+                        </div>
+                        <div>
+                            <div class="h-14 bg-[#E2E2E2] rounded-lg border border-gray-200"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#E2E2E2 <span class="text-gray-400">— Border</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vercel -->
+                <div class="card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                    <div class="p-5 border-b border-gray-50">
+                        <h4 class="text-lg font-semibold text-black">Vercel</h4>
+                        <p class="text-xs text-gray-400 mt-0.5">Cloud Platform</p>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div>
+                            <div class="h-14 bg-[#000000] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#000000 <span class="text-gray-400">— Text</span></p>
+                        </div>
+                        <div>
+                            <div class="h-14 bg-[#0070F3] rounded-lg"></div>
+                            <p class="text-xs text-gray-500 mt-1 font-mono">#0070F3 <span class="text-gray-400">— Accent</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h3 class="text-2xl font-bold mb-4">Design Inspiration Gallery</h3>
+            <p class="text-gray-400 mb-6">30 modern UI design styles — curated showcase</p>
+            <div class="flex justify-center gap-4 flex-wrap mb-8">
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Tailwind CSS</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Responsive</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Zero Dependencies</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">GitHub Pages Ready</span>
+            </div>
+            <p class="text-gray-500 text-sm">Built with reference to <a href="https://github.com/joshhu/uitest" class="underline hover:text-gray-300">joshhu/uitest</a> and other open-source design resources.</p>
+        </div>
+    </footer>
+
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+    </script>
+
+</body>
+</html>
