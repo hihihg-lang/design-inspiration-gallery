@@ -49,6 +49,14 @@
             100% { background-position: 0% 50%; }
         }
     </style>
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Design Gallery">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+
 </head>
 <body class="bg-[#1a1a2e] min-h-screen text-white overflow-x-hidden">
     <!-- Chaotic Background Elements -->
@@ -264,5 +272,12 @@
             <a href="../index.html" class="font-mono text-white/50 hover:text-[#FF6B6B] text-sm">back to index &rarr;</a>
         </div>
     </footer>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+    </script>
+
 </body>
 </html>

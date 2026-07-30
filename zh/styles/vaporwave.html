@@ -25,6 +25,14 @@
             -webkit-text-fill-color: transparent;
         }
     </style>
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Design Gallery">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+
 </head>
 <body class="bg-gradient-to-b from-purple-900 via-pink-600 to-cyan-400 min-h-screen">
     <!-- Grid Overlay -->
@@ -163,5 +171,12 @@
             <a href="swiss-modernism.html" class="font-vt text-2xl text-cyan-400 hover:text-pink-400">Swiss Modernism -&gt;</a>
         </div>
     </footer>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+    </script>
+
 </body>
 </html>

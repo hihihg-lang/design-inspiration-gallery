@@ -68,6 +68,14 @@
                 inset 2px 2px 4px rgba(255,255,255,0.8);
         }
     </style>
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Design Gallery">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+
 </head>
 <body class="min-h-screen">
     <!-- Navigation -->
@@ -253,5 +261,12 @@
             <a href="skeuomorphism.html" class="text-gray-600 hover:text-gray-900 font-semibold">Skeuomorphism &rarr;</a>
         </div>
     </footer>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+    </script>
+
 </body>
 </html>
