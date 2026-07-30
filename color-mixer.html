@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Mixer — Frontend Design Inspiration Gallery</title>
+    <title>颜色搭配器 — 前端设计灵感画廊</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -38,19 +38,19 @@
     <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <h1 class="text-xl font-bold text-black">Design Inspiration Gallery</h1>
+                <h1 class="text-xl font-bold text-black">前端设计灵感画廊</h1>
                 <div class="flex items-center gap-6">
                     <nav class="flex gap-6 text-sm">
-                        <a href="index.html" class="text-gray-500 hover:text-black transition-colors">Gallery</a>
-                        <a href="palette.html" class="text-gray-500 hover:text-black transition-colors">Palettes</a>
-                        <a href="color-mixer.html" class="text-black font-medium">Color Mixer</a>
-                        <a href="philosophy.html" class="text-gray-500 hover:text-black transition-colors">Philosophy</a>
-                        <a href="reference.html" class="text-gray-500 hover:text-black transition-colors">Reference</a>
+                        <a href="index.html" class="text-gray-500 hover:text-black transition-colors">画廊</a>
+                        <a href="palette.html" class="text-gray-500 hover:text-black transition-colors">配色库</a>
+                        <a href="color-mixer.html" class="text-black font-medium">颜色搭配</a>
+                        <a href="philosophy.html" class="text-gray-500 hover:text-black transition-colors">设计理念</a>
+                        <a href="reference.html" class="text-gray-500 hover:text-black transition-colors">代码参考</a>
                     </nav>
                     <div class="flex items-center gap-4">
-                        <a href="color-mixer.html" class="text-sm text-black font-medium">EN</a>
+                        <a href="zh/color-mixer.html" class="text-sm text-gray-500 hover:text-black">EN</a>
                         <span class="text-gray-300">|</span>
-                        <a href="zh/color-mixer.html" class="text-sm text-gray-500 hover:text-black">中文</a>
+                        <a href="color-mixer.html" class="text-sm text-black font-medium">中文</a>
                     </div>
                 </div>
             </div>
@@ -60,9 +60,9 @@
     <!-- Hero -->
     <section class="py-16 px-6 border-b border-gray-100">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-5xl font-bold text-black mb-6">Color Mixer</h2>
-            <p class="text-xl text-gray-500 mb-2 max-w-2xl mx-auto">Mix colors interactively. Select design styles, combine multiple colors, and see real-time mixing results.</p>
-            <p class="text-base text-gray-400 max-w-xl mx-auto">Choose colors from the full spectrum, apply harmony rules from different design styles, and preview the blended output instantly.</p>
+            <h2 class="text-5xl font-bold text-black mb-6">颜色搭配器</h2>
+            <p class="text-xl text-gray-500 mb-2 max-w-2xl mx-auto">交互式颜色混合搭配。选择设计风格，组合多种颜色，实时预览混合结果。</p>
+            <p class="text-base text-gray-400 max-w-xl mx-auto">从全色域中选择颜色，应用不同设计风格的调和规则，即时预览混合输出效果。</p>
         </div>
     </section>
 
@@ -70,11 +70,11 @@
     <section class="py-12 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Mix Preview -->
+                <!-- 搭配预览 -->
                 <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
                     <div class="p-5 border-b border-gray-50">
-                        <h3 class="text-lg font-semibold text-black">Mix Preview</h3>
-                        <p class="text-sm text-gray-400 mt-1" id="mixFormula">Color 1 + Color 2 = Blended Result</p>
+                        <h3 class="text-lg font-semibold text-black">搭配预览</h3>
+                        <p class="text-sm text-gray-400 mt-1" id="mixFormula">颜色 1 + 颜色 2 = 混合结果</p>
                     </div>
                     <div id="mixPreview" class="h-80 mix-preview flex items-center justify-center relative" style="background-color: #808080;">
                         <div class="text-center">
@@ -85,25 +85,25 @@
                     <div class="p-5 border-t border-gray-50">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-3">
-                                <span class="text-sm text-gray-500">Blend Mode:</span>
+                                <span class="text-sm text-gray-500">混合模式:</span>
                                 <select id="blendMode" class="text-sm border border-gray-200 rounded-lg px-3 py-1.5 bg-white focus:outline-none focus:border-black">
-                                    <option value="weighted">Weighted Average</option>
-                                    <option value="multiply">Multiply</option>
-                                    <option value="screen">Screen</option>
-                                    <option value="overlay">Overlay</option>
-                                    <option value="additive">Additive</option>
+                                    <option value="weighted">加权平均</option>
+                                    <option value="multiply">正片叠底</option>
+                                    <option value="screen">滤色</option>
+                                    <option value="overlay">叠加</option>
+                                    <option value="additive">相加混合</option>
                                 </select>
                             </div>
-                            <button onclick="randomizeAll()" class="text-sm px-4 py-1.5 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors">Randomize</button>
+                            <button onclick="randomizeAll()" class="text-sm px-4 py-1.5 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors">随机配色</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Reference Colors -->
+                <!-- 搭配参考 -->
                 <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
                     <div class="p-5 border-b border-gray-50">
-                        <h3 class="text-lg font-semibold text-black">Mix Reference</h3>
-                        <p class="text-sm text-gray-400 mt-1">Individual color contributions</p>
+                        <h3 class="text-lg font-semibold text-black">搭配参考</h3>
+                        <p class="text-sm text-gray-400 mt-1">各颜色分量展示</p>
                     </div>
                     <div class="p-5">
                         <div class="grid grid-cols-2 gap-4" id="referenceGrid">
@@ -112,8 +112,8 @@
                     </div>
                     <div class="p-5 border-t border-gray-50 bg-gray-50">
                         <div class="flex flex-wrap items-center gap-2">
-                            <span class="text-xs text-gray-500">Harmony:</span>
-                            <span id="harmonyLabel" class="text-xs font-medium text-black bg-white px-2 py-1 rounded-full border border-gray-200">Custom Mix</span>
+                            <span class="text-xs text-gray-500">调和方式:</span>
+                            <span id="harmonyLabel" class="text-xs font-medium text-black bg-white px-2 py-1 rounded-full border border-gray-200">自定义混合</span>
                         </div>
                     </div>
                 </div>
@@ -121,11 +121,11 @@
         </div>
     </section>
 
-    <!-- Color Selection Section -->
+    <!-- 颜色选择区域 -->
     <section class="py-12 px-6 bg-gray-50">
         <div class="max-w-7xl mx-auto">
-            <h3 class="text-2xl font-bold text-black mb-2">Color Slots</h3>
-            <p class="text-gray-500 mb-8">Add colors (up to 6 slots) and adjust weight for each. The formula shows how colors combine.</p>
+            <h3 class="text-2xl font-bold text-black mb-2">颜色槽位</h3>
+            <p class="text-gray-500 mb-8">添加颜色（最多 6 个槽位）并调整每个颜色的权重。公式显示各颜色如何组合。</p>
 
             <!-- Color Slots -->
             <div class="mb-8" id="colorSlots">
@@ -133,18 +133,18 @@
             </div>
 
             <div class="flex items-center gap-4 mb-10">
-                <button onclick="addColorSlot()" id="addSlotBtn" class="px-4 py-2 border-2 border-dashed border-gray-300 rounded-xl text-sm text-gray-500 hover:border-black hover:text-black transition-colors">+ Add Color Slot</button>
-                <button onclick="removeColorSlot()" id="removeSlotBtn" class="px-4 py-2 border border-gray-200 rounded-xl text-sm text-gray-500 hover:border-red-300 hover:text-red-500 transition-colors">- Remove Slot</button>
-                <span class="text-xs text-gray-400 ml-auto" id="slotCount">3 slots</span>
+                <button onclick="addColorSlot()" id="addSlotBtn" class="px-4 py-2 border-2 border-dashed border-gray-300 rounded-xl text-sm text-gray-500 hover:border-black hover:text-black transition-colors">+ 添加颜色槽位</button>
+                <button onclick="removeColorSlot()" id="removeSlotBtn" class="px-4 py-2 border border-gray-200 rounded-xl text-sm text-gray-500 hover:border-red-300 hover:text-red-500 transition-colors">- 移除槽位</button>
+                <span class="text-xs text-gray-400 ml-auto" id="slotCount">3 个槽位</span>
             </div>
         </div>
     </section>
 
-    <!-- Design Style Selection -->
+    <!-- 设计风格选择 -->
     <section class="py-12 px-6">
         <div class="max-w-7xl mx-auto">
-            <h3 class="text-2xl font-bold text-black mb-2">Design Style Presets</h3>
-            <p class="text-gray-500 mb-8">Select a design style to apply its signature color palette as a starting point for mixing</p>
+            <h3 class="text-2xl font-bold text-black mb-2">设计风格预设</h3>
+            <p class="text-gray-500 mb-8">选择一种设计风格，应用其标志性配色方案作为混合的起点</p>
 
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3" id="stylePresets">
                 <!-- Dynamic style buttons -->
@@ -152,46 +152,46 @@
         </div>
     </section>
 
-    <!-- Color Harmony Tools -->
+    <!-- 颜色调和工具 -->
     <section class="py-12 px-6 bg-gray-50">
         <div class="max-w-7xl mx-auto">
-            <h3 class="text-2xl font-bold text-black mb-2">Color Harmony</h3>
-            <p class="text-gray-500 mb-8">Generate harmonious color combinations based on color theory</p>
+            <h3 class="text-2xl font-bold text-black mb-2">颜色调和</h3>
+            <p class="text-gray-500 mb-8">基于色彩理论生成和谐的颜色组合</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <button onclick="applyHarmony('complementary')" class="harmony-btn p-6 border border-gray-100 rounded-2xl hover:border-gray-300 transition-all text-left bg-white">
-                    <h4 class="font-semibold text-black">Complementary</h4>
-                    <p class="text-sm text-gray-500 mt-1">Colors opposite on the wheel — high contrast</p>
+                    <h4 class="font-semibold text-black">互补色</h4>
+                    <p class="text-sm text-gray-500 mt-1">色轮上相对的颜色 — 高对比度</p>
                 </button>
                 <button onclick="applyHarmony('analogous')" class="harmony-btn p-6 border border-gray-100 rounded-2xl hover:border-gray-300 transition-all text-left bg-white">
-                    <h4 class="font-semibold text-black">Analogous</h4>
-                    <p class="text-sm text-gray-500 mt-1">Colors side by side — harmonious blend</p>
+                    <h4 class="font-semibold text-black">相似色</h4>
+                    <p class="text-sm text-gray-500 mt-1">色轮上相邻的颜色 — 和谐渐变</p>
                 </button>
                 <button onclick="applyHarmony('triadic')" class="harmony-btn p-6 border border-gray-100 rounded-2xl hover:border-gray-300 transition-all text-left bg-white">
-                    <h4 class="font-semibold text-black">Triadic</h4>
-                    <p class="text-sm text-gray-500 mt-1">Three evenly spaced — vibrant balance</p>
+                    <h4 class="font-semibold text-black">三角色</h4>
+                    <p class="text-sm text-gray-500 mt-1">三个均匀分布 — 活力平衡</p>
                 </button>
                 <button onclick="applyHarmony('split-complementary')" class="harmony-btn p-6 border border-gray-100 rounded-2xl hover:border-gray-300 transition-all text-left bg-white">
-                    <h4 class="font-semibold text-black">Split Complementary</h4>
-                    <p class="text-sm text-gray-500 mt-1">Base + two adjacent to complement</p>
+                    <h4 class="font-semibold text-black">分裂互补色</h4>
+                    <p class="text-sm text-gray-500 mt-1">基色 + 互补色两侧相邻色</p>
                 </button>
                 <button onclick="applyHarmony('tetradic')" class="harmony-btn p-6 border border-gray-100 rounded-2xl hover:border-gray-300 transition-all text-left bg-white">
-                    <h4 class="font-semibold text-black">Tetradic (Rectangle)</h4>
-                    <p class="text-sm text-gray-500 mt-1">Four colors in two complementary pairs</p>
+                    <h4 class="font-semibold text-black">四角色（矩形）</h4>
+                    <p class="text-sm text-gray-500 mt-1">四色组成两对互补色</p>
                 </button>
                 <button onclick="applyHarmony('monochromatic')" class="harmony-btn p-6 border border-gray-100 rounded-2xl hover:border-gray-300 transition-all text-left bg-white">
-                    <h4 class="font-semibold text-black">Monochromatic</h4>
-                    <p class="text-sm text-gray-500 mt-1">Single hue, varied saturation & lightness</p>
+                    <h4 class="font-semibold text-black">单色系</h4>
+                    <p class="text-sm text-gray-500 mt-1">单一色相，变化饱和度与明度</p>
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- Full Spectrum Color Grid -->
+    <!-- 全色域快速选择 -->
     <section class="py-12 px-6">
         <div class="max-w-7xl mx-auto">
-            <h3 class="text-2xl font-bold text-black mb-2">Full Spectrum Quick Pick</h3>
-            <p class="text-gray-500 mb-8">Click any color to add it to the active slot</p>
+            <h3 class="text-2xl font-bold text-black mb-2">全色域快速选择</h3>
+            <p class="text-gray-500 mb-8">点击任意颜色将其添加到当前活动槽位</p>
             <div class="grid grid-cols-12 sm:grid-cols-16 md:grid-cols-20 lg:grid-cols-24 gap-1" id="spectrumGrid">
                 <!-- Generated by JS -->
             </div>
@@ -201,15 +201,15 @@
     <!-- Footer -->
     <footer class="bg-black text-white py-12 px-6">
         <div class="max-w-7xl mx-auto text-center">
-            <h3 class="text-2xl font-bold mb-4">Design Inspiration Gallery</h3>
-            <p class="text-gray-400 mb-6">Interactive Color Mixer — explore the full color spectrum</p>
+            <h3 class="text-2xl font-bold mb-4">前端设计灵感画廊</h3>
+            <p class="text-gray-400 mb-6">交互式颜色搭配器 — 探索全色域色彩</p>
             <div class="flex justify-center gap-4 flex-wrap mb-8">
                 <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Tailwind CSS</span>
-                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Color Theory</span>
-                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Real-time Mixing</span>
-                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Full Spectrum</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">色彩理论</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">实时混合</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">全色域</span>
             </div>
-            <p class="text-gray-500 text-sm">Built with reference to color theory resources and open-source design tools.</p>
+            <p class="text-gray-500 text-sm">基于色彩理论资源和开源设计工具构建</p>
         </div>
     </footer>
 
@@ -296,7 +296,6 @@
                     g *= rgbs[i].g / 255;
                     b *= rgbs[i].b / 255;
                 }
-                // Blend back with weighted average for more control
                 let wr = 0, wg = 0, wb = 0;
                 for (let i = 0; i < colors.length; i++) {
                     wr += rgbs[i].r * w[i];
@@ -340,7 +339,6 @@
                 }
                 return { r: Math.min(255, Math.round(r)), g: Math.min(255, Math.round(g)), b: Math.min(255, Math.round(b)) };
             }
-            // Default: weighted
             let r = 0, g = 0, b = 0;
             for (let i = 0; i < colors.length; i++) {
                 r += rgbs[i].r * w[i];
@@ -361,20 +359,17 @@
             document.getElementById('mixResultHex').textContent = hex;
             document.getElementById('mixResultRGB').textContent = `rgb(${mixed.r}, ${mixed.g}, ${mixed.b})`;
 
-            // Update text color for contrast
             const luminance = (0.299 * mixed.r + 0.587 * mixed.g + 0.114 * mixed.b) / 255;
             const textColor = luminance > 0.5 ? '#000' : '#fff';
             document.getElementById('mixResultHex').style.color = textColor;
             document.getElementById('mixResultRGB').style.color = textColor;
 
-            // Update formula
             const formula = colorSlots.map((s, i) => {
                 const plus = i > 0 ? ' + ' : '';
                 return `${plus}${s.color}`;
             }).join('') + ` = ${hex}`;
             document.getElementById('mixFormula').textContent = formula;
 
-            // Update reference grid
             updateReferenceGrid();
         }
 
@@ -390,8 +385,8 @@
                             <span class="text-xs font-mono font-bold drop-shadow-lg" style="color: ${(0.299*rgb.r+0.587*rgb.g+0.114*rgb.b)/255 > 0.5 ? '#000' : '#fff'}">${s.color}</span>
                         </div>
                         <div class="mt-2 flex items-center justify-between bg-white rounded-lg px-2 py-1">
-                            <span class="text-xs text-gray-500">Weight: ${s.weight}</span>
-                            <span class="text-xs text-gray-400">Slot ${i+1}</span>
+                            <span class="text-xs text-gray-500">权重: ${s.weight}</span>
+                            <span class="text-xs text-gray-400">槽位 ${i+1}</span>
                         </div>
                     </div>
                 `;
@@ -410,21 +405,21 @@
                         <div class="flex-1">
                             <div class="flex items-center gap-3 mb-1">
                                 <span class="text-sm font-mono font-semibold">${s.color}</span>
-                                <span class="text-xs text-gray-400">Slot ${i+1}</span>
-                                ${i === activeSlot ? '<span class="text-xs bg-black text-white px-2 py-0.5 rounded-full">Active</span>' : ''}
+                                <span class="text-xs text-gray-400">槽位 ${i+1}</span>
+                                ${i === activeSlot ? '<span class="text-xs bg-black text-white px-2 py-0.5 rounded-full">当前</span>' : ''}
                             </div>
                             <div class="flex items-center gap-3">
-                                <span class="text-xs text-gray-500">Weight:</span>
+                                <span class="text-xs text-gray-500">权重:</span>
                                 <input type="range" min="0.1" max="3" step="0.1" value="${s.weight}" oninput="updateSlotWeight(${i}, parseFloat(this.value))" class="flex-1 max-w-[200px]">
                                 <span class="text-xs font-mono w-8 text-right">${s.weight}</span>
                             </div>
                         </div>
-                        <button onclick="setActiveSlot(${i})" class="px-3 py-1 text-xs border border-gray-200 rounded-lg hover:bg-black hover:text-white transition-colors">Select</button>
+                        <button onclick="setActiveSlot(${i})" class="px-3 py-1 text-xs border border-gray-200 rounded-lg hover:bg-black hover:text-white transition-colors">选择</button>
                     </div>
                 `;
             }).join('');
 
-            document.getElementById('slotCount').textContent = `${colorSlots.length} slot${colorSlots.length !== 1 ? 's' : ''}`;
+            document.getElementById('slotCount').textContent = `${colorSlots.length} 个槽位`;
             document.getElementById('removeSlotBtn').style.display = colorSlots.length > 1 ? 'inline-block' : 'none';
             document.getElementById('addSlotBtn').style.display = colorSlots.length < 6 ? 'inline-block' : 'none';
         }
@@ -436,10 +431,10 @@
         }
 
         function updateHarmonyLabel() {
-            document.getElementById('harmonyLabel').textContent = currentBlendMode === 'weighted' ? 'Weighted Mix' :
-                currentBlendMode === 'multiply' ? 'Multiply Blend' :
-                currentBlendMode === 'screen' ? 'Screen Blend' :
-                currentBlendMode === 'overlay' ? 'Overlay Blend' : 'Additive Blend';
+            document.getElementById('harmonyLabel').textContent = currentBlendMode === 'weighted' ? '加权混合' :
+                currentBlendMode === 'multiply' ? '正片叠底' :
+                currentBlendMode === 'screen' ? '滤色混合' :
+                currentBlendMode === 'overlay' ? '叠加混合' : '相加混合';
         }
 
         // ==================== ACTIONS ====================
@@ -482,47 +477,38 @@
             updateAll();
         }
 
-        // ==================== BLEND MODE ====================
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('blendMode').addEventListener('change', function() {
-                currentBlendMode = this.value;
-                updateHarmonyLabel();
-                updatePreview();
-            });
-        });
-
         // ==================== STYLE PRESETS ====================
         const stylePresets = [
-            { name: 'Minimalism', colors: ['#000000', '#FFFFFF', '#808080'], weight: [1, 1, 0.5] },
-            { name: 'Neumorphism', colors: ['#C8E0F4', '#F5E0E8', '#E8E8E8'], weight: [1, 1, 1] },
-            { name: 'Glassmorphism', colors: ['#0080FF', '#8B00FF', '#FF1493'], weight: [1, 0.8, 0.6] },
-            { name: 'Claymorphism', colors: ['#FDBCB4', '#ADD8E6', '#98FF98'], weight: [1, 1, 0.8] },
-            { name: 'Skeuomorphism', colors: ['#8B4513', '#DEB887', '#B8B8B8'], weight: [1, 0.8, 0.5] },
-            { name: 'Flat Design', colors: ['#E74C3C', '#F39C12', '#3498DB'], weight: [1, 1, 1] },
-            { name: 'Aurora UI', colors: ['#667EEA', '#764BA2', '#F093FB'], weight: [1, 0.8, 0.7] },
-            { name: 'Brutalism', colors: ['#FF0000', '#0000FF', '#FFFF00'], weight: [1, 1, 1] },
-            { name: 'Neubrutalism', colors: ['#FF6B6B', '#4ECDC4', '#FFE66D'], weight: [1, 1, 1] },
-            { name: 'Bento Grid', colors: ['#8B5CF6', '#F59E0B', '#10B981'], weight: [1, 0.8, 0.6] },
-            { name: 'Cyberpunk', colors: ['#FF00FF', '#00FFFF', '#00FF00'], weight: [1, 1, 0.8] },
-            { name: 'Vaporwave', colors: ['#FF71CE', '#00FFFF', '#9B59B6'], weight: [1, 0.8, 0.6] },
-            { name: 'Swiss Modernism', colors: ['#000000', '#E60000', '#0066CC'], weight: [1, 0.5, 0.5] },
-            { name: 'Liquid Glass', colors: ['#667EEA', '#F093FB', '#00FFFF'], weight: [1, 0.7, 0.6] },
-            { name: 'Gen Z Chaos', colors: ['#FF6B6B', '#FFE66D', '#A388EE'], weight: [1, 1, 0.8] },
-            { name: 'Dark Mode OLED', colors: ['#000000', '#1A1A2E', '#00D4FF'], weight: [1, 0.8, 0.4] },
-            { name: 'Retro Futurism', colors: ['#FF6B35', '#004E89', '#F7C59F'], weight: [1, 1, 0.7] },
-            { name: 'Motion Driven', colors: ['#FF3366', '#FF9933', '#33CCFF'], weight: [1, 0.8, 0.6] },
-            { name: 'Inclusive Design', colors: ['#1A73E8', '#34A853', '#FBBC04'], weight: [1, 1, 0.8] },
-            { name: 'Zero Interface', colors: ['#F5F5F5', '#E0E0E0', '#9E9E9E'], weight: [1, 1, 0.5] },
-            { name: 'Soft UI Evolution', colors: ['#E8D5F5', '#D5E8F5', '#F5E8D5'], weight: [1, 1, 0.8] },
-            { name: 'Hero Centric', colors: ['#1A1A2E', '#E94560', '#FFFFFF'], weight: [1, 0.7, 0.5] },
-            { name: 'HUD Sci-Fi', colors: ['#00FF41', '#003B00', '#00BFFF'], weight: [1, 0.8, 0.5] },
-            { name: 'Pixel Art', colors: ['#FF004D', '#FFEC27', '#00E436'], weight: [1, 1, 1] },
-            { name: 'E-Ink Paper', colors: ['#F8F4E6', '#D4CFC4', '#2C2C2C'], weight: [1, 0.8, 0.3] },
-            { name: 'Spatial UI', colors: ['#5B5EA6', '#FF6F61', '#88B04B'], weight: [1, 0.7, 0.6] },
-            { name: 'Organic Biophilic', colors: ['#2D6A4F', '#95D5B2', '#D8F3DC'], weight: [1, 0.8, 0.6] },
-            { name: 'AI Native', colors: ['#6366F1', '#8B5CF6', '#06B6D4'], weight: [1, 0.8, 0.6] },
-            { name: 'Memphis Revival', colors: ['#FF6B6B', '#4ECDC4', '#FFE66D', '#A388EE'], weight: [1, 1, 0.8, 0.7] },
-            { name: 'Y2K Revival', colors: ['#FF69B4', '#00CED1', '#FFD700', '#C0C0C0'], weight: [1, 0.8, 0.6, 0.5] }
+            { name: '极简主义', colors: ['#000000', '#FFFFFF', '#808080'], weight: [1, 1, 0.5] },
+            { name: '新拟物风格', colors: ['#C8E0F4', '#F5E0E8', '#E8E8E8'], weight: [1, 1, 1] },
+            { name: '玻璃拟态', colors: ['#0080FF', '#8B00FF', '#FF1493'], weight: [1, 0.8, 0.6] },
+            { name: '黏土风格', colors: ['#FDBCB4', '#ADD8E6', '#98FF98'], weight: [1, 1, 0.8] },
+            { name: '拟物化', colors: ['#8B4513', '#DEB887', '#B8B8B8'], weight: [1, 0.8, 0.5] },
+            { name: '扁平设计', colors: ['#E74C3C', '#F39C12', '#3498DB'], weight: [1, 1, 1] },
+            { name: '极光 UI', colors: ['#667EEA', '#764BA2', '#F093FB'], weight: [1, 0.8, 0.7] },
+            { name: '粗野主义', colors: ['#FF0000', '#0000FF', '#FFFF00'], weight: [1, 1, 1] },
+            { name: '新粗野主义', colors: ['#FF6B6B', '#4ECDC4', '#FFE66D'], weight: [1, 1, 1] },
+            { name: '便当盒布局', colors: ['#8B5CF6', '#F59E0B', '#10B981'], weight: [1, 0.8, 0.6] },
+            { name: '赛博朋克', colors: ['#FF00FF', '#00FFFF', '#00FF00'], weight: [1, 1, 0.8] },
+            { name: '蒸汽波', colors: ['#FF71CE', '#00FFFF', '#9B59B6'], weight: [1, 0.8, 0.6] },
+            { name: '瑞士现代主义', colors: ['#000000', '#E60000', '#0066CC'], weight: [1, 0.5, 0.5] },
+            { name: '液态玻璃', colors: ['#667EEA', '#F093FB', '#00FFFF'], weight: [1, 0.7, 0.6] },
+            { name: 'Gen Z 混沌', colors: ['#FF6B6B', '#FFE66D', '#A388EE'], weight: [1, 1, 0.8] },
+            { name: '暗黑模式 OLED', colors: ['#000000', '#1A1A2E', '#00D4FF'], weight: [1, 0.8, 0.4] },
+            { name: '复古未来主义', colors: ['#FF6B35', '#004E89', '#F7C59F'], weight: [1, 1, 0.7] },
+            { name: '动效驱动', colors: ['#FF3366', '#FF9933', '#33CCFF'], weight: [1, 0.8, 0.6] },
+            { name: '包容性设计', colors: ['#1A73E8', '#34A853', '#FBBC04'], weight: [1, 1, 0.8] },
+            { name: '零界面', colors: ['#F5F5F5', '#E0E0E0', '#9E9E9E'], weight: [1, 1, 0.5] },
+            { name: '柔和 UI 进化', colors: ['#E8D5F5', '#D5E8F5', '#F5E8D5'], weight: [1, 1, 0.8] },
+            { name: '主视觉中心', colors: ['#1A1A2E', '#E94560', '#FFFFFF'], weight: [1, 0.7, 0.5] },
+            { name: 'HUD 科幻', colors: ['#00FF41', '#003B00', '#00BFFF'], weight: [1, 0.8, 0.5] },
+            { name: '像素艺术', colors: ['#FF004D', '#FFEC27', '#00E436'], weight: [1, 1, 1] },
+            { name: '电子墨水纸', colors: ['#F8F4E6', '#D4CFC4', '#2C2C2C'], weight: [1, 0.8, 0.3] },
+            { name: '空间 UI', colors: ['#5B5EA6', '#FF6F61', '#88B04B'], weight: [1, 0.7, 0.6] },
+            { name: '有机仿生', colors: ['#2D6A4F', '#95D5B2', '#D8F3DC'], weight: [1, 0.8, 0.6] },
+            { name: 'AI 原生', colors: ['#6366F1', '#8B5CF6', '#06B6D4'], weight: [1, 0.8, 0.6] },
+            { name: '孟菲斯复兴', colors: ['#FF6B6B', '#4ECDC4', '#FFE66D', '#A388EE'], weight: [1, 1, 0.8, 0.7] },
+            { name: 'Y2K 复兴', colors: ['#FF69B4', '#00CED1', '#FFD700', '#C0C0C0'], weight: [1, 0.8, 0.6, 0.5] }
         ];
 
         function renderStylePresets() {
@@ -641,7 +627,6 @@
             updateAll();
         }
 
-        // Blend mode listener
         document.getElementById('blendMode').addEventListener('change', function() {
             currentBlendMode = this.value;
             updateHarmonyLabel();

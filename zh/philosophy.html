@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>设计理念 — 前端设计灵感画廊</title>
+    <title>Design Philosophy — Frontend Design Inspiration Gallery</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -24,19 +24,19 @@
     <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <h1 class="text-xl font-bold text-black">前端设计灵感画廊</h1>
+                <h1 class="text-xl font-bold text-black">Design Inspiration Gallery</h1>
                 <div class="flex items-center gap-6">
                     <nav class="flex gap-6 text-sm">
-                        <a href="index.html" class="text-gray-500 hover:text-black transition-colors">画廊</a>
-                        <a href="palette.html" class="text-gray-500 hover:text-black transition-colors">配色库</a>
-                        <a href="color-mixer.html" class="text-gray-500 hover:text-black transition-colors">颜色搭配</a>
-                        <a href="philosophy.html" class="text-black font-medium">设计理念</a>
-                        <a href="reference.html" class="text-gray-500 hover:text-black transition-colors">代码参考</a>
+                        <a href="../index.html" class="text-gray-500 hover:text-black transition-colors">Gallery</a>
+                        <a href="../palette.html" class="text-gray-500 hover:text-black transition-colors">Palettes</a>
+                        <a href="../color-mixer.html" class="text-gray-500 hover:text-black transition-colors">Color Mixer</a>
+                        <a href="../philosophy.html" class="text-black font-medium">Philosophy</a>
+                        <a href="../reference.html" class="text-gray-500 hover:text-black transition-colors">Reference</a>
                     </nav>
                     <div class="flex items-center gap-4">
-                        <a href="../philosophy.html" class="text-sm text-gray-500 hover:text-black">EN</a>
+                        <a href="../philosophy.html" class="text-sm text-black font-medium">EN</a>
                         <span class="text-gray-300">|</span>
-                        <a href="philosophy.html" class="text-sm text-black font-medium">中文</a>
+                        <a href="philosophy.html" class="text-sm text-gray-500 hover:text-black">中文</a>
                     </div>
                 </div>
             </div>
@@ -46,1016 +46,1016 @@
     <!-- Hero -->
     <section class="py-20 px-6 border-b border-gray-100">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-5xl font-bold text-black mb-6">设计理念</h2>
-            <p class="text-xl text-gray-500 mb-4 max-w-2xl mx-auto">理解每种设计风格背后的<em>原因</em> — 起源、核心原则、适用场景与 UX 考量，这些因素共同塑造了现代界面设计。</p>
-            <p class="text-base text-gray-400 max-w-xl mx-auto">每种风格都代表了用户与数字界面交互的独特哲学。选择正确的风格意味着将视觉语言与用户期望和产品目标对齐。</p>
+            <h2 class="text-5xl font-bold text-black mb-6">Design Philosophy</h2>
+            <p class="text-xl text-gray-500 mb-4 max-w-2xl mx-auto">Understanding the <em>why</em> behind each design style — origins, core principles, practical use cases, and UX considerations that shape modern interface design.</p>
+            <p class="text-base text-gray-400 max-w-xl mx-auto">Each style represents a distinct philosophy about how users interact with digital interfaces. Choosing the right one means aligning visual language with user expectations and product goals.</p>
         </div>
     </section>
 
-    <!-- 理念卡片 -->
+    <!-- Philosophy Cards -->
     <section class="py-16 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                <!-- 1. 极简主义 -->
+                <!-- 1. Minimalism -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">01</span>
-                        <h3 class="text-2xl font-bold text-black">极简主义</h3>
+                        <h3 class="text-2xl font-bold text-black">Minimalism</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">瑞士设计，1950 年代</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">Swiss Design, 1950s</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 少即是多 — 每个元素都必须有其存在的理由</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 形式服从功能 — 美学服务于可用性</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 留白是积极的元素，而非空白</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 网格系统强制视觉秩序</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 高对比度排版驱动层级</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Less is more — every element must earn its place</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Form follows function — aesthetics serve usability</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> White space is an active element, not empty</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Grid systems enforce visual order</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> High-contrast typography drives hierarchy</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">企业应用、仪表盘、文档、SaaS 平台</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Enterprise apps, dashboards, documentation, SaaS platforms</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>高对比度比率，屏幕阅读器友好</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>资源极少，加载速度快</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>视觉复杂度低；需要强大的内容策略</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> High contrast ratios, screen-reader friendly</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> Minimal assets, fast load times</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Low visual complexity; requires strong content strategy</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 2. 新拟物风格 -->
+                <!-- 2. Neumorphism -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">02</span>
-                        <h3 class="text-2xl font-bold text-black">新拟物风格</h3>
+                        <h3 class="text-2xl font-bold text-black">Neumorphism</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">2020 年 UI 趋势</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">2020 UI trend</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 柔和、浮雕外观 — 元素从背景中浮现</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 单色配色方案 — 协调而宁静</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 微妙的光影交织</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 低对比度、触觉感 — 邀请触摸</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Soft, embossed appearance — elements rise from background</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Monochromatic color schemes — cohesive and calm</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Subtle light and shadow interplay</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Low contrast, tactile feel — invites touch</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">健康应用、冥想平台、健身追踪器</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Health apps, meditation platforms, fitness trackers</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>低对比度风险 — 确保达到 WCAG AA 最低标准</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>轻量级 CSS 阴影，无重资源</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>中等 — 需要精细的阴影调校</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Low contrast risks — ensure WCAG AA minimums</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> Lightweight CSS shadows, no heavy assets</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Moderate — requires careful shadow tuning</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 3. 玻璃拟态 -->
+                <!-- 3. Glassmorphism -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">03</span>
-                        <h3 class="text-2xl font-bold text-black">玻璃拟态</h3>
+                        <h3 class="text-2xl font-bold text-black">Glassmorphism</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">2020 年（Apple、Microsoft）</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">2020 (Apple, Microsoft)</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 背景模糊创造深度与上下文</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 半透明表面 — 信息分层</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 分层透明度构建视觉层级</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 高对比度文字确保模糊背景上的可读性</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Backdrop blur creates depth and context</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Semi-transparent surfaces — layers of information</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Layered opacity for visual hierarchy</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> High contrast text ensures readability over blurred backgrounds</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">现代 SaaS、金融仪表盘、模态弹窗</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Modern SaaS, financial dashboards, modal overlays</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>文字必须在多变背景上通过对比度检查</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>backdrop-filter 在移动端可能消耗大量 GPU 资源</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>高 — 需要精细的层级和降级处理</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Text must pass contrast checks over variable backgrounds</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> backdrop-filter can be GPU-intensive on mobile</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> High — needs careful layering and fallback handling</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 4. 黏土风格 -->
+                <!-- 4. Claymorphism -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">04</span>
-                        <h3 class="text-2xl font-bold text-black">黏土风格</h3>
+                        <h3 class="text-2xl font-bold text-black">Claymorphism</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">2022 年 UI 趋势</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">2022 UI trend</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 3D 黏土质感 — 柔和、挤出的形态</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 粗犷、圆润的形状，大圆角</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 柔和的内外阴影营造深度</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 趣味、玩具般的美学 — 亲和力强</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 3D clay-like elements — soft, extruded forms</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Chunky, rounded shapes with generous border-radius</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Soft inner and outer shadows for depth</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Playful, toy-like aesthetics — approachable feel</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">教育应用、儿童应用、创意工具</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Educational apps, children's apps, creative tools</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>确保交互元素具有清晰的示能性</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>仅 CSS 阴影 — 轻量级</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低至中等 — CSS 实现简单直接</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Ensure interactive elements have clear affordance</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> CSS shadows only — lightweight</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Low to moderate — straightforward CSS implementation</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 5. 拟物化 -->
+                <!-- 5. Skeuomorphism -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">05</span>
-                        <h3 class="text-2xl font-bold text-black">拟物化</h3>
+                        <h3 class="text-2xl font-bold text-black">Skeuomorphism</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">早期 iOS（2007–2012）</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">Early iOS (2007–2012)</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 模仿现实世界材质 — 木材、皮革、金属</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 逼真的纹理和精细阴影</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 熟悉的物理隐喻降低学习曲线</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Mimics real-world materials — wood, leather, metal</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Realistic textures and detailed shadows</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Familiar physical metaphors reduce learning curve</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">游戏界面、沉浸式叙事、遗留应用</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Gaming interfaces, immersive storytelling, legacy apps</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>纹理可能遮挡文字 — 确保对比度</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>大量图片资源 — 优化并懒加载</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>高 — 需要详细的资源制作</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Textures can obscure text — ensure contrast</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> Heavy image assets — optimize and lazy-load</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> High — requires detailed asset production</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 6. 扁平设计 2.0 -->
+                <!-- 6. Flat Design 2.0 -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">06</span>
-                        <h3 class="text-2xl font-bold text-black">扁平设计 2.0</h3>
+                        <h3 class="text-2xl font-bold text-black">Flat Design 2.0</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">2010 年代（Microsoft Metro）</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">2010s (Microsoft Metro)</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 二维美学 — 无阴影、无渐变</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 大胆的纯色实现清晰的视觉区分</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 简洁的图标系统 — 普遍可识别</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 干净的无衬线字体提升可读性</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 2D aesthetic — no shadows, no gradients</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Bold, solid colors for clear visual distinction</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Simple iconography — universally recognizable</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Clean sans-serif fonts for readability</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">Web 应用、移动应用、跨平台、初创 MVP</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Web apps, mobile apps, cross-platform, startup MVPs</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>纯色背景通常对比度良好</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>极快 — 纯 CSS，无需图片</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低 — 最容易实现和维护的风格</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Generally good contrast with solid colors</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> Extremely fast — CSS-only, no images needed</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Low — easiest style to implement and maintain</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 7. 极光 UI -->
+                <!-- 7. Aurora UI -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">07</span>
-                        <h3 class="text-2xl font-bold text-black">极光 UI</h3>
+                        <h3 class="text-2xl font-bold text-black">Aurora UI</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">2020 年代渐变趋势</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">2020s gradient trend</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 网格渐变配合流动的色彩过渡</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 氛围光晕创造深度</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 微妙、有目的的动画 — 从不分散注意力</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 空灵、超凡脱俗的感觉 — 高级感</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Mesh gradients with flowing color transitions</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Atmospheric glows and halos create depth</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Subtle, purposeful animation — never distracting</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Ethereal, otherworldly feel — premium impression</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">创意机构、品牌设计、音乐平台、高端产品</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Creative agencies, branding, music platforms, premium products</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>渐变上的文字需要仔细的对比度测试</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS 渐变性能好；动画渐变可能影响低端设备</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>中等 — 需要渐变调校和动画时序</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Text over gradients needs careful contrast testing</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> CSS gradients are performant; animated gradients may impact low-end devices</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Moderate — requires gradient tuning and animation timing</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 8. 粗野主义 -->
+                <!-- 8. Brutalism -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">08</span>
-                        <h3 class="text-2xl font-bold text-black">粗野主义</h3>
+                        <h3 class="text-2xl font-bold text-black">Brutalism</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">1950 年代建筑，2010 年代 Web</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">1950s architecture, 2010s web</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 原始、未打磨的美学 — 诚实胜于美丽</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 原色和厚重黑色边框</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 可见的网格结构 — 暴露框架</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 反设计哲学 — 挑战传统</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Raw, unpolished aesthetic — honesty over beauty</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Primary colors and heavy black borders</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Visible grid structure — exposes the framework</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Anti-design philosophy — challenges conventions</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">设计作品集、艺术项目、反主流品牌</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Design portfolios, artistic projects, counter-culture brands</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>粗边框和高对比度可能令人不适</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>非常轻量 — 极简 CSS</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>技术层面低；概念层面高 — 需要自信</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Bold borders and high contrast can be overwhelming</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> Very lightweight — minimal CSS</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Low technically; high conceptually — requires confidence</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 9. 新粗野主义 -->
+                <!-- 9. Neubrutalism -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">09</span>
-                        <h3 class="text-2xl font-bold text-black">新粗野主义</h3>
+                        <h3 class="text-2xl font-bold text-black">Neubrutalism</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">2022 年现代复兴</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">2022 modern revival</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 粗犷黑色边框 — 不可错认的视觉语言</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 硬阴影 — 坚定、果断的深度</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 明亮、扁平色彩 — 充满活力与自信</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 大胆排版，受波普艺术影响</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Bold black borders — unmistakable visual language</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Hard drop shadows — firm, decisive depth</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Bright, flat colors — energetic and confident</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Bold typography with pop-art influence</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">创意机构、作品集网站、初创公司、大胆品牌</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Creative agencies, portfolio sites, startups, bold brands</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>天生高对比度 — 很易访问</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>纯 CSS — 快速轻量</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低 — 简单的 CSS 边框和阴影</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> High contrast by nature — very accessible</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> Pure CSS — fast and lightweight</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Low — straightforward CSS borders and shadows</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 10. 便当盒布局 -->
+                <!-- 10. Bento Grid -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">10</span>
-                        <h3 class="text-2xl font-bold text-black">便当盒布局</h3>
+                        <h3 class="text-2xl font-bold text-black">Bento Grid</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">Apple 设计语言，2020 年代</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">Apple design language, 2020s</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 非对称网格布局 — 有机而有序</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 不同尺寸的模块化内容卡片</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 大圆角营造柔和、友好的感觉</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 日本便当盒灵感 — 有组织的多样性</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Asymmetric grid layouts — organic yet structured</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Modular content cards of varying sizes</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Large border-radius for soft, friendly feel</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Japanese bento box inspiration — organized variety</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">作品集网站、产品展示、仪表盘</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Portfolio websites, product showcases, dashboards</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>确保非对称布局中的逻辑 Tab 顺序</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS Grid 原生高性能</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>中等 — 需要周密的网格规划</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Ensure logical tab order across asymmetric layouts</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> CSS Grid is natively performant</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Moderate — requires thoughtful grid planning</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 11. 赛博朋克 -->
+                <!-- 11. Cyberpunk -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">11</span>
-                        <h3 class="text-2xl font-bold text-black">赛博朋克</h3>
+                        <h3 class="text-2xl font-bold text-black">Cyberpunk</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">1980 年代科幻</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">1980s sci-fi</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 霓虹色彩点缀 — 在黑暗中发光</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 深色背景 — 沉浸式、夜间氛围</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 故障效果 — 数字不完美</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 等宽排版 — 黑客/终端美学</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 高科技、低生活美学 — 技术反乌托邦</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Neon color accents — glow against darkness</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Dark backgrounds — immersive, nocturnal</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Glitch effects — digital imperfection</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Monospace typography — hacker/terminal aesthetic</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> High-tech, low-life aesthetic — technological dystopia</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">游戏平台、科技初创、NFT/Crypto、科幻娱乐</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Gaming platforms, tech startups, NFT/Crypto, sci-fi entertainment</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>深色背景配霓虹文字可能引起视觉疲劳</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>故障动画可能消耗大量 CPU</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>中至高 — 动画和霓虹效果需要调校</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Dark backgrounds with neon text may cause eye strain</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> Glitch animations can be CPU-intensive</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Moderate to high — animation and neon effects need tuning</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 12. 蒸汽波 -->
+                <!-- 12. Vaporwave -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">12</span>
-                        <h3 class="text-2xl font-bold text-black">蒸汽波</h3>
+                        <h3 class="text-2xl font-bold text-black">Vaporwave</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">2010 年代互联网文化</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">2010s internet culture</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 粉/青渐变 — 标志性合成器波配色</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 日文元素 — 文化混搭</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 网格图案 — 复古未来主义</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 复古 80/90 年代字体 — 怀旧排版</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 超现实数字怀旧 — 梦幻美学</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Pink/cyan gradients — iconic synthwave palette</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Japanese text elements — cultural remix</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Grid patterns — retro-futuristic</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Retro 80s/90s fonts — nostalgic typography</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Surreal digital nostalgia — dreamlike aesthetic</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">音乐平台、时尚品牌、艺术组合、复古游戏</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Music platforms, fashion brands, art portfolios, retro gaming</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>粉/青文字可能难以阅读 — 限定为点缀色</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS 渐变和图案轻量</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低至中等 — 主要为装饰性 CSS</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Pink/cyan text can be hard to read — limit to accents</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> CSS gradients and patterns are lightweight</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Low to moderate — primarily decorative CSS</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 13. 瑞士现代主义 2.0 -->
+                <!-- 13. Swiss Modernism 2.0 -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">13</span>
-                        <h3 class="text-2xl font-bold text-black">瑞士现代主义 2.0</h3>
+                        <h3 class="text-2xl font-bold text-black">Swiss Modernism 2.0</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">为数字时代更新的瑞士设计</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">Swiss Design updated for digital</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 严格网格系统 — 数学秩序</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 无衬线排版 — Helvetica 传统</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 原色 — 红、蓝、黄、黑、白</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 非对称布局 — 动态平衡</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 数学精度 — 每个像素都有意图</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Strict grid systems — mathematical order</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Sans-serif typography — Helvetica legacy</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Primary colors — red, blue, yellow, black, white</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Asymmetric layouts — dynamic balance</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Mathematical precision — every pixel intentional</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">企业形象、编辑设计、信息设计</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Corporate identity, editorial design, information design</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>强对比度、清晰层级 — 天然可访问</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>无重资源 — 极快</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>中等 — 需要严谨的网格和排版工作</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Strong contrast, clear hierarchy — naturally accessible</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> No heavy assets — extremely fast</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Moderate — requires disciplined grid and typography work</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 14. 液态玻璃 -->
+                <!-- 14. Liquid Glass -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">14</span>
-                        <h3 class="text-2xl font-bold text-black">液态玻璃</h3>
+                        <h3 class="text-2xl font-bold text-black">Liquid Glass</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">2022 年 Apple Vision Pro 影响</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">2022 Apple Vision Pro influence</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 流动、变形形状 — 有机运动</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 虹彩变色效果 — 色彩变幻表面</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 深度背景模糊 — 空间深度</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 有机动画 — 流畅、自然的运动</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Flowing, morphing shapes — organic motion</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Iridescent chromatic effects — color-shifting surfaces</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Deep backdrop blur — spatial depth</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Organic animations — fluid, natural movement</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">高端 SaaS、高端电商、奢侈作品集</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Premium SaaS, high-end e-commerce, luxury portfolios</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>虹彩表面使文字可读性复杂化</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>较重 — backdrop-filter + 动画消耗 GPU</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>非常高 — 需要高级 CSS 和动画技能</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Iridescent surfaces complicate text readability</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> Heavy — backdrop-filter + animations tax GPU</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Very high — requires advanced CSS and animation skills</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 15. Gen Z 混沌 -->
+                <!-- 15. Gen Z Chaos -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">15</span>
-                        <h3 class="text-2xl font-bold text-black">Gen Z 混沌</h3>
+                        <h3 class="text-2xl font-bold text-black">Gen Z Chaos</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">2023 年 TikTok / Gen Z 美学</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">2023 TikTok / Gen Z aesthetics</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 极繁主义、混乱布局 — 越多越好</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 倾斜、旋转的元素 — 打破传统网格</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 俏皮、不羁的文案 — 个性驱动</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 大量 Emoji 沟通 — 视觉速记</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 反极简主义 — 颂扬过度</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Maximalist, chaotic layouts — more is more</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Tilted, rotated elements —打破了传统网格</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Playful, irreverent copy — personality-driven</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Emoji-heavy communication — visual shorthand</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Anti-minimalism — celebrating excess</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">Gen Z 品牌、社交应用、迷因文化、非主流营销</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Gen Z brands, social apps, meme culture, unhinged marketing</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>混乱布局可能使屏幕阅读器和用户迷失方向</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS transform 轻量；注意过度使用</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>高 — 在混乱与可用性之间取得平衡具有挑战性</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Chaotic layouts can disorient screen readers and users</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> CSS transforms are lightweight; watch for overuse</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> High — balancing chaos with usability is challenging</li>
                         </ul>
                     </div>
                 </div>
 
             </div>
 
-            <!-- 新兴实验风格 -->
+            <!-- Emerging & Experimental Section -->
             <div class="mt-12 mb-6">
-                <h3 class="text-2xl font-bold text-black mb-2">新兴实验风格</h3>
-                <p class="text-gray-500">前沿、小众、实验性的设计理念</p>
+                <h3 class="text-2xl font-bold text-black mb-2">Emerging & Experimental</h3>
+                <p class="text-gray-500">Cutting-edge, niche, and experimental design philosophies</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                <!-- 16. 暗黑模式 OLED -->
+                <!-- 16. Dark Mode OLED -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">16</span>
-                        <h3 class="text-2xl font-bold text-black">暗黑模式 OLED</h3>
+                        <h3 class="text-2xl font-bold text-black">Dark Mode OLED</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">OLED 显示技术，2020 年代</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">OLED display technology, 2020s</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 纯黑背景 — OLED 像素完全关闭</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 霓虹点缀色实现高对比度突出</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 省电设计 — 更低功耗</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 低光环境下减少眼部疲劳</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> True black backgrounds — pixels off on OLED</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Neon accent colors for high contrast pop</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Battery-friendly design — less power consumption</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Reduced eye strain in low-light environments</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">开发者工具、代码编辑器、阅读应用、夜间模式界面</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Developer tools, code editors, reading apps, night-mode interfaces</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>确保深色表面与文字之间有足够对比度</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>纯黑降低 OLED 功耗 — 移动端表现出色</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低 — 主要是颜色标记替换</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Ensure sufficient contrast between dark surfaces and text</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> True black reduces OLED power draw — excellent for mobile</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Low — primarily color token swaps</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 17. 复古未来主义 -->
+                <!-- 17. Retro Futurism -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">17</span>
-                        <h3 class="text-2xl font-bold text-black">复古未来主义</h3>
+                        <h3 class="text-2xl font-bold text-black">Retro Futurism</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">中世纪科幻，1950–60 年代遐想</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">Mid-century sci-fi, 1950s–60s visions</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 旧时代的明日之梦 — 怀旧未来主义</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 温暖橙色、深邃蓝、蜜桃色调</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 充满复古未来特色的几何形状</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 乐观、探索性的视觉语言</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Vintage vision of tomorrow — nostalgic futurism</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Warm oranges, deep blues, and peach tones</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Geometric shapes with retro-future character</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Optimistic, exploratory visual language</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">太空主题项目、复古品牌、概念设计</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Space-themed projects, retro brands, concept designs</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>暖色调配色在适当对比度下通常可访问</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>基于 CSS，轻量级</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低至中等 — 颜色和形状处理</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Warm color palettes generally accessible with proper contrast</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> CSS-based, lightweight</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Low to moderate — color and shape work</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 18. 动效驱动 -->
+                <!-- 18. Motion Driven -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">18</span>
-                        <h3 class="text-2xl font-bold text-black">动效驱动</h3>
+                        <h3 class="text-2xl font-bold text-black">Motion Driven</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">Web 动画复兴，2020 年代</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">Web animation renaissance, 2020s</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 动画优先设计 — 动效引导体验</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 动态色彩过渡和流畅运动</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 滚动触发动画 — 叙事推进</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 微交互带来愉悦和反馈</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Animation-first design — motion guides the experience</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Dynamic color transitions and fluid movement</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Scroll-triggered animations — narrative progression</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Micro-interactions that delight and inform</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">叙事网站、品牌体验、产品发布页</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Storytelling sites, brand experiences, product launches</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>尊重 prefers-reduced-motion；避免触发晕动症</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>使用 GPU 加速属性（transform、opacity）</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>高 — 需要动画库和性能调优</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Respect prefers-reduced-motion; avoid motion sickness triggers</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> Use GPU-accelerated properties (transform, opacity)</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> High — requires animation libraries and performance tuning</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 19. 包容性设计 -->
+                <!-- 19. Inclusive Design -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">19</span>
-                        <h3 class="text-2xl font-bold text-black">包容性设计</h3>
+                        <h3 class="text-2xl font-bold text-black">Inclusive Design</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">WCAG 标准，通用设计运动</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">WCAG standards, Universal Design movement</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 默认可访问 — WCAG AA 最低标准</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 清晰、可识别的色彩系统（Google 风格）</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 以人为本 — 为最广泛受众设计</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 语义化 HTML 和 ARIA 优先方法</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Accessible by default — WCAG AA minimum</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Clear, recognizable color systems (Google-style)</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Human-centered — designs for the widest audience</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Semantic HTML and ARIA-first approach</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">政府、教育、医疗、企业平台</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Government, education, healthcare, enterprise platforms</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>内建 — 此理念的基石</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>标准 — 可访问性增加极少开销</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>中等 — 需要可访问性知识和测试</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Built-in — the foundation of this philosophy</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> Standard — accessibility adds minimal overhead</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Moderate — requires accessibility knowledge and testing</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 20. 零界面 -->
+                <!-- 20. Zero Interface -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">20</span>
-                        <h3 class="text-2xl font-bold text-black">零界面</h3>
+                        <h3 class="text-2xl font-bold text-black">Zero Interface</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">隐形计算，2020 年代</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">Invisible computing, 2020s</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 界面消失 — 内容为王</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 极简边框 — 控件按需出现</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 轻柔色彩 — 若有若无的灰色调</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 语音和手势作为主要交互方式</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> The interface disappears — content is king</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Minimal chrome — controls appear on demand</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Whisper-soft color palette — barely-there greys</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Voice and gesture as primary input methods</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">阅读应用、内容平台、环境计算</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Reading apps, content platforms, ambient computing</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>隐藏控件有可发现性风险 — 提供清晰的示能性</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>极轻量 — 极简 UI 元素</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>概念层面高 — 需要深刻理解用户需求</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Hidden controls risk discoverability — provide clear affordances</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> Extremely lightweight — minimal UI elements</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> High conceptually — requires deep understanding of user needs</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 21. 柔和 UI 进化 -->
+                <!-- 21. Soft UI Evolution -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">21</span>
-                        <h3 class="text-2xl font-bold text-black">柔和 UI 进化</h3>
+                        <h3 class="text-2xl font-bold text-black">Soft UI Evolution</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">新拟物风格进化，2023 年</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">Neumorphism evolution, 2023</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 柔和粉彩渐变 — 柔和过渡</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 多色融合 — 薰衣草、天蓝、奶油</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 进化版柔和阴影，对比度更好</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 宁静、治愈的视觉体验</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Gentle pastel gradients — soft transitions</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Multi-color blending — lavender, sky, cream</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Evolved soft shadows with better contrast</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Calm, therapeutic visual experience</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">健康应用、心理健康平台、生活方式品牌</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Wellness apps, mental health platforms, lifestyle brands</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>比新拟物风格有改进 — 更好的对比度比率</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS 渐变和阴影 — 轻量级</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低至中等 — 渐变和谐调校</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Improved over neumorphism — better contrast ratios</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> CSS gradients and shadows — lightweight</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Low to moderate — gradient harmony tuning</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 22. 主视觉中心 -->
+                <!-- 22. Hero Centric -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">22</span>
-                        <h3 class="text-2xl font-bold text-black">主视觉中心</h3>
+                        <h3 class="text-2xl font-bold text-black">Hero Centric</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">落地页优化，2020 年代</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">Landing page optimization, 2020s</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 主导的主视觉区域 — 第一印象决定一切</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 戏剧化对比 — 深色背景配活力点缀</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 大号粗体排版 — 即时传达信息</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 单一 CTA 焦点 — 转化导向设计</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Dominant hero section — first impression is everything</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Dramatic contrast — dark backgrounds with vibrant accents</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Large, bold typography — immediate message delivery</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Single CTA focus — conversion-oriented design</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">落地页、营销网站、产品发布页</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Landing pages, marketing sites, product launches</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>深色背景需要足够的文字对比度</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>主视觉图片需要优化 — 懒加载和压缩</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低 — 聚焦布局，优先级明确</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Dark backgrounds need sufficient text contrast</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> Hero images need optimization — lazy-load and compress</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Low — focused layout with clear priorities</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 23. HUD 科幻 -->
+                <!-- 23. HUD Sci-Fi -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">23</span>
-                        <h3 class="text-2xl font-bold text-black">HUD 科幻</h3>
+                        <h3 class="text-2xl font-bold text-black">HUD Sci-Fi</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">军事航空、科幻电影</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">Military aviation, sci-fi films</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 抬头显示美学 — 数据叠加</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 矩阵绿配深色背景</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 终端风格等宽排版</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 发光边框和扫描线效果</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Heads-up display aesthetics — data overlay</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Matrix green on dark backgrounds</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Terminal-style monospace typography</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Glowing borders and scan-line effects</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">网络安全平台、开发者工具、科幻游戏</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Cybersecurity platforms, developer tools, sci-fi games</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>绿底黑字对比度好；长文本避免纯绿</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS text-shadow 发光效果 — 轻量级</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低 — 主要是颜色和排版选择</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Green-on-black has good contrast; avoid pure green for long text</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> Glow effects via CSS text-shadow — lightweight</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Low — primarily color and typography choices</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 24. 像素艺术 -->
+                <!-- 24. Pixel Art -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">24</span>
-                        <h3 class="text-2xl font-bold text-black">像素艺术</h3>
+                        <h3 class="text-2xl font-bold text-black">Pixel Art</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">8-bit 游戏时代，1980 年代</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">8-bit gaming era, 1980s</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 复古游戏怀旧 — 致敬 8-bit 和 16-bit</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 有限色彩 — 有意的约束</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 块状、基于网格的视觉 — 像素完美</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 像素字体和 CRT 屏幕效果</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Retro gaming nostalgia — 8-bit and 16-bit homage</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Limited color palettes — deliberate constraints</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Blocky, grid-based visuals — pixel-perfect</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Pixel fonts and CRT screen effects</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">游戏网站、复古品牌、创意作品集</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Gaming websites, retro brands, creative portfolios</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>像素字体难以阅读 — 仅用于标题</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>轻量级 — 基于 CSS 的像素效果</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低至中等 — 需要加载专用字体</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Pixel fonts can be hard to read — use for headings only</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> Lightweight — CSS-based pixel effects</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Low to moderate — specialized font loading required</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 25. 电子墨水纸 -->
+                <!-- 25. E-Ink Paper -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">25</span>
-                        <h3 class="text-2xl font-bold text-black">电子墨水纸</h3>
+                        <h3 class="text-2xl font-bold text-black">E-Ink Paper</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">电子阅读器显示技术，2000 年代</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">E-reader display technology, 2000s</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 纸张质感 — 温暖、触感的数字化</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 低对比度、宁静的阅读体验</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 暖灰和墨黑 — 自然色板</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 衬线字体提供传统阅读舒适感</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Paper-like texture — warm, tactile digital</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Low contrast, calm reading experience</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Warm grey and ink black — natural palette</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Serif fonts for traditional reading comfort</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">阅读应用、数字出版物、文档网站</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Reading apps, digital publications, documentation sites</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>低对比度可能不足 — 提供高对比度切换</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>非常轻量 — 极简 CSS</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低 — 聚焦颜色和排版</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Low contrast may be insufficient — provide high-contrast toggle</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> Very lightweight — minimal CSS</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Low — color and typography focused</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 26. 空间 UI -->
+                <!-- 26. Spatial UI -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">26</span>
-                        <h3 class="text-2xl font-bold text-black">空间 UI</h3>
+                        <h3 class="text-2xl font-bold text-black">Spatial UI</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">Apple Vision Pro，空间计算时代</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">Apple Vision Pro, spatial computing era</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 3D 深度和透视 — 超越平面屏幕</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 具有空间感知的玻璃材质</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 基于深度的交互 — Z 轴导航</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 潘通风格色彩点缀 — 紫外光、活珊瑚</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 3D depth and perspective — beyond flat screens</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Glass material with spatial awareness</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Depth-based interaction — Z-axis navigation</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Pantone-inspired color accents — Ultra Violet, Living Coral</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">AR/VR 界面、空间计算、沉浸式体验</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">AR/VR interfaces, spatial computing, immersive experiences</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>3D 效果可能引起晕动症 — 提供 2D 降级方案</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>3D transform 消耗大量 GPU 资源</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>非常高 — 需要 3D CSS 和空间设计思维</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> 3D effects can cause motion sickness — provide 2D fallback</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> 3D transforms are GPU-intensive</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Very high — requires 3D CSS and spatial design thinking</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 27. 有机仿生 -->
+                <!-- 27. Organic Biophilic -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">27</span>
-                        <h3 class="text-2xl font-bold text-black">有机仿生</h3>
+                        <h3 class="text-2xl font-bold text-black">Organic Biophilic</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">仿生设计运动，2020 年代</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">Biophilic design movement, 2020s</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 自然灵感设计 — 将户外引入室内</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 森林绿、鼠尾草、薄荷雾色板</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 有机形状和流动曲线</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 关注健康与可持续性</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Nature-inspired design — bringing outdoors in</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Forest greens, sage, and mint mist palettes</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Organic shapes and flowing curves</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Wellness and sustainability focus</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">可持续品牌、健康应用、生态产品</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Sustainability brands, wellness apps, eco-products</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>绿上绿配色需要仔细的对比度测试</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS 形状和渐变 — 轻量级</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低至中等 — 自然灵感 CSS 图案</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Green-on-green palettes need careful contrast testing</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> CSS shapes and gradients — lightweight</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Low to moderate — nature-inspired CSS patterns</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 28. AI 原生 -->
+                <!-- 28. AI Native -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">28</span>
-                        <h3 class="text-2xl font-bold text-black">AI 原生</h3>
+                        <h3 class="text-2xl font-bold text-black">AI Native</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">AI 革命，2023 年至今</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">AI revolution, 2023–present</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 生成式、自适应界面 — AI 驱动设计</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 靛蓝-紫罗兰-青色渐变 — 未来感 AI 氛围</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 锥形渐变和旋转元素 — 动态能量</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 智能、上下文感知的 UI 模式</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Generative, adaptive interfaces — AI-driven design</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Indigo-violet-cyan gradient palette — futuristic AI feel</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Conic gradients and rotating elements — dynamic energy</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Intelligent, context-aware UI patterns</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">AI 工具、聊天机器人界面、智能助手、ML 平台</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">AI tools, chatbot interfaces, smart assistants, ML platforms</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>渐变密集型界面需要文字对比度保障</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>锥形渐变是 CSS 原生 — 高性能</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>中等 — 创新渐变技术</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Gradient-heavy interfaces need text contrast safeguards</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> Conic gradients are CSS-native — performant</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Moderate — innovative gradient techniques</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 29. 孟菲斯复兴 -->
+                <!-- 29. Memphis Revival -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">29</span>
-                        <h3 class="text-2xl font-bold text-black">孟菲斯复兴</h3>
+                        <h3 class="text-2xl font-bold text-black">Memphis Revival</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">孟菲斯集团，1980 年代米兰</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">Memphis Group, 1980s Milan</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 大胆几何图案 — 圆、三角、波浪线</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 冲突色彩 — 珊瑚、青色、阳光黄、长春花</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 俏皮、不羁的设计语言</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 后现代对极简主义的反叛</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Bold geometric patterns — circles, triangles, squiggles</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Clashing colors — coral, teal, sunny yellow, periwinkle</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Playful, irreverent design language</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Postmodern rebellion against minimalism</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">创意机构、时尚品牌、艺术作品集</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Creative agencies, fashion brands, artistic portfolios</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>大胆色彩需要刻意的对比度搭配</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS 图案和形状 — 轻量级</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>中等 — 图案设计需要艺术技巧</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Bold colors need intentional contrast pairing</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> CSS patterns and shapes — lightweight</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Moderate — pattern design requires artistic skill</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 30. Y2K 复兴 -->
+                <!-- 30. Y2K Revival -->
                 <div class="bg-white rounded-2xl border border-gray-100 p-8">
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded">30</span>
-                        <h3 class="text-2xl font-bold text-black">Y2K 复兴</h3>
+                        <h3 class="text-2xl font-bold text-black">Y2K Revival</h3>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">起源</span>
-                        <p class="text-sm text-gray-600 mt-1">1990 年代末–2000 年代初互联网</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Origin</span>
+                        <p class="text-sm text-gray-600 mt-1">Late 1990s–early 2000s internet</p>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">核心原则</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Principles</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-600">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 千禧美学 — 镀铬、金属、闪亮</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 亮粉、绿松石、金色、银色色板</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 泡泡糖流行与数字未来主义碰撞</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> 怀旧但新鲜 — 复古复兴与现代打磨</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Millennium aesthetic — chrome, metallic, shiny</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Hot pink, turquoise, gold, silver palette</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Bubblegum pop meets digital futurism</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> Nostalgic but fresh — retro revival with modern polish</li>
                         </ul>
                     </div>
                     <div class="mb-5">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">最佳适用</span>
-                        <p class="text-sm text-gray-600 mt-1">时尚电商、音乐平台、Gen Z 品牌</p>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Best For</span>
+                        <p class="text-sm text-gray-600 mt-1">Fashion e-commerce, music platforms, Gen Z brands</p>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX 考量</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UX Considerations</span>
                         <ul class="mt-2 space-y-1.5 text-sm text-gray-500">
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>可访问性：</strong>金属和闪亮效果可能降低可读性</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>性能：</strong>CSS 渐变和阴影 — 轻量级</li>
-                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>复杂度：</strong>低至中等 — 渐变和颜色处理</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Accessibility:</strong> Metallic and shiny effects can reduce readability</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Performance:</strong> CSS gradients and shadows — lightweight</li>
+                            <li class="flex items-start gap-2"><span class="text-gray-300 mt-1.5">●</span> <strong>Complexity:</strong> Low to moderate — gradient and color work</li>
                         </ul>
                     </div>
                 </div>
@@ -1067,15 +1067,15 @@
     <!-- Footer -->
     <footer class="bg-black text-white py-12 px-6">
         <div class="max-w-7xl mx-auto text-center">
-            <h3 class="text-2xl font-bold mb-4">前端设计灵感画廊</h3>
-            <p class="text-gray-400 mb-6">30 种现代 UI 设计风格 — 精选展示</p>
+            <h3 class="text-2xl font-bold mb-4">Design Inspiration Gallery</h3>
+            <p class="text-gray-400 mb-6">30 modern UI design styles — curated showcase</p>
             <div class="flex justify-center gap-4 flex-wrap mb-8">
                 <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Tailwind CSS</span>
-                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">响应式</span>
-                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">零依赖</span>
-                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">GitHub Pages 就绪</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Responsive</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Zero Dependencies</span>
+                <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">GitHub Pages Ready</span>
             </div>
-            <p class="text-gray-500 text-sm">基于 <a href="https://github.com/joshhu/uitest" class="underline hover:text-gray-300">joshhu/uitest</a> 等开源设计资源构建</p>
+            <p class="text-gray-500 text-sm">Built with reference to <a href="https://github.com/joshhu/uitest" class="underline hover:text-gray-300">joshhu/uitest</a> and other open-source design resources.</p>
         </div>
     </footer>
 
