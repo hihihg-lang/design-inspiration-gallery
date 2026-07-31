@@ -1,501 +1,850 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ancient Spellbook — Design Style Gallery</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <title>Ancient Spellbook — 设计风格画廊</title>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@300;400;700&display=swap');
-
         :root {
-            --parchment: #f4e4c1;
-            --ink: #2c1810;
+            --cover-dark: #2c0a0a;
+            --cover-mid: #4a1515;
             --gold: #c9a84c;
-            --rune-glow: #d4a853;
-            --deep-brown: #3e2723;
+            --gold-bright: #e8c860;
+            --parchment: #f0dbb0;
+            --parchment-dark: #dcc89a;
+            --ink: #2c1810;
+            --spine: #1f0707;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', 'Noto Serif SC', serif;
+            font-family: 'Noto Serif SC', serif;
             min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0a0505;
             overflow-x: hidden;
-            color: var(--ink);
-            background: #1a0a00;
+            cursor: default;
         }
 
-        /* ── Scrolling Background Layer ── */
-        .scroll-bg-layer {
+        /* ── 环境背景 ── */
+        .ambient-bg {
             position: fixed;
             inset: 0;
             z-index: 0;
             background:
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="noise"><feTurbulence baseFrequency="0.7" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.08"/></svg>'),
-                radial-gradient(ellipse at 30% 20%, rgba(180,140,80,0.15) 0%, transparent 60%),
-                radial-gradient(ellipse at 70% 60%, rgba(200,160,60,0.12) 0%, transparent 60%),
-                radial-gradient(ellipse at 50% 80%, rgba(160,100,40,0.1) 0%, transparent 50%),
-                linear-gradient(180deg, #1a0a00 0%, #2d1810 30%, #1f0e04 60%, #140800 100%);
-            background-size: 200px 200px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+                radial-gradient(ellipse at 50% 30%, rgba(180, 130, 50, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 80%, rgba(80, 30, 10, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 30% 60%, rgba(120, 60, 20, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 40%, rgba(100, 80, 30, 0.05) 0%, transparent 50%),
+                linear-gradient(180deg, #0a0505 0%, #140a08 40%, #0d0606 100%);
         }
 
-        /* ── Floating Rune Background ── */
-        .runes-field {
+        /* 粒子效果 */
+        .particles {
             position: fixed;
             inset: 0;
             z-index: 1;
             pointer-events: none;
-            overflow: hidden;
         }
-        .rune-particle {
+        .particle {
             position: absolute;
-            font-family: 'UnifrakturMaguntia', cursive;
-            color: rgba(201, 168, 76, 0.15);
-            font-size: 2.5rem;
-            animation: floatRune 8s ease-in-out infinite;
-            text-shadow: 0 0 8px rgba(201, 168, 76, 0.3), 0 0 20px rgba(201, 168, 76, 0.1);
+            width: 3px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: rise linear infinite;
+            box-shadow: 0 0 6px var(--gold), 0 0 12px var(--gold);
         }
-        .rune-particle:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; font-size: 2rem; }
-        .rune-particle:nth-child(2) { top: 20%; left: 85%; animation-delay: 1.5s; font-size: 3rem; }
-        .rune-particle:nth-child(3) { top: 45%; left: 10%; animation-delay: 3s; font-size: 2.2rem; }
-        .rune-particle:nth-child(4) { top: 60%; left: 80%; animation-delay: 4.5s; font-size: 2.8rem; }
-        .rune-particle:nth-child(5) { top: 75%; left: 15%; animation-delay: 2s; font-size: 3.2rem; }
-        .rune-particle:nth-child(6) { top: 85%; left: 70%; animation-delay: 5s; font-size: 2.4rem; }
-        .rune-particle:nth-child(7) { top: 35%; left: 50%; animation-delay: 6s; font-size: 2.6rem; }
-        .rune-particle:nth-child(8) { top: 15%; left: 45%; animation-delay: 3.5s; font-size: 1.8rem; }
-        .rune-particle:nth-child(9) { top: 90%; left: 40%; animation-delay: 7s; font-size: 2.1rem; }
-        .rune-particle:nth-child(10) { top: 5%; left: 25%; animation-delay: 1s; font-size: 2.5rem; }
-
-        @keyframes floatRune {
-            0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.15; }
-            25% { transform: translateY(-20px) translateX(10px) rotate(3deg); opacity: 0.25; }
-            50% { transform: translateY(-10px) translateX(-5px) rotate(-2deg); opacity: 0.18; }
-            75% { transform: translateY(-30px) translateX(8px) rotate(5deg); opacity: 0.22; }
+        @keyframes rise {
+            0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-100vh) translateX(40px) scale(0.3); opacity: 0; }
         }
 
-        /* ── Main Content Layer ── */
-        .content-layer {
+        /* ── 桌面 ── */
+        .desk {
             position: relative;
             z-index: 10;
-            min-height: 100vh;
-            padding: 2rem 1rem;
+            perspective: 2000px;
+            perspective-origin: 50% 45%;
         }
 
-        /* ── Parchment Spellbook Container ── */
-        .spellbook {
-            max-width: 800px;
-            margin: 2rem auto;
-            background:
-                linear-gradient(135deg, rgba(244,228,193,0.95) 0%, rgba(235,213,170,0.95) 30%, rgba(244,228,193,0.95) 60%, rgba(230,200,155,0.95) 100%);
-            border: 3px solid #8b6914;
-            border-radius: 6px;
-            box-shadow:
-                0 0 60px rgba(180, 120, 40, 0.4),
-                0 0 120px rgba(180, 120, 40, 0.15),
-                inset 0 0 80px rgba(180, 140, 80, 0.1),
-                0 20px 60px rgba(0,0,0,0.5);
+        /* ── 3D 书本整体 ── */
+        .book-3d {
             position: relative;
+            width: 820px;
+            height: 560px;
+            transform-style: preserve-3d;
+            transform: rotateX(5deg);
+            animation: bookFloat 6s ease-in-out infinite;
+        }
+        @keyframes bookFloat {
+            0%, 100% { transform: rotateX(5deg) translateY(0); }
+            50% { transform: rotateX(5deg) translateY(-8px); }
+        }
+
+        /* ── 书脊 ── */
+        .spine {
+            position: absolute;
+            left: 390px;
+            top: 0;
+            width: 40px;
+            height: 100%;
+            background: linear-gradient(90deg, var(--spine) 0%, #3a1010 20%, #2a0808 50%, #3a1010 80%, var(--spine) 100%);
+            border-radius: 3px;
+            z-index: 5;
+            transform: translateZ(-2px);
+            box-shadow:
+                inset 0 0 30px rgba(0,0,0,0.5),
+                2px 0 8px rgba(0,0,0,0.6),
+                -2px 0 8px rgba(0,0,0,0.6);
+        }
+        /* 书脊横纹 */
+        .spine-ridges {
+            position: absolute;
+            left: 390px;
+            top: 0;
+            width: 40px;
+            height: 100%;
+            z-index: 6;
+            pointer-events: none;
+        }
+        .spine-ridge {
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg,
+                transparent 0%, rgba(201,168,76,0.3) 20%, rgba(232,200,96,0.5) 50%, rgba(201,168,76,0.3) 80%, transparent 100%);
+        }
+        .spine-title {
+            position: absolute;
+            left: 392px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-90deg);
+            z-index: 7;
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 1.6rem;
+            color: var(--gold);
+            letter-spacing: 0.3em;
+            white-space: nowrap;
+            pointer-events: none;
+            text-shadow: 0 0 10px rgba(201,168,76,0.5);
+        }
+
+        /* 书脊装饰金线 */
+        .spine-gold-line {
+            position: absolute;
+            left: 390px;
+            z-index: 7;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            pointer-events: none;
+        }
+
+        /* ── 封面（左半） ── */
+        .cover-left {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 390px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--cover-mid) 0%, var(--cover-dark) 50%, #1f0606 100%);
+            border-radius: 8px 0 0 8px;
+            z-index: 4;
+            transform-origin: right center;
+            transform: rotateY(0deg);
+            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow:
+                inset 0 0 80px rgba(0,0,0,0.4),
+                -4px 0 12px rgba(0,0,0,0.5);
+            cursor: pointer;
             overflow: hidden;
         }
+        .cover-left.closed {
+            transform: rotateY(0deg);
+        }
+        .cover-left.open {
+            transform: rotateY(-150deg);
+        }
 
-        /* Spine decoration line */
-        .spellbook::before {
+        .cover-left::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 3px,
+                rgba(0,0,0,0.03) 3px,
+                rgba(0,0,0,0.03) 4px
+            );
+            pointer-events: none;
+        }
+
+        /* 封面压印装饰 */
+        .cover-emboss {
+            position: absolute;
+            inset: 40px;
+            border: 3px solid rgba(201,168,76,0.3);
+            border-radius: 4px;
+            pointer-events: none;
+        }
+        .cover-emboss::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(201,168,76,0.15);
+            border-radius: 2px;
+        }
+        .cover-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            pointer-events: none;
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 2.8rem;
+            color: var(--gold);
+            text-shadow:
+                0 0 15px rgba(201,168,76,0.6),
+                0 0 30px rgba(201,168,76,0.3),
+                0 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 0.15em;
+        }
+        .cover-subtitle {
+            position: absolute;
+            top: 62%;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.9rem;
+            color: rgba(201,168,76,0.5);
+            letter-spacing: 0.3em;
+        }
+        .cover-ornament {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 3rem;
+            color: rgba(201,168,76,0.25);
+            pointer-events: none;
+        }
+        .cover-ornament-bottom {
+            top: auto;
+            bottom: 15%;
+            transform: translateX(-50%) rotate(180deg);
+        }
+
+        /* 封面角铁 */
+        .cover-corner {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 2px solid rgba(201,168,76,0.25);
+            pointer-events: none;
+        }
+        .cover-corner.tl { top: 25px; left: 25px; border-right: none; border-bottom: none; border-radius: 4px 0 0 0; }
+        .cover-corner.tr { top: 25px; right: 25px; border-left: none; border-bottom: none; border-radius: 0 4px 0 0; }
+        .cover-corner.bl { bottom: 25px; left: 25px; border-right: none; border-top: none; border-radius: 0 0 0 4px; }
+        .cover-corner.br { bottom: 25px; right: 25px; border-left: none; border-top: none; border-radius: 0 0 4px 0; }
+
+        /* ── 右半（封底 + 书页） ── */
+        .right-side {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 390px;
+            height: 100%;
+            z-index: 4;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 4px 0 12px rgba(0,0,0,0.5);
+        }
+
+        /* 书页堆叠效果 */
+        .page-stack {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #e8d5a3 0%, #dcc896 50%, #e8d5a3 100%);
+            border-radius: 0 8px 8px 0;
+            overflow: hidden;
+        }
+        .page-stack::before {
             content: '';
             position: absolute;
             left: 0;
             top: 0;
             bottom: 0;
-            width: 30px;
-            background: linear-gradient(90deg,
-                rgba(139, 105, 20, 0.3) 0%,
-                rgba(180, 140, 60, 0.15) 40%,
-                transparent 100%);
-            z-index: 2;
+            width: 8px;
+            background: linear-gradient(90deg, rgba(0,0,0,0.1), transparent);
+        }
+        .page-stack::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 27px,
+                rgba(139, 105, 20, 0.04) 27px,
+                rgba(139, 105, 20, 0.04) 28px
+            );
             pointer-events: none;
         }
 
-        /* Paper texture */
-        .spellbook-inner {
-            padding: 3rem 2.5rem 3rem 3.5rem;
+        /* 右侧书页内容 */
+        .page-content-right {
             position: relative;
-            background:
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 28px,
-                    rgba(139, 105, 20, 0.06) 28px,
-                    rgba(139, 105, 20, 0.06) 29px
-                );
+            z-index: 2;
+            padding: 35px 45px 35px 30px;
+            height: 100%;
+            overflow-y: auto;
         }
 
-        /* ── Glowing Runes ── */
+        /* ── 左侧书页（封面翻开后显示） ── */
+        .page-left {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 390px;
+            height: 100%;
+            background: linear-gradient(180deg, #ecd9a8 0%, #e0c890 50%, #ecd9a8 100%);
+            border-radius: 8px 0 0 8px;
+            z-index: 3;
+            opacity: 0;
+            transition: opacity 0.6s ease 0.6s;
+            overflow: hidden;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.05);
+        }
+        .page-left.visible {
+            opacity: 1;
+        }
+        .page-left::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: linear-gradient(270deg, rgba(0,0,0,0.08), transparent);
+        }
+        .page-left::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 27px,
+                rgba(139, 105, 20, 0.04) 27px,
+                rgba(139, 105, 20, 0.04) 28px
+            );
+            pointer-events: none;
+        }
+        .page-content-left {
+            position: relative;
+            z-index: 2;
+            padding: 35px 30px 35px 45px;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        /* ── Glowing Runes样式 ── */
         .rune-glow {
-            display: inline-block;
             color: #8b6914;
-            text-shadow:
-                0 0 10px rgba(201, 168, 76, 0.8),
-                0 0 20px rgba(201, 168, 76, 0.5),
-                0 0 40px rgba(201, 168, 76, 0.3),
-                0 0 80px rgba(201, 168, 76, 0.15);
             animation: runePulse 3s ease-in-out infinite;
         }
-        .rune-glow-delay { animation-delay: 1.5s; }
-        .rune-glow-delay2 { animation-delay: 0.75s; }
+        .rune-glow:nth-child(2) { animation-delay: 0.5s; }
+        .rune-glow:nth-child(3) { animation-delay: 1s; }
+        .rune-glow:nth-child(4) { animation-delay: 1.5s; }
+        .rune-glow:nth-child(5) { animation-delay: 2s; }
+        .rune-glow:nth-child(6) { animation-delay: 2.5s; }
 
         @keyframes runePulse {
             0%, 100% {
                 text-shadow:
-                    0 0 10px rgba(201, 168, 76, 0.8),
-                    0 0 20px rgba(201, 168, 76, 0.5),
-                    0 0 40px rgba(201, 168, 76, 0.3);
+                    0 0 8px rgba(201, 168, 76, 0.7),
+                    0 0 16px rgba(201, 168, 76, 0.4),
+                    0 0 32px rgba(201, 168, 76, 0.2);
             }
             50% {
                 text-shadow:
-                    0 0 20px rgba(255, 200, 80, 0.95),
-                    0 0 40px rgba(255, 200, 80, 0.7),
-                    0 0 80px rgba(255, 200, 80, 0.45),
-                    0 0 120px rgba(255, 200, 80, 0.2);
+                    0 0 16px rgba(255, 200, 80, 0.9),
+                    0 0 32px rgba(255, 200, 80, 0.6),
+                    0 0 64px rgba(255, 200, 80, 0.35),
+                    0 0 96px rgba(255, 200, 80, 0.15);
             }
         }
 
-        /* ── Central Rune Ring ── */
-        .rune-circle {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            padding: 2rem 0;
+        /* ── Magic Circle ── */
+        .magic-ring {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
             position: relative;
+            animation: ringSpin 12s linear infinite;
         }
-        .rune-circle::before {
-            content: '';
+        .magic-ring-layer {
             position: absolute;
-            width: 200px;
-            height: 200px;
-            border: 2px solid rgba(201, 168, 76, 0.2);
+            inset: 0;
+            border: 2px solid rgba(139, 105, 20, 0.35);
             border-radius: 50%;
-            animation: circleSpin 20s linear infinite;
         }
-        .rune-circle::after {
-            content: '';
+        .magic-ring-layer:nth-child(2) {
+            inset: 10px;
+            border-color: rgba(139, 105, 20, 0.25);
+            animation: ringSpin 8s linear infinite reverse;
+        }
+        .magic-ring-layer:nth-child(3) {
+            inset: 20px;
+            border-color: rgba(201, 168, 76, 0.2);
+            animation: ringSpin 5s linear infinite;
+        }
+        .magic-ring-center {
             position: absolute;
-            width: 260px;
-            height: 260px;
-            border: 1px solid rgba(201, 168, 76, 0.12);
-            border-radius: 50%;
-            animation: circleSpin 25s linear infinite reverse;
+            inset: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 1.6rem;
+            color: #8b6914;
+            text-shadow: 0 0 12px rgba(201, 168, 76, 0.7);
         }
-        @keyframes circleSpin {
+        @keyframes ringSpin {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
 
-        .rune-char {
-            font-family: 'UnifrakturMaguntia', cursive;
-            font-size: 3.5rem;
-            color: #8b6914;
-            text-shadow:
-                0 0 12px rgba(201, 168, 76, 0.8),
-                0 0 30px rgba(201, 168, 76, 0.4),
-                0 0 60px rgba(201, 168, 76, 0.2);
-            animation: runePulse 3s ease-in-out infinite;
-            z-index: 1;
-        }
-        .rune-char:nth-child(1) { animation-delay: 0s; }
-        .rune-char:nth-child(2) { animation-delay: 0.5s; }
-        .rune-char:nth-child(3) { animation-delay: 1s; }
-        .rune-char:nth-child(4) { animation-delay: 1.5s; }
-        .rune-char:nth-child(5) { animation-delay: 2s; }
-        .rune-char:nth-child(6) { animation-delay: 2.5s; }
-
-        /* ── Decorative Drop Cap ── */
-        .drop-cap::first-letter {
-            font-family: 'UnifrakturMaguntia', cursive;
-            font-size: 4rem;
-            float: left;
-            line-height: 0.8;
-            padding-right: 0.5rem;
-            padding-top: 0.2rem;
-            color: #8b6914;
-            text-shadow: 0 0 12px rgba(201, 168, 76, 0.6), 0 0 30px rgba(201, 168, 76, 0.3);
-        }
-
-        /* ── Divider ── */
-        .spell-divider {
+        /* ── 符文环 ── */
+        .rune-ring {
             display: flex;
-            align-items: center;
             justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
+            gap: 1.2rem;
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 2.2rem;
+            color: #8b6914;
+            flex-wrap: wrap;
+        }
+
+        /* ── 属性卡片 ── */
+        .stat-card {
+            background: rgba(139, 105, 20, 0.06);
+            border: 1px solid rgba(139, 105, 20, 0.15);
+            border-radius: 3px;
+            padding: 0.6rem 0.8rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .stat-card:hover {
+            background: rgba(139, 105, 20, 0.12);
+            border-color: rgba(201, 168, 76, 0.4);
+            box-shadow: 0 0 16px rgba(201, 168, 76, 0.12);
+        }
+        .stat-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
             color: #8b6914;
             opacity: 0.6;
+            text-transform: uppercase;
         }
-        .spell-divider::before,
-        .spell-divider::after {
+        .stat-value {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 1.3rem;
+            color: #8b6914;
+            text-shadow: 0 0 6px rgba(201, 168, 76, 0.3);
+        }
+
+        /* ── 分割线 ── */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin: 1.2rem 0;
+            color: #8b6914;
+            opacity: 0.5;
+            font-size: 0.8rem;
+        }
+        .divider::before, .divider::after {
             content: '';
             flex: 1;
             height: 1px;
             background: linear-gradient(90deg, transparent, #8b6914, transparent);
         }
 
-        /* ── Spinning Magic Circle ── */
-        .magic-circle {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto;
-            position: relative;
-            animation: circleSpin 12s linear infinite;
-        }
-        .magic-circle-inner {
+        /* ── 提示文字 ── */
+        .hint {
             position: absolute;
-            inset: 0;
-            border: 2px solid rgba(139, 105, 20, 0.4);
-            border-radius: 50%;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            color: rgba(201,168,76,0.5);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            animation: hintPulse 2s ease-in-out infinite;
+            pointer-events: none;
         }
-        .magic-circle-inner:nth-child(2) {
-            inset: 12px;
-            border-color: rgba(139, 105, 20, 0.3);
-            animation: circleSpin 8s linear infinite reverse;
-        }
-        .magic-circle-inner:nth-child(3) {
-            inset: 24px;
-            border-color: rgba(201, 168, 76, 0.25);
-            animation: circleSpin 5s linear infinite;
-        }
-        .magic-circle-center {
-            position: absolute;
-            inset: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'UnifrakturMaguntia', cursive;
-            font-size: 2rem;
-            color: #8b6914;
-            text-shadow: 0 0 15px rgba(201, 168, 76, 0.8), 0 0 30px rgba(201, 168, 76, 0.4);
+        @keyframes hintPulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
         }
 
-        /* ── Stat Cards ── */
-        .stat-card {
-            background: rgba(139, 105, 20, 0.08);
-            border: 1px solid rgba(139, 105, 20, 0.2);
-            border-radius: 4px;
-            padding: 1rem;
-            text-align: center;
-            transition: all 0.3s ease;
+        /* ── 翻页按钮 ── */
+        .page-btn {
+            position: absolute;
+            bottom: 30px;
+            z-index: 20;
+            background: rgba(0,0,0,0.4);
+            color: var(--gold);
+            border: 1px solid rgba(201,168,76,0.3);
+            padding: 8px 16px;
+            cursor: pointer;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            border-radius: 3px;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
         }
-        .stat-card:hover {
-            background: rgba(139, 105, 20, 0.15);
-            border-color: rgba(201, 168, 76, 0.5);
-            box-shadow: 0 0 20px rgba(201, 168, 76, 0.15);
+        .page-btn:hover {
+            background: rgba(0,0,0,0.6);
+            border-color: rgba(201,168,76,0.6);
+            box-shadow: 0 0 16px rgba(201,168,76,0.2);
         }
-        .stat-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: #8b6914;
-            opacity: 0.7;
-            margin-bottom: 0.25rem;
-        }
-        .stat-value {
-            font-family: 'UnifrakturMaguntia', cursive;
-            font-size: 1.5rem;
-            color: #8b6914;
-            text-shadow: 0 0 8px rgba(201, 168, 76, 0.4);
-        }
+        .page-btn.prev { left: 30px; }
+        .page-btn.next { right: 30px; }
 
-        /* ── Navigation ── */
+        /* ── 返回按钮 ── */
         .nav-back {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: rgba(201, 168, 76, 0.8);
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 30;
+            color: rgba(201,168,76,0.7);
             text-decoration: none;
-            font-size: 0.9rem;
-            padding: 0.5rem 1rem;
-            border: 1px solid rgba(201, 168, 76, 0.3);
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            background: rgba(0,0,0,0.3);
-            backdrop-filter: blur(10px);
+            font-size: 0.8rem;
+            padding: 6px 14px;
+            border: 1px solid rgba(201,168,76,0.25);
+            border-radius: 3px;
+            transition: all 0.3s;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(5px);
+            font-family: 'Noto Serif SC', serif;
         }
         .nav-back:hover {
-            color: #ffd700;
-            border-color: rgba(201, 168, 76, 0.6);
-            box-shadow: 0 0 20px rgba(201, 168, 76, 0.2);
+            color: var(--gold-bright);
+            border-color: rgba(201,168,76,0.5);
+            box-shadow: 0 0 14px rgba(201,168,76,0.15);
+        }
+
+        /* ── 响应式 ── */
+        @media (max-width: 900px) {
+            .book-3d { width: 90vw; height: 60vw; }
+            .cover-left, .right-side, .page-left { width: calc(45vw - 20px); }
+            .spine, .spine-ridges, .spine-gold-line { left: calc(45vw - 20px); width: 30px; }
+            .spine-title { left: calc(45vw - 18px); font-size: 1.2rem; }
+            .cover-title { font-size: 2rem; }
+            .page-content-right { padding: 20px 25px 20px 20px; overflow-y: auto; }
+            .page-content-left { padding: 20px 20px 20px 25px; overflow-y: auto; }
+            .rune-ring { font-size: 1.5rem; gap: 0.5rem; }
+        }
+        @media (max-width: 600px) {
+            .book-3d { width: 95vw; height: 80vw; }
+            .cover-left, .right-side, .page-left { width: calc(47.5vw - 15px); }
+            .spine, .spine-ridges, .spine-gold-line { left: calc(47.5vw - 15px); width: 20px; }
+            .spine-title { left: calc(47.5vw - 13px); font-size: 0.9rem; }
+            .cover-title { font-size: 1.5rem; }
+            .cover-emboss { inset: 20px; }
+            .page-content-right { padding: 15px 18px 15px 15px; }
+            .page-content-left { padding: 15px 15px 15px 18px; }
+            .page-btn { bottom: 15px; padding: 5px 10px; font-size: 0.7rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Scrolling Background -->
-    <div class="scroll-bg-layer"></div>
+    <!-- 环境背景 -->
+    <div class="ambient-bg"></div>
 
-    <!-- Floating Rune Layer -->
-    <div class="runes-field">
-        <div class="rune-particle">ᚠ</div>
-        <div class="rune-particle">ᚢ</div>
-        <div class="rune-particle">ᚦ</div>
-        <div class="rune-particle">ᚨ</div>
-        <div class="rune-particle">ᚱ</div>
-        <div class="rune-particle">ᚲ</div>
-        <div class="rune-particle">ᚷ</div>
-        <div class="rune-particle">ᚹ</div>
-        <div class="rune-particle">ᚺ</div>
-        <div class="rune-particle">ᛁ</div>
-    </div>
+    <!-- 粒子 -->
+    <div class="particles" id="particles"></div>
 
-    <!-- Main Content -->
-    <div class="content-layer">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <a href="../index.html" class="nav-back" style="margin-bottom: 1rem; display: inline-flex;">
-                ← Back to Gallery
-            </a>
-        </div>
+    <!-- 返回按钮 -->
+    <a href="../index.html" class="nav-back">← Back to Gallery</a>
 
-        <div class="spellbook">
-            <div class="spellbook-inner">
+    <!-- 桌面 + 3D书 -->
+    <div class="desk">
+        <div class="book-3d" id="book">
 
-                <!-- Title -->
-                <h1 style="
-                    font-family: 'UnifrakturMaguntia', cursive;
-                    font-size: 3.5rem;
-                    text-align: center;
-                    color: #8b6914;
-                    text-shadow:
-                        0 0 15px rgba(201, 168, 76, 0.8),
-                        0 0 30px rgba(201, 168, 76, 0.5),
-                        0 0 60px rgba(201, 168, 76, 0.25);
-                    margin-bottom: 0.5rem;
-                    letter-spacing: 0.1em;
-                ">Grimoire</h1>
-                <p style="text-align: center; font-size: 1.1rem; color: #8b6914; opacity: 0.7; margin-bottom: 1.5rem; letter-spacing: 0.2em;">
-                    ANCIENT SPELLBOOK
-                </p>
+            <!-- 书脊 -->
+            <div class="spine"></div>
+            <div class="spine-ridges" id="spineRidges"></div>
+            <div class="spine-title">GRIMOIRE</div>
 
-                <div class="spell-divider">
-                    <span class="rune-glow" style="font-family: 'UnifrakturMaguntia', cursive; font-size: 1.5rem;">✦</span>
+            <!-- 书脊金线 -->
+            <div class="spine-gold-line" style="top: 15%;"></div>
+            <div class="spine-gold-line" style="top: 25%;"></div>
+            <div class="spine-gold-line" style="top: 75%;"></div>
+            <div class="spine-gold-line" style="top: 85%;"></div>
+
+            <!-- 封面（左半） -->
+            <div class="cover-left open" id="coverLeft">
+                <div class="cover-emboss"></div>
+                <div class="cover-ornament">❦</div>
+                <div class="cover-ornament cover-ornament-bottom">❦</div>
+                <div class="cover-title">Grimoire</div>
+                <div class="cover-subtitle">ANCIENT SPELLBOOK</div>
+                <div class="cover-corner tl"></div>
+                <div class="cover-corner tr"></div>
+                <div class="cover-corner bl"></div>
+                <div class="cover-corner br"></div>
+            </div>
+
+            <!-- 左侧书页（封面翻开后显示） -->
+            <div class="page-left visible" id="pageLeft">
+                <div class="page-content-left" id="pageLeftContent">
+                    <!-- JS 动态填充 -->
                 </div>
+            </div>
 
-                <!-- Quote -->
-                <blockquote style="
-                    text-align: center;
-                    font-style: italic;
-                    font-size: 1.2rem;
-                    color: #5d4037;
-                    padding: 1.5rem 2rem;
-                    margin: 1.5rem 0;
-                    border-left: 3px solid rgba(139, 105, 20, 0.3);
-                    border-right: 3px solid rgba(139, 105, 20, 0.3);
-                    background: rgba(139, 105, 20, 0.05);
-                ">
-                    <span class="rune-glow">"</span>
-                    By the light of ancient stars, awaken the slumbering power<br>
-                    Turn these yellowed pages, and the runes shall guide your path
-                    <span class="rune-glow rune-glow-delay">"</span>
-                </blockquote>
-
-                <div class="spell-divider">
-                    <span class="rune-glow" style="font-family: 'UnifrakturMaguntia', cursive; font-size: 1.5rem;">✦</span>
-                </div>
-
-                <!-- Rune Circle -->
-                <div class="rune-circle">
-                    <span class="rune-char">ᚠ</span>
-                    <span class="rune-char">ᚱ</span>
-                    <span class="rune-char">ᚨ</span>
-                    <span class="rune-char">ᚲ</span>
-                    <span class="rune-char">ᚦ</span>
-                    <span class="rune-char">ᛗ</span>
-                </div>
-
-                <div class="spell-divider">
-                    <span class="rune-glow" style="font-family: 'UnifrakturMaguntia', cursive; font-size: 1.5rem;">✦</span>
-                </div>
-
-                <!-- Body Text -->
-                <div class="drop-cap" style="line-height: 1.9; font-size: 1.05rem; color: #3e2723;">
-                    <p style="text-indent: 0;">
-                        This is a millennia-old hero's grimoire, recording lost runic incantations and ancient ritual secrets. Its pages have yellowed and curled at the edges, the leather cover inscribed with long-forgotten scripts, shimmering with mysterious golden light between the lines.
-                    </p>
-                    <p style="margin-top: 1.2rem;">
-                        When moonlight falls upon the cover, the inscriptions begin to breathe — flickering like a heartbeat. Each page is crafted from fine parchment, the ink mixed with dragon's blood and stardust powder, ensuring the words never fade. After a thousand years, magic still flows through these pages.
-                    </p>
-                    <p style="margin-top: 1.2rem;">
-                        Legend says only the chosen hero can decipher its mysteries. Those who turn these pages shall receive the blessing of the ancient guardians — the triple boon of Wisdom, Strength, and Magic.
-                    </p>
-                </div>
-
-                <!-- Magic Circle -->
-                <div style="display: flex; justify-content: center; margin: 2.5rem 0;">
-                    <div class="magic-circle">
-                        <div class="magic-circle-inner"></div>
-                        <div class="magic-circle-inner"></div>
-                        <div class="magic-circle-inner"></div>
-                        <div class="magic-circle-center">ᛟ</div>
-                    </div>
-                </div>
-
-                <!-- Stat Panel -->
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0;">
-                    <div class="stat-card">
-                        <div class="stat-label">Wisdom</div>
-                        <div class="stat-value">Ⅷ</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-label">Strength</div>
-                        <div class="stat-value">Ⅵ</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-label">Magic</div>
-                        <div class="stat-value">Ⅸ</div>
-                    </div>
-                </div>
-
-                <div class="spell-divider">
-                    <span class="rune-glow" style="font-family: 'UnifrakturMaguntia', cursive; font-size: 1.5rem;">✦</span>
-                </div>
-
-                <!-- Bottom Inscription -->
-                <p style="text-align: center; font-size: 0.85rem; color: #8b6914; opacity: 0.6; margin-top: 1rem; letter-spacing: 0.15em;">
-                    "Lux in tenebris lucet" — Light shines in the darkness
-                </p>
-
-                <!-- Design Style Info -->
-                <div style="
-                    margin-top: 2.5rem;
-                    padding: 1.5rem;
-                    background: rgba(139, 105, 20, 0.06);
-                    border: 1px solid rgba(139, 105, 20, 0.15);
-                    border-radius: 4px;
-                ">
-                    <h3 style="font-size: 0.85rem; color: #8b6914; letter-spacing: 0.15em; margin-bottom: 0.75rem; opacity: 0.8;">
-                        Design Style #31
-                    </h3>
-                    <h2 style="font-size: 1.3rem; color: #3e2723; font-weight: 700; margin-bottom: 0.5rem;">
-                        Ancient Spellbook
-                    </h2>
-                    <p style="font-size: 0.9rem; color: #5d4037; line-height: 1.7;">
-                        Parchment textures, glowing runes, and animated magic circles. Inspired by medieval grimoires and fantasy RPG interfaces, this design uses multi-layered background animations, rune particle systems, and breathing light effects to create an immersive, mystical reading experience.
-                    </p>
-                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
-                        <span style="font-size: 0.7rem; padding: 0.2rem 0.6rem; background: rgba(139,105,20,0.1); border: 1px solid rgba(139,105,20,0.2); border-radius: 3px; color: #8b6914;">Parchment Texture</span>
-                        <span style="font-size: 0.7rem; padding: 0.2rem 0.6rem; background: rgba(139,105,20,0.1); border: 1px solid rgba(139,105,20,0.2); border-radius: 3px; color: #8b6914;">Glowing Runes</span>
-                        <span style="font-size: 0.7rem; padding: 0.2rem 0.6rem; background: rgba(139,105,20,0.1); border: 1px solid rgba(139,105,20,0.2); border-radius: 3px; color: #8b6914;">Magic Circle</span>
-                        <span style="font-size: 0.7rem; padding: 0.2rem 0.6rem; background: rgba(139,105,20,0.1); border: 1px solid rgba(139,105,20,0.2); border-radius: 3px; color: #8b6914;">Medieval Aesthetic</span>
-                        <span style="font-size: 0.7rem; padding: 0.2rem 0.6rem; background: rgba(139,105,20,0.1); border: 1px solid rgba(139,105,20,0.2); border-radius: 3px; color: #8b6914;">RPG Interface</span>
+            <!-- 右侧书页 -->
+            <div class="right-side">
+                <div class="page-stack">
+                    <div class="page-content-right" id="pageRightContent">
+                        <!-- JS 动态填充 -->
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Bottom Navigation -->
-        <div style="text-align: center; margin-top: 2rem; padding-bottom: 2rem;">
-            <a href="../index.html" class="nav-back">← Back to Gallery</a>
+            <!-- 提示 -->
+            <div class="hint" id="hint">Click cover or buttons to flip</div>
+
+            <!-- 翻页按钮 -->
+            <button class="page-btn prev" id="btnPrev" onclick="prevPage()">◂ Prev</button>
+            <button class="page-btn next" id="btnNext" onclick="nextPage()">Next ▸</button>
         </div>
     </div>
 
+    <script>
+        // 生成粒子
+        (function() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 40; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.top = (60 + Math.random() * 40) + '%';
+                p.style.animationDuration = (6 + Math.random() * 10) + 's';
+                p.style.animationDelay = Math.random() * 8 + 's';
+                p.style.width = (2 + Math.random() * 3) + 'px';
+                p.style.height = p.style.width;
+                container.appendChild(p);
+            }
+        })();
+
+        // 生成书脊横纹
+        (function() {
+            const container = document.getElementById('spineRidges');
+            for (let i = 0; i < 8; i++) {
+                const r = document.createElement('div');
+                r.className = 'spine-ridge';
+                r.style.top = (15 + i * 10) + '%';
+                container.appendChild(r);
+            }
+        })();
+
+        // ── 页面数据 ──
+        const pages = [
+            {
+                left: `
+                    <div style="text-align:center; padding-top: 20px;">
+                        <div class="rune-ring rune-glow">
+                            <span class="rune-glow">ᚠ</span>
+                            <span class="rune-glow">ᚱ</span>
+                            <span class="rune-glow">ᚨ</span>
+                            <span class="rune-glow">ᚲ</span>
+                            <span class="rune-glow">ᚦ</span>
+                            <span class="rune-glow">ᛗ</span>
+                        </div>
+                        <div style="margin-top: 20px;">
+                            <div class="magic-ring">
+                                <div class="magic-ring-layer"></div>
+                                <div class="magic-ring-layer"></div>
+                                <div class="magic-ring-layer"></div>
+                                <div class="magic-ring-center">ᛟ</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 20px; display:grid; grid-template-columns: repeat(3,1fr); gap: 8px;">
+                            <div class="stat-card"><div class="stat-label">Wisdom</div><div class="stat-value">Ⅷ</div></div>
+                            <div class="stat-card"><div class="stat-label">Strength</div><div class="stat-value">Ⅵ</div></div>
+                            <div class="stat-card"><div class="stat-label">Magic</div><div class="stat-value">Ⅸ</div></div>
+                        </div>
+                    </div>`,
+                right: `
+                    <h1 style="font-family:'UnifrakturMaguntia',cursive; font-size:2.2rem; text-align:center; color:#8b6914; text-shadow:0 0 12px rgba(201,168,76,0.6),0 0 24px rgba(201,168,76,0.3); letter-spacing:0.1em; margin-bottom:4px;">Grimoire</h1>
+                    <p style="text-align:center; font-size:0.8rem; color:#8b6914; opacity:0.6; letter-spacing:0.25em; margin-bottom:12px;">ANCIENT SPELLBOOK</p>
+                    <div class="divider"><span style="font-family:'UnifrakturMaguntia';">✦</span></div>
+                    <blockquote style="text-align:center; font-style:italic; font-size:0.9rem; color:#5d4037; padding:12px 16px; border-left:3px solid rgba(139,105,20,0.2); border-right:3px solid rgba(139,105,20,0.2); background:rgba(139,105,20,0.04); margin:8px 0;">
+                        <span class="rune-glow">「</span>
+                        以星辰之名，唤醒沉睡千年的Strength<br>
+                        Turn these yellowed pages, the runes shall guide you
+                        <span class="rune-glow" style="animation-delay:1.5s;">」</span>
+                    </blockquote>
+                    <div class="divider"><span style="font-family:'UnifrakturMaguntia';">✦</span></div>
+                    <div style="line-height:1.8; font-size:0.82rem; color:#3e2723;">
+                        <p>A millennia-old hero's grimoire, recording lost runic incantations and ancient ritual secrets. The leather cover bears long-forgotten scripts, shimmering with mysterious golden light.</p>
+                        <p style="margin-top:8px;">When moonlight falls upon the cover, the inscriptions breathe like a heartbeat. Each page is fine parchment, ink mixed with dragon's blood and stardust, never to fade.</p>
+                    </div>`
+            },
+            {
+                left: `
+                    <h3 style="font-family:'UnifrakturMaguntia',cursive; color:#8b6914; font-size:1.3rem; text-align:center; text-shadow:0 0 8px rgba(201,168,76,0.4); margin-bottom:12px;">De Elementis</h3>
+                    <div class="divider"><span style="font-family:'UnifrakturMaguntia';">✦</span></div>
+                    <div style="line-height:1.8; font-size:0.8rem; color:#3e2723;">
+                        <p><span style="color:#8b6914; font-weight:700;">Fire</span> — Dragon's breath, burning darkness. Rune ᚲ (Kenaz) holds the flame's soul, granting the hero a searing strike.</p>
+                        <p style="margin-top:8px;"><span style="color:#8b6914; font-weight:700;">Water</span> — Deep currents, cleansing the impure. Rune ᛚ (Laguz) channels the water's power, healing all wounds.</p>
+                        <p style="margin-top:8px;"><span style="color:#8b6914; font-weight:700;">Wind</span> — Wings of the firmament, piercing the sky. Rune ᚨ (Ansuz) summons the storm's breath, granting swiftness.</p>
+                        <p style="margin-top:8px;"><span style="color:#8b6914; font-weight:700;">Earth</span> — Shield of the earth, unshakable. Rune ᛟ (Othala) draws the earth's power, forging indestructible armor.</p>
+                    </div>`,
+                right: `
+                    <h3 style="font-family:'UnifrakturMaguntia',cursive; color:#8b6914; font-size:1.3rem; text-align:center; text-shadow:0 0 8px rgba(201,168,76,0.4); margin-bottom:12px;">De Futhark</h3>
+                    <div class="divider"><span style="font-family:'UnifrakturMaguntia';">✦</span></div>
+                    <div style="line-height:1.8; font-size:0.8rem; color:#3e2723;">
+                        <p>The Elder Futhark, twenty-four runes, each corresponding to a primordial force of the cosmos. They were not created by humans, but carved into the roots of Yggdrasil at the world's birth.</p>
+                        <p style="margin-top:8px;">Legend says Odin, the Allfather, hung from the World Tree for nine days and nights, sacrificing his right eye to glimpse the secrets of these runes. He bestowed them upon heroes, that they may find light in the darkness.</p>
+                        <div style="text-align:center; margin-top:16px; font-family:'UnifrakturMaguntia',cursive; font-size:1.8rem; color:#8b6914; letter-spacing:0.3em; text-shadow:0 0 8px rgba(201,168,76,0.3);">
+                            ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ
+                        </div>
+                    </div>`
+            },
+            {
+                left: `
+                    <h3 style="font-family:'UnifrakturMaguntia',cursive; color:#8b6914; font-size:1.3rem; text-align:center; text-shadow:0 0 8px rgba(201,168,76,0.4); margin-bottom:12px;">De Herois</h3>
+                    <div class="divider"><span style="font-family:'UnifrakturMaguntia';">✦</span></div>
+                    <div style="line-height:1.8; font-size:0.8rem; color:#3e2723;">
+                        <p>据传，只有被选中的勇者才能解读其中奥秘。翻开书页的人，将获得远古守护者的加护——Wisdom、Strength与勇气的三重祝福。</p>
+                        <p style="margin-top:8px;">The hero's path is no easy road. Dark abysses, eternal winters, and trials of flame await. But the rune-light never fades — it shall guide you through all mists.</p>
+                        <div style="text-align:center; margin-top:16px; font-size:0.8rem; color:#8b6914; opacity:0.6; font-style:italic;">
+                            "Lux in tenebris lucet"<br>Light shines in the darkness
+                        </div>
+                    </div>`,
+                right: `
+                    <div style="text-align:center; padding-top: 10px;">
+                        <div class="magic-ring" style="margin-bottom:20px;">
+                            <div class="magic-ring-layer"></div>
+                            <div class="magic-ring-layer"></div>
+                            <div class="magic-ring-layer"></div>
+                            <div class="magic-ring-center">ᛗ</div>
+                        </div>
+                        <div style="margin-top: 20px;">
+                            <h3 style="font-size:0.8rem; color:#8b6914; letter-spacing:0.15em; opacity:0.8; margin-bottom:12px;">Design Style #31</h3>
+                            <h2 style="font-size:1.1rem; color:#3e2723; font-weight:700; margin-bottom:8px;">Ancient Spellbook</h2>
+                            <p style="font-size:0.78rem; color:#5d4037; line-height:1.7;">
+                                3D book model, leather cover texture, gold-embossed spine, page-flip animation, and floating particle system. Inspired by medieval grimoires and fantasy RPG interfaces, using CSS 3D Transform, multi-layer perspective, and breathing light effects for an immersive spellbook experience.
+                            </p>
+                            <div style="display:flex; flex-wrap:wrap; gap:4px; justify-content:center; margin-top:12px;">
+                                <span style="font-size:0.6rem; padding:2px 8px; background:rgba(139,105,20,0.08); border:1px solid rgba(139,105,20,0.15); border-radius:3px; color:#8b6914;">3D Book</span>
+                                <span style="font-size:0.6rem; padding:2px 8px; background:rgba(139,105,20,0.08); border:1px solid rgba(139,105,20,0.15); border-radius:3px; color:#8b6914;">Leather Cover</span>
+                                <span style="font-size:0.6rem; padding:2px 8px; background:rgba(139,105,20,0.08); border:1px solid rgba(139,105,20,0.15); border-radius:3px; color:#8b6914;">Page Flip</span>
+                                <span style="font-size:0.6rem; padding:2px 8px; background:rgba(139,105,20,0.08); border:1px solid rgba(139,105,20,0.15); border-radius:3px; color:#8b6914;">Glowing Runes</span>
+                                <span style="font-size:0.6rem; padding:2px 8px; background:rgba(139,105,20,0.08); border:1px solid rgba(139,105,20,0.15); border-radius:3px; color:#8b6914;">Magic Circle</span>
+                                <span style="font-size:0.6rem; padding:2px 8px; background:rgba(139,105,20,0.08); border:1px solid rgba(139,105,20,0.15); border-radius:3px; color:#8b6914;">Particles</span>
+                            </div>
+                        </div>
+                    </div>`
+            }
+        ];
+
+        let currentPage = 0;
+        const coverLeft = document.getElementById('coverLeft');
+        const pageLeft = document.getElementById('pageLeft');
+        const pageLeftContent = document.getElementById('pageLeftContent');
+        const pageRightContent = document.getElementById('pageRightContent');
+        const hint = document.getElementById('hint');
+        const btnPrev = document.getElementById('btnPrev');
+        const btnNext = document.getElementById('btnNext');
+
+        function renderPage(idx) {
+            const p = pages[idx];
+            pageLeftContent.innerHTML = p.left;
+            pageRightContent.innerHTML = p.right;
+            updateButtons();
+        }
+
+        function updateButtons() {
+            btnPrev.style.display = currentPage === 0 ? 'none' : 'block';
+            btnNext.style.display = currentPage >= pages.length - 1 ? 'none' : 'block';
+            if (currentPage >= pages.length - 1) {
+                hint.style.display = 'block';
+                hint.textContent = 'End of the book';
+            } else {
+                hint.style.display = 'block';
+                hint.textContent = 'Click cover or buttons to flip';
+            }
+        }
+
+        function nextPage() {
+            if (currentPage >= pages.length - 1) return;
+            // 合上封面
+            coverLeft.classList.remove('open');
+            coverLeft.classList.add('closed');
+            pageLeft.classList.remove('visible');
+            hint.style.display = 'none';
+
+            setTimeout(() => {
+                currentPage++;
+                renderPage(currentPage);
+                // 翻开封面
+                coverLeft.classList.remove('closed');
+                coverLeft.classList.add('open');
+                setTimeout(() => {
+                    pageLeft.classList.add('visible');
+                    hint.style.display = 'block';
+                }, 600);
+            }, 600);
+        }
+
+        function prevPage() {
+            if (currentPage <= 0) return;
+            coverLeft.classList.remove('open');
+            coverLeft.classList.add('closed');
+            pageLeft.classList.remove('visible');
+            hint.style.display = 'none';
+
+            setTimeout(() => {
+                currentPage--;
+                renderPage(currentPage);
+                coverLeft.classList.remove('closed');
+                coverLeft.classList.add('open');
+                setTimeout(() => {
+                    pageLeft.classList.add('visible');
+                    hint.style.display = 'block';
+                }, 600);
+            }, 600);
+        }
+
+        // 点击封面翻页
+        coverLeft.addEventListener('click', () => {
+            if (currentPage < pages.length - 1) {
+                nextPage();
+            }
+        });
+
+        // 初始渲染
+        renderPage(0);
+    </script>
 </body>
 </html>
