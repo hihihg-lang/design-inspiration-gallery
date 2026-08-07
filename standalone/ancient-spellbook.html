@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>古老魔法书 · 预言之球</title>
+    <style>
+        :root {
+            --gold: #8b6914;
+            --gold-light: #c9a84c;
+            --parchment: #f4e4c1;
+            --parchment-card: #fdf5e6;
+            --ink: #2c1810;
+            --ink-light: #5c3d2e;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Serif SC', serif;
+            background: #3d2b1f;
+            background-image:
+                radial-gradient(ellipse at 30% 20%, rgba(139,105,20,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(44,24,16,0.2) 0%, transparent 60%);
+            color: var(--ink);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* 羊皮纸 */
+        .parchment {
+            background-color: #f4e4c1;
+            background-image:
+                url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E"),
+                radial-gradient(ellipse at 50% 40%, #fdf5e6 0%, #f4e4c1 35%, #e8d5a3 65%, #dcc89a 100%),
+                radial-gradient(circle at 12% 20%, rgba(139,105,20,0.09) 0%, transparent 25%),
+                radial-gradient(circle at 78% 55%, rgba(139,105,20,0.07) 0%, transparent 22%),
+                radial-gradient(circle at 35% 82%, rgba(44,24,16,0.06) 0%, transparent 18%),
+                radial-gradient(circle at 82% 12%, rgba(139,105,20,0.05) 0%, transparent 15%),
+                radial-gradient(circle at 55% 35%, rgba(44,24,16,0.04) 0%, transparent 20%),
+                radial-gradient(circle at 22% 68%, rgba(139,105,20,0.06) 0%, transparent 16%),
+                radial-gradient(ellipse at 65% 78%, rgba(107,75,25,0.07) 0%, transparent 35%),
+                radial-gradient(ellipse at 28% 42%, rgba(107,75,25,0.05) 0%, transparent 30%);
+            box-shadow: inset 0 0 140px rgba(107,75,25,0.28), inset 0 0 50px rgba(44,24,16,0.14), 0 8px 60px rgba(44,24,16,0.3);
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 28px 60px;
+        }
+        .parchment::before {
+            content: '';
+            position: absolute; inset: 0; pointer-events: none; z-index: 0;
+            background:
+                radial-gradient(ellipse at 50% 30%, rgba(255,200,100,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 30% 60%, rgba(255,180,80,0.05) 0%, transparent 40%),
+                radial-gradient(ellipse at 70% 50%, rgba(255,190,90,0.04) 0%, transparent 35%);
+        }
+        .parchment::after {
+            content: '';
+            position: absolute; inset: 0; pointer-events: none; z-index: 1;
+            background:
+                linear-gradient(180deg, rgba(139,105,20,0.22) 0%, transparent 50px) top / 100% 50px no-repeat,
+                linear-gradient(0deg, rgba(139,105,20,0.22) 0%, transparent 50px) bottom / 100% 50px no-repeat,
+                linear-gradient(90deg, rgba(139,105,20,0.22) 0%, transparent 35px) left / 35px 100% no-repeat,
+                linear-gradient(270deg, rgba(139,105,20,0.22) 0%, transparent 35px) right / 35px 100% no-repeat;
+        }
+        .parchment-inner { position: relative; z-index: 2; }
+
+        /* 火烧缺口 */
+        .burn {
+            position: absolute; bottom: 0; left: 0; width: 100px; height: 100px; pointer-events: none; z-index: 5;
+        }
+        .burn::before {
+            content: '';
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(ellipse at 0% 100%, #1a0a00 0%, #2d1200 15%, #4a2200 28%, #6b3000 40%, rgba(139,70,0,0.4) 52%, transparent 68%);
+            clip-path: polygon(0% 100%, 0% 30%, 8% 48%, 18% 22%, 30% 42%, 42% 28%, 56% 48%, 68% 35%, 80% 55%, 100% 100%);
+        }
+        .burn::after {
+            content: '';
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(ellipse at 0% 100%, rgba(255,140,30,0.25) 0%, transparent 40%), radial-gradient(ellipse at 10% 70%, rgba(255,100,0,0.12) 0%, transparent 30%);
+            clip-path: polygon(0% 100%, 0% 30%, 8% 48%, 18% 22%, 30% 42%, 42% 28%, 56% 48%, 68% 35%, 80% 55%, 100% 100%);
+            animation: ember 3s ease-in-out infinite;
+        }
+        @keyframes ember { 0%,100%{opacity:0.6} 50%{opacity:1} }
+
+        /* 标题 */
+        .title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .title-rune {
+            font-size: 4rem;
+            color: var(--gold);
+            text-shadow: 0 0 30px rgba(201,168,76,0.5), 0 0 60px rgba(201,168,76,0.2);
+            animation: glow 4s ease-in-out infinite;
+        }
+        @keyframes glow {
+            0%,100%{text-shadow:0 0 20px rgba(201,168,76,0.4),0 0 40px rgba(201,168,76,0.15)}
+            50%{text-shadow:0 0 40px rgba(201,168,76,0.7),0 0 80px rgba(255,200,100,0.3),0 0 120px rgba(255,200,100,0.1)}
+        }
+        .title-text {
+            font-size: 1.1rem;
+            color: var(--ink-light);
+            letter-spacing: 0.3em;
+            font-weight: 600;
+            margin: 8px 0;
+        }
+        .title-desc {
+            color: var(--ink-light);
+            font-size: 0.9rem;
+            opacity: 0.7;
+            line-height: 1.8;
+            max-width: 360px;
+            margin: 16px auto 0;
+        }
+        .title-runes {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+            font-size: 1.4rem;
+            flex-wrap: wrap;
+        }
+        .title-runes span {
+            color: var(--gold);
+            animation: runePulse 3s ease-in-out infinite;
+        }
+        .title-runes span:nth-child(1){animation-delay:0s}
+        .title-runes span:nth-child(2){animation-delay:0.3s}
+        .title-runes span:nth-child(3){animation-delay:0.6s}
+        .title-runes span:nth-child(4){animation-delay:0.9s}
+        .title-runes span:nth-child(5){animation-delay:1.2s}
+        .title-runes span:nth-child(6){animation-delay:1.5s}
+        .title-runes span:nth-child(7){animation-delay:1.8s}
+        .title-runes span:nth-child(8){animation-delay:2.1s}
+        @keyframes runePulse {
+            0%,100%{text-shadow:0 0 4px rgba(139,105,20,0.3)}
+            50%{text-shadow:0 0 12px rgba(201,168,76,0.5)}
+        }
+
+        /* 分隔线 */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin: 40px 0;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            max-width: 120px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(139,105,20,0.25));
+        }
+        .divider::after { background: linear-gradient(90deg, rgba(139,105,20,0.25), transparent); }
+        .divider span { color: var(--gold); font-size: 1rem; opacity: 0.5; }
+
+        .section-label {
+            text-align: center;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            opacity: 0.5;
+            margin-bottom: 8px;
+        }
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--ink);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .section-desc {
+            text-align: center;
+            color: var(--ink-light);
+            font-size: 0.85rem;
+            opacity: 0.6;
+            margin-bottom: 32px;
+        }
+        .section-text {
+            color: var(--ink-light);
+            opacity: 0.7;
+            line-height: 1.8;
+            font-size: 0.9rem;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        /* ── 魔法水晶球 ── */
+        .orb-wrap {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            margin: 0 auto;
+        }
+        .orb {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: relative;
+            background:
+                radial-gradient(circle at 35% 35%,
+                    rgba(255,255,255,0.5) 0%,
+                    rgba(255,240,200,0.3) 8%,
+                    rgba(201,168,76,0.2) 25%,
+                    rgba(139,105,20,0.3) 50%,
+                    rgba(80,50,15,0.55) 75%,
+                    rgba(30,15,5,0.75) 100%);
+            box-shadow:
+                0 0 25px rgba(255,220,140,0.25),
+                0 0 60px rgba(201,168,76,0.15),
+                0 0 100px rgba(139,105,20,0.08),
+                inset 0 0 50px rgba(255,255,240,0.06);
+            animation: orbFloat 7s cubic-bezier(0.45,0,0.55,1) infinite,
+                       orbBreathe 4s cubic-bezier(0.4,0,0.6,1) infinite;
+        }
+        @keyframes orbBreathe {
+            0%,100%{box-shadow:0 0 20px rgba(255,220,140,0.2),0 0 50px rgba(201,168,76,0.1),0 0 80px rgba(139,105,20,0.05),inset 0 0 40px rgba(255,255,240,0.04)}
+            30%{box-shadow:0 0 35px rgba(255,230,160,0.35),0 0 75px rgba(201,168,76,0.2),0 0 130px rgba(139,105,20,0.1),inset 0 0 55px rgba(255,255,240,0.08)}
+            60%{box-shadow:0 0 28px rgba(255,225,150,0.28),0 0 60px rgba(201,168,76,0.16),0 0 100px rgba(139,105,20,0.08),inset 0 0 48px rgba(255,255,240,0.06)}
+            80%{box-shadow:0 0 40px rgba(255,235,170,0.4),0 0 85px rgba(201,168,76,0.22),0 0 140px rgba(139,105,20,0.12),inset 0 0 60px rgba(255,255,240,0.1)}
+        }
+        @keyframes orbFloat {
+            0%,100%{transform:translateY(0)}
+            30%{transform:translateY(-6px)}
+            60%{transform:translateY(-14px)}
+            85%{transform:translateY(-4px)}
+        }
+        .orb::before {
+            content: '';
+            position: absolute;
+            top: 10%; left: 20%;
+            width: 35%; height: 28%;
+            background: radial-gradient(ellipse, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.25) 40%, transparent 70%);
+            border-radius: 50%;
+            transform: rotate(-18deg);
+            animation: shimmer 5s cubic-bezier(0.4,0,0.6,1) infinite;
+        }
+        @keyframes shimmer {
+            0%,100%{opacity:0.7;transform:rotate(-18deg) scale(1)}
+            50%{opacity:1;transform:rotate(-18deg) scale(1.08)}
+        }
+        .orb::after {
+            content: '';
+            position: absolute;
+            inset: -12px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,220,140,0.12) 30%, rgba(201,168,76,0.06) 55%, transparent 75%);
+            animation: aura 5s cubic-bezier(0.4,0,0.6,1) infinite;
+        }
+        @keyframes aura {
+            0%,100%{transform:scale(1);opacity:0.4}
+            40%{transform:scale(1.15);opacity:0.8}
+            70%{transform:scale(1.06);opacity:0.55}
+            90%{transform:scale(1.18);opacity:0.9}
+        }
+        .orb-dust {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: dustFloat linear infinite;
+            opacity: 0;
+            box-shadow: 0 0 4px 1px rgba(255,255,200,0.6);
+            pointer-events: none;
+        }
+        .orb-dust:nth-child(1){top:30%;left:40%;width:3px;height:3px;animation-duration:4s;animation-delay:0s}
+        .orb-dust:nth-child(2){top:50%;left:55%;width:2px;height:2px;animation-duration:5s;animation-delay:1.5s}
+        .orb-dust:nth-child(3){top:40%;left:30%;width:3px;height:3px;animation-duration:6s;animation-delay:3s}
+        .orb-dust:nth-child(4){top:60%;left:45%;width:2px;height:2px;animation-duration:4.5s;animation-delay:0.8s}
+        .orb-dust:nth-child(5){top:35%;left:60%;width:3px;height:3px;animation-duration:5.5s;animation-delay:2.2s}
+        .orb-dust:nth-child(6){top:45%;left:25%;width:1.5px;height:1.5px;animation-duration:7s;animation-delay:3.5s}
+        .orb-dust:nth-child(7){top:55%;left:65%;width:3px;height:3px;animation-duration:4.8s;animation-delay:1s}
+        .orb-dust:nth-child(8){top:25%;left:50%;width:2px;height:2px;animation-duration:6.5s;animation-delay:4.2s}
+        @keyframes dustFloat {
+            0%{transform:translateY(0) translateX(0) scale(0);opacity:0}
+            20%{opacity:0.8}
+            50%{transform:translateY(-30px) translateX(8px) scale(1.2);opacity:0.4}
+            80%{opacity:0.7}
+            100%{transform:translateY(-5px) translateX(-6px) scale(0);opacity:0}
+        }
+        .orb-mist {
+            position: absolute;
+            inset: 20%;
+            border-radius: 50%;
+            background: radial-gradient(ellipse at 45% 40%, rgba(255,255,240,0.12) 0%, rgba(255,220,140,0.06) 30%, transparent 65%);
+            animation: mist 12s linear infinite;
+        }
+        @keyframes mist {
+            0%{transform:rotate(0deg) scale(1)}
+            40%{transform:rotate(160deg) scale(1.08)}
+            70%{transform:rotate(280deg) scale(0.95)}
+            100%{transform:rotate(360deg) scale(1)}
+        }
+
+        /* 魔法阵 */
+        .circle-wrap {
+            position: relative;
+            width: 240px;
+            height: 240px;
+            margin: 0 auto;
+        }
+        .circle-aura {
+            position: absolute;
+            inset: -40px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201,168,76,0.08) 30%, rgba(139,105,20,0.04) 55%, transparent 75%);
+            animation: auraPulse 4s ease-in-out infinite;
+        }
+        @keyframes auraPulse {
+            0%,100%{transform:scale(1);opacity:0.6}
+            50%{transform:scale(1.08);opacity:1}
+        }
+        .circle-ring {
+            position: absolute; inset: 0;
+        }
+        .circle-ring .ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1.5px solid rgba(139,105,20,0.2);
+        }
+        .circle-ring .ring:nth-child(1){inset:0;border-color:rgba(201,168,76,0.25);animation:ringSpin 25s linear infinite}
+        .circle-ring .ring:nth-child(2){inset:14px;border-color:rgba(139,105,20,0.18);animation:ringSpin 18s linear infinite reverse;border-style:dashed}
+        .circle-ring .ring:nth-child(3){inset:30px;border-color:rgba(139,105,20,0.22);animation:ringSpin 12s linear infinite}
+        .circle-ring .ring:nth-child(4){inset:46px;border-color:rgba(201,168,76,0.14);animation:ringSpin 8s linear infinite reverse;border-style:dotted}
+        .circle-ring .ring:nth-child(5){inset:60px;background:radial-gradient(circle,rgba(201,168,76,0.06) 0%,transparent 70%);border:1px solid rgba(201,168,76,0.2);animation:ringSpin 6s linear infinite}
+        .circle-ring .center {
+            position: absolute;
+            inset: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--gold);
+            animation: centerGlow 3s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(201,168,76,0.6), 0 0 40px rgba(201,168,76,0.3);
+        }
+        @keyframes centerGlow {
+            0%,100%{text-shadow:0 0 15px rgba(201,168,76,0.4),0 0 30px rgba(201,168,76,0.2)}
+            50%{text-shadow:0 0 30px rgba(201,168,76,0.8),0 0 60px rgba(201,168,76,0.4),0 0 90px rgba(255,200,100,0.2)}
+        }
+        @keyframes ringSpin {
+            from{transform:rotate(0deg)}
+            to{transform:rotate(360deg)}
+        }
+
+        /* 符文卡片 */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .card {
+            background: var(--parchment-card);
+            border: 1px solid rgba(139,105,20,0.12);
+            border-radius: 14px;
+            padding: 22px;
+            position: relative;
+            overflow: hidden;
+        }
+        .card-icon {
+            font-size: 1.8rem;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 10px;
+            animation: cardGlow 5s ease-in-out infinite;
+            text-shadow: 0 0 10px rgba(201,168,76,0.3);
+        }
+        @keyframes cardGlow {
+            0%,100%{text-shadow:0 0 6px rgba(201,168,76,0.2)}
+            50%{text-shadow:0 0 18px rgba(201,168,76,0.5),0 0 30px rgba(255,200,100,0.2)}
+        }
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 6px;
+        }
+        .card-desc {
+            font-size: 0.8rem;
+            color: var(--ink-light);
+            line-height: 1.7;
+            opacity: 0.75;
+        }
+
+        /* 标签 */
+        .tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .tag {
+            font-size: 0.6rem;
+            padding: 4px 10px;
+            background: rgba(139,105,20,0.06);
+            border: 1px solid rgba(139,105,20,0.12);
+            border-radius: 20px;
+            color: var(--gold);
+            letter-spacing: 0.05em;
+        }
+
+        /* 色彩 */
+        .swatches {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+        .swatch {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 2px solid rgba(139,105,20,0.15);
+        }
+
+        /* 引用 */
+        .quote {
+            text-align: center;
+            font-style: italic;
+            padding: 24px;
+            border-left: 2px solid rgba(139,105,20,0.2);
+            border-right: 2px solid rgba(139,105,20,0.2);
+            background: var(--parchment-card);
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: 8px;
+            color: var(--ink-light);
+            opacity: 0.7;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        .quote .latin { font-size: 1.2rem; color: var(--gold); }
+
+        @media (max-width: 480px) {
+            .parchment { padding: 60px 16px 40px; }
+            .title-rune { font-size: 3rem; }
+            .orb-wrap { width: 180px; height: 180px; }
+            .circle-wrap { width: 180px; height: 180px; }
+            .circle-ring .ring:nth-child(2){inset:10px}
+            .circle-ring .ring:nth-child(3){inset:22px}
+            .circle-ring .ring:nth-child(4){inset:34px}
+            .circle-ring .ring:nth-child(5){inset:44px}
+            .circle-ring .center{inset:52px;font-size:1.5rem}
+            .burn { width: 70px; height: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="parchment">
+        <div class="burn"></div>
+        <div class="parchment-inner">
+
+            <!-- 标题 -->
+            <div class="title">
+                <div class="title-rune">ᚱ</div>
+                <h1 class="title-text">古 老 魔 法 书</h1>
+                <p class="title-desc">以星辰之名，唤醒沉睡千年的力量。符文之光，将为你指引勇者之路。</p>
+                <div class="title-runes">
+                    <span>ᚠ</span><span>ᚢ</span><span>ᚦ</span><span>ᚨ</span>
+                    <span>ᚱ</span><span>ᚲ</span><span>ᚷ</span><span>ᚹ</span>
+                </div>
+            </div>
+
+            <div class="divider"><span>✦</span></div>
+
+            <!-- 预言之球 -->
+            <div class="section-label">Orbis Mysticus</div>
+            <h2 class="section-title">预言之球</h2>
+            <p class="section-desc">古老水晶球承载着远古守护者的意志</p>
+
+            <div class="orb-wrap">
+                <div class="orb">
+                    <div class="orb-dust"></div><div class="orb-dust"></div>
+                    <div class="orb-dust"></div><div class="orb-dust"></div>
+                    <div class="orb-dust"></div><div class="orb-dust"></div>
+                    <div class="orb-dust"></div><div class="orb-dust"></div>
+                    <div class="orb-mist"></div>
+                </div>
+            </div>
+
+            <p class="section-text">
+                其内部烟雾缭绕，光晕流转，只有真正的勇者才能从中窥见未来的影子。<br>
+                当黑暗降临，水晶球的光芒将指引前行的方向。
+            </p>
+            <div class="tags">
+                <span class="tag">预言</span>
+                <span class="tag">守护</span>
+                <span class="tag">光之指引</span>
+            </div>
+
+            <div class="divider"><span>✦</span></div>
+
+            <!-- 魔法阵 -->
+            <div class="section-label">Magicae Circulus</div>
+            <h2 class="section-title">魔法阵</h2>
+            <p class="section-desc">三层同心圆环，象征天地人三界</p>
+
+            <div class="circle-wrap">
+                <div class="circle-aura"></div>
+                <div class="circle-ring">
+                    <div class="ring"></div>
+                    <div class="ring"></div>
+                    <div class="ring"></div>
+                    <div class="ring"></div>
+                    <div class="ring"></div>
+                    <div class="center">ᛟ</div>
+                </div>
+            </div>
+
+            <div class="divider"><span>✦</span></div>
+
+            <!-- 符文之力 -->
+            <div class="section-label">Arcanum</div>
+            <h2 class="section-title">符文之力</h2>
+            <p class="section-desc">古老弗萨克文字蕴含的原初力量</p>
+
+            <div class="cards">
+                <div class="card">
+                    <span class="card-icon">ᚲ</span>
+                    <h3 class="card-title">火之符文 · Kenaz</h3>
+                    <p class="card-desc">龙息烈焰，焚尽黑暗。掌控火焰之魂，赋予勇者灼热之击。</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">ᛚ</span>
+                    <h3 class="card-title">水之符文 · Laguz</h3>
+                    <p class="card-desc">深海暗流，涤荡污浊。引导水流之力，治愈一切创伤。</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">ᚨ</span>
+                    <h3 class="card-title">风之符文 · Ansuz</h3>
+                    <p class="card-desc">苍穹之翼，贯穿天际。召唤风暴之息，赋予疾风之速。</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">ᛟ</span>
+                    <h3 class="card-title">土之符文 · Othala</h3>
+                    <p class="card-desc">大地之盾，巍然不动。汲取大地之力，铸就不灭护甲。</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">ᚱ</span>
+                    <h3 class="card-title">旅之符文 · Raidho</h3>
+                    <p class="card-desc">星辰罗盘，指引征途。掌控空间之律，穿梭于虚实之间。</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">ᛗ</span>
+                    <h3 class="card-title">人之符文 · Mannaz</h3>
+                    <p class="card-desc">众生之魂，凝结一心。唤醒内在潜能，连接所有勇者意志。</p>
+                </div>
+            </div>
+
+            <div class="divider"><span>✦</span></div>
+
+            <!-- 色彩 -->
+            <div class="section-label">Palette</div>
+            <h2 class="section-title">魔法色彩</h2>
+
+            <div class="swatches">
+                <div class="swatch" style="background:#f4e4c1;"></div>
+                <div class="swatch" style="background:#fdf5e6;"></div>
+                <div class="swatch" style="background:#c9a84c;"></div>
+                <div class="swatch" style="background:#8b6914;"></div>
+                <div class="swatch" style="background:#2c1810;"></div>
+                <div class="swatch" style="background:#5c3d2e;"></div>
+            </div>
+
+            <div class="quote">
+                <span class="latin">Lux in tenebris lucet</span>
+                <br>光在黑暗中照耀
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
