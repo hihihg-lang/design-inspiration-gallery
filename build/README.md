@@ -1,61 +1,91 @@
-# Design Inspiration Gallery — 安装指南
+# Design Inspiration Gallery
 
-30 种 UI 设计风格灵感画廊 | 支持 Windows / Android / iOS
+🎨 30+ 种前端 UI 设计风格的灵感画廊，每种风格都有独立、完整的视觉展示页面。
 
-**所有版本均为离线可用，无需网络连接。**
+## 预览
 
----
+在线访问：[https://hihihg-lang.github.io/design-inspiration-gallery/](https://hihihg-lang.github.io/design-inspiration-gallery/)
 
-## Windows 安装
+## 设计风格列表
 
-### 自动安装程序（推荐）
-1. 解压 ZIP 文件
-2. 右键 `setup.ps1` →「使用 PowerShell 运行」
-3. 弹出窗口中选择安装目录
-4. 自动复制文件 + 创建桌面/开始菜单快捷方式
-5. 双击桌面「Design Inspiration Gallery」使用
+| # | 风格 | 说明 |
+|---|------|------|
+| 1 | 极简主义 Minimalism | 留白、克制、功能至上 |
+| 2 | 新拟态 Neumorphism | 柔和阴影、凸起/凹陷效果 |
+| 3 | 玻璃态 Glassmorphism | 毛玻璃、半透明层次 |
+| 4 | 野兽派 Brutalism | 原始、粗暴、直接 |
+| 5 | 扁平设计 Flat Design | 简洁、无阴影、纯色块 |
+| 6 | 赛博朋克 Cyberpunk | 霓虹灯、暗黑、未来感 |
+| 7 | 蒸汽波 Vaporwave | 粉紫渐变、复古合成器波 |
+| 8 | 瑞士现代主义 Swiss Modernism | 网格系统、无衬线、清晰 |
+| 9 | 孟菲斯 Memphis | 几何图形、大胆配色 |
+| 10 | 粘土态 Claymorphism | 3D 柔和、粘土质感 |
+| 11 | 暗黑模式 OLED | 纯黑背景、省电、扫描线 |
+| 12 | 复古未来主义 Retro-Futurism | 80年代科幻、几何图形 |
+| 13 | 电子墨水 E-Ink | 类纸质感、护眼 |
+| 14 | 极光 UI Aurora UI | 渐变光晕、北极光效果 |
+| 15 | 液体玻璃 Liquid Glass | 动态模糊、流体感 |
+| 16 | HUD 科幻 HUD Sci-Fi | 线框、全息投影 |
+| 17 | 像素艺术 Pixel Art | 8-bit、复古游戏 |
+| 18 | 拟物主义 Skeuomorphism | 真实材质、质感 |
+| 19 | 动态驱动 Motion-Driven | 动画优先、活力 |
+| 20 | Bento 网格 Bento Grid | 卡片式、模块化 |
+| 21 | 零界面 Zero UI | 语音、手势优先 |
+| 22 | 英雄中心 Hero-Centric | 大标题、视觉冲击 |
+| 23 | 有机仿生 Organic Biomimicry | 自然曲线、流体 |
+| 24 | 软 UI Soft UI | 柔和圆角、温暖 |
+| 25 | Z世代混乱 Gen-Z Chaos | 拼贴、随机、大胆 |
+| 26 | 新粗野主义 Neubrutalism | 硬阴影、粗边框 |
+| 27 | AI 原生 AI-Native | 生成式、自适应 |
+| 28 | 包容性设计 Inclusive Design | 无障碍、高对比度 |
+| 29 | 空间 UI Spatial UI | 3D 深度、视差 |
+| 30 | Y2K 复兴 Y2K Revival | 千禧年、金属质感 |
+| 31 | 古老魔法书 Ancient Spellbook | 羊皮纸、符文、水晶球 |
 
-> 如提示安全策略，先运行：`Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass`
-> 或双击 `setup.bat` 通过批处理安装
+## 项目结构
 
-### 便携版（免安装）
-直接打开 `app/index.html` 在浏览器中使用，无需安装
-
-### 卸载
-运行安装目录下的 `uninstall.bat`，或直接删除安装目录
-
----
-
-## Android 安装
-
-### 方式一：编译 APK（完全离线）
-1. 用 Android Studio 打开 `android/` 文件夹
-2. 等待 Gradle 同步完成
-3. Build → Build Bundle(s) / APK(s) → Build APK(s)
-4. APK 文件在 `app/build/outputs/apk/debug/`
-5. 传输到手机安装 → 打开即可使用，完全离线
-
-### 方式二：文件管理器直接打开
-1. 将 `app/` 文件夹复制到手机存储
-2. 用文件管理器打开 `app/index.html`
-3. 选择 Chrome 浏览器打开
-
----
-
-## iOS 安装
-
-### 添加到主屏幕
-1. 将 `app/` 文件夹通过 AirDrop/文件传到 iPhone
-2. 用 Safari 打开「文件」App 中的 `index.html`
-3. 点击底部「分享」→「添加到主屏幕」
-
----
-
-## 文件说明
 ```
-app/              # 网站源文件（HTML/CSS/JS/图标，离线可用）
-setup.ps1         # Windows PowerShell 安装程序（可选安装位置）
-setup.bat         # Windows 批处理安装程序
-android/          # Android Studio 项目（编译离线 APK）
-README.md         # 本文件
+├── index.html                  # 首页画廊（中文）
+├── styles/                     # 31种风格页面（中文）
+│   ├── minimalism.html
+│   ├── ancient-spellbook.html
+│   └── ...
+├── zh/                         # 英文版本
+│   ├── index.html
+│   └── styles/
+├── standalone/                 # 独立版（零外部依赖，可离线使用）
+├── build/                      # 安装包构建文件
+├── color-mixer.html            # 配色工具
+├── palette.html                # 配色库
+├── reference.html              # 参考资源
+└── philosophy.html             # 设计理念
 ```
+
+## 技术栈
+
+- 纯 HTML/CSS，无需构建工具
+- [Tailwind CSS](https://tailwindcss.com/)（CDN 引入）
+- CSS 自定义动画（`@keyframes`、`@property`）
+- 部分页面使用 SVG 滤镜实现纹理效果
+
+## 本地运行
+
+```bash
+# 任意静态服务器即可
+python3 -m http.server 8080
+# 访问 http://localhost:8080
+```
+
+## 贡献指南
+
+欢迎提交 Pull Request！请查看 [CONTRIBUTING.md](./CONTRIBUTING.md)。
+
+贡献方向：
+- 新增设计风格
+- 改进现有页面的视觉效果
+- 修复 Bug
+- 补充文档
+
+## 许可证
+
+MIT License — 详见 [LICENSE](./LICENSE)

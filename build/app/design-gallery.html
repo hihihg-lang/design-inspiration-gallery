@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>前端设计灵感画廊 — 30种UI设计风格</title>
+<style>
+  :root {
+    --bg: #fff;
+    --text: #000;
+    --muted: #6b7280;
+    --border: #f3f4f6;
+    --card-bg: #fff;
+    --tag-bg: #f9fafb;
+    --accent: #000;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  
+  /* Header */
+  .header { border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+  .header h1 { font-size: 1.25rem; font-weight: 700; }
+  .header nav { display: flex; gap: 24px; font-size: 0.875rem; }
+  .header nav a { color: var(--muted); text-decoration: none; cursor: pointer; transition: color 0.2s; }
+  .header nav a:hover, .header nav a.active { color: var(--text); font-weight: 600; }
+  .lang-switch { display: flex; gap: 8px; align-items: center; font-size: 0.875rem; }
+  .lang-switch a { color: var(--muted); text-decoration: none; cursor: pointer; }
+  .lang-switch a.active { color: var(--text); font-weight: 600; }
+  .lang-switch span { color: #d1d5db; }
+
+  /* Hero */
+  .hero { text-align: center; padding: 60px 0 40px; }
+  .hero h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 16px; }
+  .hero p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+  /* Section */
+  .section { padding: 40px 0; }
+  .section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+  .section-sub { color: var(--muted); margin-bottom: 24px; font-size: 0.95rem; }
+
+  /* Gallery Grid */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+  .card { border: 1px solid var(--border); border-radius: 16px; padding: 24px; background: var(--card-bg); cursor: pointer; transition: all 0.2s; }
+  .card:hover { border-color: #d1d5db; box-shadow: 0 4px 16px rgba(0,0,0,0.04); transform: translateY(-2px); }
+  .card-num { font-size: 0.75rem; color: #9ca3af; background: var(--tag-bg); display: inline-block; padding: 2px 8px; border-radius: 4px; margin-bottom: 12px; }
+  .card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; }
+  .card .en-name { font-size: 0.8rem; color: var(--muted); margin-bottom: 10px; }
+  .card .desc { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+  .card .colors { display: flex; gap: 6px; margin-top: 12px; }
+  .card .color-dot { width: 20px; height: 20px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1); }
+
+  /* Modal */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200; align-items: center; justify-content: center; }
+  .modal-overlay.show { display: flex; }
+  .modal { background: #fff; border-radius: 20px; padding: 40px; max-width: 700px; width: 90%; max-height: 85vh; overflow-y: auto; position: relative; }
+  .modal-close { position: absolute; top: 16px; right: 20px; font-size: 1.5rem; cursor: pointer; color: var(--muted); border: none; background: none; }
+  .modal h3 { font-size: 1.75rem; font-weight: 800; margin-bottom: 4px; }
+  .modal .en-name { color: var(--muted); margin-bottom: 20px; }
+  .modal .preview-box { border-radius: 16px; padding: 40px; text-align: center; margin-bottom: 24px; font-size: 1.5rem; font-weight: 700; }
+  .modal .desc-block { margin-bottom: 20px; }
+  .modal .desc-block h4 { font-size: 0.8rem; text-transform: uppercase; color: #9ca3af; letter-spacing: 0.05em; margin-bottom: 6px; }
+  .modal .desc-block p, .modal .desc-block li { font-size: 0.9rem; color: var(--muted); }
+  .modal .desc-block ul { list-style: none; padding: 0; }
+  .modal .desc-block li { padding: 2px 0; }
+  .modal .desc-block li::before { content: "●"; margin-right: 8px; color: #d1d5db; font-size: 0.5rem; vertical-align: middle; }
+
+  /* Palette */
+  .palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+  .palette-card { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .palette-swatch { height: 80px; display: flex; }
+  .palette-swatch div { flex: 1; }
+  .palette-info { padding: 12px; }
+  .palette-info h4 { font-size: 0.9rem; font-weight: 600; }
+  .palette-info p { font-size: 0.75rem; color: var(--muted); }
+
+  /* Footer */
+  .footer { border-top: 1px solid var(--border); padding: 24px 0; text-align: center; margin-top: 40px; }
+  .footer p { font-size: 0.8rem; color: var(--muted); }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .hero h2 { font-size: 1.75rem; }
+    .grid { grid-template-columns: 1fr; }
+    .header nav { display: none; }
+    .modal { padding: 24px; }
+  }
+
+  /* Tabs */
+  .tabs { display: flex; gap: 4px; margin-bottom: 24px; flex-wrap: wrap; }
+  .tab { padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border); background: #fff; cursor: pointer; font-size: 0.85rem; transition: all 0.2s; }
+  .tab:hover { background: #f9fafb; }
+  .tab.active { background: #000; color: #fff; border-color: #000; }
+</style>
+</head>
+<body>
+<div class="header"><div class="container header-inner">
+  <h1 data-zh="前端设计灵感画廊" data-en="Design Inspiration Gallery">前端设计灵感画廊</h1>
+  <nav>
+    <a href="#gallery" class="active" data-zh="画廊" data-en="Gallery" onclick="scrollToSection('gallery')">画廊</a>
+    <a href="#palettes" data-zh="配色库" data-en="Palettes" onclick="scrollToSection('palettes')">配色库</a>
+    <a href="#philosophy" data-zh="设计理念" data-en="Philosophy" onclick="scrollToSection('philosophy')">设计理念</a>
+  </nav>
+  <div class="lang-switch">
+    <a class="active" onclick="switchLang('zh')">中文</a><span>|</span>
+    <a onclick="switchLang('en')">EN</a>
+  </div>
+</div></div>
+
+<div class="container">
+  <!-- Hero -->
+  <div class="hero">
+    <h2 data-zh="30种 UI 设计风格灵感画廊" data-en="30 UI Design Styles Gallery">30种 UI 设计风格灵感画廊</h2>
+    <p data-zh="从极简主义到新粗野主义，从玻璃态到赛博朋克 — 一站式浏览现代界面设计的全部风格，含配色方案与设计理念。" data-en="From Minimalism to Neubrutalism, Glassmorphism to Cyberpunk — explore all modern UI design styles in one place, with color palettes and design philosophy.">从极简主义到新粗野主义，从玻璃态到赛博朋克 — 一站式浏览现代界面设计的全部风格，含配色方案与设计理念。</p>
+  </div>
+
+  <!-- Gallery -->
+  <div class="section" id="gallery">
+    <h3 class="section-title" data-zh="经典设计风格" data-en="Classic Design Styles">经典设计风格</h3>
+    <p class="section-sub" data-zh="经过时间考验的经典风格，现代界面设计的基石" data-en="Time-tested classics, the foundation of modern UI design">经过时间考验的经典风格，现代界面设计的基石</p>
+    <div class="grid" id="grid-classic"></div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-title" data-zh="新兴实验风格" data-en="Emerging & Experimental">新兴实验风格</h3>
+    <p class="section-sub" data-zh="前沿设计趋势，突破传统边界的创新风格" data-en="Cutting-edge trends pushing the boundaries of design">前沿设计趋势，突破传统边界的创新风格</p>
+    <div class="grid" id="grid-emerging"></div>
+  </div>
+
+  <!-- Palettes -->
+  <div class="section" id="palettes">
+    <h3 class="section-title" data-zh="配色方案" data-en="Color Palettes">配色方案</h3>
+    <p class="section-sub" data-zh="每种风格对应的配色参考" data-en="Color schemes for each style">每种风格对应的配色参考</p>
+    <div class="palette-grid" id="palette-grid"></div>
+  </div>
+
+  <!-- Philosophy -->
+  <div class="section" id="philosophy">
+    <h3 class="section-title" data-zh="设计理念" data-en="Design Philosophy">设计理念</h3>
+    <p class="section-sub" data-zh="理解每种风格背后的设计思想" data-en="Understanding the thinking behind each style">理解每种风格背后的设计思想</p>
+    <div class="grid" id="philosophy-grid"></div>
+  </div>
+</div>
+
+<div class="footer"><div class="container">
+  <p>Design Inspiration Gallery — 30 UI Design Styles | 独立网页 · 无需服务器 · 直接打开即可使用</p>
+</div></div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal"><div class="modal" id="modal-content"></div></div>
+
+<script>
+const STYLES = [
+  { id:1, zh:"极简主义", en:"Minimalism", desc_zh:"少即是多 — 极致的留白与克制，通过最少的元素传达最清晰的信息。白色背景、黑色文字、网格系统。", desc_en:"Less is more — extreme whitespace and restraint. Conveys clarity through minimal elements. White backgrounds, black text, grid systems.", colors:["#000000","#FFFFFF","#808080","#F5F5F5"], preview:"linear-gradient(135deg, #fff 0%, #f5f5f5 100%)", preview_text:"Minimalism", cat:"classic", origin_zh:"瑞士国际主义风格，1950年代", origin_en:"Swiss International Style, 1950s", principles_zh:["极致留白","黑白灰为主","网格系统","功能优先于形式"], principles_en:["Extreme whitespace","Black, white & gray","Grid systems","Function over form"], best_zh:"企业官网、SaaS 产品、作品集", best_en:"Corporate sites, SaaS, portfolios", ux_zh:"清晰的信息层级，低认知负担", ux_en:"Clear hierarchy, low cognitive load"},
+  { id:2, zh:"新拟态", en:"Neumorphism", desc_zh:"软 UI 风格 — 通过微妙的内外阴影模拟物理按钮的凹凸感，背景与元素同色系。", desc_en:"Soft UI — subtle inner/outer shadows create convex/concave button effects. Background matches element colors.", colors:["#E0E5EC","#A3B1C6","#FFFFFF","#9BAACF"], preview:"linear-gradient(145deg, #e0e5ec 0%, #c8d0dc 100%)", preview_text:"Neumorphism", cat:"classic", origin_zh:"Dribbble 设计社区，2019年", origin_en:"Dribbble community, 2019", principles_zh:["同色系背景与元素","内外阴影模拟深度","柔和的圆角","低对比度"], principles_en:["Same-tone background","Inner/outer shadow depth","Soft rounded corners","Low contrast"], best_zh:"健康类 App、智能家居控制面板", best_en:"Health apps, smart home panels", ux_zh:"视觉柔和但需注意可访问性", ux_en:"Soft visuals, watch accessibility"},
+  { id:3, zh:"玻璃态", en:"Glassmorphism", desc_zh:"毛玻璃效果 — 半透明背景 + 模糊 + 边框，营造层次感和深度。适合深色背景。", desc_en:"Frosted glass — semi-transparent backgrounds with blur and borders create depth. Best on dark backgrounds.", colors:["#1A1A2E","#16213E","#FFFFFF","#E94560"], preview:"linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)", preview_text:"Glassmorphism", cat:"classic", origin_zh:"Apple macOS Big Sur，2020年", origin_en:"Apple macOS Big Sur, 2020", principles_zh:["半透明背景","背景模糊","微妙边框","鲜艳的背景色"], principles_en:["Translucent surfaces","Background blur","Subtle borders","Vibrant backgrounds"], best_zh:"音乐 App、仪表盘、金融科技", best_en:"Music apps, dashboards, fintech", ux_zh:"层次感强，信息不会丢失", ux_en:"Strong depth, info stays visible"},
+  { id:4, zh:"新粗野主义", en:"Neubrutalism", desc_zh:"大胆、粗糙、不妥协 — 粗黑边框、撞色配色、硬阴影。反精致，反传统。", desc_en:"Bold, raw, uncompromising — thick black borders, clashing colors, hard shadows. Anti-refined, anti-traditional.", colors:["#FF6B6B","#FFE66D","#4ECDC4","#000000"], preview:"linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%)", preview_text:"Neubrutalism", cat:"classic", origin_zh:"设计社区反精致潮流，2020年代", origin_en:"Anti-refined design movement, 2020s", principles_zh:["粗黑边框","撞色配色","硬阴影","反精致美学"], principles_en:["Thick black borders","Clashing colors","Hard shadows","Anti-polished"], best_zh:"创意作品集、设计工具、教育平台", best_en:"Creative portfolios, design tools, edu", ux_zh:"视觉冲击力强，趣味性高", ux_en:"High visual impact, playful"},
+  { id:5, zh:"粘土风格", en:"Claymorphism", desc_zh:"3D 软胶风格 — 圆润、蓬松、像黏土一样。内阴影 + 柔和的高光营造立体感。", desc_en:"3D soft clay — round, puffy, toy-like. Inner shadows and soft highlights create dimension.", colors:["#A8D8EA","#AA96DA","#FCBAD3","#FFFFD2"], preview:"linear-gradient(135deg, #A8D8EA 0%, #AA96DA 100%)", preview_text:"Claymorphism", cat:"classic", origin_zh:"3D 设计趋势，2021年", origin_en:"3D design trend, 2021", principles_zh:["圆润的3D造型","柔和的色彩","内阴影+高光","可爱的感觉"], principles_en:["Rounded 3D shapes","Soft pastels","Inner shadow + highlight","Playful feel"], best_zh:"儿童应用、教育产品、游戏化界面", best_en:"Kids apps, education, gamification", ux_zh:"亲和力强，降低用户焦虑", ux_en:"Approachable, reduces user anxiety"},
+  { id:6, zh:"极光 UI", en:"Aurora UI", desc_zh:"渐变的极光色彩 — 流动的蓝紫粉绿渐变，类似北极光。适合品牌和营销页面。", desc_en:"Aurora gradients — flowing blue-purple-pink-green gradients like the Northern Lights. Great for branding.", colors:["#6366F1","#8B5CF6","#EC4899","#06B6D4"], preview:"linear-gradient(135deg, #6366F1 0%, #8B5CF6 40%, #EC4899 100%)", preview_text:"Aurora UI", cat:"classic", origin_zh:"Stripe、Vercel 等科技品牌，2020年", origin_en:"Stripe, Vercel branding, 2020", principles_zh:["流动渐变","高饱和色彩","深色背景","未来感"], principles_en:["Flowing gradients","High saturation","Dark backgrounds","Futuristic"], best_zh:"科技品牌、SaaS 落地页、营销站", best_en:"Tech brands, SaaS landing, marketing", ux_zh:"视觉冲击力强，品牌辨识度高", ux_en:"High impact, strong brand recognition"},
+  { id:7, zh:"扁平设计", en:"Flat Design", desc_zh:"纯二维设计 — 无阴影、无渐变、无纹理。鲜艳色彩 + 清晰排版，极致简洁。", desc_en:"Pure 2D — no shadows, no gradients, no textures. Bold colors and crisp typography. Ultimate simplicity.", colors:["#3498DB","#2ECC71","#E74C3C","#F39C12"], preview:"#3498DB", preview_text:"Flat Design", cat:"classic", origin_zh:"Microsoft Metro 风格，2010年代", origin_en:"Microsoft Metro, 2010s", principles_zh:["无阴影无渐变","鲜艳色彩","清晰排版","极简图标"], principles_en:["No shadows/gradients","Bold colors","Crisp type","Simple icons"], best_zh:"移动应用、仪表盘、管理后台", best_en:"Mobile apps, dashboards, admin", ux_zh:"加载快，易于理解", ux_en:"Fast loading, easy to understand"},
+  { id:8, zh:"拟物化", en:"Skeuomorphism", desc_zh:"模拟真实世界材质 — 皮革、木材、金属纹理。让数字界面看起来像实物。", desc_en:"Mimics real-world materials — leather, wood, metal textures. Digital interfaces look like physical objects.", colors:["#8B7355","#D4A574","#654321","#F5DEB3"], preview:"linear-gradient(135deg, #8B7355 0%, #D4A574 100%)", preview_text:"Skeuomorphism", cat:"classic", origin_zh:"Apple iOS 早期，2007-2013年", origin_en:"Early Apple iOS, 2007-2013", principles_zh:["模拟真实材质","丰富纹理","写实图标","深度阴影"], principles_en:["Real material mimicry","Rich textures","Realistic icons","Deep shadows"], best_zh:"游戏界面、复古应用、音频工具", best_en:"Game UI, retro apps, audio tools", ux_zh:"直观但可能过时", ux_en:"Intuitive but may feel dated"},
+  { id:9, zh:"液态玻璃", en:"Liquid Glass", desc_zh:"高级玻璃效果 — 比普通玻璃态更通透，带流动感和彩色折射，像液态玻璃。", desc_en:"Premium glass — more transparent than glassmorphism, with fluidity and colorful refraction like liquid glass.", colors:["#0F0F23","#1A1A3E","#6366F1","#EC4899"], preview:"linear-gradient(135deg, #0F0F23 0%, #1A1A3E 100%)", preview_text:"Liquid Glass", cat:"classic", origin_zh:"Apple Vision Pro 设计语言，2023年", origin_en:"Apple Vision Pro, 2023", principles_zh:["高通透度","彩色折射","流动感","空间深度"], principles_en:["High transparency","Color refraction","Fluidity","Spatial depth"], best_zh:"空间计算、AR/VR、高端产品", best_en:"Spatial computing, AR/VR, premium", ux_zh:"沉浸式体验，空间感强", ux_en:"Immersive, strong spatial awareness"},
+  { id:10, zh:"瑞士现代主义", en:"Swiss Modernism", desc_zh:"网格系统 + 无衬线字体 + 不对称布局。源自包豪斯的理性设计传统。", desc_en:"Grid systems + sans-serif + asymmetric layouts. Rational design tradition from Bauhaus.", colors:["#000000","#FFFFFF","#FF0000","#00509E"], preview:"#FFFFFF", preview_text:"Swiss Modernism", cat:"classic", origin_zh:"瑞士设计学院，1950-60年代", origin_en:"Swiss Design School, 1950s-60s", principles_zh:["网格系统","无衬线字体","不对称布局","少即是多"], principles_en:["Grid systems","Sans-serif type","Asymmetric layouts","Less is more"], best_zh:"编辑设计、杂志、建筑网站", best_en:"Editorial, magazines, architecture", ux_zh:"信息密度高，秩序感强", ux_en:"High info density, strong order"},
+  { id:11, zh:"暗黑模式 OLED", en:"Dark Mode OLED", desc_zh:"纯黑背景 + 霓虹点缀 — OLED 像素完全关闭的极致暗色，省电且减少眼部疲劳。", desc_en:"Pure black + neon accents — OLED pixels off for ultimate dark mode. Battery-friendly, eye-friendly.", colors:["#000000","#121212","#BB86FC","#03DAC6"], preview:"#000000", preview_text:"Dark Mode OLED", cat:"classic", origin_zh:"OLED 显示技术，2020年代", origin_en:"OLED display technology, 2020s", principles_zh:["纯黑背景","霓虹点缀","高对比度","省电设计"], principles_en:["True black","Neon accents","High contrast","Battery-friendly"], best_zh:"开发者工具、代码编辑器、阅读应用", best_en:"Dev tools, code editors, reading apps", ux_zh:"低光环境友好，对比度充足", ux_en:"Low-light friendly, good contrast"},
+  { id:12, zh:"赛博朋克", en:"Cyberpunk", desc_zh:"霓虹灯、暗夜、科技感 — 高饱和品红与青色，终端字体，故障效果。", desc_en:"Neon, night, high-tech — saturated magenta and cyan, terminal fonts, glitch effects.", colors:["#FF00FF","#00FFFF","#0D0221","#FFD700"], preview:"linear-gradient(135deg, #0D0221 0%, #1A0A3E 100%)", preview_text:"Cyberpunk", cat:"classic", origin_zh:"赛博朋克文化，1980年代至今", origin_en:"Cyberpunk culture, 1980s-present", principles_zh:["霓虹色彩","暗色背景","故障效果","科技感字体"], principles_en:["Neon colors","Dark backgrounds","Glitch effects","Tech fonts"], best_zh:"游戏界面、科技品牌、音乐平台", best_en:"Game UI, tech brands, music platforms", ux_zh:"沉浸感强，但需注意可读性", ux_en:"Immersive, watch readability"},
+  { id:13, zh:"蒸汽波", en:"Vaporwave", desc_zh:"复古未来主义 — 粉紫蓝渐变、古希腊雕塑、棕榈树、Windows 95 元素。", desc_en:"Retro-futurism — pink-purple-blue gradients, Greek statues, palm trees, Windows 95 aesthetics.", colors:["#FF71CE","#01CDFE","#B967FF","#FFFB96"], preview:"linear-gradient(135deg, #FF71CE 0%, #01CDFE 100%)", preview_text:"Vaporwave", cat:"classic", origin_zh:"网络亚文化，2010年代", origin_en:"Internet subculture, 2010s", principles_zh:["粉紫蓝渐变","复古元素","低保真","怀旧未来"], principles_en:["Pink-purple-blue","Retro elements","Lo-fi","Nostalgic future"], best_zh:"音乐平台、创意品牌、时尚网站", best_en:"Music, creative brands, fashion", ux_zh:"风格化强烈，小众审美", ux_en:"Highly stylized, niche appeal"},
+  { id:14, zh:"Bento 网格", en:"Bento Grids", desc_zh:"便当盒式布局 — 不同大小的卡片拼接，像日式便当。Apple 产品页常用。", desc_en:"Bento box layout — cards of different sizes fit together like a Japanese lunch box. Used by Apple.", colors:["#F5F5F7","#E8E8ED","#1D1D1F","#0071E3"], preview:"#F5F5F7", preview_text:"Bento Grids", cat:"classic", origin_zh:"Apple 产品页面，2022年", origin_en:"Apple product pages, 2022", principles_zh:["不同大小的卡片","圆角矩形","留白空间","信息模块化"], principles_en:["Varied card sizes","Rounded rectangles","Whitespace","Modular info"], best_zh:"产品展示、仪表盘、个人主页", best_en:"Product showcases, dashboards, profiles", ux_zh:"信息有序，视觉节奏感好", ux_en:"Ordered info, good visual rhythm"},
+  { id:15, zh:"Gen Z 混沌", en:"Gen Z Chaos", desc_zh:"反设计、非对称、贴纸风格 — 打破一切规则，充满叛逆和个性表达。", desc_en:"Anti-design, asymmetric, sticker-style — breaks all rules. Rebellious and expressive.", colors:["#FF006E","#FFBE0B","#00F5D4","#8338EC"], preview:"linear-gradient(135deg, #FF006E 0%, #8338EC 100%)", preview_text:"Gen Z Chaos", cat:"classic", origin_zh:"TikTok、Z世代社交媒体，2020年代", origin_en:"TikTok, Gen Z social media, 2020s", principles_zh:["反设计规则","不对称布局","贴纸式元素","高饱和色彩"], principles_en:["Anti-design rules","Asymmetric layouts","Sticker elements","Saturated colors"], best_zh:"Z世代品牌、社交媒体、创意活动", best_en:"Gen Z brands, social media, events", ux_zh:"个性强烈，目标受众明确", ux_en:"Strong personality, clear target audience"},
+  { id:16, zh:"Y2K 复兴", en:"Y2K Revival", desc_zh:"千禧年美学回归 — 金属质感、粉色、低分辨率、未来感，2000年代互联网风格。", desc_en:"Millennium aesthetic returns — metallic, pink, low-res, futuristic. 2000s internet vibes.", colors:["#FF69B4","#00CED1","#FFD700","#C0C0C0"], preview:"linear-gradient(135deg, #FF69B4 0%, #C0C0C0 100%)", preview_text:"Y2K Revival", cat:"emerging", origin_zh:"2000年代互联网审美，2023年复兴", origin_en:"2000s internet, revived 2023", principles_zh:["金属质感","粉色系","低分辨率","未来感"], principles_en:["Metallic textures","Pink tones","Low-res","Futuristic"], best_zh:"时尚品牌、音乐平台、年轻化产品", best_en:"Fashion brands, music, youth products", ux_zh:"怀旧感强，辨识度高", ux_en:"Nostalgic, highly recognizable"},
+  { id:17, zh:"AI 原生", en:"AI-Native", desc_zh:"为 AI 交互设计的界面 — 对话式、流式输出、渐进式展示，AI 生成内容的载体。", desc_en:"Interfaces designed for AI — conversational, streaming, progressive. Carriers for AI-generated content.", colors:["#10A37F","#1A1A2E","#FFFFFF","#F0F0F0"], preview:"#1A1A2E", preview_text:"AI-Native", cat:"emerging", origin_zh:"ChatGPT 等 AI 产品，2023年", origin_en:"ChatGPT era, 2023", principles_zh:["对话式界面","流式输出","渐进式加载","AI 内容容器"], principles_en:["Conversational UI","Streaming output","Progressive","AI content"], best_zh:"AI 聊天、智能助手、自动化工具", best_en:"AI chat, assistants, automation", ux_zh:"自然交互，学习成本低", ux_en:"Natural interaction, low learning curve"},
+  { id:18, zh:"有机生物", en:"Organic Biophilic", desc_zh:"自然启发的设计 — 有机曲线、大地色系、植物纹理，将自然融入数字界面。", desc_en:"Nature-inspired — organic curves, earthy tones, plant textures. Bringing nature into digital.", colors:["#4A7C59","#8B9A6B","#D4C5A9","#F5F0E1"], preview:"linear-gradient(135deg, #4A7C59 0%, #D4C5A9 100%)", preview_text:"Biophilic", cat:"emerging", origin_zh:"亲生物设计运动，2020年代", origin_en:"Biophilic design movement, 2020s", principles_zh:["有机曲线","大地色系","自然纹理","可持续理念"], principles_en:["Organic curves","Earthy tones","Natural textures","Sustainability"], best_zh:"健康应用、环保品牌、水疗中心", best_en:"Health apps, eco brands, wellness", ux_zh:"放松感，与自然连接", ux_en:"Calming, nature connection"},
+  { id:19, zh:"孟菲斯复兴", en:"Memphis Revival", desc_zh:"80年代孟菲斯设计运动复兴 — 几何图形、波点、大胆撞色，充满玩乐精神。", desc_en:"80s Memphis design revival — geometric shapes, polka dots, bold color clashes. Playful.", colors:["#FF6B6B","#4ECDC4","#FFE66D","#2C3E50"], preview:"linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%)", preview_text:"Memphis Revival", cat:"emerging", origin_zh:"孟菲斯设计集团，1981年", origin_en:"Memphis Group, 1981", principles_zh:["几何图形","波点与条纹","大胆撞色","玩乐精神"], principles_en:["Geometric shapes","Polka dots","Bold clashes","Playful"], best_zh:"创意品牌、活动页面、艺术平台", best_en:"Creative brands, events, art", ux_zh:"视觉冲击力强，趣味性高", ux_en:"High impact, fun"},
+  { id:20, zh:"空间 UI", en:"Spatial UI", desc_zh:"空间计算界面 — 深度、阴影、视差，专为 AR/VR/MR 设计的沉浸式交互。", desc_en:"Spatial computing — depth, shadows, parallax. Immersive interaction for AR/VR/MR.", colors:["#2D2D3F","#6366F1","#22D3EE","#F472B6"], preview:"linear-gradient(135deg, #2D2D3F 0%, #6366F1 100%)", preview_text:"Spatial UI", cat:"emerging", origin_zh:"Apple Vision Pro，2023年", origin_en:"Apple Vision Pro, 2023", principles_zh:["深度层次","视差效果","空间感知","手势交互"], principles_en:["Depth layers","Parallax","Spatial awareness","Gesture"], best_zh:"空间计算、VR/AR 应用、3D 工具", best_en:"Spatial computing, VR/AR, 3D tools", ux_zh:"沉浸式体验，新交互范式", ux_en:"Immersive, new interaction paradigm"},
+  { id:21, zh:"像素艺术", en:"Pixel Art", desc_zh:"像素风格界面 — 8-bit 美学、像素字体、复古游戏感，唤起怀旧情怀。", desc_en:"Pixel-style interfaces — 8-bit aesthetics, pixel fonts, retro gaming vibes. Nostalgic.", colors:["#2D1B69","#FF6B6B","#00FF88","#FFF8E7"], preview:"#2D1B69", preview_text:"Pixel Art", cat:"emerging", origin_zh:"8-bit 游戏时代，1980-90年代", origin_en:"8-bit gaming era, 1980-90s", principles_zh:["8-bit 美学","像素字体","明亮色彩","复古游戏感"], principles_en:["8-bit aesthetics","Pixel fonts","Bright colors","Retro gaming"], best_zh:"游戏界面、NFT 平台、创意作品集", best_en:"Game UI, NFT, creative portfolios", ux_zh:"怀旧感强，游戏化体验", ux_en:"Nostalgic, gamified experience"},
+  { id:22, zh:"HUD 科幻", en:"HUD Sci-Fi", desc_zh:"抬头显示器风格 — 半透明覆盖层、数据可视化、蓝绿色调，军事/科幻感。", desc_en:"Heads-up display — translucent overlays, data viz, blue-green tones. Military/sci-fi feel.", colors:["#0A0E27","#00FF41","#0080FF","#FF6600"], preview:"#0A0E27", preview_text:"HUD Sci-Fi", cat:"emerging", origin_zh:"科幻电影/游戏 UI，持续演化", origin_en:"Sci-fi movies/games, ongoing", principles_zh:["半透明覆盖","数据可视化","蓝绿色调","科技感线条"], principles_en:["Translucent overlays","Data viz","Blue-green","Tech lines"], best_zh:"数据监控、安全系统、游戏界面", best_en:"Monitoring, security, game UI", ux_zh:"信息密度高，沉浸感强", ux_en:"Dense info, immersive"},
+  { id:23, zh:"电子墨水", en:"E-Ink Paper", desc_zh:"模仿电子墨水屏 — 灰白为主、低对比度、纸质质感，适合长时间阅读。", desc_en:"Mimics e-ink displays — gray-white, low contrast, paper texture. Great for extended reading.", colors:["#F8F8F0","#2C2C2C","#666666","#CCCCCC"], preview:"#F8F8F0", preview_text:"E-Ink Paper", cat:"emerging", origin_zh:"Kindle 等电子阅读器，2007年", origin_en:"Kindle e-readers, 2007", principles_zh:["灰白为主","低对比度","纸质质感","减少视觉疲劳"], principles_en:["Gray-white","Low contrast","Paper texture","Reduce eye strain"], best_zh:"阅读应用、新闻客户端、文档工具", best_en:"Reading apps, news, docs", ux_zh:"长时间阅读舒适，极简", ux_en:"Comfortable for long reading, minimal"},
+  { id:24, zh:"运动驱动", en:"Motion-Driven", desc_zh:"以动效为核心的界面 — 滚动驱动的动画、微交互、过渡效果，让界面充满生命力。", desc_en:"Animation-driven interfaces — scroll-triggered animations, micro-interactions, transitions. Alive.", colors:["#1A1A2E","#E94560","#0F3460","#FFFFFF"], preview:"linear-gradient(135deg, #1A1A2E 0%, #E94560 100%)", preview_text:"Motion-Driven", cat:"emerging", origin_zh:"现代 Web 动效设计，2020年代", origin_en:"Modern web animation, 2020s", principles_zh:["滚动驱动动画","微交互","平滑过渡","叙事性动效"], principles_en:["Scroll-driven","Micro-interactions","Smooth transitions","Narrative motion"], best_zh:"作品集、品牌网站、产品展示", best_en:"Portfolios, brands, product demos", ux_zh:"引导用户注意力，增强叙事", ux_en:"Guides attention, enhances storytelling"},
+  { id:25, zh:"数据仪表盘", en:"Data Dashboard", desc_zh:"数据密集型界面 — 图表、KPI 卡片、实时数据流，信息密度最高但层次清晰。", desc_en:"Data-dense interfaces — charts, KPI cards, real-time data. Highest info density with clear hierarchy.", colors:["#0F1923","#1A3A4A","#00D4AA","#FF6B6B"], preview:"#0F1923", preview_text:"Data Dashboard", cat:"emerging", origin_zh:"商业智能工具，2010年代至今", origin_en:"BI tools, 2010s-present", principles_zh:["高信息密度","清晰层级","实时更新","数据可视化"], principles_en:["High density","Clear hierarchy","Real-time","Data viz"], best_zh:"商业智能、运维监控、金融分析", best_en:"BI, monitoring, financial analysis", ux_zh:"一目了然，快速决策", ux_en:"At-a-glance, fast decisions"},
+  { id:26, zh:"叙事驱动", en:"Storytelling", desc_zh:"像讲故事一样设计 — 滚动叙事、渐进式揭示、场景化设计，引导用户沉浸式阅读。", desc_en:"Design like storytelling — scroll narrative, progressive reveal, scene-based. Immersive reading.", colors:["#FFF8E7","#2D2D2D","#E07A5F","#81B29A"], preview:"#FFF8E7", preview_text:"Storytelling", cat:"emerging", origin_zh:"纽约时报等媒体，2010年代", origin_en:"NYT digital, 2010s", principles_zh:["滚动叙事","渐进式揭示","场景化设计","沉浸式阅读"], principles_en:["Scroll narrative","Progressive reveal","Scenes","Immersive"], best_zh:"新闻媒体、品牌故事、年度报告", best_en:"News media, brand stories, reports", ux_zh:"深度参与，情感连接", ux_en:"Deep engagement, emotional connection"},
+  { id:27, zh:"英雄中心", en:"Hero-Centric", desc_zh:"大标题 + 大背景 — 首页以超大视觉元素吸引眼球，后续内容简洁，适合营销落地页。", desc_en:"Big headline + big background — oversized hero visuals grab attention. Clean follow-up content. Perfect for landing pages.", colors:["#1A1A2E","#E94560","#FFFFFF","#F0F0F0"], preview:"linear-gradient(135deg, #1A1A2E 0%, #E94560 100%)", preview_text:"Hero-Centric", cat:"emerging", origin_zh:"SaaS 营销页面，2010年代", origin_en:"SaaS marketing, 2010s", principles_zh:["超大视觉","大标题","简洁后续","CTA 突出"], principles_en:["Oversized visuals","Big headlines","Clean follow-up","Prominent CTA"], best_zh:"SaaS 落地页、产品发布、活动页", best_en:"SaaS landing, launches, events", ux_zh:"快速抓住注意力，转化率高", ux_en:"Quick attention grab, high conversion"},
+  { id:28, zh:"超简主义", en:"Exaggerated Minimalism", desc_zh:"极致简化的极端版本 — 可能只有文字和光标，去除一切非必要元素。", desc_en:"The extreme of minimalism — just text and a cursor. Strips away everything non-essential.", colors:["#FFFFFF","#000000","#F5F5F5","#CCCCCC"], preview:"#FFFFFF", preview_text:"Exaggerated Minimalism", cat:"emerging", origin_zh:"极简主义极端化，2010年代", origin_en:"Extreme minimalism, 2010s", principles_zh:["极致去除","仅保留核心","大量留白","字体为王"], principles_en:["Extreme removal","Core only","Massive whitespace","Type is king"], best_zh:"个人博客、摄影作品集、写作工具", best_en:"Blogs, photography, writing tools", ux_zh:"零干扰，纯粹内容", ux_en:"Zero distraction, pure content"},
+  { id:29, zh:"信任权威", en:"Trust & Authority", desc_zh:"传递专业感 — 深蓝、金色、衬线字体，营造可靠、权威、专业的品牌形象。", desc_en:"Conveys professionalism — deep blue, gold, serif fonts. Creates reliable, authoritative brand image.", colors:["#1B2A4A","#C9A96E","#FFFFFF","#F5F3EE"], preview:"#1B2A4A", preview_text:"Trust & Authority", cat:"emerging", origin_zh:"金融/法律行业设计，传统延续", origin_en:"Finance/legal design, traditional", principles_zh:["深蓝主色","金色点缀","衬线字体","庄重感"], principles_en:["Deep blue","Gold accents","Serif fonts","Dignified"], best_zh:"金融网站、法律事务所、政府网站", best_en:"Finance, legal, government", ux_zh:"专业感强，建立信任", ux_en:"Professional, builds trust"},
+  { id:30, zh:"交互演示", en:"Interactive Demo", desc_zh:"产品即界面 — 直接在页面上展示产品交互，所见即所得，降低试用门槛。", desc_en:"Product is the interface — show product interaction directly on the page. WYSIWYG, lowers trial barriers.", colors:["#667EEA","#764BA2","#FFFFFF","#F0F0FF"], preview:"linear-gradient(135deg, #667EEA 0%, #764BA2 100%)", preview_text:"Interactive Demo", cat:"emerging", origin_zh:"PLG（产品驱动增长），2020年代", origin_en:"Product-led growth, 2020s", principles_zh:["所见即所得","产品内嵌","即时交互","降低试用门槛"], principles_en:["WYSIWYG","Embedded product","Instant interaction","Low barrier"], best_zh:"SaaS 产品、开发者工具、设计工具", best_en:"SaaS, dev tools, design tools", ux_zh:"即时体验，转化率高", ux_en:"Instant experience, high conversion"}
+];
+
+let currentLang = 'zh';
+
+function switchLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-switch a').forEach(a => a.classList.remove('active'));
+  document.querySelectorAll('.lang-switch a').forEach(a => {
+    if (a.textContent.trim() === (lang === 'zh' ? '中文' : 'EN')) a.classList.add('active');
+  });
+  document.querySelectorAll('[data-zh][data-en]').forEach(el => {
+    el.textContent = el.getAttribute('data-' + lang);
+  });
+  renderGallery();
+  renderPalettes();
+  renderPhilosophy();
+}
+
+function renderGallery() {
+  const classic = STYLES.filter(s => s.cat === 'classic');
+  const emerging = STYLES.filter(s => s.cat === 'emerging');
+  document.getElementById('grid-classic').innerHTML = classic.map(s => cardHTML(s)).join('');
+  document.getElementById('grid-emerging').innerHTML = emerging.map(s => cardHTML(s)).join('');
+}
+
+function cardHTML(s) {
+  const name = currentLang === 'zh' ? s.zh : s.en;
+  const enName = currentLang === 'zh' ? s.en : '';
+  const desc = currentLang === 'zh' ? s.desc_zh : s.desc_en;
+  return `<div class="card" onclick="openModal(${s.id})">
+    <span class="card-num">${String(s.id).padStart(2,'0')}</span>
+    <h3>${name}</h3>
+    ${enName ? `<div class="en-name">${enName}</div>` : ''}
+    <div class="desc">${desc.substring(0, 100)}...</div>
+    <div class="colors">${s.colors.map(c => `<div class="color-dot" style="background:${c}"></div>`).join('')}</div>
+  </div>`;
+}
+
+function openModal(id) {
+  const s = STYLES.find(x => x.id === id);
+  const name = currentLang === 'zh' ? s.zh : s.en;
+  const enName = currentLang === 'zh' ? s.en : '';
+  const desc = currentLang === 'zh' ? s.desc_zh : s.desc_en;
+  const origin = currentLang === 'zh' ? s.origin_zh : s.origin_en;
+  const principles = currentLang === 'zh' ? s.principles_zh : s.principles_en;
+  const best = currentLang === 'zh' ? s.best_zh : s.best_en;
+  const ux = currentLang === 'zh' ? s.ux_zh : s.ux_en;
+
+  document.getElementById('modal-content').innerHTML = `
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h3>${name}</h3>
+    ${enName ? `<div class="en-name">${enName}</div>` : ''}
+    <div class="preview-box" style="background:${s.preview}; color:${isLightBg(s) ? '#000' : '#fff'}">${s.preview_text}</div>
+    <div class="desc-block"><h4>${currentLang === 'zh' ? '描述' : 'Description'}</h4><p>${desc}</p></div>
+    <div class="desc-block"><h4>${currentLang === 'zh' ? '配色' : 'Colors'}</h4><div class="colors" style="margin-top:6px">${s.colors.map(c => `<div class="color-dot" style="background:${c};width:32px;height:32px" title="${c}"></div>`).join('')} <span style="font-size:0.8rem;color:var(--muted);margin-left:8px">${s.colors.join(', ')}</span></div></div>
+    <div class="desc-block"><h4>${currentLang === 'zh' ? '起源' : 'Origin'}</h4><p>${origin}</p></div>
+    <div class="desc-block"><h4>${currentLang === 'zh' ? '核心原则' : 'Core Principles'}</h4><ul>${principles.map(p => `<li>${p}</li>`).join('')}</ul></div>
+    <div class="desc-block"><h4>${currentLang === 'zh' ? '最佳适用' : 'Best For'}</h4><p>${best}</p></div>
+    <div class="desc-block"><h4>${currentLang === 'zh' ? 'UX 考量' : 'UX Considerations'}</h4><p>${ux}</p></div>
+  `;
+  document.getElementById('modal').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+function isLightBg(s) {
+  const lightColors = ['#FFFFFF','#FFF','#F5F5F7','#F8F8F0','#FFF8E7','#F5F3EE','#F5F0E1','#FFFFD2','#FFF8E7'];
+  return lightColors.some(c => s.preview.includes(c)) || s.preview.includes('#fff') || s.preview.includes('#FFF');
+}
+
+function renderPalettes() {
+  const grids = [];
+  STYLES.forEach(s => {
+    const name = currentLang === 'zh' ? s.zh : s.en;
+    grids.push(`<div class="palette-card">
+      <div class="palette-swatch">${s.colors.map(c => `<div style="background:${c}"></div>`).join('')}</div>
+      <div class="palette-info"><h4>${name}</h4><p>${s.colors.join(' · ')}</p></div>
+    </div>`);
+  });
+  document.getElementById('palette-grid').innerHTML = grids.join('');
+}
+
+function renderPhilosophy() {
+  const grids = [];
+  STYLES.forEach(s => {
+    const name = currentLang === 'zh' ? s.zh : s.en;
+    const origin = currentLang === 'zh' ? s.origin_zh : s.origin_en;
+    const principles = currentLang === 'zh' ? s.principles_zh : s.principles_en;
+    const best = currentLang === 'zh' ? s.best_zh : s.best_en;
+    const ux = currentLang === 'zh' ? s.ux_zh : s.ux_en;
+    grids.push(`<div class="card" onclick="openModal(${s.id})">
+      <span class="card-num">${String(s.id).padStart(2,'0')}</span>
+      <h3>${name}</h3>
+      <div class="desc" style="margin-top:8px"><strong>${currentLang === 'zh' ? '起源' : 'Origin'}:</strong> ${origin}</div>
+      <div class="desc"><strong>${currentLang === 'zh' ? '原则' : 'Principles'}:</strong> ${principles.slice(0,2).join(' / ')}</div>
+      <div class="desc"><strong>${currentLang === 'zh' ? '适用' : 'Best for'}:</strong> ${best}</div>
+    </div>`);
+  });
+  document.getElementById('philosophy-grid').innerHTML = grids.join('');
+}
+
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  document.querySelectorAll('.header nav a').forEach(a => a.classList.remove('active'));
+  document.querySelector(`.header nav a[href="#${id}"]`).classList.add('active');
+}
+
+// Close modal on overlay click
+document.getElementById('modal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// Init
+renderGallery();
+renderPalettes();
+renderPhilosophy();
+</script>
+</body>
+</html>

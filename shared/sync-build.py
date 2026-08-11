@@ -119,9 +119,6 @@ def main():
             continue
 
         for num, (filename, _, _) in STYLES.items():
-            if num == '31':
-                print(f'  SKIP #31: {styles_dir}/{filename}.html')
-                continue
             filepath = os.path.join(styles_dir, f'{filename}.html')
             update_file(filepath, num, lang, base_path)
 
