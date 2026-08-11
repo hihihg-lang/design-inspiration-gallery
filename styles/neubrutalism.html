@@ -21,21 +21,7 @@
 
 </head>
 <body class="bg-[#FFF8E7] min-h-screen">
-    <!-- Navigation -->
-    <nav class="bg-white border-b-4 border-black px-6 py-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="../../index.html" class="text-black font-bold hover:underline">&larr; BACK</a>
-            <span class="font-bold text-xl">#38 NEUBRUTALISM</span>
-            <div class="flex items-center gap-4">
-                <span class="bg-black text-white px-3 py-1">MODERN</span>
-                <div class="flex items-center gap-2">
-                    <a href="../zh/styles/neubrutalism.html" class="text-xs text-gray-400 hover:text-gray-600">EN</a>
-                    <span class="text-gray-300">|</span>
-                    <span class="text-xs text-gray-800 font-medium">中文</span>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div id="shared-nav" data-style="26" data-name="新粗野主义" data-name-en="Neubrutalism" data-lang="zh" data-base="../"></div>
 
     <div class="max-w-6xl mx-auto p-8">
         <!-- Hero -->
@@ -141,12 +127,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-black text-white px-6 py-4 mt-8">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="brutalism.html" class="hover:underline">&larr; Brutalism</a>
-            <a href="bento-grid.html" class="hover:underline">Bento Grid &rarr;</a>
-        </div>
-    </footer>
+    <div id="shared-footer" data-style="26" data-prev="25" data-prev-name="Z世代混乱" data-next="27" data-next-name="AI 原生"></div>
 
     <script>
       if ('serviceWorker' in navigator) {
@@ -154,5 +135,6 @@
       }
     </script>
 
+  <script src="../shared/components.js"></script>
 </body>
 </html>

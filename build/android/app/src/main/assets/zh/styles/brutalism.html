@@ -20,19 +20,7 @@
 
 </head>
 <body class="bg-yellow-400 min-h-screen">
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 bg-white border-b-4 border-black z-50">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="../index.html" class="text-black font-bold hover:bg-black hover:text-white px-2 transition-none">[BACK]</a>
-            <span class="font-black text-xl">#04 BRUTALISM</span>
-            <span class="mono text-sm">GENERAL</span>
-            <div class="flex items-center gap-2">
-                <span class="text-xs text-black font-bold">EN</span>
-                <span class="text-gray-400">|</span>
-                <a href="../../styles/brutalism.html" class="text-xs text-gray-500 hover:text-black">中文</a>
-            </div>
-        </div>
-    </nav>
+    <div id="shared-nav" data-style="04" data-name="Brutalism" data-name-en="Brutalism" data-lang="en" data-base="../../"></div>
 
     <!-- Hero -->
     <section class="pt-24 pb-12 px-4">
@@ -191,12 +179,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-4 px-4 bg-white border-t-4 border-black">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <a href="aurora-ui.html" class="font-bold hover:bg-black hover:text-white px-2">[AURORA UI]</a>
-            <a href="neubrutalism.html" class="font-bold hover:bg-black hover:text-white px-2">[NEUBRUTALISM]</a>
-        </div>
-    </footer>
+    <div id="shared-footer" data-style="04" data-prev="03" data-prev-name="Glassmorphism" data-next="05" data-next-name="Flat Design"></div>
 
     <script>
       if ('serviceWorker' in navigator) {
@@ -204,5 +187,6 @@
       }
     </script>
 
+  <script src="../../shared/components.js"></script>
 </body>
 </html>

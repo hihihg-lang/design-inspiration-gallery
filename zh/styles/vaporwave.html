@@ -38,19 +38,7 @@
     <!-- Grid Overlay -->
     <div class="fixed inset-0 grid-bg opacity-20 pointer-events-none"></div>
 
-    <!-- Navigation -->
-    <nav class="relative z-50 bg-black/50 backdrop-blur border-b border-pink-500/50 px-6 py-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="../index.html" class="font-vt text-2xl text-cyan-400 hover:text-pink-400">&lt;- BACK</a>
-            <span class="font-retro text-pink-400 text-sm">#45 VAPORWAVE</span>
-            <span class="font-vt text-2xl text-cyan-400">[MODERN]</span>
-            <div class="flex items-center gap-2">
-                <span class="font-vt text-xl text-white font-bold">EN</span>
-                <span class="text-pink-400/50">|</span>
-                <a href="../../styles/vaporwave.html" class="font-vt text-xl text-pink-400 hover:text-cyan-400">中文</a>
-            </div>
-        </div>
-    </nav>
+    <div id="shared-nav" data-style="07" data-name="Vaporwave" data-name-en="Vaporwave" data-lang="en" data-base="../../"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto p-8">
         <!-- Hero -->
@@ -163,12 +151,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="relative z-50 bg-black/50 backdrop-blur border-t border-pink-500/50 px-6 py-4 mt-8">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="cyberpunk.html" class="font-vt text-2xl text-cyan-400 hover:text-pink-400">&lt;- Cyberpunk</a>
-            <a href="swiss-modernism.html" class="font-vt text-2xl text-cyan-400 hover:text-pink-400">Swiss Modernism -&gt;</a>
-        </div>
-    </footer>
+    <div id="shared-footer" data-style="07" data-prev="06" data-prev-name="Cyberpunk" data-next="08" data-next-name="Swiss Modernism"></div>
 
     <script>
       if ('serviceWorker' in navigator) {
@@ -176,5 +159,6 @@
       }
     </script>
 
+  <script src="../../shared/components.js"></script>
 </body>
 </html>

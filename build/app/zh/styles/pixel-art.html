@@ -23,16 +23,7 @@
 </head>
 <body class="bg-[#1A1A2E] min-h-screen text-white grid-8bit">
 
-<!-- Navigation -->
-<nav class="border-b-4 border-[#FF004D] px-6 py-4 flex items-center justify-between">
-  <span class="pixel-font text-[#FFEC27] text-xs tracking-wider">🎮 DESIGN GALLERY</span>
-  <div class="flex items-center gap-4 pixel-mono text-sm">
-    <a href="../../index.html" class="text-[#29ADFF] hover:text-[#FFEC27] pixel-font text-xs">← Back to Gallery</a>
-    <span class="pixel-font text-[#00E436] text-xs">EN</span>
-    <span class="text-white/40">|</span>
-    <a href="../../styles/pixel-art.html" class="text-[#29ADFF] hover:text-[#FFEC27] pixel-font text-xs">中文</a>
-  </div>
-</nav>
+<div id="shared-nav" data-style="17" data-name="Pixel Art" data-name-en="Pixel Art" data-lang="en" data-base="../../"></div>
 
 <!-- Hero -->
 <section class="max-w-4xl mx-auto mt-16 px-6">
@@ -200,8 +191,7 @@
 </section>
 
 <!-- Footer -->
-<footer class="border-t-4 border-[#FF004D] py-8 text-center">
-  <p class="pixel-mono text-white/30 text-xs">© 2026 DESIGN GALLERY · PIXEL ART</p>
-</footer>
+<div id="shared-footer" data-style="17" data-prev="16" data-prev-name="HUD Sci-Fi" data-next="18" data-next-name="Skeuomorphism"></div>
+  <script src="../../shared/components.js"></script>
 </body>
 </html>

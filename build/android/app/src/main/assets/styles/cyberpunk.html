@@ -37,21 +37,7 @@
     <!-- Scanline Overlay -->
     <div class="fixed inset-0 pointer-events-none scanline opacity-20 z-50"></div>
 
-    <!-- Navigation -->
-    <nav class="bg-black/80 border-b border-cyan-500/30 px-6 py-4 relative z-40">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="../../index.html" class="font-mono text-cyan-400 hover:text-cyan-300 text-sm">&lt;-- BACK</a>
-            <span class="font-cyber font-bold text-fuchsia-500 neon-pink">#41 CYBERPUNK</span>
-            <div class="flex items-center gap-4">
-                <span class="font-mono text-yellow-400 text-sm">[MODERN]</span>
-                <div class="flex items-center gap-2">
-                    <a href="../zh/styles/cyberpunk.html" class="font-mono text-xs text-gray-400 hover:text-cyan-400">EN</a>
-                    <span class="text-gray-500">|</span>
-                    <span class="font-mono text-xs text-cyan-400 font-medium">中文</span>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div id="shared-nav" data-style="06" data-name="赛博朋克" data-name-en="Cyberpunk" data-lang="zh" data-base="../"></div>
 
     <div class="max-w-6xl mx-auto p-8 relative z-10">
         <!-- Hero -->
@@ -175,12 +161,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-gray-800 px-6 py-4 relative z-40">
-        <div class="max-w-6xl mx-auto flex justify-between items-center font-mono text-sm">
-            <a href="bento-grid.html" class="text-gray-500 hover:text-cyan-400">&lt;-- Bento Grid</a>
-            <a href="vaporwave.html" class="text-gray-500 hover:text-cyan-400">Vaporwave --&gt;</a>
-        </div>
-    </footer>
+    <div id="shared-footer" data-style="06" data-prev="05" data-prev-name="扁平设计" data-next="07" data-next-name="蒸汽波"></div>
 
     <script>
       if ('serviceWorker' in navigator) {
@@ -188,5 +169,6 @@
       }
     </script>
 
+  <script src="../shared/components.js"></script>
 </body>
 </html>

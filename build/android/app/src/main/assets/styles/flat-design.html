@@ -19,18 +19,7 @@
 
 </head>
 <body class="bg-white min-h-screen">
-    <!-- Navigation -->
-    <nav class="bg-[#3498db] text-white">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../../index.html" class="hover:opacity-80 transition-opacity">&larr; Back</a>
-            <span class="font-bold">#12 Flat Design</span>
-            <div class="flex items-center gap-2">
-                <a href="../zh/styles/flat-design.html" class="text-xs text-white/60 hover:text-white">EN</a>
-                <span class="text-white/30">|</span>
-                <span class="text-xs text-white font-medium">中文</span>
-            </div>
-        </div>
-    </nav>
+    <div id="shared-nav" data-style="05" data-name="扁平设计" data-name-en="Flat Design" data-lang="zh" data-base="../"></div>
 
     <!-- Hero -->
     <section class="py-20 px-6 bg-[#3498db] text-white">
@@ -202,12 +191,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-6 px-6 bg-[#3498db] text-white">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="skeuomorphism.html" class="hover:opacity-80">&larr; Skeuomorphism</a>
-            <a href="aurora-ui.html" class="hover:opacity-80">Aurora UI &rarr;</a>
-        </div>
-    </footer>
+    <div id="shared-footer" data-style="05" data-prev="04" data-prev-name="野兽派" data-next="06" data-next-name="赛博朋克"></div>
 
     <script>
       if ('serviceWorker' in navigator) {
@@ -215,5 +199,6 @@
       }
     </script>
 
+  <script src="../shared/components.js"></script>
 </body>
 </html>

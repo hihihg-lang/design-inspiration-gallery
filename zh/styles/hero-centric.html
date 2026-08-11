@@ -12,16 +12,7 @@
 </head>
 <body class="min-h-screen bg-[#1A1A2E]">
 
-  <nav class="fixed top-0 w-full z-50 bg-transparent transition-colors duration-300" id="navbar">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-      <a href="/" class="text-lg font-bold text-white">🎨 Design Gallery</a>
-      <div class="flex items-center gap-6 text-sm font-medium">
-        <a href="/" class="text-gray-400 hover:text-white transition-colors">Back to Gallery</a>
-        <span class="px-4 py-2 rounded-full bg-[#E94560] text-white font-bold">EN</span>
-        <a href="../../styles/hero-centric.html" class="text-gray-500 hover:text-gray-300 transition-colors">中文</a>
-      </div>
-    </div>
-  </nav>
+  <div id="shared-nav" data-style="22" data-name="Hero-Centric" data-name-en="Hero-Centric" data-lang="en" data-base="../../"></div>
 
   <section class="min-h-screen flex items-center px-6 relative overflow-hidden">
     <div class="absolute inset-0 pointer-events-none">
@@ -179,15 +170,8 @@
     </div>
   </section>
 
-  <footer class="py-16 px-6 bg-[#0F0F23] border-t border-white/5">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-      <div><p class="text-gray-400 text-sm font-medium">Style #22 — Hero-Centric</p><p class="text-gray-600 text-xs mt-1">Dramatic landing page design</p></div>
-      <div class="flex gap-4">
-        <a href="/zh/styles/soft-ui.html" class="px-6 py-3 border border-white/10 rounded-lg text-sm font-medium text-gray-400 hover:border-white/30 hover:text-white transition-all duration-300">← Previous Style</a>
-        <a href="/zh/styles/motion-driven.html" class="px-6 py-3 bg-[#E94560] rounded-lg text-sm font-medium text-white hover:bg-[#d63852] hover:shadow-lg hover:shadow-[#E94560]/30 transition-all duration-300">Next Style →</a>
-      </div>
-    </div>
-  </footer>
+  <div id="shared-footer" data-style="22" data-prev="21" data-prev-name="Zero UI" data-next="23" data-next-name="Organic Biomimicry"></div>
 
+  <script src="../../shared/components.js"></script>
 </body>
 </html>

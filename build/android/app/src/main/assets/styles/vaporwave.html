@@ -38,21 +38,7 @@
     <!-- Grid Overlay -->
     <div class="fixed inset-0 grid-bg opacity-20 pointer-events-none"></div>
 
-    <!-- Navigation -->
-    <nav class="relative z-50 bg-black/50 backdrop-blur border-b border-pink-500/50 px-6 py-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="../../index.html" class="font-vt text-2xl text-cyan-400 hover:text-pink-400">&lt;- BACK</a>
-            <span class="font-retro text-pink-400 text-sm">#45 VAPORWAVE</span>
-            <div class="flex items-center gap-4">
-                <span class="font-vt text-2xl text-cyan-400">[MODERN]</span>
-                <div class="flex items-center gap-2">
-                    <a href="../zh/styles/vaporwave.html" class="font-vt text-lg text-cyan-400/50 hover:text-cyan-400">EN</a>
-                    <span class="text-cyan-400/50">|</span>
-                    <span class="font-vt text-lg text-cyan-400 font-medium">中文</span>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div id="shared-nav" data-style="07" data-name="蒸汽波" data-name-en="Vaporwave" data-lang="zh" data-base="../"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto p-8">
         <!-- Hero -->
@@ -165,12 +151,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="relative z-50 bg-black/50 backdrop-blur border-t border-pink-500/50 px-6 py-4 mt-8">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="cyberpunk.html" class="font-vt text-2xl text-cyan-400 hover:text-pink-400">&lt;- Cyberpunk</a>
-            <a href="swiss-modernism.html" class="font-vt text-2xl text-cyan-400 hover:text-pink-400">Swiss Modernism -&gt;</a>
-        </div>
-    </footer>
+    <div id="shared-footer" data-style="07" data-prev="06" data-prev-name="赛博朋克" data-next="08" data-next-name="瑞士现代主义"></div>
 
     <script>
       if ('serviceWorker' in navigator) {
@@ -178,5 +159,6 @@
       }
     </script>
 
+  <script src="../shared/components.js"></script>
 </body>
 </html>

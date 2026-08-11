@@ -19,19 +19,7 @@
 
 </head>
 <body class="bg-white min-h-screen">
-    <!-- Navigation -->
-    <nav class="bg-[#3498db] text-white">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../index.html" class="hover:opacity-80 transition-opacity">&larr; Back</a>
-            <span class="font-bold">#12 Flat Design</span>
-            <span class="opacity-70">General</span>
-            <div class="flex items-center gap-2">
-                <span class="text-xs text-white font-medium">EN</span>
-                <span class="text-white/30">|</span>
-                <a href="../../styles/flat-design.html" class="text-xs text-white/50 hover:text-white">中文</a>
-            </div>
-        </div>
-    </nav>
+    <div id="shared-nav" data-style="05" data-name="Flat Design" data-name-en="Flat Design" data-lang="en" data-base="../../"></div>
 
     <!-- Hero -->
     <section class="py-20 px-6 bg-[#3498db] text-white">
@@ -203,12 +191,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-6 px-6 bg-[#3498db] text-white">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="skeuomorphism.html" class="hover:opacity-80">&larr; Skeuomorphism</a>
-            <a href="aurora-ui.html" class="hover:opacity-80">Aurora UI &rarr;</a>
-        </div>
-    </footer>
+    <div id="shared-footer" data-style="05" data-prev="04" data-prev-name="Brutalism" data-next="06" data-next-name="Cyberpunk"></div>
 
     <script>
       if ('serviceWorker' in navigator) {
@@ -216,5 +199,6 @@
       }
     </script>
 
+  <script src="../../shared/components.js"></script>
 </body>
 </html>

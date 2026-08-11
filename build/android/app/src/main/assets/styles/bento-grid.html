@@ -17,21 +17,7 @@
 
 </head>
 <body class="bg-neutral-100 min-h-screen">
-    <!-- Navigation -->
-    <nav class="bg-white border-b border-neutral-200 px-6 py-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="../../index.html" class="text-neutral-500 hover:text-neutral-900 text-sm">&larr; Back</a>
-            <span class="font-semibold">#39 Bento Box Grid</span>
-            <div class="flex items-center gap-4">
-                <span class="text-neutral-400 text-sm">Modern</span>
-                <div class="flex items-center gap-2">
-                    <a href="../zh/styles/bento-grid.html" class="text-xs text-gray-400 hover:text-gray-600">EN</a>
-                    <span class="text-gray-300">|</span>
-                    <span class="text-xs text-gray-800 font-medium">中文</span>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div id="shared-nav" data-style="20" data-name="Bento 网格" data-name-en="Bento Grid" data-lang="zh" data-base="../"></div>
 
     <div class="max-w-6xl mx-auto p-8">
         <!-- Hero Bento Grid -->
@@ -166,12 +152,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-neutral-200 px-6 py-4 mt-8">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="neubrutalism.html" class="text-neutral-500 hover:text-neutral-900 text-sm">&larr; Neubrutalism</a>
-            <a href="cyberpunk.html" class="text-neutral-500 hover:text-neutral-900 text-sm">Cyberpunk &rarr;</a>
-        </div>
-    </footer>
+    <div id="shared-footer" data-style="20" data-prev="19" data-prev-name="动态驱动" data-next="21" data-next-name="零界面"></div>
 
     <script>
       if ('serviceWorker' in navigator) {
@@ -179,5 +160,6 @@
       }
     </script>
 
+  <script src="../shared/components.js"></script>
 </body>
 </html>

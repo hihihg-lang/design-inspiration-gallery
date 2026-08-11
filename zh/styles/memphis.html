@@ -14,22 +14,7 @@
 </head>
 <body class="bg-white min-h-screen">
 
-<!-- Navigation -->
-<nav class="sticky top-0 z-50 bg-white border-2 border-black px-6 py-4 flex items-center justify-between">
-  <div class="flex items-center gap-3">
-    <div class="w-10 h-10 border-2 border-black flex items-center justify-center" style="background: #FF6B6B; transform: rotate(-6deg);">
-      <span class="text-white text-lg font-black">M</span>
-    </div>
-    <span class="text-2xl font-black text-black tracking-tight">Memphis Revival</span>
-  </div>
-  <div class="hidden md:flex gap-8">
-    <a href="#" class="text-black font-bold hover:text-[#FF6B6B] transition-colors">Home</a>
-    <a href="#" class="text-black font-bold hover:text-[#4ECDC4] transition-colors">Features</a>
-    <a href="#" class="text-black font-bold hover:text-[#A388EE] transition-colors">Colors</a>
-    <a href="#" class="text-black font-bold hover:text-[#FFE66D] transition-colors">Contact</a>
-  </div>
-  <button class="border-2 border-black px-6 py-2 font-black text-black hover:bg-black hover:text-white transition-all" style="transform: rotate(1deg);">Explore</button>
-</nav>
+<div id="shared-nav" data-style="09" data-name="Memphis" data-name-en="Memphis" data-lang="en" data-base="../../"></div>
 
 <!-- Hero Section -->
 <header class="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
@@ -164,15 +149,8 @@
 </section>
 
 <!-- Footer -->
-<footer class="py-12 border-t-2 border-black" style="background: repeating-linear-gradient(-45deg, #FFF 0px, #FFF 8px, #4ECDC4 8px, #4ECDC4 9px);">
-  <div class="max-w-6xl mx-auto px-4 text-center">
-    <div class="w-14 h-14 border-2 border-black flex items-center justify-center mx-auto mb-4" style="background: #FFE66D; transform: rotate(-6deg);">
-      <span class="text-black text-xl font-black">M</span>
-    </div>
-    <p class="text-black font-black">Memphis Revival · Design Style Gallery</p>
-    <p class="text-black/60 text-sm font-bold mt-2">Break the rules, reshape the colors</p>
-  </div>
-</footer>
+<div id="shared-footer" data-style="09" data-prev="08" data-prev-name="Swiss Modernism" data-next="10" data-next-name="Claymorphism"></div>
 
+  <script src="../../shared/components.js"></script>
 </body>
 </html>

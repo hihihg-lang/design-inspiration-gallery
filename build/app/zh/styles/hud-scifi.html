@@ -28,16 +28,7 @@
 <body class="min-h-screen relative">
 <div class="scanline fixed inset-0 z-50 pointer-events-none"></div>
 
-<!-- Navigation -->
-<nav class="border-b border-[#00FF41]/30 px-6 py-3 flex items-center justify-between">
-  <span class="text-[#00FF41]/60 font-mono text-sm tracking-wider">// SYS::DESIGN_GALLERY</span>
-  <div class="flex items-center gap-4 font-mono text-sm">
-    <a href="../../index.html" class="text-[#00FF41]/60 hover:text-[#00FF41] transition-colors">← Back to Gallery</a>
-    <span class="text-[#00FF41]">EN</span>
-    <span class="text-[#00FF41]/30">|</span>
-    <a href="../../styles/hud-scifi.html" class="text-[#00FF41]/50 hover:text-[#00FF41] transition-colors">中文</a>
-  </div>
-</nav>
+<div id="shared-nav" data-style="16" data-name="HUD Sci-Fi" data-name-en="HUD Sci-Fi" data-lang="en" data-base="../../"></div>
 
 <!-- Hero -->
 <section class="max-w-5xl mx-auto mt-16 px-6">
@@ -227,8 +218,7 @@
 </section>
 
 <!-- Footer -->
-<footer class="border-t border-[#00FF41]/20 py-8 text-center">
-  <p class="text-[#00FF41]/30 text-xs font-mono">[SYS] Design Gallery · HUD Sci-Fi · 2026</p>
-</footer>
+<div id="shared-footer" data-style="16" data-prev="15" data-prev-name="Liquid Glass" data-next="17" data-next-name="Pixel Art"></div>
+  <script src="../../shared/components.js"></script>
 </body>
 </html>

@@ -10,16 +10,7 @@
 <body class="bg-white min-h-screen font-sans">
 
   <!-- Nav -->
-  <nav class="w-full bg-white border-b-4 border-gray-200" role="navigation" aria-label="主导航">
-    <div class="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
-      <a href="/" class="text-2xl font-black text-gray-900" aria-label="返回画廊首页">🎨 设计画廊</a>
-      <div class="flex items-center gap-8 text-lg font-bold">
-        <a href="/" class="text-gray-700 hover:text-[#1A73E8] focus:ring-4 focus:ring-[#1A73E8] focus:outline-none rounded-lg px-4 py-3 transition-colors" aria-label="返回画廊">返回画廊</a>
-        <span class="px-5 py-2 rounded-lg bg-[#1A73E8] text-white text-lg font-bold" aria-current="page">中文</span>
-        <a href="../zh/styles/inclusive-design.html" class="text-gray-700 hover:text-[#1A73E8] focus:ring-4 focus:ring-[#1A73E8] focus:outline-none rounded-lg px-4 py-3 transition-colors" lang="en">EN</a>
-      </div>
-    </div>
-  </nav>
+  <div id="shared-nav" data-style="28" data-name="包容性设计" data-name-en="Inclusive Design" data-lang="zh" data-base="../"></div>
 
   <main>
     <!-- Hero -->
@@ -234,18 +225,8 @@
   </main>
 
   <!-- Footer -->
-  <footer class="py-16 px-8 bg-gray-900 text-white" role="contentinfo">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-      <div>
-        <p class="text-lg text-gray-300 font-bold">风格 #19 — 包容性设计</p>
-        <p class="text-base text-gray-400 mt-2">Inclusive Design</p>
-      </div>
-      <div class="flex gap-6">
-        <a href="/styles/motion-driven.html" class="px-8 py-4 bg-white/10 text-lg font-bold rounded-lg hover:bg-white/20 focus:ring-4 focus:ring-white focus:outline-none transition-colors" style="min-height: 56px;" aria-label="上一个风格">← 上一个风格</a>
-        <a href="/styles/zero-ui.html" class="px-8 py-4 bg-[#1A73E8] text-lg font-bold rounded-lg hover:bg-[#1557b0] focus:ring-4 focus:ring-[#1A73E8] focus:outline-none transition-colors" style="min-height: 56px;" aria-label="下一个风格">下一个风格 →</a>
-      </div>
-    </div>
-  </footer>
+  <div id="shared-footer" data-style="28" data-prev="27" data-prev-name="AI 原生" data-next="29" data-next-name="空间 UI"></div>
 
+  <script src="../shared/components.js"></script>
 </body>
 </html>

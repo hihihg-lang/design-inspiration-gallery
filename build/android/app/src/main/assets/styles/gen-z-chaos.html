@@ -68,23 +68,7 @@
         <div class="absolute top-1/2 left-10 text-4xl opacity-20 color-shift">◐</div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="relative z-50 px-6 py-4">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <a href="../../index.html" class="font-mono text-sm hover:text-[#FF6B6B] glitch">&larr; back lol</a>
-            <span class="font-display text-xl">
-                <span class="text-[#FF6B6B]">#57</span> gen z chaos
-            </span>
-            <div class="flex items-center gap-4">
-                <span class="font-mono text-xs px-3 py-1 bg-[#4ECDC4] text-black rounded-full">✨ slay</span>
-                <div class="flex items-center gap-2">
-                    <a href="../zh/styles/gen-z-chaos.html" class="text-xs text-white/50 hover:text-[#FF6B6B]">EN</a>
-                    <span class="text-white/30">|</span>
-                    <span class="text-xs text-[#4ECDC4] font-medium">中文</span>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div id="shared-nav" data-style="25" data-name="Z世代混乱" data-name-en="Gen-Z Chaos" data-lang="zh" data-base="../"></div>
 
     <div class="relative max-w-5xl mx-auto px-6 py-8">
         <!-- Hero -->
@@ -267,13 +251,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="px-6 py-8 mt-16 border-t border-white/10">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <a href="liquid-glass.html" class="font-mono text-white/50 hover:text-[#4ECDC4] text-sm">&larr; Liquid Glass</a>
-            <span class="font-mono text-sm text-white/30">that's all the styles bestie 💅</span>
-            <a href="../../index.html" class="font-mono text-white/50 hover:text-[#FF6B6B] text-sm">back to index &rarr;</a>
-        </div>
-    </footer>
+    <div id="shared-footer" data-style="25" data-prev="24" data-prev-name="软 UI" data-next="26" data-next-name="新粗野主义"></div>
 
     <script>
       if ('serviceWorker' in navigator) {
@@ -281,5 +259,6 @@
       }
     </script>
 
+  <script src="../shared/components.js"></script>
 </body>
 </html>

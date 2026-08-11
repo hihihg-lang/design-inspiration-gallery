@@ -31,21 +31,7 @@
 <body class="min-h-screen text-white">
 
 <!-- 导航栏 -->
-<nav class="sticky top-0 z-50 bg-[#1E1B4B]/80 backdrop-blur-xl border-b border-white/10 px-6 py-4 flex items-center justify-between">
-  <div class="flex items-center gap-3">
-    <div class="w-10 h-10 rounded-full conic-badge flex items-center justify-center">
-      <span class="text-white text-lg">🤖</span>
-    </div>
-    <span class="text-xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">AI 原生</span>
-  </div>
-  <div class="hidden md:flex gap-8">
-    <a href="#" class="text-indigo-200 hover:text-white transition-colors font-medium">对话</a>
-    <a href="#" class="text-indigo-200 hover:text-white transition-colors font-medium">能力</a>
-    <a href="#" class="text-indigo-200 hover:text-white transition-colors font-medium">色彩</a>
-    <a href="#" class="text-indigo-200 hover:text-white transition-colors font-medium">互动</a>
-  </div>
-  <button class="rounded-full px-6 py-2 bg-gradient-to-r from-indigo-500 to-cyan-500 text-white font-medium hover:from-indigo-600 hover:to-cyan-600 transition-all glow-glow">开始对话</button>
-</nav>
+<div id="shared-nav" data-style="27" data-name="AI 原生" data-name-en="AI-Native" data-lang="zh" data-base="../"></div>
 
 <!-- Hero 区域 - 聊天式介绍 -->
 <header class="min-h-screen flex items-center justify-center px-4 py-20">
@@ -212,15 +198,8 @@
 </section>
 
 <!-- 页脚 -->
-<footer class="py-12 bg-[#1E1B4B]/80 border-t border-white/10">
-  <div class="max-w-6xl mx-auto px-4 text-center">
-    <div class="w-14 h-14 rounded-full conic-badge flex items-center justify-center mx-auto mb-4">
-      <span class="text-white text-xl">🤖</span>
-    </div>
-    <p class="text-white/70 font-medium">AI 原生 · 设计风格画廊</p>
-    <p class="text-white/40 text-sm mt-2">对话即界面，智能即设计</p>
-  </div>
-</footer>
+<div id="shared-footer" data-style="27" data-prev="26" data-prev-name="新粗野主义" data-next="28" data-next-name="包容性设计"></div>
 
+  <script src="../shared/components.js"></script>
 </body>
 </html>

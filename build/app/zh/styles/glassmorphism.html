@@ -44,19 +44,7 @@
         <div class="absolute bottom-20 left-1/2 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse" style="animation-delay: 2s;"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="fixed top-4 left-4 right-4 glass rounded-2xl z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../index.html" class="text-sm text-white/70 hover:text-white transition-colors">&larr; Back</a>
-            <span class="font-medium text-white">#03 Glassmorphism</span>
-            <span class="text-sm text-white/50">General</span>
-            <div class="flex items-center gap-2">
-                <span class="text-xs text-white font-medium">EN</span>
-                <span class="text-white/30">|</span>
-                <a href="../../styles/glassmorphism.html" class="text-xs text-white/50 hover:text-white">中文</a>
-            </div>
-        </div>
-    </nav>
+    <div id="shared-nav" data-style="03" data-name="Glassmorphism" data-name-en="Glassmorphism" data-lang="en" data-base="../../"></div>
 
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 px-6">
@@ -223,12 +211,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="relative py-8 px-6">
-        <div class="max-w-5xl mx-auto glass rounded-2xl px-6 py-4 flex justify-between items-center">
-            <a href="neumorphism.html" class="text-sm text-white/70 hover:text-white">&larr; Neumorphism</a>
-            <a href="claymorphism.html" class="text-sm text-white/70 hover:text-white">Claymorphism &rarr;</a>
-        </div>
-    </footer>
+    <div id="shared-footer" data-style="03" data-prev="02" data-prev-name="Neumorphism" data-next="04" data-next-name="Brutalism"></div>
 
     <script>
       if ('serviceWorker' in navigator) {
@@ -236,5 +219,6 @@
       }
     </script>
 
+  <script src="../../shared/components.js"></script>
 </body>
 </html>

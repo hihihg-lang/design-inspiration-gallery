@@ -35,19 +35,7 @@
 
 </head>
 <body class="min-h-screen text-gray-700">
-    <!-- Navigation -->
-    <nav class="fixed top-4 left-4 right-4 neu-flat rounded-2xl z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../index.html" class="text-sm text-gray-500 hover:text-gray-800 transition-colors">&larr; Back</a>
-            <span class="font-medium text-gray-700">#02 Neumorphism</span>
-            <span class="text-sm text-gray-400">General</span>
-            <div class="flex items-center gap-2">
-                <span class="text-xs text-gray-800 font-medium">EN</span>
-                <span class="text-gray-300">|</span>
-                <a href="../../styles/neumorphism.html" class="text-xs text-gray-400 hover:text-gray-600">中文</a>
-            </div>
-        </div>
-    </nav>
+    <div id="shared-nav" data-style="02" data-name="Neumorphism" data-name-en="Neumorphism" data-lang="en" data-base="../../"></div>
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20 px-6">
@@ -230,12 +218,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 px-6">
-        <div class="max-w-5xl mx-auto neu-flat rounded-2xl px-6 py-4 flex justify-between items-center">
-            <a href="minimalism.html" class="text-sm text-gray-500 hover:text-gray-800">&larr; Minimalism</a>
-            <a href="glassmorphism.html" class="text-sm text-gray-500 hover:text-gray-800">Glassmorphism &rarr;</a>
-        </div>
-    </footer>
+    <div id="shared-footer" data-style="02" data-prev="01" data-prev-name="Minimalism" data-next="03" data-next-name="Glassmorphism"></div>
 
     <script>
       if ('serviceWorker' in navigator) {
@@ -243,5 +226,6 @@
       }
     </script>
 
+  <script src="../../shared/components.js"></script>
 </body>
 </html>

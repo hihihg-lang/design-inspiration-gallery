@@ -9,16 +9,7 @@
 </head>
 <body class="bg-white min-h-screen font-sans">
 
-  <nav class="w-full bg-white border-b-4 border-gray-200" role="navigation" aria-label="Main navigation">
-    <div class="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
-      <a href="/" class="text-2xl font-black text-gray-900" aria-label="Back to gallery home">🎨 Design Gallery</a>
-      <div class="flex items-center gap-8 text-lg font-bold">
-        <a href="/" class="text-gray-700 hover:text-[#1A73E8] focus:ring-4 focus:ring-[#1A73E8] focus:outline-none rounded-lg px-4 py-3 transition-colors" aria-label="Back to Gallery">Back to Gallery</a>
-        <span class="px-5 py-2 rounded-lg bg-[#1A73E8] text-white text-lg font-bold" aria-current="page">EN</span>
-        <a href="../../styles/inclusive-design.html" class="text-gray-700 hover:text-[#1A73E8] focus:ring-4 focus:ring-[#1A73E8] focus:outline-none rounded-lg px-4 py-3 transition-colors" lang="zh">中文</a>
-      </div>
-    </div>
-  </nav>
+  <div id="shared-nav" data-style="28" data-name="Inclusive Design" data-name-en="Inclusive Design" data-lang="en" data-base="../../"></div>
 
   <main>
     <section class="py-24 px-8" aria-labelledby="hero-heading">
@@ -188,15 +179,8 @@
     </section>
   </main>
 
-  <footer class="py-16 px-8 bg-gray-900 text-white" role="contentinfo">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-      <div><p class="text-lg text-gray-300 font-bold">Style #19 — Inclusive Design</p><p class="text-base text-gray-400 mt-2">Accessible & universal design</p></div>
-      <div class="flex gap-6">
-        <a href="/zh/styles/motion-driven.html" class="px-8 py-4 bg-white/10 text-lg font-bold rounded-lg hover:bg-white/20 focus:ring-4 focus:ring-white focus:outline-none transition-colors" style="min-height: 56px;" aria-label="Previous style">← Previous Style</a>
-        <a href="/zh/styles/zero-ui.html" class="px-8 py-4 bg-[#1A73E8] text-lg font-bold rounded-lg hover:bg-[#1557b0] focus:ring-4 focus:ring-[#1A73E8] focus:outline-none transition-colors" style="min-height: 56px;" aria-label="Next style">Next Style →</a>
-      </div>
-    </div>
-  </footer>
+  <div id="shared-footer" data-style="28" data-prev="27" data-prev-name="AI-Native" data-next="29" data-next-name="Spatial UI"></div>
 
+  <script src="../../shared/components.js"></script>
 </body>
 </html>

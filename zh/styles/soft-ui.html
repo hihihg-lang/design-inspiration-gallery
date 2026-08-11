@@ -9,16 +9,7 @@
 </head>
 <body class="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-amber-50">
 
-  <nav class="w-full bg-white/60 backdrop-blur-xl border-b border-white/50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="/" class="text-lg font-bold text-gray-700">🌸 Design Gallery</a>
-      <div class="flex items-center gap-6 text-sm font-medium">
-        <a href="/" class="text-gray-500 hover:text-purple-500 transition-colors">Back to Gallery</a>
-        <span class="px-4 py-2 rounded-2xl bg-gradient-to-r from-purple-400 to-blue-400 text-white font-bold">EN</span>
-        <a href="../../styles/soft-ui.html" class="text-gray-400 hover:text-purple-400 transition-colors">中文</a>
-      </div>
-    </div>
-  </nav>
+  <div id="shared-nav" data-style="24" data-name="Soft UI" data-name-en="Soft UI" data-lang="en" data-base="../../"></div>
 
   <section class="py-32 px-6">
     <div class="max-w-4xl mx-auto text-center">
@@ -149,15 +140,8 @@
     </div>
   </section>
 
-  <footer class="py-16 px-6 bg-white/60 backdrop-blur-xl border-t border-white/50">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-      <div><p class="text-gray-500 text-sm font-medium">Style #21 — Soft UI Evolution</p><p class="text-gray-400 text-xs mt-1">Dreamy pastel design</p></div>
-      <div class="flex gap-4">
-        <a href="/zh/styles/zero-ui.html" class="px-6 py-3 bg-white/80 backdrop-blur rounded-2xl text-sm font-medium text-gray-500 hover:shadow-md hover:-translate-y-1 transition-all duration-300">← Previous Style</a>
-        <a href="/zh/styles/hero-centric.html" class="px-6 py-3 bg-gradient-to-r from-purple-400 to-blue-400 text-white rounded-2xl text-sm font-medium hover:shadow-lg hover:shadow-purple-200 hover:-translate-y-1 transition-all duration-300">Next Style →</a>
-      </div>
-    </div>
-  </footer>
+  <div id="shared-footer" data-style="24" data-prev="23" data-prev-name="Organic Biomimicry" data-next="25" data-next-name="Gen-Z Chaos"></div>
 
+  <script src="../../shared/components.js"></script>
 </body>
 </html>

@@ -56,21 +56,7 @@
         <div class="absolute bottom-20 left-1/3 w-72 h-72 bg-purple-400/30 rounded-full filter blur-3xl morphing floating" style="animation-delay: 4s;"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="fixed top-4 left-4 right-4 liquid-glass z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../../index.html" class="text-white/70 hover:text-white">&larr; Back</a>
-            <span class="font-medium text-white">#14 Liquid Glass</span>
-            <div class="flex items-center gap-4">
-                <span class="text-white/50">General</span>
-                <div class="flex items-center gap-2">
-                    <a href="../zh/styles/liquid-glass.html" class="text-xs text-white/50 hover:text-white/80">EN</a>
-                    <span class="text-white/30">|</span>
-                    <span class="text-xs text-white font-medium">中文</span>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div id="shared-nav" data-style="15" data-name="液体玻璃" data-name-en="Liquid Glass" data-lang="zh" data-base="../"></div>
 
     <!-- Hero -->
     <section class="relative pt-32 pb-20 px-6">
@@ -192,12 +178,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="relative py-8 px-6">
-        <div class="max-w-5xl mx-auto liquid-glass px-6 py-4 flex justify-between items-center">
-            <a href="swiss-modernism.html" class="text-white/70 hover:text-white">&larr; Swiss Modernism</a>
-            <a href="gen-z-chaos.html" class="text-white/70 hover:text-white">Gen Z Chaos &rarr;</a>
-        </div>
-    </footer>
+    <div id="shared-footer" data-style="15" data-prev="14" data-prev-name="极光 UI" data-next="16" data-next-name="HUD 科幻"></div>
 
     <style>
         @keyframes aurora {
@@ -220,5 +201,6 @@
       }
     </script>
 
+  <script src="../shared/components.js"></script>
 </body>
 </html>

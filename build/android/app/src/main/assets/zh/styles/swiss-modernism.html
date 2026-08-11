@@ -17,19 +17,7 @@
 
 </head>
 <body class="bg-white min-h-screen">
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black px-6 py-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="../index.html" class="text-black hover:underline text-sm">&larr; Back</a>
-            <span class="font-bold tracking-tight">#50 Swiss Modernism 2.0</span>
-            <span class="text-gray-500 text-sm">Modern</span>
-            <div class="flex items-center gap-2">
-                <span class="text-xs text-gray-800 font-medium">EN</span>
-                <span class="text-gray-300">|</span>
-                <a href="../../styles/swiss-modernism.html" class="text-xs text-gray-400 hover:text-gray-600">中文</a>
-            </div>
-        </div>
-    </nav>
+    <div id="shared-nav" data-style="08" data-name="Swiss Modernism" data-name-en="Swiss Modernism" data-lang="en" data-base="../../"></div>
 
     <div class="pt-20">
         <!-- Hero -->
@@ -188,12 +176,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="px-6 py-4 border-t border-black">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="vaporwave.html" class="text-black hover:underline text-sm">&larr; Vaporwave</a>
-            <a href="liquid-glass.html" class="text-black hover:underline text-sm">Liquid Glass &rarr;</a>
-        </div>
-    </footer>
+    <div id="shared-footer" data-style="08" data-prev="07" data-prev-name="Vaporwave" data-next="09" data-next-name="Memphis"></div>
 
     <script>
       if ('serviceWorker' in navigator) {
@@ -201,5 +184,6 @@
       }
     </script>
 
+  <script src="../../shared/components.js"></script>
 </body>
 </html>

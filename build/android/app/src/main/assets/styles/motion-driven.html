@@ -42,16 +42,7 @@
 <body class="bg-white min-h-screen overflow-x-hidden">
 
   <!-- Nav -->
-  <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="/" class="text-lg font-bold bg-gradient-to-r from-[#FF3B30] via-[#FFCC00] to-[#007AFF] bg-clip-text text-transparent animate-gradient">🎨 设计画廊</a>
-      <div class="flex items-center gap-6 text-sm font-medium">
-        <a href="/" class="text-gray-500 hover:text-[#FF3B30] transition-colors">返回画廊</a>
-        <span class="px-3 py-1 rounded-full bg-[#FF3B30] text-white font-bold">中文</span>
-        <a href="../zh/styles/motion-driven.html" class="text-gray-400 hover:text-[#007AFF] transition-colors">EN</a>
-      </div>
-    </div>
-  </nav>
+  <div id="shared-nav" data-style="19" data-name="动态驱动" data-name-en="Motion-Driven" data-lang="zh" data-base="../"></div>
 
   <!-- Hero -->
   <section class="relative pt-32 pb-28 px-6 overflow-hidden">
@@ -305,18 +296,8 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-16 px-6 bg-gray-900 text-white">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-      <div>
-        <p class="text-gray-400 text-sm">风格 #18 — 动感驱动</p>
-        <p class="text-gray-500 text-xs mt-1">Motion-Driven Design</p>
-      </div>
-      <div class="flex gap-4">
-        <a href="/styles/hero-centric.html" class="px-6 py-3 bg-white/10 rounded-full text-sm font-medium hover:bg-white/20 hover:scale-105 transition-all duration-300">← 上一个风格</a>
-        <a href="/styles/inclusive-design.html" class="px-6 py-3 bg-[#FF3B30] rounded-full text-sm font-medium hover:bg-[#ff5b52] hover:scale-105 transition-all duration-300">下一个风格 →</a>
-      </div>
-    </div>
-  </footer>
+  <div id="shared-footer" data-style="19" data-prev="18" data-prev-name="拟物主义" data-next="20" data-next-name="Bento 网格"></div>
 
+  <script src="../shared/components.js"></script>
 </body>
 </html>

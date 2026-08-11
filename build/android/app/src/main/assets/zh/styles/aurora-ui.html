@@ -44,19 +44,7 @@
 
 </head>
 <body class="aurora-bg min-h-screen text-white">
-    <!-- Navigation -->
-    <nav class="fixed top-4 left-4 right-4 glass-card rounded-2xl z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../index.html" class="text-white/70 hover:text-white transition-colors">&larr; Back</a>
-            <span class="font-semibold">#10 Aurora UI</span>
-            <span class="text-white/50">General</span>
-            <div class="flex items-center gap-2">
-                <span class="text-xs text-white font-medium">EN</span>
-                <span class="text-white/30">|</span>
-                <a href="../../styles/aurora-ui.html" class="text-xs text-white/50 hover:text-white">中文</a>
-            </div>
-        </div>
-    </nav>
+    <div id="shared-nav" data-style="14" data-name="Aurora UI" data-name-en="Aurora UI" data-lang="en" data-base="../../"></div>
 
     <!-- Hero -->
     <section class="pt-32 pb-20 px-6">
@@ -218,12 +206,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 px-6">
-        <div class="max-w-5xl mx-auto glass-card rounded-2xl px-6 py-4 flex justify-between items-center">
-            <a href="flat-design.html" class="text-white/70 hover:text-white">&larr; Flat Design</a>
-            <a href="brutalism.html" class="text-white/70 hover:text-white">Brutalism &rarr;</a>
-        </div>
-    </footer>
+    <div id="shared-footer" data-style="14" data-prev="13" data-prev-name="E-Ink" data-next="15" data-next-name="Liquid Glass"></div>
 
     <script>
       if ('serviceWorker' in navigator) {
@@ -231,5 +214,6 @@
       }
     </script>
 
+  <script src="../../shared/components.js"></script>
 </body>
 </html>
