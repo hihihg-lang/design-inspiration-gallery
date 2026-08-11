@@ -9,13 +9,14 @@
 1. 在 `styles/` 目录下创建新的 HTML 文件
 2. 文件名使用英文小写，用连字符分隔，如 `my-style.html`
 3. 页面需包含：
-   - 完整的导航栏（含返回按钮和语言切换）
+   - 共享导航占位符 `<div id="shared-nav" ...>` 和 `<div id="shared-footer" ...>`（参见现有页面）
    - 风格名称、设计理念说明
    - 色彩方案展示
    - 适用场景和技术特点
-   - 页脚导航
-4. 同步创建 `zh/styles/` 下的英文版本
+   - 在 `</body>` 前引入 `<script src="../shared/components.js"></script>`
+4. 同步创建 `zh/styles/` 下的英文版本（注意 base-path 为 `../../`）
 5. 在 `index.html` 和 `zh/index.html` 中添加风格卡片
+6. 在 `shared/update-components.py` 和 `shared/sync-build.py` 的 STYLES 字典中注册新风格
 
 ### 改进现有页面
 

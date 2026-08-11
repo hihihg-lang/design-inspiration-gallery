@@ -119,6 +119,8 @@ def main():
             continue
 
         for num, (filename, _, _) in STYLES.items():
+            if num == '31':
+                continue  # 魔法书有完全自定义的导航
             filepath = os.path.join(styles_dir, f'{filename}.html')
             update_file(filepath, num, lang, base_path)
 
