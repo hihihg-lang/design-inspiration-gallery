@@ -20,12 +20,12 @@
         }
     </style>
     <!-- PWA -->
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="../manifest.json">
     <meta name="theme-color" content="#000000">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Design Gallery">
-    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="../icons/icon-192.png">
 
 </head>
 <body class="bg-white text-black min-h-screen">
@@ -36,16 +36,16 @@
                 <h1 class="text-xl font-bold text-black">Design Inspiration Gallery</h1>
                 <div class="flex items-center gap-6">
                     <nav class="flex gap-6 text-sm">
-                        <a href="../index.html" class="text-gray-500 hover:text-black transition-colors">Gallery</a>
-                        <a href="../palette.html" class="text-gray-500 hover:text-black transition-colors">Palettes</a>
-                        <a href="../color-mixer.html" class="text-gray-500 hover:text-black transition-colors">Color Mixer</a>
-                        <a href="../philosophy.html" class="text-gray-500 hover:text-black transition-colors">Philosophy</a>
-                        <a href="../reference.html" class="text-black font-medium">Reference</a>
+                        <a href="index.html" class="text-gray-500 hover:text-black transition-colors">Gallery</a>
+                        <a href="palette.html" class="text-gray-500 hover:text-black transition-colors">Palettes</a>
+                        <a href="color-mixer.html" class="text-gray-500 hover:text-black transition-colors">Color Mixer</a>
+                        <a href="philosophy.html" class="text-gray-500 hover:text-black transition-colors">Philosophy</a>
+                        <a href="reference.html" class="text-black font-medium">Reference</a>
                     </nav>
                     <div class="flex items-center gap-4">
-                        <a href="../reference.html" class="text-sm text-black font-medium">EN</a>
+                        <a href="reference.html" class="text-sm text-black font-medium">EN</a>
                         <span class="text-gray-300">|</span>
-                        <a href="reference.html" class="text-sm text-gray-500 hover:text-black">中文</a>
+                        <a href="../reference.html" class="text-sm text-gray-500 hover:text-black">中文</a>
                     </div>
                 </div>
             </div>
@@ -344,7 +344,7 @@
 
     <script>
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
+        navigator.serviceWorker.register('../sw.js').catch(() => {});
       }
     </script>
 

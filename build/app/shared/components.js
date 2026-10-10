@@ -20,12 +20,15 @@
   var langLabel = isZh ? '中文' : '中文';
   var enLabel = 'EN';
 
+  // 语言对应的画廊首页：中文版在根目录，英文版在 zh/ 目录
+  var galleryPath = isZh ? basePath + 'index.html' : basePath + 'zh/index.html';
+
   // ── 导航栏 ──
   if (nav) {
     nav.outerHTML =
       '<nav class="fixed top-4 left-4 right-4 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-xl z-50 shadow-sm" style="max-width:calc(100% - 32px)">' +
       '<div class="max-w-7xl mx-auto px-5 py-3 flex justify-between items-center">' +
-      '<a href="' + basePath + 'index.html" class="text-sm text-gray-500 hover:text-black transition-colors">&larr; ' +
+      '<a href="' + galleryPath + '" class="text-sm text-gray-500 hover:text-black transition-colors">&larr; ' +
       backLabel +
       '</a>' +
       '<span class="font-medium text-sm text-gray-700">#' +
@@ -71,7 +74,7 @@
       '<footer class="border-t border-gray-100 py-8 px-6 mt-12">' +
       '<div class="max-w-7xl mx-auto flex justify-between items-center">' +
       prevHtml +
-      '<a href="' + basePath + 'index.html" class="text-sm text-gray-400 hover:text-gray-600">' +
+      '<a href="' + galleryPath + '" class="text-sm text-gray-400 hover:text-gray-600">' +
       (isZh ? '返回画廊' : 'Back to Gallery') +
       '</a>' +
       nextHtml +
